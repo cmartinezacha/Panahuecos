@@ -1,6 +1,9 @@
-drop table if exists entries;
-create table entries (
+drop table if exists news;
+
+create table news (
   id integer primary key autoincrement,
-  title text not null,
-  text text not null
+  type text not null,
+  text text not null,
+  time text,
+
 );
