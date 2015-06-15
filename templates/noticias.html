@@ -115,7 +115,7 @@
 	      <div class="tabContent" id="twitter">
 	        <div>
 	          {% for new in twitter_news %}
-	            <p><em>{{ new }}</em>
+	            <p><em>{{ new | safe }}</em>
 	          {% else %}
 	            <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
 	          {% endfor %}
