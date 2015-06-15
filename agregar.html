@@ -5,33 +5,44 @@
 			<meta charset = "utf-8">
 			<title>Panahuecos Noticias</title>
 			<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-			<link rel="stylesheet" href="panahuecos-noticias.css">
+			<link rel="stylesheet" href="static/noticias.css">
 			<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
 		</head>
 
 		<body>
-			<h3>Noticias</h3>
-			<form>
-				<div class="fecha completa">
-					<h5>fecha</h5>
-					<input type="time" name="usr_time">
-				</div>
+			<h3 class="titulo">Noticias</h3>
 
-				<section class="tipo de noticia">
-					<input type="radio" name="tipo" value="Radio"> Radio
-					<br>
-					<input type="radio" name="tipo" value="Medio"> Medio
-					<br>
-					<input type="radio" name="tipo" value="Twitter"> Twitter
+			<form class="form">
+				<div class = "parte-arriba">
+					<section class="fecha-completa">
+						<h4 class="description">FECHA</h4>
+						<input type="time" name="time">
+					</section>
+						<section class="tipo-de-noticia">
+						<h4 class="description">Escoja el tipo de noticia:</h4>
+						<input type="radio" name="type" value="Radio"> Radio
+						<br>
+						<input type="radio" name="type" value="Medio"> Medio
+						<br>
+						<input type="radio" name="type" value="Twitter"> Twitter
+					</section>
+				 </div>
+				<section class = "area-de-texto">
+					<textarea rows ="30" cols="190" name="text" placeholder="Escriba aquí sus noticias"></textarea>
 				</section>
 
-				<section class = "area de texto">
-					<textarea name="Noticias">Escriba aquí sus noticias</textarea>
-				</section>
+				<input class="btn" type="submit" value="Agregar">
 
-				<input type="submit" value="Agregar">
+			</form>	<!--
 
-			</form>	
+
+			--><section class="leyenda">
+				<h5 class="positiva">Noticias Positivas</h5>
+			  	<h5 class="neutral">Noticias Neutrales</h5>
+			  	<h5 class = "negativa">Noticias Negativas</h5>
+	 	  	</section>
+
+
 		</body>
 
 
