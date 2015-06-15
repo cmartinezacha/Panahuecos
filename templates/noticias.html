@@ -1,34 +1,125 @@
 <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Panahuecos Noticias</title>
+		<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="../static/noticias.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
 
-	<html>
-		<head>
-			<meta charset = "utf-8">
-			<title>Panahuecos Noticias</title>
-			<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-			<link rel="stylesheet" href="panahuecos-noticias.css">
-			<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-		</head>
+		<script type="text/javascript">
+					//<![CDATA[
 
-		<body>
-			
-		  <nav>
-		    <div class="nav-wrapper">
-		      <a href="#" class="header">Noticias</a>
-		      <ul class="nav-list">
-		        <li><a href="">Medios</a></li>
-		        <li><a href="">Twitter</a></li>
-		        <li><a href="">Radio</a></li>
-		      </ul>
-		    </div>
-		  </nav>
+		    var tabLinks = new Array();
+		    var contentDivs = new Array();
 
-		  <div class="leyenda">
-		  	<h5 class="positiva">Noticias Positivas</h5>
-		  	<h5 class="neutral">Noticias Neutrales</h5>
-		  	<h5 class = "negativa">Noticias Negativas</h5>
-		  </div>
-			
+		    function init() {
 
-		</body>
+		      // Grab the tab links and content divs from the page
+		      var tabListItems = document.getElementById('tabs').childNodes;
+		      for ( var i = 0; i < tabListItems.length; i++ ) {
+		        if ( tabListItems[i].nodeName == "LI" ) {
+		          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+		          var id = getHash( tabLink.getAttribute('href') );
+		          tabLinks[id] = tabLink;
+		          contentDivs[id] = document.getElementById( id );
+		        }
+		      }
 
-	</html>
+		      // Assign onclick events to the tab links, and
+		      // highlight the first tab
+		      var i = 0;
+
+		      for ( var id in tabLinks ) {
+		        tabLinks[id].onclick = showTab;
+		        tabLinks[id].onfocus = function() { this.blur() };
+		        if ( i == 0 ) tabLinks[id].className = 'selected';
+		        i++;
+		      }
+
+		      // Hide all content divs except the first
+		      var i = 0;
+
+		      for ( var id in contentDivs ) {
+		        if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
+		        i++;
+		      }
+		    }
+
+		    function showTab() {
+		      var selectedId = getHash( this.getAttribute('href') );
+
+		      // Highlight the selected tab, and dim all others.
+		      // Also show the selected content div, and hide all others.
+		      for ( var id in contentDivs ) {
+		        if ( id == selectedId ) {
+		          tabLinks[id].className = 'selected';
+		          contentDivs[id].className = 'tabContent';
+		        } else {
+		          tabLinks[id].className = '';
+		          contentDivs[id].className = 'tabContent hide';
+		        }
+		      }
+
+		      // Stop the browser following the link
+		      return false;
+		    }
+
+		    function getFirstChildWithTagName( element, tagName ) {
+		      for ( var i = 0; i < element.childNodes.length; i++ ) {
+		        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+		      }
+		    }
+
+		    function getHash( url ) {
+		      var hashPos = url.lastIndexOf ( '#' );
+		      return url.substring( hashPos + 1 );
+		    }
+
+		    //]]>
+		</script>
+	</head>
+
+	<body onload="init()">
+
+	  <nav>
+	    <div class="nav-wrapper">
+	      <a href="#" class="header">Noticias</a>
+	      <ul class="nav-list" id="tabs">
+	        <li><a href="#medios">Medios</a></li>
+	        <li><a href="#twitter">Twitter</a></li>
+	        <li><a href="#radio">Radio</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+	  	
+	  <div class="leyenda">
+	  	<h5 class="positiva">Noticias Positivas</h5>
+	  	<h5 class="neutral">Noticias Neutrales</h5>
+	  	<h5 class = "negativa">Noticias Negativas</h5>
+	  </div>
+
+	  <div class="tabContent" id="medios">
+	        <h2>About JavaScript tabs</h2>
+	        <div>
+	          <p>JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is visible.</p>
+	          <p>The code is written in such a way that the page degrades gracefully in browsers that don't support JavaScript or CSS.</p>
+	        </div>
+	      </div>
+
+	      <div class="tabContent" id="twitter">
+	        <h2>Advantages of tabs</h2>
+	        <div>
+	          <p>JavaScript tabs are great if your Web page contains a large amount of content.</p>
+	          <p>They're also good for things like multi-step Web forms.</p>
+	        </div>
+	      </div>
+
+	      <div class="tabContent" id="radio">
+	        <h2>Using tabs</h2>
+	        <div>
+	          <p>Click a tab to view the tab's content. Using tabs couldn't be easier!</p>
+	        </div>
+	      </div>
+	</body>
+</html>

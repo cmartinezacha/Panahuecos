@@ -127,60 +127,26 @@ a {
 	color: red;
 }
 
-/*
-  ========================================
-  Botones
-  ========================================
-*/
 
-.btn{
-	border-radius: 5px;
-	color: #fff;
-	cursor: pointer;
-	font-weight: 400;
-	letter-spacing: .5px;
-	text-transform: uppercase;
-	margin: 0 20px;
-	display: inline-block;
-	background: #fff;
-	color: #648880;
-	border: 1px solid #dfe2e5;
-	padding: 10px 30px;
+ul#tabs { 
+	list-style-type: none; 
+	margin: 4px 0 0 0; 
+	padding: 0 0 0.3em 0; 
 }
 
-/*
-  ========================================
-  Agregar
-  ========================================
-*/
-
-
-
-.titulo{
-	background-color: #FFD700;
-	height: 30px;
-	font-size: 24px;
-  	font-weight: 400;
-  	letter-spacing: .5px;
- 	padding: 20px;
+ul#tabs li { 
+	display: inline; 
+}
+/*			      ul#tabs li a:hover { background-color: #f1f0ee; }*/
+ul#tabs li a.selected { 
+	font-weight: bold 
 }
 
-.fecha-completa{
-	float: left;
-	width: 10%;
-	height: 100px;
-
+div.tabContent { 
+	color:black 
 }
 
-.parte-arriba{
-	height: 100px;
-	margin: 20px;
+div.tabContent.hide { 
+	display: none; 
 }
- .area-de-texto{
- 	margin: 0px 20px;
- }
-
- .description{
- 	font-weight: 400;
- }
 
