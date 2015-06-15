@@ -107,7 +107,7 @@
 	        <div>
 				{% for new in medios_news %}
 					<div class="fecha_de_noticias">
-						<span>{{ new.fecha }}</span> - <span>{{ new.time }}</span>:
+						{{ new.fecha }} - {{ new.time }}:
 					</div>
 					<p><em>{{ new.text }}</em>
 				{% else %}
@@ -120,7 +120,7 @@
 			<div>
 				{% for new in twitter_news %}
 					<div class="fecha_de_noticias">
-						<span>{{ new.fecha }}</span> - <span>{{ new.time }}</span>:
+						{{ new.fecha }} - {{ new.time }}:
 					</div>          
 					<p><em>{{ new.text }}</em>
 				{% else %}
@@ -133,7 +133,7 @@
 	        <div>
 				{% for new in radios_news %}
 					<div class="fecha_de_noticias">
-						<span>{{ new.fecha }}</span> - <span>{{ new.time }}</span>:
+						{{ new.fecha }} - {{ new.time }}:
 					</div>		           
 					<p><em>{{ new.text }}</em>
 				{% else %}

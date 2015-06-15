@@ -99,14 +99,14 @@ def show_news(date):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
-	medios_cur = g.db.execute('select text, type from news where date = "%s" and type = "Medios" order by id desc' % date)
-	medios_news = [dict(text=row[0], type=row[1]) for row in medios_cur.fetchall()]
+	medios_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Medios" order by id desc' % date)
+	medios_news = [dict(text=row[0], type=row[1], time=row[2]) for row in medios_cur.fetchall()]
 	
-	twitter_cur = g.db.execute('select text, type, date from news where date = "%s" and type = "Twitter" order by id desc' % date)
-	twitter_news = [dict(text=row[0], type=row[1]) for row in twitter_cur.fetchall()]
+	twitter_cur = g.db.execute('select text, type, time date from news where date = "%s" and type = "Twitter" order by id desc' % date)
+	twitter_news = [dict(text=row[0], type=row[1], time=row[2]) for row in twitter_cur.fetchall()]
 
-	radio_cur = g.db.execute('select text, type from news where date = "%s" and type = "Radio" order by id desc' % date)
-	radio_news = [dict(text=row[0], type=row[1]) for row in radio_cur.fetchall()]
+	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % date)
+	radio_news = [dict(text=row[0], type=row[1], time=row[2]) for row in radio_cur.fetchall()]
 
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news)
 
