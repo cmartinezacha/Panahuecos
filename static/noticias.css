@@ -219,6 +219,9 @@ div.tabContent.hide {
 }
 
 .parte-de-arriba{
-    
     overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+.fecha_de_noticias{
+	font-weight: bold;
 }
