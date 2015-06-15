@@ -123,3 +123,24 @@ a {
 	color: red;
 }
 
+ul#tabs { 
+	list-style-type: none; 
+	margin: 4px 0 0 0; 
+	padding: 0 0 0.3em 0; 
+}
+
+ul#tabs li { 
+	display: inline; 
+}
+/*			      ul#tabs li a:hover { background-color: #f1f0ee; }*/
+ul#tabs li a.selected { 
+	font-weight: bold 
+}
+
+div.tabContent { 
+	color:black 
+}
+
+div.tabContent.hide { 
+	display: none; 
+}
