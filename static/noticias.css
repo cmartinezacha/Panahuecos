@@ -60,7 +60,6 @@ body {
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-
 /*
   ========================================
   Navigation
@@ -95,9 +94,7 @@ a {
 	margin-right: 1.5em;
 }
 
-.header{
-	margin-top: 2em;
-}
+
 
 
 /*
@@ -200,6 +197,11 @@ div.tabContent.hide {
 	height: 100px;
 	margin: 20px;
 }
+.wrapper{
+	display: inline-block;
+}
+
+
  .area-de-texto{
  	margin: 0px 20px;
  }
@@ -208,9 +210,15 @@ div.tabContent.hide {
  	font-weight: 400;
  }
 
+.wrapper {
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+.leyenda {
+    width: 300px;
+    float:right; 
+}
 
-
-
-
-
-
+.parte-de-arriba{
+    
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
