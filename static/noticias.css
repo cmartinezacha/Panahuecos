@@ -60,9 +60,6 @@ body {
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-* {
-   outline: 0px solid red !important;
-}
 
 /*
   ========================================
@@ -127,6 +124,12 @@ a {
 	color: red;
 }
 
+ /*
+  ========================================
+  Alvaros
+  ========================================
+*/
+
 
 ul#tabs { 
 	list-style-type: none; 
@@ -149,4 +152,65 @@ div.tabContent {
 div.tabContent.hide { 
 	display: none; 
 }
+
+/*
+  ========================================
+  Botones
+  ========================================
+*/
+
+.btn{
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 400;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	margin: 0 20px;
+	display: inline-block;
+	background: #fff;
+	color: #648880;
+	border: 1px solid #dfe2e5;
+	padding: 10px 30px;
+}
+
+/*
+  ========================================
+  Agregar
+  ========================================
+*/
+
+.titulo{
+	background-color: #FFD700;
+	height: 30px;
+	font-size: 24px;
+  	font-weight: 400;
+  	letter-spacing: .5px;
+ 	padding: 20px;
+}
+
+.fecha-completa{
+	float: left;
+	width: 10%;
+	height: 100px;
+
+}
+
+.parte-arriba{
+	height: 100px;
+	margin: 20px;
+}
+ .area-de-texto{
+ 	margin: 0px 20px;
+ }
+
+ .description{
+ 	font-weight: 400;
+ }
+
+
+
+
+
+
 
