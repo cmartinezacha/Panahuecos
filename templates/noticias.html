@@ -8,7 +8,10 @@
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
 
 		<script type="text/javascript">
-					//<![CDATA[
+			// http://www.elated.com/articles/javascript-tabs/
+			// view-source:http://www.elated.com/res/File/articles/development/javascript/document-object-model/javascript-tabs/javascript-tabs.html
+			
+			// 		//<![CDATA[
 
 		    var tabLinks = new Array();
 		    var contentDivs = new Array();
@@ -100,25 +103,32 @@
 	  </div>
 
 	  <div class="tabContent" id="medios">
-	        <h2>About JavaScript tabs</h2>
 	        <div>
-	          <p>JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is visible.</p>
-	          <p>The code is written in such a way that the page degrades gracefully in browsers that don't support JavaScript or CSS.</p>
+	          {% for new in medios_news %}
+	            <p><em>{{ new }}</em>
+	          {% else %}
+	            <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+	          {% endfor %}
 	        </div>
 	      </div>
 
 	      <div class="tabContent" id="twitter">
-	        <h2>Advantages of tabs</h2>
 	        <div>
-	          <p>JavaScript tabs are great if your Web page contains a large amount of content.</p>
-	          <p>They're also good for things like multi-step Web forms.</p>
+	          {% for new in twitter_news %}
+	            <p><em>{{ new }}</em>
+	          {% else %}
+	            <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+	          {% endfor %}
 	        </div>
 	      </div>
 
 	      <div class="tabContent" id="radio">
-	        <h2>Using tabs</h2>
 	        <div>
-	          <p>Click a tab to view the tab's content. Using tabs couldn't be easier!</p>
+		        {% for new in radios_news %}
+		          <p><em>{{ new }}</em>
+		        {% else %}
+		          <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+		        {% endfor %}
 	        </div>
 	      </div>
 	</body>
