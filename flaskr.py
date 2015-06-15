@@ -52,7 +52,7 @@ def teardown_request(exception):
 
 @app.route('/')
 def show_news():
-	cur = g.db.execute('select text, type, time from news order by id desc')
+	cur = g.db.execute('select text, type from news order by id desc')
 	news = [dict(text=row[0], type=row[1]) for row in cur.fetchall()]
 	return render_template('show_news.html', news=news)
 
