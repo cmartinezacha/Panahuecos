@@ -85,51 +85,61 @@
 
 	<body onload="init()">
 
-	  <nav>
-	    <div class="nav-wrapper">
-	      <a href="#" class="header">Noticias</a>
-	      <ul class="nav-list" id="tabs">
-	        <li><a href="#medios">Medios</a></li>
-	        <li><a href="#twitter">Twitter</a></li>
-	        <li><a href="#radio">Radio</a></li>
-	      </ul>
-	    </div>
-	  </nav>
-	  	
-	  <div class="leyenda">
-	  	<h5 class="positiva">Noticias Positivas</h5>
-	  	<h5 class="neutral">Noticias Neutrales</h5>
-	  	<h5 class = "negativa">Noticias Negativas</h5>
-	  </div>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="header">Noticias</a>
+				<ul class="nav-list" id="tabs">
+					<li><a href="#medios">Medios</a></li>
+					<li><a href="#twitter">Twitter</a></li>
+					<li><a href="#radio">Radio</a></li>
+				</ul>
+			</div>
+		</nav>
 
-	  <div class="tabContent" id="medios">
-	        <div>
-	          {% for new in medios_news %}
-	            <p><em>{{ new }}</em>
-	          {% else %}
-	            <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
-	          {% endfor %}
-	        </div>
-	      </div>
+		<div class="leyenda">
+			<h5 class="positiva">Noticias Positivas</h5>
+			<h5 class="neutral">Noticias Neutrales</h5>
+			<h5 class = "negativa">Noticias Negativas</h5>
+		</div>
 
-	      <div class="tabContent" id="twitter">
-	        <div>
-	          {% for new in twitter_news %}
-	            <p><em>{{ new }}</em>
-	          {% else %}
-	            <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
-	          {% endfor %}
-	        </div>
-	      </div>
 
-	      <div class="tabContent" id="radio">
+		<div class="tabContent" id="medios">
 	        <div>
-		        {% for new in radios_news %}
-		          <p><em>{{ new }}</em>
-		        {% else %}
-		          <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
-		        {% endfor %}
-	        </div>
-	      </div>
+				{% for new in medios_news %}
+					<div class="fecha_de_noticias">
+						<span>{{ new.fecha }}</span> - <span>{{ new.time }}</span>:
+					</div>
+					<p><em>{{ new.text }}</em>
+				{% else %}
+					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="tabContent" id="twitter">
+			<div>
+				{% for new in twitter_news %}
+					<div class="fecha_de_noticias">
+						<span>{{ new.fecha }}</span> - <span>{{ new.time }}</span>:
+					</div>          
+					<p><em>{{ new.text }}</em>
+				{% else %}
+					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="tabContent" id="radio">
+	        <div>
+				{% for new in radios_news %}
+					<div class="fecha_de_noticias">
+						<span>{{ new.fecha }}</span> - <span>{{ new.time }}</span>:
+					</div>		           
+					<p><em>{{ new.text }}</em>
+				{% else %}
+					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+				{% endfor %}
+			</div>
+		</div>
 	</body>
 </html>
