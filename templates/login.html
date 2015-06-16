@@ -1,14 +1,33 @@
-{% extends "layout.html" %}
-{% block body %}
-  <h2>Login</h2>
-  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
-  <form action="{{ url_for('login') }}" method=post>
-    <dl>
-      <dt>Username:
-      <dd><input type=text name=username>
-      <dt>Password:
-      <dd><input type=password name=password>
-      <dd><input type=submit value=Login>
-    </dl>
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset = "utf-8">
+      <title>Panahuecos Noticias</title>
+      <link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
+      <link rel="stylesheet" href="../static/noticias.css">
+      <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body class="login">
+      <h3 class="titulo">Noticias</h3>
+      {% extends "layout.html" %}
+      {% block body %}
+        <h2 class="ingresar">Ingresar</h2>
+        {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+        <form  action="{{ url_for('login') }}" method=post>
+          <dl>
+            <dt>Usuario:
+            <dd><input type=text name=username>
+            <dt>Contraseña:
+            <dd class="passcode"><input type=password name=password>
+            <dd><input type=submit value=Login class="btn">
+          </dl>
+        </form>
+      {% endblock %}
+
+    </body>
+
+  </html>
+
+
+
