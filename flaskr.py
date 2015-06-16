@@ -80,9 +80,9 @@ def login():
     error = None
     if request.method == 'POST':
         if sha256(request.form['username']).hexdigest() != app.config['USERNAME']:
-            error = 'Invalid username'
+            error = 'Usuario invalido'
         elif sha256(request.form['password']).hexdigest() != app.config['PASSWORD']:
-            error = 'Invalid password'
+            error = 'Contraseña invalida'
         else:
             session['logged_in'] = True
             flash('You were logged in')
