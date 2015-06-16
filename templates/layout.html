@@ -1,17 +1,25 @@
 <!doctype html>
-<title>Flaskr</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<div class=page>
-  <h1>Flaskr</h1>
-  <div class=metanav>
-  {% if not session.logged_in %}
-    <a href="{{ url_for('login') }}">log in</a>
-  {% else %}
-    <a href="{{ url_for('logout') }}">log out</a>
-  {% endif %}
+
+<head>
+  <title>Ingresar</title>
+  <meta charset = "utf-8">
+  <link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/noticias.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+
+<body>
+  <div class=page>
+    <div class=metanav>
+    {% if not session.logged_in %}
+      <a href="{{ url_for('login') }}">Ingresar</a>
+    {% else %}
+      <a class="cerrar-sesion" href="{{ url_for('logout') }}">Cerrar Sesión</a>
+    {% endif %}
+    </div>
+    {% block body %}{% endblock %}
   </div>
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
-  {% block body %}{% endblock %}
-</div>
+</body>
