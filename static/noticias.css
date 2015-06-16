@@ -144,7 +144,7 @@ a {
 
 ul#tabs { 
 	list-style-type: none; 
-	margin: 4px 0 0 0; 
+	margin: 0; 
 	padding: 0 0 0.3em 0; 
 }
 

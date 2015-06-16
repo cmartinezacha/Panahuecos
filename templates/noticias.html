@@ -6,7 +6,9 @@
 		<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="../static/noticias.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 		<script type="text/javascript">
 			// http://www.elated.com/articles/javascript-tabs/
 			// view-source:http://www.elated.com/res/File/articles/development/javascript/document-object-model/javascript-tabs/javascript-tabs.html
@@ -16,6 +18,35 @@
 		    var tabLinks = new Array();
 		    var contentDivs = new Array();
 
+		    $(function($){
+		    	$.datepicker.regional['es'] = {
+		    		closeText: 'Cerrar',
+		    		prevText: '<Ant',
+		    		nextText: 'Sig>',
+		    		currentText: 'Hoy',
+		    		monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		    		monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+		    		dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+		    		dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+		    		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+		    		weekHeader: 'Sm',
+		    		dateFormat: 'dd-mm-yy',
+		    		firstDay: 1,
+		    		isRTL: false,
+		    		showMonthAfterYear: false,
+		    		yearSuffix: ''
+		    	};
+		    	$.datepicker.setDefaults($.datepicker.regional['es']);
+		    });
+		    $(function () {
+		    	$("#fecha").datepicker({
+    			inline : true,
+    			onSelect : function(date){ 
+    			window.location.href ='/'+date  
+    			}
+    });
+
+		    });
 		    function init() {
 
 		      // Grab the tab links and content divs from the page
@@ -87,11 +118,15 @@
 
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#" class="header">Noticias</a>
+				
 				<ul class="nav-list" id="tabs">
+					<span style="float:left; position:relative"<a href="#" class="header">Noticias</a></span>
 					<li><a href="#medios">Medios</a></li>
 					<li><a href="#twitter">Twitter</a></li>
 					<li><a href="#radio">Radio</a></li>
+					<span style="float:right"><label for="fecha">Fecha:
+						<input type="text" id="fecha" value="" />
+					</label></span>
 				</ul>
 			</div>
 		</nav>
