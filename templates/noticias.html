@@ -30,7 +30,7 @@
 		    		dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
 		    		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
 		    		weekHeader: 'Sm',
-		    		dateFormat: 'dd/mm/yy',
+		    		dateFormat: 'dd-mm-yy',
 		    		firstDay: 1,
 		    		isRTL: false,
 		    		showMonthAfterYear: false,
@@ -39,7 +39,13 @@
 		    	$.datepicker.setDefaults($.datepicker.regional['es']);
 		    });
 		    $(function () {
-		    	$("#fecha").datepicker();
+		    	$("#fecha").datepicker({
+    			inline : true,
+    			onSelect : function(date){ 
+    			window.location.href ='/'+date  
+    			}
+    });
+
 		    });
 		    function init() {
 
