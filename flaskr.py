@@ -5,6 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
 from contextlib import closing
 from datetime import date
 import locale
+import time
 import datetime
 # Los comments con un # son los mios (Fernando), los que tienen 3 # son
 # los que vinieron con el codigo.
@@ -103,17 +104,17 @@ def show_news(fecha_raw):
 	locale.setlocale(locale.LC_TIME, "es_ES")
 
 	medios_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Medios" order by id desc' % fecha_raw)
-	medios_news = [dict(text=row[0], type=row[1], time=row[2]) for row in medios_cur.fetchall()]
+	medios_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in medios_cur.fetchall()]
 	
 	twitter_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Twitter" order by id desc' % fecha_raw)
-	twitter_news = [dict(text=row[0], type=row[1], time=row[2]) for row in twitter_cur.fetchall()]
+	twitter_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in twitter_cur.fetchall()]
 
 	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % fecha_raw)
-	radio_news = [dict(text=row[0], type=row[1], time=row[2]) for row in radio_cur.fetchall()]
+	radio_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in radio_cur.fetchall()]
 
 	fecha = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]),  year=int(fecha_raw[6:10])).strftime('%A %d %B %Y')
 	fecha = fecha.split(' ', 3)
-	fecha = fecha[0].capitalize() + ' ' + fecha[1].capitalize() + ' de ' + fecha[2].capitalize() + ' ' + fecha [3].capitalize()
+	fecha = fecha[0].capitalize() + ' ' + fecha[1].capitalize() + ' de ' + fecha[2].capitalize() + ' de ' + fecha [3].capitalize()
 	
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, fecha=fecha)
 
