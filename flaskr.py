@@ -4,7 +4,8 @@ from flask import Flask, request, session, g, redirect, url_for, \
 	              abort, render_template, flash
 from contextlib import closing
 from datetime import date
-
+import locale
+import datetime
 # Los comments con un # son los mios (Fernando), los que tienen 3 # son
 # los que vinieron con el codigo.
 
@@ -56,7 +57,7 @@ def teardown_request(exception):
 @app.route('/')
 def today_news():
 	print date.today().weekday()
-	return redirect(url_for('show_news', date=get_today()))
+	return redirect(url_for('show_news', fecha_raw=get_today()))
 	
 
 @app.route('/agregar', methods=['GET','POST'])
@@ -94,11 +95,13 @@ def logout():
     flash('You were logged out')
     return redirect(url_for('today_news'))
 	
-@app.route('/<date>')
+@app.route('/<fecha_raw>')
 def show_news(fecha_raw):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
+	locale.setlocale(locale.LC_TIME, "es_ES")
+
 	medios_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Medios" order by id desc' % fecha_raw)
 	medios_news = [dict(text=row[0], type=row[1], time=row[2]) for row in medios_cur.fetchall()]
 	
@@ -108,9 +111,11 @@ def show_news(fecha_raw):
 	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % fecha_raw)
 	radio_news = [dict(text=row[0], type=row[1], time=row[2]) for row in radio_cur.fetchall()]
 
-	fecha = date(day=int(date[2:4]), month=int(date[0:2]),  year=int(date[4:8])).strftime('%A %d %B %Y')
-
-	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news,)
+	fecha = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]),  year=int(fecha_raw[6:10])).strftime('%A %d %B %Y')
+	fecha = fecha.split(' ', 3)
+	fecha = fecha[0].capitalize() + ' ' + fecha[1].capitalize() + ' de ' + fecha[2].capitalize() + ' ' + fecha [3].capitalize()
+	
+	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, fecha=fecha)
 
 
 if __name__ == '__main__':
