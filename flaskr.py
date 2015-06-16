@@ -111,11 +111,12 @@ def show_news(fecha_raw):
 	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % fecha_raw)
 	radio_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in radio_cur.fetchall()]
 
-	fecha = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]),  year=int(fecha_raw[6:10])).strftime('%A %d %B %Y')
-	fecha = fecha.split(' ', 3)
-	fecha = fecha[0].capitalize() + ' ' + fecha[1].capitalize() + ' de ' + fecha[2].capitalize() + ' de ' + fecha [3].capitalize()
+	fecha_entera = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]),  year=int(fecha_raw[6:10])).strftime('%A %d %B %Y')
+	fecha_entera = fecha_entera.split(' ', 3)
+	fecha_entera = fecha_entera[0].capitalize() + ' ' + fecha_entera[1].capitalize() + ' de ' + fecha_entera[2].capitalize() + ' de ' + fecha_entera[3].capitalize()
 	
-	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, fecha=fecha)
+	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
+											fecha_entera=fecha_entera, fecha_raw=fecha_raw)
 
 
 if __name__ == '__main__':
