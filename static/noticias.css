@@ -68,7 +68,7 @@ body {
 
 .nav-wrapper{
 	background-color: #FFD700;
-	height: 70px;
+	height: 2em;
 	font-size: 24px;
   	font-weight: 350;
   	letter-spacing: .5px;
@@ -144,8 +144,8 @@ a {
 
 ul#tabs { 
 	list-style-type: none; 
-	margin: 0; 
-	padding: 0 0 0.3em 0; 
+	margin-top: 0; 
+	padding: 0.6em 0 0.3em 0; 
 }
 
 ul#tabs li { 
