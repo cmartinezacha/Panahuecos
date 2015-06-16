@@ -109,10 +109,13 @@
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
 					</div>
-					<p><em>{{ new.text | safe }}</em>
-				{% else %}
-					<p><em>Aún no hay noticias de MEDIOS para el día de hoy.</em>
-				{% endfor %}
+					<br>
+					<div class="noticia">
+						<p><em>{{ new.text | safe }}</em>
+					{% else %}
+						<p><em>Aún no hay noticias de MEDIOS para el día de hoy.</em>
+					{% endfor %}
+					</div>
 			</div>
 		</div>
 
@@ -121,11 +124,15 @@
 				{% for new in twitter_news %}
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
-					</div>          
-					<p><em>{{ new.text | safe }}</em>
-				{% else %}
-					<p><em>Aún no hay noticias de TWITTER para el día de hoy.</em>
-				{% endfor %}
+					</div>  
+					<br>
+					<div class="noticia">
+						<p><em>{{ new.text | safe }}</em>
+					{% else %}
+						<p><em>Aún no hay noticias de TWITTER para el día de hoy.</em>
+					{% endfor %}
+					</div>        
+
 			</div>
 		</div>
 
@@ -134,11 +141,15 @@
 				{% for new in radio_news %}
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
-					</div>          
-					<p><em>{{ new.text | safe }}</em>
-				{% else %}
-					<p><em>Aún no hay noticias de RADIO para el día de hoy.</em>
-				{% endfor %}
+					</div>  
+					<br>
+					<div class="noticia">
+						<p><em>{{ new.text | safe }}</em>
+					{% else %}
+						<p><em>Aún no hay noticias de RADIO para el día de hoy.</em>
+					{% endfor %}
+					</div>        
+
 			</div>
 		</div>
 
