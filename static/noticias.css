@@ -73,6 +73,7 @@ body {
   	font-weight: 350;
   	letter-spacing: .5px;
   	text-transform: uppercase;
+  	margin-bottom: 20px;
 }
 
 .nav-list {
@@ -95,8 +96,6 @@ a {
 }
 
 
-
-
 /*
   ========================================
   Leyenda
@@ -106,7 +105,7 @@ a {
 .leyenda{
 	text-align: right;
 	font-weight: 300px;
-	margin: 1em;
+	margin-right: 20px;
 }
 
 .positiva{
@@ -119,6 +118,21 @@ a {
 
 .negativa{
 	color: red;
+}
+
+
+/*
+  ========================================
+  Noticias 
+  ========================================
+*/
+
+.fecha_de_noticias{
+	margin-left: 20px;
+}
+
+.noticia{
+	margin-left: 40px;
 }
 
  /*
