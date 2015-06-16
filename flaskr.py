@@ -1,4 +1,4 @@
-###imports
+	###imports
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
 	              abort, render_template, flash
@@ -95,20 +95,22 @@ def logout():
     return redirect(url_for('today_news'))
 	
 @app.route('/<date>')
-def show_news(date):
+def show_news(fecha_raw):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
-	medios_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Medios" order by id desc' % date)
+	medios_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Medios" order by id desc' % fecha_raw)
 	medios_news = [dict(text=row[0], type=row[1], time=row[2]) for row in medios_cur.fetchall()]
 	
-	twitter_cur = g.db.execute('select text, type, time date from news where date = "%s" and type = "Twitter" order by id desc' % date)
+	twitter_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Twitter" order by id desc' % fecha_raw)
 	twitter_news = [dict(text=row[0], type=row[1], time=row[2]) for row in twitter_cur.fetchall()]
 
-	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % date)
+	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % fecha_raw)
 	radio_news = [dict(text=row[0], type=row[1], time=row[2]) for row in radio_cur.fetchall()]
 
-	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news)
+	fecha = date(day=int(date[2:4]), month=int(date[0:2]),  year=int(date[4:8])).strftime('%A %d %B %Y')
+
+	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news,)
 
 
 if __name__ == '__main__':
