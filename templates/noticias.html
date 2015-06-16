@@ -130,36 +130,18 @@
 		</div>
 
 		<div class="tabContent" id="radio">
-	        <div>
-
-	          {% for new in twitter_news %}
-	            <p><em>{{ new | safe }}</em>
-	          {% else %}
-	            <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
-	          {% endfor %}
-	        </div>
-	      </div>
-
-	      <div class="tabContent" id="radio">
-	        <div>
-		        {% for new in radios_news %}
-		          <p><em>{{ new }}</em>
-		        {% else %}
-		          <p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
-		        {% endfor %}
-	        </div>
-	      </div>
-
-				{% for new in radios_news %}
+			<div>
+				{% for new in radio_news %}
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
-					</div>		           
+					</div>          
 					<p><em>{{ new.text }}</em>
 				{% else %}
 					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
 				{% endfor %}
 			</div>
 		</div>
+
 
 	</body>
 </html>
