@@ -57,7 +57,6 @@ def teardown_request(exception):
 
 @app.route('/')
 def today_news():
-	print date.today().weekday()
 	return redirect(url_for('show_news', fecha_raw=get_today()))
 	
 
@@ -66,7 +65,6 @@ def add_entry():
 	if not session.get('logged_in'):
 		abort(401)
 	if request.method == 'POST':
-		print request.form['time']
 		g.db.execute('insert into news (text, type, time, date) values(?,?,?,?)',
 					[request.form['text'], request.form['type'], request.form['time'], get_today()])
 		g.db.commit()
