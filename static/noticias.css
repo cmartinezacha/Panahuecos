@@ -239,3 +239,20 @@ div.tabContent.hide {
 .fecha_de_noticias{
 	font-weight: bold;
 }
+
+
+/*
+  ========================================
+ Login
+  ========================================
+*/
+
+.ingresar{
+	color: black;
+	margin-bottom: 10px;
+}
+
+.passcode{
+	margin-bottom: 20px;
+}
+
