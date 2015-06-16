@@ -127,14 +127,14 @@ a {
   ========================================
 */
 
-.fecha_de_noticias{
-	margin-left: 20px;
+
+.wrapper-noticias{
+	margin-left: 30px;
 }
 
-.noticia{
+.noticia p{
 	margin-left: 40px;
 }
-
  /*
   ========================================
   Alvaros
@@ -239,3 +239,20 @@ div.tabContent.hide {
 .fecha_de_noticias{
 	font-weight: bold;
 }
+
+
+/*
+  ========================================
+ Login
+  ========================================
+*/
+
+.ingresar{
+	color: black;
+	margin-bottom: 10px;
+}
+
+.passcode{
+	margin-bottom: 20px;
+}
+
