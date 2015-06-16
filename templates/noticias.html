@@ -109,9 +109,9 @@
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
 					</div>
-					<p><em>{{ new.text }}</em>
+					<p><em>{{ new.text | safe }}</em>
 				{% else %}
-					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+					<p><em>Aún no hay noticias de MEDIOS para el día de hoy.</em>
 				{% endfor %}
 			</div>
 		</div>
@@ -122,9 +122,9 @@
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
 					</div>          
-					<p><em>{{ new.text }}</em>
+					<p><em>{{ new.text | safe }}</em>
 				{% else %}
-					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+					<p><em>Aún no hay noticias de TWITTER para el día de hoy.</em>
 				{% endfor %}
 			</div>
 		</div>
@@ -135,9 +135,9 @@
 					<div class="fecha_de_noticias">
 						{{ new.fecha }} - {{ new.time }}:
 					</div>          
-					<p><em>{{ new.text }}</em>
+					<p><em>{{ new.text | safe }}</em>
 				{% else %}
-					<p><em>Aún no hay noticias de este tipo para el día de hoy.</em>
+					<p><em>Aún no hay noticias de RADIO para el día de hoy.</em>
 				{% endfor %}
 			</div>
 		</div>
