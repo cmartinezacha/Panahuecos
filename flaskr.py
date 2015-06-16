@@ -7,14 +7,15 @@ from datetime import date
 import locale
 import time
 import datetime
+from hashlib import sha256
 # Los comments con un # son los mios (Fernando), los que tienen 3 # son
 # los que vinieron con el codigo.
 
 DATABASE = '/tmp/flaskr.db'
 DEBUG = True
 SECRET_KEY = 'development key'
-USERNAME = 'admin'
-PASSWORD = 'default'
+USERNAME = sha256('admin').hexdigest()
+PASSWORD = sha256('default').hexdigest()
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -78,9 +79,9 @@ def add_entry():
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
+        if sha256(request.form['username']).hexdigest() != app.config['USERNAME']:
             error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
+        elif sha256(request.form['password']).hexdigest() != app.config['PASSWORD']:
             error = 'Invalid password'
         else:
             session['logged_in'] = True
