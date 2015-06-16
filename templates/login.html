@@ -12,7 +12,7 @@
       <h3 class="titulo">Noticias</h3>
       {% extends "layout.html" %}
       {% block body %}
-        <h2 class="ingresar">Ingresar</h2>
+        <h2 class="ingresar">Empezar Sesión</h2>
         {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
         <form  action="{{ url_for('login') }}" method=post>
           <dl>
@@ -20,7 +20,7 @@
             <dd><input type=text name=username>
             <dt>Contraseña:
             <dd class="passcode"><input type=password name=password>
-            <dd><input type=submit value=Login class="btn">
+            <dd><input type=submit value="Ingresar" class="btn">
           </dl>
         </form>
       {% endblock %}
