@@ -104,12 +104,12 @@ a {
 
 .leyenda{
 	text-align: right;
-	font-weight: bold;
+	font-weight: 400;
 	margin-right: 20px;
 }
 
 .positiva{
-	color: green;
+	color: #04B431;
 }
 
 .neutral{
