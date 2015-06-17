@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset = "utf-8">
 		<title>Panahuecos Noticias</title>
-		<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" href="../static/noticias.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-		<script type="text/javascript">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+			<link rel="stylesheet" type= "text/css" href="../static/bootstrap.css">
+<!-- 			<link rel="stylesheet" type= "text/css" href="style.css"> -->
+			<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+			<link rel="stylesheet" href= "/stylesheets/styles.css" />
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta charset="utf-8">
+			<script type="text/javascript">
 			// http://www.elated.com/articles/javascript-tabs/
 			// view-source:http://www.elated.com/res/File/articles/development/javascript/document-object-model/javascript-tabs/javascript-tabs.html
 			
@@ -116,7 +118,7 @@
 
 	<body onload="init()">
 
-		<nav>
+		<!-- <nav>
 			<div class="nav-wrapper">
 				
 				<ul class="nav-list" id="tabs">
@@ -129,7 +131,28 @@
 					</label></span>
 				</ul>
 			</div>
+		</nav> -->
+		<nav class="navbar">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">WebSiteName</a>
+		    </div>
+		    <div>
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Home</a></li>
+		        <li><a href="#medios">Medios</a></li>
+		        <li><a href="#twitter">Twitter</a></li>
+		        <li><a href="#radio">Radio</a></li> 
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
 		</nav>
+
+<!--                  								-->
 
 		<div class="leyenda">
 			<h5 class="positiva">Noticias Positivas</h5>
