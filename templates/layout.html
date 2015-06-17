@@ -1,25 +1,24 @@
-<!doctype html>
-
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Ingresar</title>
-  <meta charset = "utf-8">
-  <link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../static/noticias.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <title>Ingresar</title>
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.css" rel="bootstrap">
+    <link href="../static/noticias.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic'
+    rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"
+    type="text/css">
 </head>
 
-
-
 <body>
-  <div class=page>
-    <div class=metanav>
-    {% if not session.logged_in %}
-      <a href="{{ url_for('login') }}">Ingresar</a>
-    {% else %}
-      <a class="cerrar-sesion" href="{{ url_for('logout') }}">Cerrar Sesión</a>
-    {% endif %}
+    <div class="page">
+        <div class="metanav">
+            {% if not session.logged_in %} <a href=
+            "{{%20url_for('login')%20}}">Ingresar</a> {% else %} <a class=
+            "cerrar-sesion" href="{{%20url_for('logout')%20}}">Cerrar
+            Sesión</a> {% endif %}
+        </div>{% block body %}{% endblock %}
     </div>
-    {% block body %}{% endblock %}
-  </div>
 </body>
+</html>
