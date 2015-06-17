@@ -1,4 +1,5 @@
-	###imports
+#coding=utf-8
+###imports
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
 	              abort, render_template, flash
@@ -8,6 +9,8 @@ import locale
 import time
 import datetime
 from hashlib import sha256
+from flask.ext.sqlalchemy import SQLAlchemy
+
 # Los comments con un # son los mios (Fernando), los que tienen 3 # son
 # los que vinieron con el codigo.
 
@@ -20,16 +23,23 @@ PASSWORD = sha256('default').hexdigest()
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/pre-registration'
+db = SQLAlchemy(app)
 
-def connect_db():
-	return sqlite3.connect(app.config['DATABASE'])
 
-def init_db():
-	with closing(connect_db()) as db:
-		with app.open_resource('schema.sql', mode='r') as f:
-			db.cursor().executescript(f.read())
-		db.commit()
-init_db()
+class News(db.Model):
+    __tablename__ = "news"
+    id = db.Column(db.Integer, primary_key=True)
+    tipo = db.Column(db.String(120), unique=False)
+    time = db.Column(db.String(120), unique=False)
+    text = db.Column(db.String(120), unique=False)
+    date = db.Column(db.String(120), unique=False)
+
+    def __init__(self, tipo, time, text, date):
+        self.tipo = tipo
+        self.time = time
+        self.text = text
+        self.date = date
  
 ### The closing() function allows us to keep a connection open for the duration 
 ### of the with block.
@@ -42,20 +52,6 @@ def get_today():
 	today.reverse()
 	return "-".join(today)
 
-
-@app.before_request
-def before_request():
-    '''Ni idea de que hace'''
-    g.db = connect_db()
-
-@app.teardown_request
-def teardown_request(exception):
-    '''Ni idea de que hace asumo que "cierra" el db cuando la aplicacion se cierra'''
-    db = getattr(g, 'db', None)
-    if db is not None:
-        db.close()
-
-
 @app.route('/')
 def today_news():
 	return redirect(url_for('show_news', fecha_raw=get_today()))
@@ -66,10 +62,10 @@ def add_entry():
 	if not session.get('logged_in'):
 		abort(401)
 	if request.method == 'POST':
-		g.db.execute('insert into news (text, type, time, date) values(?,?,?,?)',
-					[request.form['text'], request.form['type'], request.form['time'], get_today()])
-		g.db.commit()
-		flash('New entry was succesfully posted')
+		print "aquiii"
+		new = News(request.form['type'],request.form['time'],request.form['text'],get_today())
+		db.session.add(new)
+		db.session.commit()
 		return redirect(url_for('today_news'))
 	else:
 		return render_template('agregar.html')
@@ -102,19 +98,19 @@ def show_news(fecha_raw):
 	'''
 	locale.setlocale(locale.LC_TIME, "es_ES")
 
-	medios_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Medios" order by id desc' % fecha_raw)
-	medios_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in medios_cur.fetchall()]
+				
+	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios")
+	medios_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in medios_cur.all()]
 	
-	twitter_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Twitter" order by id desc' % fecha_raw)
-	twitter_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in twitter_cur.fetchall()]
+	twitter_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Twitter")
+	twitter_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in twitter_cur.all()]
 
-	radio_cur = g.db.execute('select text, type, time from news where date = "%s" and type = "Radio" order by id desc' % fecha_raw)
-	radio_news = [dict(text=row[0], type=row[1], time=time.strftime( "%I:%M %p", time.strptime(row[2], "%H:%M"))) for row in radio_cur.fetchall()]
+	radio_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Radio")
+	radio_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in radio_cur.all()]
 
 	fecha_entera = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]),  year=int(fecha_raw[6:10])).strftime('%A %d %B %Y')
 	fecha_entera = fecha_entera.split(' ', 3)
 	fecha_entera = fecha_entera[0].capitalize() + ' ' + fecha_entera[1].capitalize() + ' de ' + fecha_entera[2].capitalize() + ' de ' + fecha_entera[3].capitalize()
-	
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
 											fecha_entera=fecha_entera, fecha_raw=fecha_raw)
 
