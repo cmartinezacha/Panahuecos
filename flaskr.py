@@ -14,18 +14,19 @@ from flask.ext.sqlalchemy import SQLAlchemy
 # Los comments con un # son los mios (Fernando), los que tienen 3 # son
 # los que vinieron con el codigo.
 
-DATABASE = '/tmp/flaskr.db'
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/pre-registration'
 db = SQLAlchemy(app)
 
+# db.drop_all()
+# db.create_all()
 
 class News(db.Model):
     __tablename__ = "news"
