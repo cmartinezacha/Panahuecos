@@ -1,47 +1,56 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
 
-	<html>
-		<head>
-			<meta charset = "utf-8">
-			<title>Panahuecos Noticias</title>
-			<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-			<link rel="stylesheet" href="../static/noticias.css">
-			<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-			<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-			<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-		</head>
+    <title>Panahuecos Noticias</title>
+    <link href="bootstrap/css/bootstrap.css" rel="bootstrap">
+    <link href="../static/noticias.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic'
+    rel='stylesheet' type='text/css'>
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type=
+    "text/javascript"></script>
+    <script type="text/javascript">
+bkLib.onDomLoaded(nicEditors.allTextAreas);
+    </script>
+</head>
 
-		<body>
-			<h3 class="titulo">Noticias</h3>
-			<div class="wrapper">
-				<div class="leyenda">
-					<h5 class="positiva">Noticias Positivas</h5>
-				  	<h5 class="neutral">Noticias Neutrales</h5>
-				  	<h5 class = "negativa">Noticias Negativas</h5>
-		 	  	</div>
+<body>
+    <h3 class="titulo">Noticias</h3>
 
-				<form class="form" method="POST">
-					<div class = "parte-arriba">
-						<section class="fecha-completa">
-							<h4 class="description">Hora:</h4>
-							<input step="3600" type="time" name="time" required>
-							
-						</section>
-							<section class="tipo-de-noticia">
-							<h4 class="description">Escoja el tipo de noticia:</h4>
-							<input type="radio" name="type" value="Medios"> Medios
-							<br>
-							<input type="radio" name="type" value="Twitter"> Twitter
-							<br>
-							<input type="radio" name="type" value="Radio" required> Radio
-						</section>
-					 </div>
-					<section class = "area-de-texto">
-						<textarea rows ="30" cols="190" name="text" placeholder="Escriba aquí sus noticias"></textarea>
-					</section>
+    <div class="wrapper">
+        <div class="leyenda">
+            <h5 class="positiva">Noticias Positivas</h5>
 
-					<input class="btn agregar" type="submit" value="Agregar">
-				</form>	
-			</div>
-		</body>
-	</html>
+            <h5 class="neutral">Noticias Neutrales</h5>
+
+            <h5 class="negativa">Noticias Negativas</h5>
+        </div>
+
+        <form class="form" method="post">
+            <div class="parte-arriba">
+                <section class="fecha-completa">
+                    <h4 class="description">Hora:</h4><input name="time"
+                    required="" step="3600" type="time">
+                </section>
+
+                <section class="tipo-de-noticia">
+                    <h4 class="description">Escoja el tipo de
+                    noticia:</h4><input name="type" type="radio" value=
+                    "Medios"> Medios<br>
+                    <input name="type" type="radio" value="Twitter">
+                    Twitter<br>
+                    <input name="type" required="" type="radio" value="Radio">
+                    Radio
+                </section>
+            </div>
+
+            <section class="area-de-texto">
+                <textarea cols="190" name="text" placeholder=
+                "Escriba aquí sus noticias" rows="30">
+</textarea>
+            </section><input class="btn agregar" type="submit" value="Agregar">
+        </form>
+    </div>
+</body>
+</html>
