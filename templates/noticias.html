@@ -4,22 +4,10 @@
 		<title>Panahuecos Noticias</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-			<link rel="stylesheet" type= "text/css" href="../static/bootstrap.css">
-<!-- 			<link rel="stylesheet" type= "text/css" href="style.css"> -->
-			<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-			<link rel="stylesheet" href= "/stylesheets/styles.css" />
-			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-			<meta charset="utf-8">
-			<script type="text/javascript">
-			// http://www.elated.com/articles/javascript-tabs/
-			// view-source:http://www.elated.com/res/File/articles/development/javascript/document-object-model/javascript-tabs/javascript-tabs.html
-			
-			// 		//<![CDATA[
-
-		    var tabLinks = new Array();
-		    var contentDivs = new Array();
-
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
 		    $(function($){
 		    	$.datepicker.regional['es'] = {
 		    		closeText: 'Cerrar',
@@ -46,178 +34,58 @@
     			onSelect : function(date){ 
     			window.location.href ='/'+date  
     			}
-    });
+    		});
 
 		    });
-		    function init() {
-
-		      // Grab the tab links and content divs from the page
-		      var tabListItems = document.getElementById('tabs').childNodes;
-		      for ( var i = 0; i < tabListItems.length; i++ ) {
-		        if ( tabListItems[i].nodeName == "LI" ) {
-		          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
-		          var id = getHash( tabLink.getAttribute('href') );
-		          tabLinks[id] = tabLink;
-		          contentDivs[id] = document.getElementById( id );
-		        }
-		      }
-
-		      // Assign onclick events to the tab links, and
-		      // highlight the first tab
-		      var i = 0;
-
-		      for ( var id in tabLinks ) {
-		        tabLinks[id].onclick = showTab;
-		        tabLinks[id].onfocus = function() { this.blur() };
-		        if ( i == 0 ) tabLinks[id].className = 'selected';
-		        i++;
-		      }
-
-		      // Hide all content divs except the first
-		      var i = 0;
-
-		      for ( var id in contentDivs ) {
-		        if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
-		        i++;
-		      }
-		    }
-
-		    function showTab() {
-		      var selectedId = getHash( this.getAttribute('href') );
-
-		      // Highlight the selected tab, and dim all others.
-		      // Also show the selected content div, and hide all others.
-		      for ( var id in contentDivs ) {
-		        if ( id == selectedId ) {
-		          tabLinks[id].className = 'selected';
-		          contentDivs[id].className = 'tabContent';
-		        } else {
-		          tabLinks[id].className = '';
-		          contentDivs[id].className = 'tabContent hide';
-		        }
-		      }
-
-		      // Stop the browser following the link
-		      return false;
-		    }
-
-		    function getFirstChildWithTagName( element, tagName ) {
-		      for ( var i = 0; i < element.childNodes.length; i++ ) {
-		        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
-		      }
-		    }
-
-		    function getHash( url ) {
-		      var hashPos = url.lastIndexOf ( '#' );
-		      return url.substring( hashPos + 1 );
-		    }
-
-		    //]]>
 		</script>
 	</head>
 
+
+<!-- ------------------------------------------------------------------------ -->
+
 	<body onload="init()">
-
-		<!-- <nav>
-			<div class="nav-wrapper">
-				
-				<ul class="nav-list" id="tabs">
-					<span style="float:left; margin-left: 1em"><a href="/" class="header">Noticias</a></span>
-					<li><a href="#medios">Medios</a></li>
-					<li><a href="#twitter">Twitter</a></li>
-					<li><a href="#radio">Radio</a></li>
-					<span style="float:right; margin-right: 1em; text-align: right;"><label for="fecha">Fecha:
-						<input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
-					</label></span>
-				</ul>
-			</div>
-		</nav> -->
-		<nav class="navbar">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">WebSiteName</a>
-		    </div>
-		    <div>
-		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Home</a></li>
-		        <li><a href="#medios">Medios</a></li>
-		        <li><a href="#twitter">Twitter</a></li>
-		        <li><a href="#radio">Radio</a></li> 
-		      </ul>
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
-		        </li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
-
-<!--                  								-->
-
 		<div class="leyenda">
 			<h5 class="positiva">Noticias Positivas</h5>
 			<h5 class="neutral">Noticias Neutrales</h5>
 			<h5 class = "negativa">Noticias Negativas</h5>
 		</div>
 
+<!-- ------------------------------------------------------------------------ -->
+	<div class="container">
+		<ul class="nav nav-pills">
+		  <li class="active"><a data-toggle="pill" href="#medios">Medios</a></li>
+		  <li><a data-toggle="pill" href="#twitter">Twitter</a></li>
+		  <li><a data-toggle="pill" href="#radio">Radio</a></li>
+		</ul>
 
-		<div class="tabContent" id="medios">
-	        <div class="wrapper-noticias">
+		<div class="tab-content">
+	        <div id="medios" class="tab-pane fade in active">
 				{% for new in medios_news %}
-					<div class="fecha_de_noticias">
-						{{ fecha_entera }} - {{ new.time }}:
-					</div>
-					<br>
-					<div class="noticia">
-						<p><em>{{ new.text | safe }}</em>
-						<br><br>
-					</div>
-					{% else %}
-						<p><em>Aún no hay noticias de MEDIOS para el día de hoy.</em>
-						<br>
-					{% endfor %}
-					
+					<h3>{{ fecha_entera }} - {{ new.time }}:</h3>
+					<p>{{ new.text | safe }}</p>
+				{% else %}
+					<p>Aún no hay noticias de MEDIOS para el día de hoy.</p>
+				{% endfor %}	
 			</div>
-		</div>
 
-		<div class="tabContent" id="twitter">
-			<div class="wrapper-noticias">
+			<div id="twitter" class="tab-pane fade">
 				{% for new in twitter_news %}
-					<div class="fecha_de_noticias">
-						{{ fecha_entera }} - {{ new.time }}:
-					</div>  
-					<br>
-					<div class="noticia">
-						<p><em>{{ new.text | safe }}</em>
-						<br><br>
-					</div>  
-					{% else %}
-						<p><em>Aún no hay noticias de TWITTER para el día de hoy.</em>
-						<br>
-					{% endfor %}    
-
+					<h3>{{ fecha_entera }} - {{ new.time }}:</h3>  
+					<p>{{ new.text | safe }}</p>
+				{% else %}
+					<p>Aún no hay noticias de TWITTER para el día de hoy.</p>
+				{% endfor %}    
 			</div>
-		</div>
 
-		<div class="tabContent" id="radio">
-			<div class="wrapper-noticias">
+			<div id="radio" class="tab-pane fade">
 				{% for new in radio_news %}
-					<div class="fecha_de_noticias">
-						{{ fecha_entera }} - {{ new.time }}:
-					</div>  
-					<br>
-					<div class="noticia">
-						<p><em>{{ new.text | safe }}</em>
-						<br><br>
-					</div>
-					{% else %}
-						<p><em>Aún no hay noticias de RADIO para el día de hoy.</em>
-						<br>
-					{% endfor %}      
-
+					<h3>{{ fecha_entera }} - {{ new.time }}:</h3>  
+					<p>{{ new.text | safe }}</p>
+				{% else %}
+					<p>Aún no hay noticias de RADIO para el día de hoy.</p>
+				{% endfor %}      
 			</div>
-		</div>
-
+	</div>
 
 	</body>
 </html>

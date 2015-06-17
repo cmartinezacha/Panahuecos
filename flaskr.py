@@ -58,7 +58,7 @@ def teardown_request(exception):
 
 @app.route('/')
 def today_news():
-	return redirect(url_for('show_news', fecha_raw=get_today()))
+	return redirect(url_for('show_news', fecha_raw="16-06-2015")) #fecha_raw=get_today()))
 	
 
 @app.route('/agregar', methods=['GET','POST'])
