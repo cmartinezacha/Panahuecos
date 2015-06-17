@@ -10,7 +10,7 @@ import time
 import datetime
 from hashlib import sha256
 from flask.ext.sqlalchemy import SQLAlchemy
-
+from flask.ext.heroku import Heroku
 # Los comments con un # son los mios (Fernando), los que tienen 3 # son
 # los que vinieron con el codigo.
 
@@ -18,11 +18,12 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 # db.drop_all()
