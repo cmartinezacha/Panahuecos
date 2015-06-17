@@ -70,7 +70,7 @@ body {
 	background-color: #FCCC20;
 	height: 2em;
 	font-size: 24px;
-  	font-weight: 350;
+  	font-weight: 300;
   	letter-spacing: .5px;
   	text-transform: uppercase;
   	margin-bottom: 20px;
@@ -199,9 +199,10 @@ div.tabContent.hide {
 	background-color: #FFD700;
 	height: 30px;
 	font-size: 24px;
-  	font-weight: 400;
   	letter-spacing: .5px;
  	padding: 20px;
+  	font-weight: 300;
+  	text-transform: uppercase;
 }
 
 .fecha-completa{
@@ -218,7 +219,6 @@ div.tabContent.hide {
 .wrapper{
 	display: inline-block;
 }
-
 
  .area-de-texto{
  	margin: 0px 20px;
