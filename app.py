@@ -98,7 +98,7 @@ def show_news(fecha_raw):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
-	locale.setlocale(locale.LC_TIME, "es_ES")
+	#locale.setlocale(locale.LC_TIME, "es_ES")
 
 				
 	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios")
@@ -114,7 +114,7 @@ def show_news(fecha_raw):
 	fecha_entera = fecha_entera.split(' ', 3)
 	fecha_entera = fecha_entera[0].capitalize() + ' ' + fecha_entera[1].capitalize() + ' de ' + fecha_entera[2].capitalize() + ' de ' + fecha_entera[3].capitalize()
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
-											fecha_entera=fecha_entera, fecha_raw=fecha_raw)
+											fecha_entera=fecha_raw, fecha_raw=fecha_raw)
 
 
 if __name__ == '__main__':
