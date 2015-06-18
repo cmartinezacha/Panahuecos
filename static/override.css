@@ -2,9 +2,10 @@
 	background-color: #F4D404;
 }
 
-/*.nav{
-	color:red;
-}*/
+.nav-pills a{
+	color:black;
+	
+}
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
 	background-color: transparent;
 	font-weight: bold;
