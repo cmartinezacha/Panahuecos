@@ -26,23 +26,25 @@ body{
     margin-right: 12px;
 }
 
+
+/*colores de leyenda*/
 .positiva{
 	color: #04B431;
 }
-
 .neutral{
 	color: #FCCC20;
 }
-
 .negativa{
 	color: red;
 }
 
 .tab-content{
 	text-align: left;
+	margin-left: -70px;
 }
 
-/*ESTO LO COPYPASTIE*/
+
+/*ESTO LO COPYPASTIE*/ /*------>COPION!!!!!!!!!!!!*/
 .navbar .nav,
 .navbar .nav > li {
   float:none;
@@ -56,11 +58,7 @@ body{
 }
 /*HASTA AQUI*/
 
-.tab-content{
-	margin-left: -70px;
-}
-
 p{
-	font-family: Tahoma;
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-left: 40px;
 }
