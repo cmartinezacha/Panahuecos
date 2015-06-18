@@ -8,37 +8,7 @@
 		<link rel="stylesheet" href="static/css/override.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-		    $(function($){
-		    	$.datepicker.regional['es'] = {
-		    		closeText: 'Cerrar',
-		    		prevText: '<Ant',
-		    		nextText: 'Sig>',
-		    		currentText: 'Hoy',
-		    		monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-		    		monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-		    		dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-		    		dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-		    		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-		    		weekHeader: 'Sm',
-		    		dateFormat: 'dd-mm-yy',
-		    		firstDay: 1,
-		    		isRTL: false,
-		    		showMonthAfterYear: false,
-		    		yearSuffix: ''
-		    	};
-		    	$.datepicker.setDefaults($.datepicker.regional['es']);
-		    });
-		    $(function () {
-		    	$("#fecha").datepicker({
-    			inline : true,
-    			onSelect : function(date){ 
-    			window.location.href ='/'+date  
-    			}
-    		});
-
-		    });
-		</script>
+		<script type="text/javascript" src="static/nuestro.js"></script>
 	</head>
 
 
@@ -56,7 +26,7 @@
 				<div class="navbar-inner">
 		<!-- 			<div class="container"> -->
 						<a class="brand" href="#">Project name</a>
-						<ul class="nav">
+						<ul class="nav nav-pills">
 							<li class="active"><a href="#medios" data-toggle="tab">Medios</a></li>
 							<li><a href="#twitter" data-toggle="tab">Twitter</a></li>
 							<li><a href="#radio" data-toggle="tab">Radio</a></li>
