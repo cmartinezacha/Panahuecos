@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 #coding=utf-8
 ###imports
-import sqlite3
-||||||| merged common ancestors
-	###imports
-import sqlite3
-=======
-#coding=utf-8
-###imports
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
+
 from flask import Flask, request, session, g, redirect, url_for, \
 	              abort, render_template, flash
 from contextlib import closing

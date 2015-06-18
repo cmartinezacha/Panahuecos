@@ -1,216 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-<head>
-	<meta charset = "utf-8">
-	<title>Panahuecos Noticias</title>
-	<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="../static/noticias.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-	<script type="text/javascript">
-		// http://www.elated.com/articles/javascript-tabs/
-		// view-source:http://www.elated.com/res/File/articles/development/javascript/document-object-model/javascript-tabs/javascript-tabs.html
-
-		// 		//<![CDATA[
-
-		var tabLinks = new Array();
-		var contentDivs = new Array();
-
-		$(function($){
-			$.datepicker.regional['es'] = {
-				closeText: 'Cerrar',
-				prevText: '<Ant',
-				nextText: 'Sig>',
-				currentText: 'Hoy',
-				monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-				monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-				dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-				dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-				dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-				weekHeader: 'Sm',
-				dateFormat: 'dd-mm-yy',
-				firstDay: 1,
-				isRTL: false,
-				showMonthAfterYear: false,
-				yearSuffix: ''
-			};
-			$.datepicker.setDefaults($.datepicker.regional['es']);
-		});
-		$(function () {
-			$("#fecha").datepicker({
-				inline : true,
-				onSelect : function(date){ 
-					window.location.href ='/'+date  
-				}
-			});
-
-		});
-		function init() {
-
-		    // Grab the tab links and content divs from the page
-		    var tabListItems = document.getElementById('tabs').childNodes;
-		    for ( var i = 0; i < tabListItems.length; i++ ) {
-		    	if ( tabListItems[i].nodeName == "LI" ) {
-		    		var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
-		    		var id = getHash( tabLink.getAttribute('href') );
-		    		tabLinks[id] = tabLink;
-		    		contentDivs[id] = document.getElementById( id );
-		    	}
-		    }
-
-		    // Assign onclick events to the tab links, and
-		    // highlight the first tab
-		    var i = 0;
-
-		    for ( var id in tabLinks ) {
-		    	tabLinks[id].onclick = showTab;
-		    	tabLinks[id].onfocus = function() { this.blur() };
-		    	if ( i == 0 ) tabLinks[id].className = 'selected';
-		    	i++;
-		    }
-
-		      // Hide all content divs except the first
-		      var i = 0;
-
-		      for ( var id in contentDivs ) {
-		      	if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
-		      	i++;
-		      }
-		  }
-
-		  function showTab() {
-		  	var selectedId = getHash( this.getAttribute('href') );
-
-		      // Highlight the selected tab, and dim all others.
-		      // Also show the selected content div, and hide all others.
-		      for ( var id in contentDivs ) {
-		      	if ( id == selectedId ) {
-		      		tabLinks[id].className = 'selected';
-		      		contentDivs[id].className = 'tabContent';
-		      	} else {
-		      		tabLinks[id].className = '';
-		      		contentDivs[id].className = 'tabContent hide';
-		      	}
-		      }
-
-		      // Stop the browser following the link
-		      return false;
-		  }
-
-		  function getFirstChildWithTagName( element, tagName ) {
-		  	for ( var i = 0; i < element.childNodes.length; i++ ) {
-		  		if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
-		  	}
-		  }
-||||||| merged common ancestors
-	<head>
-		<meta charset = "utf-8">
-		<title>Panahuecos Noticias</title>
-		<link rel = "bootstrap" href="bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" href="../static/noticias.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-		<script type="text/javascript">
-			// http://www.elated.com/articles/javascript-tabs/
-			// view-source:http://www.elated.com/res/File/articles/development/javascript/document-object-model/javascript-tabs/javascript-tabs.html
-			
-			// 		//<![CDATA[
-
-		    var tabLinks = new Array();
-		    var contentDivs = new Array();
-
-		    $(function($){
-		    	$.datepicker.regional['es'] = {
-		    		closeText: 'Cerrar',
-		    		prevText: '<Ant',
-		    		nextText: 'Sig>',
-		    		currentText: 'Hoy',
-		    		monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-		    		monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-		    		dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-		    		dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-		    		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-		    		weekHeader: 'Sm',
-		    		dateFormat: 'dd-mm-yy',
-		    		firstDay: 1,
-		    		isRTL: false,
-		    		showMonthAfterYear: false,
-		    		yearSuffix: ''
-		    	};
-		    	$.datepicker.setDefaults($.datepicker.regional['es']);
-		    });
-		    $(function () {
-		    	$("#fecha").datepicker({
-    			inline : true,
-    			onSelect : function(date){ 
-    			window.location.href ='/'+date  
-    			}
-    });
-
-		    });
-		    function init() {
-
-		      // Grab the tab links and content divs from the page
-		      var tabListItems = document.getElementById('tabs').childNodes;
-		      for ( var i = 0; i < tabListItems.length; i++ ) {
-		        if ( tabListItems[i].nodeName == "LI" ) {
-		          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
-		          var id = getHash( tabLink.getAttribute('href') );
-		          tabLinks[id] = tabLink;
-		          contentDivs[id] = document.getElementById( id );
-		        }
-		      }
-
-		      // Assign onclick events to the tab links, and
-		      // highlight the first tab
-		      var i = 0;
-
-		      for ( var id in tabLinks ) {
-		        tabLinks[id].onclick = showTab;
-		        tabLinks[id].onfocus = function() { this.blur() };
-		        if ( i == 0 ) tabLinks[id].className = 'selected';
-		        i++;
-		      }
-
-		      // Hide all content divs except the first
-		      var i = 0;
-
-		      for ( var id in contentDivs ) {
-		        if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
-		        i++;
-		      }
-		    }
-
-		    function showTab() {
-		      var selectedId = getHash( this.getAttribute('href') );
-
-		      // Highlight the selected tab, and dim all others.
-		      // Also show the selected content div, and hide all others.
-		      for ( var id in contentDivs ) {
-		        if ( id == selectedId ) {
-		          tabLinks[id].className = 'selected';
-		          contentDivs[id].className = 'tabContent';
-		        } else {
-		          tabLinks[id].className = '';
-		          contentDivs[id].className = 'tabContent hide';
-		        }
-		      }
-
-		      // Stop the browser following the link
-		      return false;
-		    }
-
-		    function getFirstChildWithTagName( element, tagName ) {
-		      for ( var i = 0; i < element.childNodes.length; i++ ) {
-		        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
-		      }
-		    }
-=======
 	<head>
 		<title>Panahuecos Noticias</title>
 		<meta charset="utf-8">
@@ -225,47 +14,7 @@
 		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="static/nuestro.js"></script>
 	</head>
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
 
-<<<<<<< HEAD
-		  function getHash( url ) {
-		  	var hashPos = url.lastIndexOf ( '#' );
-		  	return url.substring( hashPos + 1 );
-		  }
-||||||| merged common ancestors
-		    function getHash( url ) {
-		      var hashPos = url.lastIndexOf ( '#' );
-		      return url.substring( hashPos + 1 );
-		    }
-=======
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
-
-<<<<<<< HEAD
-		    //]]>
-		    </script>
-</head>
-||||||| merged common ancestors
-		    //]]>
-		</script>
-	</head>
-
-	<body onload="init()">
-
-		<nav>
-			<div class="nav-wrapper">
-				
-				<ul class="nav-list" id="tabs">
-					<span style="float:left; margin-left: 1em"><a href="/" class="header">Noticias</a></span>
-					<li><a href="#medios">Medios</a></li>
-					<li><a href="#twitter">Twitter</a></li>
-					<li><a href="#radio">Radio</a></li>
-					<span style="float:right; margin-right: 1em; text-align: right;"><label for="fecha">Fecha:
-						<input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
-					</label></span>
-				</ul>
-			</div>
-		</nav>
-=======
 <!-- ------------------------------------------------------------------------ -->
 
 	<body onload="init()">
@@ -283,79 +32,14 @@
 				<!-- </div> -->
 			</div>
 		</div>
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
-
-<<<<<<< HEAD
-<body onload="init()">
-||||||| merged common ancestors
-		<div class="leyenda">
-			<h5 class="positiva">Noticias Positivas</h5>
-			<h5 class="neutral">Noticias Neutrales</h5>
-			<h5 class = "negativa">Noticias Negativas</h5>
-		</div>
-=======
 		<div class="pull-right">
 			<h5 class="positiva">Noticias Positivas</h5>
 			<h5 class="neutral">Noticias Neutrales</h5>
 			<h5 class = "negativa">Noticias Negativas</h5>
 		</div>
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
 
-<<<<<<< HEAD
-	<nav>
-		<div class="nav-wrapper">
-
-			<ul class="nav-list" id="tabs">
-				<span style="float:left; margin-left: 1em"><a href="/" class="header">Noticias</a></span>
-				<li>
-					<a href="#medios">Medios</a>
-				</li>
-
-				<li>
-					<a href="#twitter">Twitter</a>
-				</li>
-
-				<li>
-					<a href="#radio">Radio</a>
-				</li>
-||||||| merged common ancestors
-
-		<div class="tabContent" id="medios">
-	        <div class="wrapper-noticias">
-				{% for new in medios_news %}
-					<div class="fecha_de_noticias">
-						{{ fecha_entera }} - {{ new.time }}:
-					</div>
-					<br>
-					<div class="noticia">
-						<p><em>{{ new.text | safe }}</em>
-						<br><br>
-					</div>
-					{% else %}
-						<p><em>Aún no hay noticias de MEDIOS para el día de hoy.</em>
-						<br>
-					{% endfor %}
-					
-			</div>
-		</div>
-
-		<div class="tabContent" id="twitter">
-			<div class="wrapper-noticias">
-				{% for new in twitter_news %}
-					<div class="fecha_de_noticias">
-						{{ fecha_entera }} - {{ new.time }}:
-					</div>  
-					<br>
-					<div class="noticia">
-						<p><em>{{ new.text | safe }}</em>
-						<br><br>
-					</div>  
-					{% else %}
-						<p><em>Aún no hay noticias de TWITTER para el día de hoy.</em>
-						<br>
-					{% endfor %}    
-=======
 <!-- ------------------------------------------------------------------------ -->
+
 		<div class="container">
 			<div class="tab-content">
 		        <div id="medios" class="tab-pane fade in active">
@@ -366,7 +50,6 @@
 						<p>Aún no hay noticias de MEDIOS para el día de hoy.</p>
 					{% endfor %}	
 				</div>
-
 				<div id="twitter" class="tab-pane fade">
 					{% for new in twitter_news %}
 						<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
@@ -375,89 +58,6 @@
 						<p>Aún no hay noticias de TWITTER para el día de hoy.</p>
 					{% endfor %}    
 				</div>
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
-
-<<<<<<< HEAD
-				<span style="float:right; margin-right: 1em; text-align: right;"><label for="fecha">Fecha:
-					<input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
-				</label></span>
-			</ul>
-		</div>
-	</nav>
-
-	<div class="leyenda">
-		<h5 class="positiva">Noticias Positivas</h5>
-		<h5 class="neutral">Noticias Neutrales</h5>
-		<h5 class = "negativa">Noticias Negativas</h5>
-	</div>
-
-	<div class="tabContent" id="medios">
-		<div class="wrapper-noticias">
-			{% for new in medios_news %}
-			<div class="fecha_de_noticias">
-				{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:
-			</div>
-			<br>
-			<div class="noticia">
-				<p><em>{{ new.text | safe }}</em>
-					<br><br>
-			</div>
-			{% else %}
-				<p><em>Aún no hay noticias de MEDIOS para el día de hoy.</em>
-					<br>
-			{% endfor %}
-		</div>
-	</div>
-
-	<div class="tabContent" id="twitter">
-		<div class="wrapper-noticias">
-			{% for new in twitter_news %}
-			<div class="fecha_de_noticias">
-				{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:
-			</div>  
-			<br>
-			<div class="noticia">
-				<p><em>{{ new.text | safe }}</em>
-					<br><br>
-			</div>  
-			{% else %}
-				<p><em>Aún no hay noticias de TWITTER para el día de hoy.</em>
-					<br>
-			{% endfor %}    
-		</div>
-	</div>
-
-	<div class="tabContent" id="radio">
-		<div class="wrapper-noticias">
-			{% for new in radio_news %}
-			<div class="fecha_de_noticias">
-				{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:
-			</div>  
-			<br>
-			<div class="noticia">
-				<p><em>{{ new.text | safe }}</em>
-					<br><br>
-||||||| merged common ancestors
-			</div>
-		</div>
-
-		<div class="tabContent" id="radio">
-			<div class="wrapper-noticias">
-				{% for new in radio_news %}
-					<div class="fecha_de_noticias">
-						{{ fecha_entera }} - {{ new.time }}:
-					</div>  
-					<br>
-					<div class="noticia">
-						<p><em>{{ new.text | safe }}</em>
-						<br><br>
-					</div>
-					{% else %}
-						<p><em>Aún no hay noticias de RADIO para el día de hoy.</em>
-						<br>
-					{% endfor %}      
-
-=======
 				<div id="radio" class="tab-pane fade">
 					{% for new in radio_news %}
 						<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
@@ -466,21 +66,7 @@
 						<p>Aún no hay noticias de RADIO para el día de hoy.</p>
 					{% endfor %}      
 				</div>
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
 			</div>
-			{% else %}
-				<p><em>Aún no hay noticias de RADIO para el día de hoy.</em><br>
-			{% endfor %}      
 		</div>
-<<<<<<< HEAD
-	</div>
-
-</body>
-||||||| merged common ancestors
-
-
 	</body>
-=======
-	</body>
->>>>>>> d5701be62d89fab1c6468fea1f29f0e11f709d01
 </html>
