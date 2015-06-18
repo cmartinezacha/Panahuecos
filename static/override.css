@@ -9,7 +9,7 @@ body{
 
 .nav-pills a{
 	color:black;
-	font-size: 24px;
+	font-size: 20px;
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
 	background-color: transparent;

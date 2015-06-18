@@ -28,7 +28,7 @@
 						<li class="active"><a href="#medios" data-toggle="tab">Medios</a></li>
 						<li><a href="#twitter" data-toggle="tab">Twitter</a></li>
 						<li><a href="#radio" data-toggle="tab">Radio</a></li>
-						<input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom"/>
+						<a><input type="text" id="fecha" value="{{ fecha_raw }}" size="10" class="pull-right" style="font-size:14px"/></a>
 					</ul>
 				<!-- </div> -->
 			</div>
@@ -45,7 +45,7 @@
 			<div class="tab-content">
 		        <div id="medios" class="tab-pane fade in active">
 					{% for new in medios_news %}
-						<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>
+						<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>
 						<p>{{ new.text | safe }}</p>
 					{% else %}
 						<p>Aún no hay noticias de MEDIOS para el día de hoy.</p>
@@ -54,7 +54,7 @@
 
 				<div id="twitter" class="tab-pane fade">
 					{% for new in twitter_news %}
-						<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>  
+						<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
 						<p>{{ new.text | safe }}</p>
 					{% else %}
 						<p>Aún no hay noticias de TWITTER para el día de hoy.</p>
@@ -63,7 +63,7 @@
 
 				<div id="radio" class="tab-pane fade">
 					{% for new in radio_news %}
-						<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>  
+						<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
 						<p>{{ new.text | safe }}</p>
 					{% else %}
 						<p>Aún no hay noticias de RADIO para el día de hoy.</p>
