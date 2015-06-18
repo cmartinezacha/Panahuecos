@@ -1,3 +1,16 @@
 .navbar-inner{
 	background-color: #F4D404;
 }
+
+/*.nav{
+	color:red;
+}*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+	background-color: transparent;
+	font-weight: bold;
+	color: black;
+}
+.nav-pills>li>a:hover{
+	background-color: transparent;
+	color:black;
+}
