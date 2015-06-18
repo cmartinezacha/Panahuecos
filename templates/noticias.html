@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/override.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
@@ -51,41 +52,48 @@
 		</div> -->
 
 <!-- ------------------------------------------------------------------------ -->
-	<div class="container">
-		<ul class="nav nav-pills nav-justified" role="tablist">
-		  <li class="active"><a data-toggle="pill" href="#medios">Medios</a></li>
-		  <li><a data-toggle="pill" href="#twitter">Twitter</a></li>
-		  <li><a data-toggle="pill" href="#radio">Radio</a></li>
-		</ul>
-
-		<div class="tab-content">
-	        <div id="medios" class="tab-pane fade in active">
-				{% for new in medios_news %}
-					<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>
-					<p>{{ new.text | safe }}</p>
-				{% else %}
-					<p>Aún no hay noticias de MEDIOS para el día de hoy.</p>
-				{% endfor %}	
+			<div class="navbar navbar-static-top">
+				<div class="navbar-inner">
+		<!-- 			<div class="container"> -->
+						<a class="brand" href="#">Project name</a>
+						<ul class="nav">
+							<li class="active"><a href="#medios" data-toggle="tab">Medios</a></li>
+							<li><a href="#twitter" data-toggle="tab">Twitter</a></li>
+							<li><a href="#radio" data-toggle="tab">Radio</a></li>
+						</ul>
+					<!-- </div> -->
+				</div>
 			</div>
 
-			<div id="twitter" class="tab-pane fade">
-				{% for new in twitter_news %}
-					<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>  
-					<p>{{ new.text | safe }}</p>
-				{% else %}
-					<p>Aún no hay noticias de TWITTER para el día de hoy.</p>
-				{% endfor %}    
-			</div>
+		<div class="container">
+			<div class="tab-content">
+		        <div id="medios" class="tab-pane fade in active">
+					{% for new in medios_news %}
+						<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>
+						<p>{{ new.text | safe }}</p>
+					{% else %}
+						<p>Aún no hay noticias de MEDIOS para el día de hoy.</p>
+					{% endfor %}	
+				</div>
 
-			<div id="radio" class="tab-pane fade">
-				{% for new in radio_news %}
-					<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>  
-					<p>{{ new.text | safe }}</p>
-				{% else %}
-					<p>Aún no hay noticias de RADIO para el día de hoy.</p>
-				{% endfor %}      
-			</div>
-	</div>
+				<div id="twitter" class="tab-pane fade">
+					{% for new in twitter_news %}
+						<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>  
+						<p>{{ new.text | safe }}</p>
+					{% else %}
+						<p>Aún no hay noticias de TWITTER para el día de hoy.</p>
+					{% endfor %}    
+				</div>
 
+				<div id="radio" class="tab-pane fade">
+					{% for new in radio_news %}
+						<h3>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h3>  
+						<p>{{ new.text | safe }}</p>
+					{% else %}
+						<p>Aún no hay noticias de RADIO para el día de hoy.</p>
+					{% endfor %}      
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
