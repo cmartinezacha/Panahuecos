@@ -1,1 +1,1 @@
-web: gunicorn app:flaskr
+web: gunicorn app:app
