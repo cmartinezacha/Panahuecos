@@ -9,6 +9,7 @@ body{
 .nav-pills a{
 	color:black;
 	font-size: 20px;
+	font-weight: 100;
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
 	background-color: transparent;
@@ -22,6 +23,7 @@ body{
 
 .pull-right {
     font-weight: 300px;
+    margin-right: 12px;
 }
 
 .positiva{
@@ -38,4 +40,27 @@ body{
 
 .tab-content{
 	text-align: left;
+}
+
+/*ESTO LO COPYPASTIE*/
+.navbar .nav,
+.navbar .nav > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+.navbar-inner {
+  text-align:center;
+}
+/*HASTA AQUI*/
+
+.tab-content{
+	margin-left: -70px;
+}
+
+p{
+	font-family: Tahoma;
+	margin-left: 40px;
 }
