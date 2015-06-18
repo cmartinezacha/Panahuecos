@@ -43,30 +43,22 @@
 
 <!-- ------------------------------------------------------------------------ -->
 
-	<body onload="init()">
-<!-- 			<div class="leyenda">
-				<h5 class="positiva">Noticias Positivas</h5>
-				<h5 class="neutral">Noticias Neutrales</h5>
-				<h5 class = "negativa">Noticias Negativas</h5>
-			</div> -->
+<!-- 	<body onload="init()">
+		<div class="leyenda">
+			<h5 class="positiva">Noticias Positivas</h5>
+			<h5 class="neutral">Noticias Neutrales</h5>
+			<h5 class = "negativa">Noticias Negativas</h5>
+		</div> -->
 
 <!-- ------------------------------------------------------------------------ -->
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="#">PANAHUECOS</a>
-					</div>
-				<div>
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#medios">Medios</a></li>
-						<li><a href="#twitter">Twitter</a></li>
-						<li><a href="#radio">Radio</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+	<div class="container">
+		<ul class="nav nav-pills nav-justified" role="tablist">
+		  <li class="active"><a data-toggle="pill" href="#medios">Medios</a></li>
+		  <li><a data-toggle="pill" href="#twitter">Twitter</a></li>
+		  <li><a data-toggle="pill" href="#radio">Radio</a></li>
+		</ul>
 
-		<div class="container">
+		<div class="tab-content">
 	        <div id="medios" class="tab-pane fade in active">
 				{% for new in medios_news %}
 					<h3>{{ fecha_entera }} - {{ new.time }}:</h3>
@@ -93,6 +85,7 @@
 					<p>Aún no hay noticias de RADIO para el día de hoy.</p>
 				{% endfor %}      
 			</div>
-		</div>
+	</div>
+
 	</body>
 </html>
