@@ -1,0 +1,64 @@
+body{
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.navbar-inner{
+/*	background-color: #F4D404;*/
+	background-color: #FCCC20
+}
+
+.nav-pills a{
+	color:black;
+	font-size: 20px;
+	font-weight: 100;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+	background-color: transparent;
+	font-weight: bold;
+	color: black;
+}
+.nav-pills>li>a:hover{
+	background-color: transparent;
+	color:black;
+}
+
+.pull-right {
+    font-weight: 300px;
+    margin-right: 12px;
+}
+
+
+/*colores de leyenda*/
+.positiva{
+	color: #04B431;
+}
+.neutral{
+	color: #FCCC20;
+}
+.negativa{
+	color: red;
+}
+
+.tab-content{
+	text-align: left;
+	margin-left: -70px;
+}
+
+
+/*ESTO LO COPYPASTIE*/ /*------>COPION!!!!!!!!!!!!*/
+.navbar .nav,
+.navbar .nav > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+.navbar-inner {
+  text-align:center;
+}
+/*HASTA AQUI*/
+
+p{
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-left: 40px;
+}
