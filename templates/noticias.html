@@ -8,35 +8,38 @@
 		<link rel="stylesheet" href="static/override.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="static/nuestro.js"></script>
 	</head>
 
 
 <!-- ------------------------------------------------------------------------ -->
 
-<!-- 	<body onload="init()">
-		<div class="leyenda">
+	<body onload="init()">
+		<div class="navbar navbar-static-top">
+			<div class="navbar-inner">
+	<!-- 			<div class="container"> -->
+					<span style="float:right; margin-right: 1em; text-align: right;"><label for="fecha">Fecha:
+						<input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
+					</label></span>
+					<ul class="nav nav-pills">
+						<li class="active"><a href="#medios" data-toggle="tab">Medios</a></li>
+						<li><a href="#twitter" data-toggle="tab">Twitter</a></li>
+						<li><a href="#radio" data-toggle="tab">Radio</a></li>
+					</ul>
+				<!-- </div> -->
+			</div>
+		</div>
+
+		<div class="pull-right">
 			<h5 class="positiva">Noticias Positivas</h5>
 			<h5 class="neutral">Noticias Neutrales</h5>
 			<h5 class = "negativa">Noticias Negativas</h5>
-		</div> -->
+		</div>
 
 <!-- ------------------------------------------------------------------------ -->
-			<div class="navbar navbar-static-top">
-				<div class="navbar-inner">
-		<!-- 			<div class="container"> -->
-						<span style="float:right; margin-right: 1em; text-align: right;"><label for="fecha">Fecha:
-							<input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom;"/>
-						</label></span>
-						<ul class="nav nav-pills">
-							<li class="active"><a href="#medios" data-toggle="tab">Medios</a></li>
-							<li><a href="#twitter" data-toggle="tab">Twitter</a></li>
-							<li><a href="#radio" data-toggle="tab">Radio</a></li>
-						</ul>
-					<!-- </div> -->
-				</div>
-			</div>
-
 		<div class="container">
 			<div class="tab-content">
 		        <div id="medios" class="tab-pane fade in active">
