@@ -17,7 +17,7 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+# SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
