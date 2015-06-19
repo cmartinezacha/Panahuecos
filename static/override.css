@@ -125,12 +125,14 @@ body{
 
 .area-de-texto{
 	margin: 1.5em;
+	margin-bottom: 2em;
 }
 .login{
 	margin: 1em;
 }
-
-
+.noticia_text{
+	margin-bottom: 4em;
+}
 .navbar-default .navbar-nav>.active>a{
   background-color:#FCCC20
 }
