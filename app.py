@@ -17,7 +17,7 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
-#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -33,7 +33,7 @@ class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     tipo = db.Column(db.String(120), unique=False)
     time = db.Column(db.String(120), unique=False)
-    text = db.Column(db.String(120), unique=False)
+    text = db.Column(db.Text, unique=False)
     date = db.Column(db.String(120), unique=False)
 
     def __init__(self, tipo, time, text, date):
@@ -130,5 +130,4 @@ def show_news(fecha_raw):
 
 
 if __name__ == '__main__':
-	app.debug = True
 	app.run()
