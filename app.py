@@ -58,13 +58,12 @@ def translate_day(fecha_raw):
 						  "May":"Mayo", "Jun":"Junio", "Jul":"Julio","Aug":"Agosto","Sep":"Septiembre", \
 						  "Oct":"Octubre","Nov":"Noviembre","Dec":"Diciembre"}
 
-	fecha_entera_ingles = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]), year=int(fecha_raw[6:10])).strftime('%A %d %b %Y').split(' ', 3)
+	fecha_entera_ingles = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[3:5]), year=int(fecha_raw[6:])).strftime('%A %d %b %Y').split(' ', 3)
 	fecha_entera_esp = dia_ingles_esp[fecha_entera_ingles[0]] + ' '+ \
 						   fecha_entera_ingles[1] + ' de '+ \
 						   mes_ingles_esp[fecha_entera_ingles[2]] + ' de '+ \
 						   fecha_entera_ingles[3]
 	return fecha_entera_esp
-
 
 
 def get_today():
@@ -83,7 +82,6 @@ def add_entry():
 	if not session.get('logged_in'):
 		abort(401)
 	if request.method == 'POST':
-		print "aquiii"
 		new = News(request.form['type'],request.form['time'],request.form['text'],get_today())
 		db.session.add(new)
 		db.session.commit()
@@ -132,4 +130,5 @@ def show_news(fecha_raw):
 
 
 if __name__ == '__main__':
+	app.debug = True
 	app.run()
