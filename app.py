@@ -22,7 +22,7 @@ PASSWORD = sha256('default').hexdigest()
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-heroku = Heroku(app)
+# heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 # db.drop_all()

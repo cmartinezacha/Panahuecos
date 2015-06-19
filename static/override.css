@@ -99,7 +99,6 @@ p{
 	margin: 10px;
 }
 
-
 .btn{
 	border-radius: 3px;
 	border-color: black;
@@ -122,5 +121,24 @@ p{
 
 .login{
 	margin: 10px;
+}
+
+.navbar-default .navbar-nav>.active>a{
+  background-color:#FCCC20
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color:#FCCC20;
+  font-weight:bold
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    background-color:#FFD700;
 }
 
