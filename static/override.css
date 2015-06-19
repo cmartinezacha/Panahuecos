@@ -43,22 +43,23 @@ body{
 	margin-left: -70px;
 }
 
-
-/*ESTO LO COPYPASTIE*/ /*------>COPION!!!!!!!!!!!!*/
-.navbar .nav,
-.navbar .nav > li {
-  float:none;
-  display:inline-block;
-  *display:inline; /* ie7 fix */
-  *zoom:1; /* hasLayout ie7 trigger */
-  vertical-align: top;
-}
-.navbar-inner {
-  text-align:center;
-}
-/*HASTA AQUI*/
-
 p{
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-left: 40px;
+}
+
+.centered-pills {  
+    text-align: center
+}
+.centered-pills ul.nav-pills {
+    display: inline-block
+}
+.centered-pills li {
+    display: inline
+}
+.centered-pills a {
+    float: left
+}
+* html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
+    display: inline
 }
