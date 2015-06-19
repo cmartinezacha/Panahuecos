@@ -113,7 +113,8 @@ body{
 	margin: 0;
 	display: inline-block;
 	background: transparent;
-	margin: 1em;
+/*	margin: 1.5em;*/
+	margin-left: 1.5em;
 	font-size: 18px;
 }
 
@@ -124,7 +125,7 @@ body{
 }
 
 .area-de-texto{
-	margin: 1em;
+	margin: 1.5em;
 }
 .login{
 	margin: 1em;
