@@ -1,9 +1,19 @@
+/*affects all*/
 body{
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+/*Controla el nav-bar*/
 .navbar-inner{
 /*	background-color: #F4D404;*/
-	background-color: #FCCC20
+	background-color: #FCCC20;
+}
+
+.titulo{
+	float: left;
+	font: 400 26px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	vertical-align: text-top;
 }
 
 .nav-pills a{
@@ -26,7 +36,6 @@ body{
     margin-right: 12px;
 }
 
-
 /*colores de leyenda*/
 .positiva{
 	color: #04B431;
@@ -38,15 +47,31 @@ body{
 	color: red;
 }
 
+
 .tab-content{
 	text-align: left;
 	margin-left: -70px;
 }
 
+/*ESTO LO COPYPASTIE*/ 
+.navbar .nav,
+.navbar .nav > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+.navbar-inner {
+  text-align:center;
+}
+/*HASTA AQUI*/
+
 p{
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-left: 40px;
 }
+<<<<<<< HEAD
 
 .centered-pills {  
     text-align: center
@@ -62,4 +87,8 @@ p{
 }
 * html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
     display: inline
+}
+/*LAYOUT*/
+.navbar-layout{
+	background-color: #FCCC20;
 }
