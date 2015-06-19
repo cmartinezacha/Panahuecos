@@ -67,11 +67,11 @@ body{
 
 .noticia_text {
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin-left: 2em;
+	margin-left: 60px;
 }
 
 .noticia_fecha {
-	margin-left:1em;
+	margin-left: 40px;
 }
 
 .centered-pills {  
