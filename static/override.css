@@ -50,7 +50,6 @@ body{
 
 .tab-content{
 	text-align: left;
-	margin-left: -70px;
 }
 
 /*ESTO LO COPYPASTIE*/ 
@@ -67,11 +66,14 @@ body{
 }
 /*HASTA AQUI*/
 
-p{
+.noticia_text {
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin-left: 40px;
+	margin-left: 2em;
 }
-<<<<<<< HEAD
+
+.noticia_fecha {
+	margin-left:1em;
+}
 
 .centered-pills {  
     text-align: center
