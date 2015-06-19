@@ -18,12 +18,12 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-#heroku = Heroku(app)
+heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 # db.drop_all()
@@ -98,7 +98,7 @@ def show_news(fecha_raw):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
-	locale.setlocale(locale.LC_TIME, "es_ES")
+	#locale.setlocale(locale.LC_TIME, "es_ES")
 
 				
 	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios")
