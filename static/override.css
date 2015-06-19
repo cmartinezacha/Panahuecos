@@ -142,3 +142,8 @@ p{
     background-color:#FFD700;
 }
 
+.navbar-default {
+  background-color: #FFD700;
+  border-color: #FFD700;
+  border-radius: 0px;
+}
