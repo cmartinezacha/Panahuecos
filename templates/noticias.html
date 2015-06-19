@@ -4,26 +4,26 @@
 	<div class="tab-content">
         <div id="medios" class="tab-pane fade in active">
 			{% for new in medios_news %}
-				<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>
-				<p>{{ new.text | safe }}</p>
+				<h4 class = "noticia_fecha">{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>
+				<div class = "noticia_text">{{ new.text | safe }}</div>
 			{% else %}
-				<p>Aún no hay noticias de MEDIOS para el día de hoy.</p>
+				<h4 class = "noticia_fecha">Aún no hay noticias de MEDIOS para el día de hoy.</h4>
 			{% endfor %}	
 		</div>
 		<div id="twitter" class="tab-pane fade">
 			{% for new in twitter_news %}
-				<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
-				<p>{{ new.text | safe }}</p>
+				<h4 class = "noticia_fecha">{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
+				<div class = "noticia_text">{{ new.text | safe }}</div>
 			{% else %}
-				<p>Aún no hay noticias de TWITTER para el día de hoy.</p>
+				<h4 class = "noticia_fecha">Aún no hay noticias de TWITTER para el día de hoy.</h4>
 			{% endfor %}    
 		</div>
 		<div id="radio" class="tab-pane fade">
 			{% for new in radio_news %}
-				<h4>{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
-				<p>{{ new.text | safe }}</p>
+				<h4 class = "noticia_fecha">{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
+				<div class = "noticia_text">{{ new.text | safe }}</div>
 			{% else %}
-				<p>Aún no hay noticias de RADIO para el día de hoy.</p>
+				<h4 class = "noticia_fecha">Aún no hay noticias de RADIO para el día de hoy.</h4>
 			{% endfor %}      
 		</div>
 	</div>
