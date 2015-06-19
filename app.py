@@ -17,7 +17,7 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
-#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -58,13 +58,12 @@ def translate_day(fecha_raw):
 						  "May":"Mayo", "Jun":"Junio", "Jul":"Julio","Aug":"Agosto","Sep":"Septiembre", \
 						  "Oct":"Octubre","Nov":"Noviembre","Dec":"Diciembre"}
 
-	fecha_entera_ingles = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]), year=int(fecha_raw[6:10])).strftime('%A %d %b %Y').split(' ', 3)
+	fecha_entera_ingles = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[3:5]), year=int(fecha_raw[6:])).strftime('%A %d %b %Y').split(' ', 3)
 	fecha_entera_esp = dia_ingles_esp[fecha_entera_ingles[0]] + ' '+ \
 						   fecha_entera_ingles[1] + ' de '+ \
 						   mes_ingles_esp[fecha_entera_ingles[2]] + ' de '+ \
 						   fecha_entera_ingles[3]
 	return fecha_entera_esp
-
 
 
 def get_today():
