@@ -36,7 +36,6 @@ body{
     margin-right: 12px;
 }
 
-
 /*colores de leyenda*/
 .positiva{
 	color: #04B431;
@@ -53,7 +52,6 @@ body{
 	text-align: left;
 	margin-left: -70px;
 }
-
 
 /*ESTO LO COPYPASTIE*/ 
 .navbar .nav,
@@ -73,7 +71,23 @@ p{
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-left: 40px;
 }
+<<<<<<< HEAD
 
+.centered-pills {  
+    text-align: center
+}
+.centered-pills ul.nav-pills {
+    display: inline-block
+}
+.centered-pills li {
+    display: inline
+}
+.centered-pills a {
+    float: left
+}
+* html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
+    display: inline
+}
 /*LAYOUT*/
 .navbar-layout{
 	background-color: #FCCC20;
