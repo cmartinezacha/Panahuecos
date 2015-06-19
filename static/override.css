@@ -94,9 +94,10 @@ p{
 
 .form{
 	margin: 10px;
+	margin-top: 20px;
 }
 .parte-arriba{
-	margin: 10px;
+	margin: 30px;
 }
 
 .btn{
@@ -110,7 +111,8 @@ p{
 	margin: 0;
 	display: inline-block;
 	background: transparent;
-	margin: 2em
+	margin: 1em;
+	font-size: 18px;
 }
 
 .btn:hover {
@@ -119,9 +121,13 @@ p{
 	border-color: #BDBDBD;
 }
 
-.login{
-	margin: 10px;
+.area-de-texto{
+	margin: 1em;
 }
+.login{
+	margin: 1em;
+}
+
 
 .navbar-default .navbar-nav>.active>a{
   background-color:#FCCC20
