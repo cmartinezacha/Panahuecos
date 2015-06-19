@@ -5,7 +5,6 @@ from flask import Flask, request, session, g, redirect, url_for, \
 	              abort, render_template, flash
 from contextlib import closing
 from datetime import date
-import locale
 import time
 import datetime
 from hashlib import sha256
@@ -47,6 +46,26 @@ class News(db.Model):
 ### of the with block.
 ### Open_resource: opens a file from the resource location, and allows
 ### you to read from it. 
+
+def translate_day(fecha_raw):
+	'''Transforma un fecha en formato dd-mm-yyyy a 
+	"Dia # de Mes de Año"
+	'''
+	dia_ingles_esp = {"Monday":"Lunes", "Tuesday":"Martes", "Wednesday":"Miércoles", "Thursday":"Jueves", \
+						  "Friday":"Viernes", "Saturday":"Sábado", "Sunday":"Domingo"}
+
+	mes_ingles_esp = {"Jan":"Enero", "Feb":"Febrero", "Mar":"Marzo", "Apr":"Abril", \
+						  "May":"Mayo", "Jun":"Junio", "Jul":"Julio","Aug":"Agosto","Sep":"Septiembre", \
+						  "Oct":"Octubre","Nov":"Noviembre","Dec":"Diciembre"}
+
+	fecha_entera_ingles = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]), year=int(fecha_raw[6:10])).strftime('%A %d %b %Y').split(' ', 3)
+	fecha_entera_esp = dia_ingles_esp[fecha_entera_ingles[0]] + ' '+ \
+						   fecha_entera_ingles[1] + ' de '+ \
+						   mes_ingles_esp[fecha_entera_ingles[2]] + ' de '+ \
+						   fecha_entera_ingles[3]
+	return fecha_entera_esp
+
+
 
 def get_today():
 	'''Regresa la fecha de hoy en formato dd-mm-yyyy'''
@@ -98,8 +117,6 @@ def show_news(fecha_raw):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
-	#locale.setlocale(locale.LC_TIME, "es_ES")
-
 				
 	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios")
 	medios_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in medios_cur.all()]
@@ -110,11 +127,8 @@ def show_news(fecha_raw):
 	radio_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Radio")
 	radio_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in radio_cur.all()]
 
-	fecha_entera = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[4:5]),  year=int(fecha_raw[6:10])).strftime('%A %d %B %Y')
-	fecha_entera = fecha_entera.split(' ', 3)
-	fecha_entera = fecha_entera[0].capitalize() + ' ' + fecha_entera[1].capitalize() + ' de ' + fecha_entera[2].capitalize() + ' de ' + fecha_entera[3].capitalize()
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
-											fecha_entera=fecha_entera, fecha_raw=fecha_raw)
+											fecha_entera=translate_day(fecha_raw), fecha_raw=fecha_raw)
 
 
 if __name__ == '__main__':
