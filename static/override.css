@@ -142,7 +142,6 @@ body{
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
-
 }
 
 .navbar .navbar-collapse {
@@ -154,4 +153,15 @@ body{
   background-color: #FFD700;
   border-color: #FFD700;
   border-radius: 0px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	font-size:21px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	font-size: 20px;
+}
+
+.navbar-brand{
+	font-size: 20px;
 }
