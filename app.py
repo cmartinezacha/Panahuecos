@@ -17,7 +17,7 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = sha256('admin').hexdigest()
 PASSWORD = sha256('default').hexdigest()
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -82,7 +82,6 @@ def add_entry():
 	if not session.get('logged_in'):
 		abort(401)
 	if request.method == 'POST':
-		print "aquiii"
 		new = News(request.form['type'],request.form['time'],request.form['text'],get_today())
 		db.session.add(new)
 		db.session.commit()
@@ -131,4 +130,5 @@ def show_news(fecha_raw):
 
 
 if __name__ == '__main__':
+	app.debug = True
 	app.run()
