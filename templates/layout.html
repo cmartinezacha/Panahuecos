@@ -21,28 +21,35 @@
 
     <body>
         <body onload="init()">
-            <div class="navbar navbar-static-top">
-                <div class="navbar-inner">
-                    <div class="centered-pills">
-                        <ul class= "nav nav-pills">
-        <!--            <div class="container"> -->
-    <!--                    <span style="float:right; margin-right: 1em; text-align: right;"><label for="fecha">Fecha:
-                            <input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom"/>
-                        </label></span> -->
-                        <h3 class="titulo">Noticias</h3>
-                        <ul class="nav nav-pills">
-                            <li class="active"><a href="#medios" data-toggle="tab">MEDIOS</a></li>
-                            <li><a href="#twitter" data-toggle="tab">TWITTER</a></li>
-                            <li><a href="#radio" data-toggle="tab">RADIO</a></li>
-    <!--                        <li class="pull-right"><label for="fecha">Fecha:
-                                <input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="vertical-align: bottom"/>
-                            </label></li> -->
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
 
-                        </ul>
+                        </button> <a class="navbar-brand" href="#">Noticias</a>
 
                     </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#medios" data-toggle="tab">Medios</a>
+                            </li>
+                            <li><a href="#twitter" data-toggle="tab">Twitter</a>
+                            </li>
+                            <li><a href="#radio" data-toggle="tab">Radio</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><a href="#">Fecha:</a>
+                            </li>
+                          <li><span><input type="text" id="fecha" value="{{ fecha_raw }}" size="10" style="margin-top:12px"></span></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </nav>
+
             <div class="pull-right">
                 <h5 class="positiva">Noticias Positivas</h5>
                 <h5 class="neutral">Noticias Neutrales</h5>

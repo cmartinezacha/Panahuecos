@@ -13,7 +13,6 @@ body{
 	float: left;
 	font: 400 26px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
-	vertical-align: text-top;
 }
 
 .nav-pills a{
@@ -28,7 +27,7 @@ body{
 }
 .nav-pills>li>a:hover{
 	background-color: transparent;
-	color:black;
+	color:#BDBDBD;
 }
 
 .pull-right {
@@ -102,3 +101,51 @@ body{
 	margin: 10px;
 }
 
+.btn{
+	border-radius: 3px;
+	border-color: black;
+	border-width: 1px;
+	color: black;
+	cursor: pointer;
+	font-weight: 300;
+	letter-spacing: .5px;
+	margin: 0;
+	display: inline-block;
+	background: transparent;
+	margin: 2em
+}
+
+.btn:hover {
+	background: #fff;
+	color: #BDBDBD;
+	border-color: #BDBDBD;
+}
+
+.login{
+	margin: 10px;
+}
+
+.navbar-default .navbar-nav>.active>a{
+  background-color:#FCCC20
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color:#FCCC20;
+  font-weight:bold
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    background-color:#FFD700;
+}
+
+.navbar-default {
+  background-color: #FFD700;
+  border-color: #FFD700;
+  border-radius: 0px;
+}
