@@ -128,6 +128,9 @@ def show_news(fecha_raw):
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
 											fecha_entera=translate_day(fecha_raw), fecha_raw=fecha_raw)
 
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('404.html'), 500
 
 if __name__ == '__main__':
 	app.run()
