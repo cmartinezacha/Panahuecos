@@ -17,12 +17,12 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6'
 PASSWORD = 'd1775cdbcf90d7864101da3f728d64ef357441361dc31db4d6d62cf3e34c3656'
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-#heroku = Heroku(app)
+heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 # db.drop_all()
