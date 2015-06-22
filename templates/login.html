@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class=metanav>
-    {% if not session.logged_in %}
-      <a href="{{ url_for('login') }}">Ingresar</a>
+    {% if session.logged_in %}
+        <a class="cerrar-sesion" href="{{ url_for('logout') }}"><!-- Cerrar Sesión --></a>
     {% else %}
-      <a class="cerrar-sesion" href="{{ url_for('logout') }}"><!-- Cerrar Sesión --></a>
+      
     {% endif %}
     </div>
 

@@ -167,3 +167,10 @@ body{
 .navbar-brand{
 	font-size: 20px;
 }
+
+#news_container{
+	width:80%;
+}
+.error-page{
+	margin-left: 30px;
+}
