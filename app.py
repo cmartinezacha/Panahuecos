@@ -17,7 +17,7 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6'
 PASSWORD = 'd1775cdbcf90d7864101da3f728d64ef357441361dc31db4d6d62cf3e34c3656'
-#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -122,13 +122,13 @@ def show_news(fecha_raw):
 
 	if not fecha_valida(fecha_raw):
 		abort(404)
-	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios")
+	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios").order_by(News.id.desc())
 	medios_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in medios_cur.all()]
 	
-	twitter_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Twitter")
+	twitter_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Twitter").order_by(News.id.desc())
 	twitter_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in twitter_cur.all()]
 
-	radio_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Radio")
+	radio_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Radio").order_by(News.id.desc())
 	radio_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in radio_cur.all()]
 
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
