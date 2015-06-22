@@ -1,0 +1,9 @@
+<!-- el error en realidad es 500: internal server error. -->
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Página no encontrada.</h1>
+<!--   <p>What you weree looking for is just not there. -->
+  	<form action="{{ url_for('today_news') }}">
+  		<input type="submit" value="Regresar a noticias de hoy." class="btn agregar">
+  	</form>
+{% endblock %}
