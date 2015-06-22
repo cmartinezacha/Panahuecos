@@ -15,14 +15,14 @@ from flask.ext.heroku import Heroku
 
 DEBUG = True
 SECRET_KEY = 'development key'
-USERNAME = sha256('admin').hexdigest()
-PASSWORD = sha256('default').hexdigest()
-#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+USERNAME = 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6'
+PASSWORD = 'd1775cdbcf90d7864101da3f728d64ef357441361dc31db4d6d62cf3e34c3656'
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-heroku = Heroku(app)
+#heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 # db.drop_all()
@@ -80,7 +80,7 @@ def today_news():
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
 	if not session.get('logged_in'):
-		abort(401)
+		return redirect(url_for('login'))
 	if request.method == 'POST':
 		new = News(request.form['type'],request.form['time'],request.form['text'],get_today())
 		db.session.add(new)

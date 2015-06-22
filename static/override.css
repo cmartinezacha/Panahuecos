@@ -167,3 +167,7 @@ body{
 .navbar-brand{
 	font-size: 20px;
 }
+
+#news_container{
+	width:80%;
+}
