@@ -1,6 +1,6 @@
 /*affects all*/
 body{
-	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 400 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
 }
 
 /*Controla el nav-bar*/
@@ -11,7 +11,7 @@ body{
 
 .titulo{
 	float: left;
-	font: 400 26px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 400 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
 	text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@ body{
 /*HASTA AQUI*/
 
 .noticia_text {
-	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 400 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
 	margin-left: 60px;
 }
 
