@@ -158,10 +158,12 @@ body{
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
 	font-size:21px;
+	color:black;
 }
 
 .navbar-default .navbar-nav>li>a {
 	font-size: 20px;
+	color:black;
 }
 
 .navbar-brand{
@@ -174,3 +176,5 @@ body{
 .error-page{
 	margin-left: 30px;
 }
+.navbar-default .navbar-brand {
+	color:black;
