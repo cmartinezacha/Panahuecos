@@ -46,6 +46,10 @@ class News(db.Model):
 ### of the with block.
 ### Open_resource: opens a file from the resource location, and allows
 ### you to read from it. 
+def fecha_valida(fecha_raw):
+	if len(fecha_raw) != 10 or len(fecha_raw.split("-")) != 3:
+		return False
+	return True
 
 def translate_day(fecha_raw):
 	'''Transforma un fecha en formato dd-mm-yyyy a 
@@ -115,22 +119,24 @@ def show_news(fecha_raw):
 	''' Renders el html con las noticias del dia especifico
 		date debe estar en formato dd-mm-yyyy
 	'''
-				
-	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios")
+
+	if not fecha_valida(fecha_raw):
+		abort(404)
+	medios_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Medios").order_by(News.id.desc())
 	medios_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in medios_cur.all()]
 	
-	twitter_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Twitter")
+	twitter_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Twitter").order_by(News.id.desc())
 	twitter_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in twitter_cur.all()]
 
-	radio_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Radio")
+	radio_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == "Radio").order_by(News.id.desc())
 	radio_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in radio_cur.all()]
 
 	return render_template('noticias.html', medios_news=medios_news, twitter_news=twitter_news, radio_news=radio_news, 
 											fecha_entera=translate_day(fecha_raw), fecha_raw=fecha_raw)
 
-@app.errorhandler(500)
+@app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 500
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
 	app.run()
