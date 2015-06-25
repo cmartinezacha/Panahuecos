@@ -28,3 +28,15 @@ $(function () {
 	});
 
 });
+
+// $(function() {
+//    $('#nav li a').click(function() {
+//       $('#nav li').removeClass();
+//       $($(this).attr('href')).addClass('active');
+//    });
+// });
+
+$(".nav li").on("click", function() {
+   $(".nav li").removeClass("active");
+   $(this).addClass("active");
+ });

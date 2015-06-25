@@ -141,8 +141,9 @@ nav.content span,nav.content ul,nav.content li{
 
 .navbar-nav>.active>a,.navbar-nav>.active>a:focus,.navbar-nav>.active>a:hover {
   /*background-color:#FFD700;*/
-	background-color: red;
-	color:black;
+	background-color: white;
+	color:red;
+	/*font-weight: bold;*/
 }
 .navbar-collapse>.active>a,.navbar-collapse>.active>a:focus,.navbar-collapse>.active>a:hover {
 	background-color: green;
