@@ -15,21 +15,6 @@ body{
 	text-transform: uppercase;
 }
 
-.nav-pills a{
-	color:black;
-	font-size: 20px;
-	font-weight: 100;
-}
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
-	background-color: transparent;
-	font-weight: bold;
-	color: black;
-}
-.nav-pills>li>a:hover{
-	background-color: transparent;
-	color:#BDBDBD;
-}
-
 .pull-right {
     font-weight: 300px;
     margin-right: 12px;
@@ -72,22 +57,6 @@ body{
 
 .noticia_fecha {
 	margin-left: 40px;
-}
-
-.centered-pills {  
-    text-align: center
-}
-.centered-pills ul.nav-pills {
-    display: inline-block
-}
-.centered-pills li {
-    display: inline
-}
-.centered-pills a {
-    float: left
-}
-* html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
-    display: inline
 }
 /*LAYOUT*/
 .navbar-layout{
@@ -133,12 +102,12 @@ body{
 .noticia_text{
 	margin-bottom: 2em;
 }
-.navbar-default .navbar-nav>.active>a{
-  background-color:#FCCC20
-}
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color:#FCCC20;
-  font-weight:bold
+  font-weight:bold;
+  font-size:21px;
+  color:black;
 }
 
 .navbar .navbar-nav {
@@ -148,17 +117,12 @@ body{
 
 .navbar .navbar-collapse {
     text-align: center;
-    background-color:#FFD700;
 }
 
 .navbar-default {
   background-color: #FFD700;
   border-color: #FFD700;
   border-radius: 0px;
-}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-	font-size:21px;
-	color:black;
 }
 
 .navbar-default .navbar-nav>li>a {
