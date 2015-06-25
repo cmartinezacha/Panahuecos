@@ -115,28 +115,35 @@ nav.content span,nav.content ul,nav.content li{
 }
 .nav-subhead a:hover {
     /*color:#ccc;*/
-    color:red;
+    color:black;
 }
 
 .fix {
     position:fixed;
 }
 
-.navbar-default {
+.navbar {
 	background-color: #FFD700;
-	border-color: #FFD700;
+	border-color: white;
+}
+
+.container a{
 	color:black;
 }
 
-.navbar-default .navbar-nav>li>a {
-	color:black;
+.navbar-nav{
+	color:grey;
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-	background-color:#FCCC20;
-	font-weight:bold;
-	color:black;
-}
-/*.navbar-default .navbar-brand {
-	color:red;
-}*/
 
+.navbar-default .navbar-brand {
+	color:black;
+}
+
+.navbar-nav>.active>a,.navbar-nav>.active>a:focus,.navbar-nav>.active>a:hover {
+  /*background-color:#FFD700;*/
+	background-color: red;
+	color:black;
+}
+.navbar-collapse>.active>a,.navbar-collapse>.active>a:focus,.navbar-collapse>.active>a:hover {
+	background-color: green;
+}

@@ -10,13 +10,17 @@
 </div>
 
 <nav class="navbar navbar-fixed-top content nav-subhead fix sticky" id="nav_secondary">
-    <section>
-        <ul class="resources">
-              <li><a href="#medios" data-toggle="tab" class="full">Medios</a></li>
-              <li><a href="#twitter" data-toggle="tab" class="full">Twitter</a></li>
-              <li><a href="#radio" data-toggle="tab" class="full">Radio</a></li>
+    <div>
+        <ul class="nav navbar-nav">
+			<li><a href="#medios" data-toggle="tab"  class="full">Medios</a></li>
+			<li><a href="#twitter" data-toggle="tab" class="full">Twitter</a></li>
+			<li><a href="#radio" data-toggle="tab" class="full">Radio</a></li>
         </ul>
-    </section>
+        <ul class="nav navbar-nav navbar-right">
+			<li><a>Fecha:</a></li>
+			<li><span><input type="text" id="fecha" value="{{ fecha_raw }}" size="11" style="margin-top:12px"></span></li>
+        </ul>
+    </div>
 </nav>
 
 <div class="container pull-left" id="news_container">
