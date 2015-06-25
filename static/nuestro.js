@@ -27,3 +27,9 @@ $(function($){
     		});
 
 		    });
+
+$(document).ready(function () {
+    $('#noticias').click(function(e) {
+        $('#nav_secondary').toggleClass('no-show');
+    });     
+});
