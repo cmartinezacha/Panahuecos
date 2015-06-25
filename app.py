@@ -4,6 +4,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
                   abort, render_template, flash
 import models
 import utils
+import sys; sys.dont_write_bytecode = True
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 
