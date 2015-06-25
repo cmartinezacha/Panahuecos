@@ -1,3 +1,189 @@
-{% extends "layout.html" %}
-{% block content %}
-{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+	<meta charset="utf-8">
+    <title>Reportes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/feed.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+			<section>
+			</section>
+
+			<section class="estado">
+				<h5>Estado:</h5>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Completo
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     En proceso
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    En inspección
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Vencido
+				  </label>
+				</div>
+			</section>
+
+			<section class="region">
+				<h5>Región:</h5>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Panamá Oeste
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Panamá Este
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    San Miguelito
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Colón
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Bocas del Toro
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Chiriquí
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Veraguas
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Coclé
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Herrera
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Los Santos
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Darién
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Ngobe Bugle
+				  </label>
+				</div>
+			</section>
+
+			<section class="tipo-de-dano">
+				<h5>Tipo de daño:</h5>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Cajones Pluviales
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Limpieza
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Mantenimiento de Camino
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="" disabled>
+				     Mantenimiento de Puente
+				  </label>
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <input type="checkbox" value="">
+				    Otras Obras
+				  </label>
+				</div>
+			</section>
+		</div>
+
+		<div class="col-md-6">
+				<h3 class = "titulo-de-reporte">{{report.titulo | safe}} - {{report.location | safe }}</h3>
+				<h4 class = "estado">{{ report.state | safe }}</h4>
+		      	<h5 class="panel-title">
+		        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		          Ver más
+		        	</a>
+		      	</h5>
+		      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		      	<div class="panel-body">
+		      		{{report.text | safe }}
+		      	</div>
+		    </div>
+				<div class="datos">
+					<div class="date">{{report.date | safe}}</div>  |  <div class="likes">{{report.likes | safe}}	</div>
+				</div>
+		</div>
+		
+		<div class="col-md-3">
+			<h2></h2>
+		</div>
+	</div>
+	</div>
+</body>
+
+
+</html>
+
