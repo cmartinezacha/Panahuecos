@@ -42,10 +42,6 @@ class News(db.Model):
         self.text = text
         self.date = date
  
-### The closing() function allows us to keep a connection open for the duration 
-### of the with block.
-### Open_resource: opens a file from the resource location, and allows
-### you to read from it. 
 def fecha_valida(fecha_raw):
 	if len(fecha_raw) != 10 or len(fecha_raw.split("-")) != 3:
 		return False
@@ -104,14 +100,12 @@ def login():
             error = 'Clave invalida'
         else:
             session['logged_in'] = True
-            flash('You were logged in')
             return redirect(url_for('add_entry'))
     return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('You were logged out')
     return redirect(url_for('today_news'))
 	
 @app.route('/<fecha_raw>')
