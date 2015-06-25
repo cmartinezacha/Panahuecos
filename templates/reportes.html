@@ -162,24 +162,27 @@
 		<div class="col-md-6">
 				<h3 class = "titulo-de-reporte">{{report.titulo | safe}} - {{report.location | safe }}</h3>
 				<h4 class = "estado">{{ report.state | safe }}</h4>
-		      	<h5 class="panel-title">
-		        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		          Ver más
-		        	</a>
-		      	</h5>
-		      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-		      	<div class="panel-body">
-		      		{{report.text | safe }}
-		      	</div>
-		    </div>
+				<div class="panel panel-default">
+			      	<h5 class="panel-title">
+			        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			          Ver más
+			        	</a>
+			      	</h5>
+			      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"></div>
+			      	<div class="panel-body">
+			      		{{report.text | safe }}
+			      	</div>
+			    </div>
+		  
 				<div class="datos">
-					<div class="date">{{report.date | safe}}</div>  |  <div class="likes">{{report.likes | safe}}	</div>
+					<h6>{{report.date | safe}}  |  {{report.likes | safe}}	</h6>
 				</div>
+
 		</div>
 		
 		<div class="col-md-3">
-			<h2></h2>
 		</div>
+
 	</div>
 	</div>
 </body>
