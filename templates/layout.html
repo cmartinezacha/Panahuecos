@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/override.css">
+        <link rel="stylesheet" href="static/navbar.css">
         <script src="static/links/ajaxgoogle"></script>
         <link href='static/links/fontsgoogle' type='text/css'>
         <script src="static/links/maxcdnbootstrap"></script>
@@ -44,8 +45,7 @@
 
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Noticias</a></li>
-                    <li><a href="/agregar">Reportes</a></li>
+                    {% block footer %}{% endblock %}
                   </ul>
                 </div>
 

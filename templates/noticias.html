@@ -1,4 +1,10 @@
 {% extends "layout.html" %}
+
+{% block footer %}
+<li class="active"><a href="/">Noticias</a></li>
+<li><a href="/agregar">Reportes</a></li>
+{% endblock %}
+
 {% block content %}
 
 <br><br><br><br><br>
@@ -12,7 +18,7 @@
 <nav class="navbar navbar-fixed-top content nav-subhead fix sticky" id="nav_secondary">
     <div>
         <ul class="nav navbar-nav">
-			<li><a href="#medios" data-toggle="tab"  class="full">Medios</a></li>
+			<li><a href="#medios" data-toggle="tab"  class="active full">Medios</a></li>
 			<li><a href="#twitter" data-toggle="tab" class="full">Twitter</a></li>
 			<li><a href="#radio" data-toggle="tab" class="full">Radio</a></li>
         </ul>
