@@ -87,7 +87,8 @@ body{
 	margin-left: 30px;
 }
 
-.no-show { display: none; }
+
+
 .nav-subhead {
     z-index:9010;
     width: 100%;
@@ -113,10 +114,29 @@ nav.content span,nav.content ul,nav.content li{
     text-transform:uppercase;
 }
 .nav-subhead a:hover {
-    color:#ccc;
+    /*color:#ccc;*/
+    color:red;
 }
 
 .fix {
     position:fixed;
 }
+
+.navbar-default {
+	background-color: #FFD700;
+	border-color: #FFD700;
+	color:black;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color:black;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color:#FCCC20;
+	font-weight:bold;
+	color:black;
+}
+/*.navbar-default .navbar-brand {
+	color:red;
+}*/
 
