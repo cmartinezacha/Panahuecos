@@ -34,8 +34,16 @@ class Reportes(db.Model):
     state = db.Column(db.String(120))
     email = db.Column(db.String(120))
 
-    def __init__(self, date, likes, problema, area, localizacion_breve, details, image, state):
+    def __init__(self, email, date, likes, problema, area, localizacion_breve, details, image, state):
+        self.email = email
+        self.date = date
         self.likes = 1
+        self.problema = problema
+        self.area = area
+        self.localizacion_breve = localizacion_breve
+        self.details = details
+        self.state = "Iniciado"
+
 
 def get_reportes(problemas, estados, areas):
     reportes_cur = db.session.query(Reportes).filter(Reportes.problema in problemas,

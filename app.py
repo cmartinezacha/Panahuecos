@@ -62,14 +62,17 @@ def show_news(fecha_raw):
     return render_template('noticias.html', medios_news = medios_news, twitter_news = twitter_news, radio_news = radio_news, 
                                             fecha_entera = utils.translate_day(fecha_raw), fecha_raw = fecha_raw)
 
-# @app.route('/reportes', methods=['GET', 'POST'])
-# def show_reportes():
-#     if request.method = 'POST':
+@app.route('/reportes', methods=['GET', 'POST'])
+def show_reportes():
+    if request.method = 'POST':
+        reporte = models.Reportes(request)
+        db.session.add(new)
+        db.session.commit()
 
-#     else:
-#         checkboxes = "todos"
+    else:
+        checkboxes = "todos"
 
-#     return render_template('reportes.html')
+    return render_template('reportes.html')
 
 
 @app.errorhandler(404)
