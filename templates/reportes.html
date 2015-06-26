@@ -2,7 +2,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="trial.css">
+    <link rel="stylesheet" href="static/trial.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 {% endblock %}
@@ -250,8 +250,8 @@
 		</div>
 
 		<div class="col-md-6">
-				<h3 class = "titulo-de-reporte">{{report.titulo | safe}} - {{report.location | safe }}</h3>
-				<h4 class = "estado">{{ report.state | safe }}</h4>
+				<h3 class = "titulo-de-reporte">titulo de reporte</h3>
+				<h4 class = "estado">estado de reporte</h4>
 				<div class="panel panel-default">
 			      	<h5 class="panel-title">
 			        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -260,12 +260,12 @@
 			      	</h5>
 			      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"></div>
 			      	<div class="panel-body">
-			      		{{report.text | safe }}
+			      		texto de reporte
 			      	</div>
 			    </div>
 		  
 				<div class="datos">
-					<h6>{{report.date | safe}}  |  {{report.likes | safe}}	</h6>
+					<h6>fecha y likes de reportes</h6>
 				</div>
 		</div>
 		

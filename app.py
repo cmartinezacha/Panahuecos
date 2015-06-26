@@ -64,11 +64,10 @@ def show_news(fecha_raw):
 
 @app.route('/reportes', methods=['GET', 'POST'])
 def show_reportes():
-    if request.method = 'POST':
+    if request.method == 'POST':
         reporte = models.Reportes(request)
         db.session.add(new)
         db.session.commit()
-
     else:
         checkboxes = "todos"
 
