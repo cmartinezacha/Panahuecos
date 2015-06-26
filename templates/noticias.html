@@ -1,22 +1,21 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="static/override.css">
+<link rel="stylesheet" href="static/navbar.css">
+{% endblock %}
+
 {% block footer %}
 <li class="active"><a href="/">Noticias</a></li>
-<li><a href="/agregar">Reportes</a></li>
+<li><a href="/reportes">Reportes</a></li>
 {% endblock %}
 
 {% block content %}
 
 <br><br><br><br><br>
 
-<div class="pull-right">
-    <h5 class="positiva">Noticias Positivas</h5>
-    <h5 class="neutral">Noticias Neutrales</h5>
-    <h5 class = "negativa">Noticias Negativas</h5>
-</div>
-
 <nav class="navbar navbar-fixed-top content nav-subhead fix sticky" id="nav_secondary">
-    <div>
+    <div class="container-fluid">
         <ul class="nav navbar-nav" id="tipomedios">
 			<li><a href="#medios" data-toggle="tab" class="active">Medios</a></li>
 			<li><a href="#twitter" data-toggle="tab" id="tipomedios">Twitter</a></li>
@@ -28,6 +27,12 @@
         </ul>
     </div>
 </nav>
+
+<div class="pull-right">
+    <h5 class="positiva">Noticias Positivas</h5>
+    <h5 class="neutral">Noticias Neutrales</h5>
+    <h5 class ="negativa">Noticias Negativas</h5>
+</div>
 
 <div class="container pull-left" id="news_container">
 	<div class="tab-content">

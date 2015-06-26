@@ -47,14 +47,14 @@ nav.content span,nav.content ul,nav.content li{
 .navbar-nav>.active>a,.navbar-nav>.active>a:focus .navbar-nav>.active>a:hover {
   background-color:#FCCC20;;
   font-weight:bold;
-  font-size:19px;
+  font-size:18px;
   color:black;
 }
 
 #tipomedios>.active>a, #tipomedios>.active>a:focus #tipomedios>.active>a:hover{
   background-color:black;
   font-weight:bold;
-  font-size:18px;
+  font-size:14px;
   color:white;
 }
 /*#tipomedios>a:focus{
