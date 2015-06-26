@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="static/override.css">
+<link rel="stylesheet" href="static/navbar.css">
+{% endblock %}
+
 {% block footer %}
 <li class="active"><a href="/">Noticias</a></li>
-<li><a href="/agregar">Reportes</a></li>
+<li><a href="/reportes">Reportes</a></li>
 {% endblock %}
 
 {% block content %}
