@@ -1,0 +1,61 @@
+/*affects all*/
+body{
+	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+}
+/**{
+	border: 1px solid red !important;
+}*/
+
+.btn-info{
+	margin:  1em;
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700;
+	text-align: center;
+}
+
+.btn-info:hover{
+	color: black; 
+	background-color: #F0B903;
+    border: #F0B903;
+}
+
+.btn-info:active {
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700; 
+}
+
+.btn-lg:active {
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700; 
+}
+
+.btn:active {
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700; 
+}
+
+.modal-content{
+	border-color: rgba(248, 210, 96, 1);
+	border-width: 4px;
+	background-color: rgba(251, 227, 148, 1);
+}
+
+.modal-header{
+	border-width: 4px;
+	border-color: rgba(248, 210, 96, 1);
+}
+
+.modal-title{
+	text-align: center;
+}
+
+.filtros{
+	margin-left: 3em;
+	text-align: left;
+	font-size: 14px;
+}
+

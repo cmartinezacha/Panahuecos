@@ -4,7 +4,6 @@ from flask import Flask, request, session, g, redirect, url_for, \
                   abort, render_template, flash
 import models
 import utils
-import sys; sys.dont_write_bytecode = True
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 
@@ -62,6 +61,16 @@ def show_news(fecha_raw):
     radio_news = models.get_news_date_tipo(fecha_raw, "Radio")
     return render_template('noticias.html', medios_news = medios_news, twitter_news = twitter_news, radio_news = radio_news, 
                                             fecha_entera = utils.translate_day(fecha_raw), fecha_raw = fecha_raw)
+
+# @app.route('/reportes', methods=['GET', 'POST'])
+# def show_reportes():
+#     if request.method = 'POST':
+
+#     else:
+#         checkboxes = "todos"
+
+#     return render_template('reportes.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):

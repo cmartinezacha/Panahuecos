@@ -1,3 +1,4 @@
+#coding=utf-8
 from app import db
 import time
 
@@ -19,3 +20,26 @@ def get_news_date_tipo(fecha_raw, tipo_noticia):
     tipo_cur = db.session.query(News).filter(News.date == fecha_raw, News.tipo == tipo_noticia).order_by(News.id.desc())
     tipo_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in tipo_cur.all()]
     return tipo_news
+
+class Reportes(db.Model):
+    __tablename__ = "reportes"
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.DateTime)
+    likes = db.Column(db.Integer)
+    problema = db.Column(db.String(120), unique=False)
+    area = db.Column(db.String(120))
+    localizacion_breve = db.Column(db.String(120))
+    details = db.Column(db.Text)
+    image = db.Column(db.String(120))
+    state = db.Column(db.String(120))
+    email = db.Column(db.String(120))
+
+    def __init__(self, date, likes, problema, area, localizacion_breve, details, image, state):
+        self.likes = 1
+
+def get_reportes(problemas, estados, areas):
+    reportes_cur = db.session.query(Reportes).filter(Reportes.problema in problemas,
+                                                     Reportes.state in estados,
+                                                     Reportes.area in areas).order_by(Reportes.likes.desc())
+    return
+    

@@ -7,7 +7,7 @@
     <title>Reportes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/feed.css">
+    <link rel="stylesheet" href="trial.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
@@ -16,147 +16,237 @@
 <body>
 	<div class="container-fluid">
 	<div class="row">
+
 		<div class="col-md-3">
-			<section>
-			</section>
+			<div class="container form">
+			  <!-- Trigger the modal with a button -->
+			  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar Reporte</button>
 
-			<section class="estado">
-				<h5>Estado:</h5>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Completo
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     En proceso
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    En inspección
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Vencido
-				  </label>
-				</div>
-			</section>
+			  <!-- Modal -->
+			  <div class="modal fade" id="myModal" role="dialog">
+			    <div class="modal-dialog">
+			    
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h3 class="modal-title">Agrega tu Reporte</h3>
+			        </div>
+			        <div class="modal-body">
 
-			<section class="region">
-				<h5>Región:</h5>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Panamá Oeste
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Panamá Este
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    San Miguelito
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Colón
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Bocas del Toro
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Chiriquí
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Veraguas
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Coclé
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Herrera
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Los Santos
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Darién
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Ngobe Bugle
-				  </label>
-				</div>
-			</section>
+			          <div class="container">
+			            <form class="form-horizontal" role="form">
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
+			                <div class="col-sm-4">
+			                  <input type="email" class="form-control" id="email" placeholder="ejemplo@hotmail.com">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
+			                <div class="col-sm-4">          
+			                  <select name="tipo">
+			                    <option>Hueco</option>
+			                    <option>Puente</option>
+			                    <option>Alcantarilla</option>
+			                 </select>
+			                </div>
+			              </div>
 
-			<section class="tipo-de-dano">
-				<h5>Tipo de daño:</h5>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Cajones Pluviales
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Limpieza
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Mantenimiento de Camino
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="" disabled>
-				     Mantenimiento de Puente
-				  </label>
-				</div>
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" value="">
-				    Otras Obras
-				  </label>
-				</div>
-			</section>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Región:</label>
+			                <div class="col-sm-4">          
+			                  <select name="region">
+			                    <option>Panamá Oeste</option>
+			                    <option>Panamá Este</option>
+			                    <option>San Miguelito</option>
+			                    <option>Colón</option>
+			                    <option>Bocas del Toro</option>
+			                    <option>Chiriquí</option>
+			                    <option>Veraguas</option>
+			                    <option>Herrera</option>
+			                    <option>Los Santos</option>
+			                    <option>Darién</option>
+			                    <option>Ngobe Bugle</option>
+			                 </select>
+			                </div>
+			              </div>
+			              
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
+			                <div class="col-sm-4">
+			                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50">
+			                </div>
+			              </div>
+
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Detalles:</label>
+			                <div class="col-sm-4">
+			                  <input type="textarea" class="form-control" rows="10" placeholder="Escribir localización detallada">
+			                </div>
+			              </div>
+
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Agregar Foto:</label>
+			                <div class="col-sm-4">
+			                  <input type="file" name="file">
+			                </div>
+			              </div>
+			              
+			              <div class="form-group">        
+			                <div class="col-sm-offset-2 col-sm-10">
+			                  <button type="submit" class="btn btn-default">Añadir</button>
+			                </div>
+			              </div>
+
+			            </form>
+			          </div>
+			        </div>
+			      </div>
+			      
+			    </div>
+			  </div>
+			</div>
+			
+			<div class="filtros">
+				<section class="estado">
+					<h4>Estado:</h4>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Completo
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     En proceso
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    En inspección
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Vencido
+					  </label>
+					</div>
+				</section>
+
+				<section class="region">
+					<h4>Región:</h4>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Panamá Oeste
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Panamá Este
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    San Miguelito
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Colón
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Bocas del Toro
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Chiriquí
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Veraguas
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Coclé
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Herrera
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Los Santos
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Darién
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Ngobe Bugle
+					  </label>
+					</div>
+				</section>
+
+				<section class="tipo-de-dano">
+					<h4>Tipo de daño:</h4>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Cajones Pluviales
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Limpieza
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Mantenimiento de Camino
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="" disabled>
+					     Mantenimiento de Puente
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" value="">
+					    Otras Obras
+					  </label>
+					</div>
+				</section>
+			</div>
 		</div>
 
 		<div class="col-md-6">
@@ -177,7 +267,6 @@
 				<div class="datos">
 					<h6>{{report.date | safe}}  |  {{report.likes | safe}}	</h6>
 				</div>
-
 		</div>
 		
 		<div class="col-md-3">
