@@ -23,8 +23,8 @@ nav.content span,nav.content ul,nav.content li{
     text-transform:uppercase;
 }
 .nav-subhead a:hover {
-    color:#ccc;
     color:black;
+    /*background-color:red;*/
 }
 
 .fix {
@@ -40,24 +40,23 @@ nav.content span,nav.content ul,nav.content li{
   color:black;
 }
 
-.navbar-nav{
-  color:grey;
-}
-
 .navbar-default .navbar-brand {
   color:black;
 }
 
-.navbar-nav>.active>a,.navbar-nav>.active>a:focus,.navbar-nav>.active>a:hover {
-  background-color:#FFD700;
+.navbar-nav>.active>a,.navbar-nav>.active>a:focus .navbar-nav>.active>a:hover {
+  background-color:#FCCC20;;
+  font-weight:bold;
+  font-size:19px;
   color:black;
-  font-weight: bold;
 }
 
-#tipomedios{
+#tipomedios>.active>a, #tipomedios>.active>a:focus #tipomedios>.active>a:hover{
+  background-color:black;
+  font-weight:bold;
+  font-size:18px;
   color:white;
 }
-
-#tipomedios.active{
-  color:red;
-}
+/*#tipomedios>a:focus{
+  background-color:yellow;
+}*/
