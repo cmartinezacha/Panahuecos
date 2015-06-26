@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-<!--       {% block head %} -->
+
         <title>MOPresponde</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/override.css">
-        <link rel="stylesheet" href="static/navbar.css">
+<!--         <link rel="stylesheet" href="static/override.css">
+        <link rel="stylesheet" href="static/navbar.css"> -->
         <script src="static/links/ajaxgoogle"></script>
         <link href='static/links/fontsgoogle' type='text/css'>
         <script src="static/links/maxcdnbootstrap"></script>
@@ -20,7 +20,6 @@
         <script type="text/javascript" src="static/nuestro.js"></script>
         <script src="static/links/niceedit" type="text/javascript"></script>
         <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
-<!--       {% endblock %} -->
         <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,6 +31,8 @@
           ga('send', 'pageview');
 
         </script>
+
+        {% block head %}{% endblock %}
     </head>
 
     <body>
