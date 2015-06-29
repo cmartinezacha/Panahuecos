@@ -38,11 +38,11 @@ body{
 	border: #FFD700; 
 }
 
-.btn-default:focus {
+/*.btn-default:focus {
     color: black;
     background-color: #FFD700;
     border-color: #FFD700;
-}
+}*/
 
 .modal-content{
 	border-color: rgba(248, 210, 96, 1);
@@ -64,4 +64,3 @@ body{
 	text-align: left;
 	font-size: 14px;
 }
-
