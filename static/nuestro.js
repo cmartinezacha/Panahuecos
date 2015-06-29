@@ -40,10 +40,10 @@ $(function () {
 //    $(".navbar-nav li").removeClass("active");
 //    $(this).addClass("active");
 //  });
-$('.navbar-nav li a').click(function(e) {
-  var $this = $(this);
-  if (!$this.hasClass('active')) {
-    $this.addClass('active');
-  }
-  e.preventDefault();
-});
+// $('.navbar-nav li a').click(function(e) {
+//   var $this = $(this);
+//   if (!$this.hasClass('active')) {
+//     $this.addClass('active');
+//   }
+//   e.preventDefault();
+// });

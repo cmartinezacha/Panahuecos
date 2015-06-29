@@ -20,11 +20,22 @@ body{
     border: #F0B903;
 }
 
-.btn-info:focus {
-    color: black;
-    background-color: #FFD700;
-    border-color: #FFD700;
-    outline: 0;
+.btn-info:active {
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700; 
+}
+
+.btn-lg:active {
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700; 
+}
+
+.btn:active {
+	color: black;
+	background-color: #FFD700;
+	border: #FFD700; 
 }
 
 .modal-content{
@@ -52,7 +63,9 @@ body{
 	font-size: 12px;
 }
 
+
 /*.left-part{	
 	border: 1px solid red !important;	
 }*/
+
 
