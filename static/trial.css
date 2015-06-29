@@ -7,11 +7,11 @@ body{
 }*/
 
 .btn-info{
-	margin:  1em;
 	color: black;
 	background-color: #FFD700;
 	border: #FFD700;
 	text-align: center;
+	margin: 0 5%;
 }
 
 .btn-info:hover{
@@ -39,12 +39,20 @@ body{
 }
 
 .modal-title{
-	text-align: center;
+	text-align: left;
 }
 
 .filtros{
 	margin-left: 3em;
 	text-align: left;
-	font-size: 14px;
+	font-size: 10px;
 }
+
+.filtro-ind{
+	font-size: 12px;
+}
+
+/*.left-part{	
+	border: 1px solid red !important;	
+}*/
 
