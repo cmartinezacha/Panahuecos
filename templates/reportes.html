@@ -35,7 +35,7 @@
 			        <div class="modal-body">
 
 			          <div class="container">
-			            <form class="form-horizontal" role="form">
+			            <form class="form-horizontal" role="form" method= "POST">
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
 			                <div class="col-sm-4">
@@ -250,8 +250,9 @@
 		</div>
 
 		<div class="col-md-6">
-				<h3 class = "titulo-de-reporte">titulo de reporte</h3>
-				<h4 class = "estado">estado de reporte</h4>
+			{% for reporte in reportes %}
+				<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
+				<h4 class = "estado">{{reporte.state}}</h4>
 				<div class="panel panel-default">
 			      	<h5 class="panel-title">
 			        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -260,13 +261,14 @@
 			      	</h5>
 			      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"></div>
 			      	<div class="panel-body">
-			      		texto de reporte
+			      		{{reporte.details}}
 			      	</div>
 			    </div>
 		  
 				<div class="datos">
-					<h6>fecha y likes de reportes</h6>
+					<h6>fecha y likes de reportes({{reporte.likes}})</h6>
 				</div>
+			{% endfor %}
 		</div>
 		
 		<div class="col-md-3">
