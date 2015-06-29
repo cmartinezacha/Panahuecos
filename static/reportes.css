@@ -7,24 +7,36 @@ body{
 }*/
 
 .btn-info{
-	color: black;
-	background-color: #FFD700;
-	border: #FFD700;
+	font-size: 14px;
+	font-weight: 600;
+	color: #3F96B0;
+	background-color: white;
+	border-color: #3F96B0;
+	border-width: 2px;
 	text-align: center;
-	margin: 0 5%;
+	margin: 0 auto;
+	padding: 10px;
 }
 
 .btn-info:hover{
-	color: black; 
-	background-color: #F0B903;
-    border: #F0B903;
+	color: #3F96B0;
+	font-weight: 600;
+	background-color: white;
+	border-color: #3F96B0;
+	border-width: 2px;
+	text-align: center;
+	margin: 0 auto;
 }
 
+
 .btn-info:focus {
-    color: black;
-    background-color: #FFD700;
-    border-color: #FFD700;
-    outline: 0;
+	color: #3F96B0;
+	font-weight: 600;
+	background-color: white;
+	border-color: #3F96B0;
+	border-width: 2px;
+	text-align: center;
+	margin: 0 auto;
 }
 
 .modal-content{
@@ -52,9 +64,19 @@ body{
 	font-size: 12px;
 }
 
+.checkbox{
+	margin: 0;
+	padding: 0;
+}
 
-/*.left-part{	
-	border: 1px solid red !important;	
-}*/
+.agregar-reporte{
+	width: 25%;
+}
+
+
+.left-part{	
+	/*border: 1px solid red !important;*/
+	padding-top: 10px;	
+}
 
 
