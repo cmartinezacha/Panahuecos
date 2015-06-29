@@ -31,8 +31,8 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 .navbar {
-  background-color: #FFD700;
-  border-color: #FFD700;
+  background-color:#FFD700;
+  border-color:transparent;
 }
 
 .container a{
