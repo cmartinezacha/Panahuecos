@@ -3,6 +3,7 @@
 from flask import Flask, request, session, g, redirect, url_for, \
                   abort, render_template, flash
 import utils
+
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 
@@ -17,6 +18,11 @@ heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 import models
+
+@app.template_filter('datetime')
+def datetime_filter(date_time):
+    temp = date_time.strftime('%b %-d - %-I:%M%p').split(" ")
+    return " ".join([utils.MES_INGLES_ESP[temp[0]]]+temp[1:])
 
 @app.route('/')
 def today_news():

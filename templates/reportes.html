@@ -17,7 +17,7 @@
 		<div class="col-md-3 left-part">
 			<div class="container form">
 			  <!-- Trigger the modal with a button -->
-			  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar Reporte</button>
+			  <button type="button" class="btn btn-info btn-lg agregar-reporte" data-toggle="modal" data-target="#myModal">Agregar Reporte</button>
 
 			  <!-- Modal -->
 			  <div class="modal fade" id="myModal" role="dialog">
@@ -256,15 +256,15 @@
 			          Ver más
 			        	</a>
 			      	</h5>
-			      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"></div>
-			      	<div class="panel-body">
-			      		{{reporte.details}}
+			      	<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">{{reporte.details}}
+			      		<div class="datos">
+							<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
+						</div>
 			      	</div>
+			      		
 			    </div>
 		  
-				<div class="datos">
-					<h6>fecha y likes de reportes({{reporte.likes}})</h6>
-				</div>
+				
 			{% endfor %}
 		</div>
 		
