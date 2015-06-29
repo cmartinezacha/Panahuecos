@@ -64,6 +64,6 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 #tipomedios>li>a:hover{
-    background-color:grey;
+    background-color:#2E2E2E;
     color:white;
 }
