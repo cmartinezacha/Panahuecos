@@ -256,15 +256,15 @@
 			          Ver más
 			        	</a>
 			      	</h5>
-			      	<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"></div>
-			      	<div class="panel-body">
-			      		{{reporte.details}}
+			      	<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">{{reporte.details}}
+			      		<div class="datos">
+							<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
+						</div>
 			      	</div>
+			      		
 			    </div>
 		  
-				<div class="datos">
-					<h6>fecha y likes de reportes({{reporte.likes}})</h6>
-				</div>
+				
 			{% endfor %}
 		</div>
 		
