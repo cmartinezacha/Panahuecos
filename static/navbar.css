@@ -7,6 +7,7 @@
     top:47px;
     left:0;
     background-color:rgba(69, 69, 69, 0.95);
+    /*background-color:#3F96B0;*/
 }
 nav.content span,nav.content ul,nav.content li{
     display:inline-block;
@@ -51,7 +52,7 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 #tipomedios>.active>a{
-  background-color:black;
+  background-color:grey;
   font-weight:bold;
   font-size:13px;
   color:white;
@@ -67,3 +68,7 @@ nav.content span,nav.content ul,nav.content li{
     background-color:#2E2E2E;
     color:white;
 }
+
+/*.container-fluid{
+    margin-left: 3em;
+}*/
