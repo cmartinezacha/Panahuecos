@@ -1,6 +1,7 @@
 #coding=utf-8
 from app import db
 import time
+from datetime import datetime
 
 class News(db.Model):
     __tablename__ = "news"
@@ -34,16 +35,19 @@ class Reportes(db.Model):
     state = db.Column(db.String(120))
     email = db.Column(db.String(120))
 
-    def __init__(self, email, date, likes, problema, area, localizacion_breve, details, image, state):
-        self.email = email
-        self.date = date
+    def __init__(self, **kwargs):
+        self.email = kwargs['email']
+        self.date = datetime.now()
         self.likes = 1
-        self.problema = problema
-        self.area = area
-        self.localizacion_breve = localizacion_breve
-        self.details = details
+        self.problema = kwargs['problema']
+        self.area = kwargs['area']
+        self.localizacion_breve = kwargs['localizacion_breve']
+        self.details = kwargs['details']
         self.state = "Iniciado"
 
+def get_all_reportes():
+    reportes_query = db.session.query(Reportes)
+    return reportes_query.all()
 
 def get_reportes(problemas, estados, areas):
     reportes_cur = db.session.query(Reportes).filter(Reportes.problema in problemas,
