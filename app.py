@@ -2,7 +2,6 @@
 ###imports
 from flask import Flask, request, session, g, redirect, url_for, \
                   abort, render_template, flash
-import models
 import utils
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
@@ -16,6 +15,8 @@ app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 heroku = Heroku(app)
 db = SQLAlchemy(app)
+
+import models
 
 @app.route('/')
 def today_news():
@@ -65,13 +66,15 @@ def show_news(fecha_raw):
 @app.route('/reportes', methods=['GET', 'POST'])
 def show_reportes():
     if request.method == 'POST':
-        reporte = models.Reportes(request)
-        db.session.add(new)
+        form = request.form
+        reporte = models.Reportes(email=form['email'], problema=form['problema'], area=form['area'], 
+                                  localizacion_breve=form['localizacion'], details=form['details'])
+        db.session.add(reporte)
         db.session.commit()
     else:
         checkboxes = "todos"
 
-    return render_template('reportes.html')
+    return render_template('reportes.html', reportes=models.get_all_reportes())
 
 
 @app.errorhandler(404)
