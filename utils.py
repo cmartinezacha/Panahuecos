@@ -20,10 +20,6 @@ def translate_day(fecha_raw):
     '''Transforma un fecha en formato dd-mm-yyyy a 
     "Dia # de Mes de Año"
     '''
-    
-
-    
-
     fecha_entera_ingles = date(day=int(fecha_raw[0:2]), month=int(fecha_raw[3:5]), year=int(fecha_raw[6:])).strftime('%A %d %b %Y').split(' ', 3)
     fecha_entera_esp = DIA_INGLES_ESP[fecha_entera_ingles[0]] + ' '+ \
                            fecha_entera_ingles[1] + ' de '+ \
