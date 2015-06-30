@@ -1,10 +1,23 @@
-/*affects all*/
+/*
+  ========================================
+ Afecta todo
+  ========================================
+*/
 body{
 	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 }
-/**{
-	border: 1px solid red !important;
-}*/
+
+
+/*
+  ========================================
+ toda la columna izquierda
+  ========================================
+*/
+
+.left-part{	
+	/*border: 1px solid red !important;*/
+	padding-top: 10px;	
+}
 
 .btn-info,.btn-info:hover,.btn-info:focus {
 	font-size: 14px;
@@ -15,8 +28,15 @@ body{
 	border-width: 2px;
 	text-align: center;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 9px;
 }
+
+
+/*
+  ========================================
+ Pop-up form
+  ========================================
+*/
 
 .modal-content{
 	border-color: rgba(248, 210, 96, 1);
@@ -33,34 +53,9 @@ body{
 	text-align: left;
 }
 
-.filtros{
-	margin-left: 3em;
-	text-align: left;
-	font-size: 11px;
-}
-
-.filtro-ind{
-	font-size: 12px;
-}
-
-.checkbox{
-	margin: 0;
-	padding: 0;
-}
-
-input[type=checkbox]:checked ~ div {
-   background: red;
-}
-
 .agregar-reporte{
 	width: 12%;
 }
-
-.left-part{	
-	/*border: 1px solid red !important;*/
-	padding-top: 10px;	
-}
-
 
 #nuevoreporte{
 	border-color:#3F96B0;
@@ -68,18 +63,89 @@ input[type=checkbox]:checked ~ div {
 	color:white;
 }
 
+/*
+  ========================================
+ Filtros
+  ========================================
+*/
+
+.filtros{
+	margin-left: 3em;
+	text-align: left;
+	font-size: 11px;
+	padding-top: 0;
+}
+
+.filtro-ind{
+	font-size: 12px;
+	margin: 1px;
+	font-weight: 500;
+	padding-top: 1em;
+	border-top-color: #e5e5e5 ;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.problema{
+	border-bottom-color: #e5e5e5;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+.checkbox{
+	margin: 0;
+	padding: 0;
+}
+
+#filtro{
+	margin-left: 5em;
+}
+
+.agregar-reporte{
+	width: 9.5%;
+}
+
+/*
+  ========================================
+ Botones
+  ========================================
+*/
+
+.btn-info,.btn-info:hover,.btn-info:focus {
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	background-color: #3F96B0;
+	border-color: #3F96B0;
+	border-width: 2px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+/*
+  ========================================
+ Todo el centro
+  ========================================
+*/
+
+
+.entries{
+	margin-top: 2em;
+}
+
 .reporte{
 	border-right: 1px;
 	border-left: 1px;
 	border-top: 1px;
 	border-bottom: 1px;
-	border-color: #e5e5e5;
+	border-color: #e5e5e5 #e5e5e5 white #e5e5e5;
 	border-style: solid;
 	padding: 2px;
 }
 
 .reporte:hover{
-	border-style: solid solid double solid;
+	border-style: solid;
 	padding: 2px;
 	border-width: 1px;
 	border-color: #9E9E9E;

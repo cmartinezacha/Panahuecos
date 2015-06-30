@@ -5,8 +5,14 @@
 {% endblock %}
 
 {% block footer %}
-<li><a href="/">Noticias</a></li>
-<li class="active"><a href="/reportes">Reportes</a></li>
+<ul class="nav navbar-nav">
+	<li><a href="/">Noticias</a></li>
+	<li class="active"><a href="/reportes">Reportes</a></li>
+</ul>
+{% endblock %}
+
+{% block content_body %}
+<button type="button" class="btn btn-info btn-lg agregar-reporte pull-right" data-toggle="modal" data-target="#myModal" style="margin-top:4px; margin-right:2em">Agregar Reporte</button>
 {% endblock %}
 
 {% block content %} 
@@ -16,9 +22,6 @@
 
 		<div class="col-md-2 left-part">
 			<div class="container form">
-			  <!-- Trigger the modal with a button -->
-			  <button type="button" class="btn btn-info btn-lg agregar-reporte" data-toggle="modal" data-target="#myModal">Agregar Reporte</button>
-
 			  <!-- Modal -->
 			  <div class="modal fade" id="myModal" role="dialog">
 			    <div class="modal-dialog">

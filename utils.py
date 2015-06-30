@@ -1,6 +1,7 @@
 #coding=utf-8
 from datetime import date
 from datetime import datetime
+import pytz
 from hashlib import sha256
 
 USERNAME = 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6'
@@ -34,7 +35,8 @@ def translate_day(fecha_raw):
 
 def get_today():
     '''Regresa la fecha de hoy en formato dd-mm-yyyy'''
-    today = date.today().isoformat().split("-") # regresa la fecha de hoy en formato [YYYY, MM, DD]
+    today=datetime.now(pytz.timezone('America/Panama'))
+    today = str(today)[0:10].split("-")
     today.reverse()
     return "-".join(today)
 
