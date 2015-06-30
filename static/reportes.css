@@ -9,6 +9,7 @@ body{
 .btn-info{
 	font-size: 14px;
 	font-weight: 600;
+	/*font-family: lucida;*/
 	color: #3F96B0;
 	background-color: white;
 	border-color: #3F96B0;
@@ -70,7 +71,7 @@ body{
 }
 
 .agregar-reporte{
-	width: 25%;
+	width: 15%;
 }
 
 
