@@ -12,8 +12,8 @@ MES_INGLES_ESP = {"Jan":"Enero", "Feb":"Febrero", "Mar":"Marzo", "Apr":"Abril", 
                           "Oct":"Octubre","Nov":"Noviembre","Dec":"Diciembre"}
 REGIONES = ['Panamá Oeste', 'Panamá Este', 'San Miguelito', 'Colón', 'Bocas del Toro',
             'Chiriquí', 'Veraguas', 'Coclé', 'Herrera', 'Los Santos', 'Darién', 'Ngobe Bugle']
-TIPOS_DE_PROBLEMAS = ['Hueco', 'Cajones Pluviales', 'Alcantarilla', 'Puente', 'Otro']
-
+PROBLEMAS = ['Hueco', 'Cajones Pluviales', 'Alcantarilla', 'Puente', 'Otro']
+ESTADOS = ['Completo', 'En proceso', 'En inspección', 'Vencido', 'Iniciado']
 
 
 def fecha_valida(fecha_raw):
