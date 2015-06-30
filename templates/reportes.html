@@ -101,6 +101,7 @@
 			</div>
 
 			<form method= "POST">
+			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
 			<div class="filtros">
 				<section class="estado">
 					<h4 class="filtro-ind">Estado:</h4>
@@ -127,7 +128,7 @@
 				</section>
 
 				<section class="tipo-de-dano">
-					<h4 class="filtro-ind">Tipo de daño:</h4>
+					<h4 class="filtro-ind problema">Tipo de daño:</h4>
 
 					{% for problema in problemas %}
 			               
@@ -140,7 +141,7 @@
 					{% endfor %}
 				</section>
 			</div>
-			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
+			
 			</form>
 		</div>
 

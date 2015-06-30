@@ -99,10 +99,15 @@ body{
 
 #filtro{
 	margin-left: 5em;
+	width: 50%;
+	margin-bottom: 1em;
+	margin-top: 0;
+	padding: 2px;
 }
 
 .agregar-reporte{
 	width: 9.5%;
+
 }
 
 /*
