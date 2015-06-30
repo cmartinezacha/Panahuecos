@@ -6,38 +6,16 @@ body{
 	border: 1px solid red !important;
 }*/
 
-.btn-info{
+.btn-info,.btn-info:hover,.btn-info:focus {
 	font-size: 14px;
 	font-weight: 600;
-	/*font-family: lucida;*/
-	color: #3F96B0;
-	background-color: white;
+	color: white;
+	background-color: #3F96B0;
 	border-color: #3F96B0;
 	border-width: 2px;
 	text-align: center;
 	margin: 0 auto;
 	padding: 10px;
-}
-
-.btn-info:hover{
-	color: #3F96B0;
-	font-weight: 600;
-	background-color: white;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-
-.btn-info:focus {
-	color: #3F96B0;
-	font-weight: 600;
-	background-color: white;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
 }
 
 .modal-content{
@@ -71,7 +49,7 @@ body{
 }
 
 .agregar-reporte{
-	width: 15%;
+	width: 12%;
 }
 
 
@@ -80,4 +58,8 @@ body{
 	padding-top: 10px;	
 }
 
-
+#nuevoreporte{
+	border-color:#3F96B0;
+	background-color:#3F96B0;
+	color:white;
+}
