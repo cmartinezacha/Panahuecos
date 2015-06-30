@@ -1,22 +1,29 @@
-/*affects all*/
+/*
+  ========================================
+ Afecta todo
+  ========================================
+*/
 body{
 	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 }
-/**{
-	border: 1px solid red !important;
-}*/
 
-.btn-info,.btn-info:hover,.btn-info:focus {
-	font-size: 14px;
-	font-weight: 600;
-	color: white;
-	background-color: #3F96B0;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
-	padding: 10px;
+/*
+  ========================================
+ toda la columna izquierda
+  ========================================
+*/
+
+.left-part{	
+	/*border: 1px solid red !important;*/
+	padding-top: 10px;	
 }
+
+
+/*
+  ========================================
+ Pop-up form
+  ========================================
+*/
 
 .modal-content{
 	border-color: rgba(248, 210, 96, 1);
@@ -33,6 +40,22 @@ body{
 	text-align: left;
 }
 
+.agregar-reporte{
+	width: 12%;
+}
+
+#nuevoreporte{
+	border-color:#3F96B0;
+	background-color:#3F96B0;
+	color:white;
+}
+
+/*
+  ========================================
+ Filtros
+  ========================================
+*/
+
 .filtros{
 	margin-left: 3em;
 	text-align: left;
@@ -48,23 +71,40 @@ body{
 .checkbox{
 	margin: 0;
 	padding: 0;
-
 }
 
-.agregar-reporte{
-	width: 12%;
+.estado{
+	border-bottom-color: red;
+	border-bottom-width: 2px;
 }
 
-.left-part{	
-	/*border: 1px solid red !important;*/
-	padding-top: 10px;	
+/*
+  ========================================
+ Botones
+  ========================================
+*/
+
+.btn-info,.btn-info:hover,.btn-info:focus {
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	background-color: #3F96B0;
+	border-color: #3F96B0;
+	border-width: 2px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
 }
 
+/*
+  ========================================
+ Todo el centro
+  ========================================
+*/
 
-#nuevoreporte{
-	border-color:#3F96B0;
-	background-color:#3F96B0;
-	color:white;
+
+.entries{
+	margin-top: 2em;
 }
 
 .reporte{
@@ -82,8 +122,4 @@ body{
 	padding: 2px;
 	border-width: 1px;
 	border-color: #9E9E9E;
-}
-
-.entries{
-	margin-top: 2em;
 }
