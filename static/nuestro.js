@@ -19,12 +19,12 @@ $(function($){
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 });
 
-// $(function () {
-// 	$("#fecha").datepicker({
-// 		inline : true,
-// 		onSelect : function(date){ 
-// 			window.location.href ='/'+date  
-// 		}
-// 	});
+$(function () {
+	$("#fecha").datepicker({
+		inline : true,
+		onSelect : function(date){ 
+			window.location.href ='/'+date  
+		}
+	});
 
-// });
+});
