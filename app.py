@@ -80,7 +80,8 @@ def show_reportes():
     else:
         checkboxes = "todos"
 
-    return render_template('reportes.html', reportes=models.get_all_reportes())
+    return render_template('reportes.html', reportes=models.get_all_reportes(), regiones=utils.REGIONES,
+                                            problemas=utils.TIPOS_DE_PROBLEMAS)
 
 
 @app.errorhandler(404)

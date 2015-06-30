@@ -43,9 +43,9 @@
 			                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
 			                <div class="col-sm-4">          
 			                  <select name="problema">
-			                    <option>Hueco</option>
-			                    <option>Puente</option>
-			                    <option>Alcantarilla</option>
+			                  	{% for problema in problemas %}
+			                    <option>{{problema}}</option>
+			                    {% endfor %}
 			                 </select>
 			                </div>
 			              </div>
@@ -54,17 +54,9 @@
 			                <label class="control-label col-sm-2" for="pwd">Región:</label>
 			                <div class="col-sm-4">          
 			                  <select name="area">
-			                    <option>Panamá Oeste</option>
-			                    <option>Panamá Este</option>
-			                    <option>San Miguelito</option>
-			                    <option>Colón</option>
-			                    <option>Bocas del Toro</option>
-			                    <option>Chiriquí</option>
-			                    <option>Veraguas</option>
-			                    <option>Herrera</option>
-			                    <option>Los Santos</option>
-			                    <option>Darién</option>
-			                    <option>Ngobe Bugle</option>
+			                  	{% for region in regiones %}
+			                    <option>{{region.decode('utf8')}}</option>
+			                    {% endfor %}
 			                 </select>
 			                </div>
 			              </div>
@@ -136,112 +128,28 @@
 
 				<section class="region">
 					<h4 class="filtro-ind">Región:</h4>
+					{% for region in regiones %}
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
-					    Panamá Oeste
+					    <input type="checkbox" value="{{region.decode('utf8')}}">
+					    {{region.decode('utf8')}}
 					  </label>
 					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Panamá Este
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    San Miguelito
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Colón
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    Bocas del Toro
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Chiriquí
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    Veraguas
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Coclé
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    Herrera
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Los Santos
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    Darién
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Ngobe Bugle
-					  </label>
-					</div>
+					{% endfor %}
 				</section>
 
 				<section class="tipo-de-dano">
 					<h4 class="filtro-ind">Tipo de daño:</h4>
+
+					{% for problema in problemas %}
+			               
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
-					    Cajones Pluviales
+					    <input type="checkbox" value="{{problema}}">
+					    {{problema}}
 					  </label>
 					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Limpieza
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    Mantenimiento de Camino
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					     Mantenimiento de Puente
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" value="">
-					    Otras Obras
-					  </label>
-					</div>
+					{% endfor %}
 				</section>
 			</div>
 		</div>
