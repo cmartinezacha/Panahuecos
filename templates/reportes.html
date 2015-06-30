@@ -102,25 +102,25 @@
 					<h4 class="filtro-ind">Estado:</h4>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox" value="" checked>
 					    Completo
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox" value="" checked>
 					     En proceso
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox" value="" checked>
 					    En inspección
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox" value="" checked>
 					     Vencido
 					  </label>
 					</div>
@@ -131,7 +131,7 @@
 					{% for region in regiones %}
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="{{region.decode('utf8')}}">
+					    <input type="checkbox" value="{{region.decode('utf8')}}" checked>
 					    {{region.decode('utf8')}}
 					  </label>
 					</div>
@@ -145,7 +145,7 @@
 			               
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="{{problema}}">
+					    <input type="checkbox" value="{{problema}}" checked>
 					    {{problema}}
 					  </label>
 					</div>
