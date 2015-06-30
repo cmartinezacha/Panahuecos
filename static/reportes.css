@@ -52,14 +52,31 @@ body{
 	width: 12%;
 }
 
-
 .left-part{	
 	/*border: 1px solid red !important;*/
 	padding-top: 10px;	
 }
 
+
 #nuevoreporte{
 	border-color:#3F96B0;
 	background-color:#3F96B0;
 	color:white;
+}
+
+.reporte{
+	border-right: 1px;
+	border-left: 1px;
+	border-top: 1px;
+	border-bottom: 1px;
+	border-color: #e5e5e5;
+	border-style: solid;
+	padding: 2px;
+}
+
+.reporte:hover{
+	border-style: solid solid double solid;
+	padding: 2px;
+	border-width: 1px;
+	border-color: #9E9E9E;
 }
