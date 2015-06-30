@@ -56,7 +56,7 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 #tipomedios>.active>a{
-  background-color:#bfbebe;
+  background-color:#DFDFDF;
   font-weight:bold;
   font-size:13px;
   color:black;
@@ -69,7 +69,7 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 #tipomedios>li>a:hover{
-    background-color:#8a8c8d;
+    background-color:#D0D0D0;
     color:black;
 }
 
