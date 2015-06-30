@@ -107,7 +107,7 @@
 					{% for estado in estados %}
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="estado" value="{{estado.decode('utf8')}}" {% if estado.decode('utf8') in estados_checkiados %} checked {% endif%}>
+					    <input type="checkbox" name="estado" value="{{estado.decode('utf8')}}" {% if estado.decode('utf8') in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
 					    {{estado.decode('utf8')}}
 					  </label>
 					</div>
@@ -119,7 +119,7 @@
 					{% for region in regiones %}
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" {% if region.decode('utf8') in regiones_checkiadas %} checked{% endif%}>
+					    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" {% if region.decode('utf8') in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
 					    {{region.decode('utf8')}}
 					  </label>
 					</div>
@@ -133,7 +133,7 @@
 			               
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema.decode('utf8') in problemas_checkiados %} checked{% endif%}>
+					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema.decode('utf8') in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
 					    {{problema}}
 					  </label>
 					</div>
