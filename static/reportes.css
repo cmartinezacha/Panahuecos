@@ -41,15 +41,14 @@ body{
 
 .filtro-ind{
 	font-size: 12px;
+	margin: 1px;
+	font-weight: 500;
 }
 
 .checkbox{
 	margin: 0;
 	padding: 0;
-}
 
-input[type=checkbox]:checked ~ div {
-   background: red;
 }
 
 .agregar-reporte{
@@ -73,14 +72,18 @@ input[type=checkbox]:checked ~ div {
 	border-left: 1px;
 	border-top: 1px;
 	border-bottom: 1px;
-	border-color: #e5e5e5;
+	border-color: #e5e5e5 #e5e5e5 white #e5e5e5;
 	border-style: solid;
 	padding: 2px;
 }
 
 .reporte:hover{
-	border-style: solid solid double solid;
+	border-style: solid;
 	padding: 2px;
 	border-width: 1px;
 	border-color: #9E9E9E;
+}
+
+.entries{
+	margin-top: 2em;
 }
