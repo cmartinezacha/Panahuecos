@@ -73,12 +73,23 @@ body{
 	margin-left: 3em;
 	text-align: left;
 	font-size: 11px;
+	padding-top: 0;
 }
 
 .filtro-ind{
 	font-size: 12px;
 	margin: 1px;
 	font-weight: 500;
+	padding-top: 1em;
+	border-top-color: #e5e5e5 ;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.problema{
+	border-bottom-color: #e5e5e5;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 }
 
 .checkbox{
@@ -86,10 +97,9 @@ body{
 	padding: 0;
 }
 
-/*.estado{
-	border-bottom-color: red;
-	border-bottom-width: 2px;
-}*/
+#filtro{
+	margin-left: 5em;
+}
 
 .agregar-reporte{
 	width: 9.5%;
