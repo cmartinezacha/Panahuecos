@@ -53,5 +53,5 @@ def get_reportes(problemas, estados, areas):
     reportes_cur = db.session.query(Reportes).filter(Reportes.problema in problemas,
                                                      Reportes.state in estados,
                                                      Reportes.area in areas).order_by(Reportes.likes.desc())
-    return
+    return reportes_cur.all()
     
