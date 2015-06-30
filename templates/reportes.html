@@ -154,25 +154,24 @@
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6 entries">
 			{% for reporte in reportes %}
-				<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
-				<h4 class = "estado">{{reporte.state}}</h4>
-				<div class="panel panel-default">
-			      	<h5 class="panel-title">
-			        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-expanded="true" aria-controls="collapse_{{reporte.id}}">
-			          Ver más
-			        	</a>
-			      	</h5>
-			      	<div id="collapse_{{reporte.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">{{reporte.details}}
-			      		<div class="datos">
-							<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
-						</div>
-			      	</div>
-			      		
-			    </div>
-		  
-				
+				<div class="reporte">
+					<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
+					<h4 class = "estado">{{reporte.state}}</h4>
+					<div class="panel panel-default">
+				      	<h5 class="panel-title">
+				        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-expanded="true" aria-controls="collapse_{{reporte.id}}">
+				          Ver más
+				        	</a>
+				      	</h5>
+				      	<div id="collapse_{{reporte.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">{{reporte.details}}
+				      		<div class="datos">
+								<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
+							</div>
+				      	</div>
+				    </div>
+			    </div>				
 			{% endfor %}
 		</div>
 		
