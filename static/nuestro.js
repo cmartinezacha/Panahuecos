@@ -19,31 +19,12 @@ $(function($){
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 });
 
-$(function () {
-	$("#fecha").datepicker({
-		inline : true,
-		onSelect : function(date){ 
-			window.location.href ='/'+date  
-		}
-	});
+// $(function () {
+// 	$("#fecha").datepicker({
+// 		inline : true,
+// 		onSelect : function(date){ 
+// 			window.location.href ='/'+date  
+// 		}
+// 	});
 
-});
-
-// $(function() {
-//    $('#nav li a').click(function() {
-//       $('#nav li').removeClass();
-//       $($(this).attr('href')).addClass('active');
-//    });
-// });
-
-// $(".navbar-nav li").on("click", function() {
-//    $(".navbar-nav li").removeClass("active");
-//    $(this).addClass("active");
-//  });
-// $('.navbar-nav li a').click(function(e) {
-//   var $this = $(this);
-//   if (!$this.hasClass('active')) {
-//     $this.addClass('active');
-//   }
-//   e.preventDefault();
 // });
