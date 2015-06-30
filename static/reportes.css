@@ -7,6 +7,7 @@ body{
 	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 }
 
+
 /*
   ========================================
  toda la columna izquierda
@@ -16,6 +17,18 @@ body{
 .left-part{	
 	/*border: 1px solid red !important;*/
 	padding-top: 10px;	
+}
+
+.btn-info,.btn-info:hover,.btn-info:focus {
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	background-color: #3F96B0;
+	border-color: #3F96B0;
+	border-width: 2px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 9px;
 }
 
 
@@ -73,9 +86,13 @@ body{
 	padding: 0;
 }
 
-.estado{
+/*.estado{
 	border-bottom-color: red;
 	border-bottom-width: 2px;
+}*/
+
+.agregar-reporte{
+	width: 9.5%;
 }
 
 /*
