@@ -50,8 +50,6 @@ def get_all_reportes():
     return reportes_query.all()
 
 def get_reportes(problemas, estados, areas):
-    reportes_cur = db.session.query(Reportes).filter(Reportes.problema in problemas,
-                                                     Reportes.state in estados,
-                                                     Reportes.area in areas).order_by(Reportes.likes.desc())
-    return
+    reportes_cur = db.session.query(Reportes).order_by(Reportes.likes.desc())
+    return [x for x in reportes_cur.all() if x.problema in problemas and x.state in estados]
     

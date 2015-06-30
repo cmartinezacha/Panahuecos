@@ -73,16 +73,24 @@ def show_news(fecha_raw):
 def show_reportes():
     if request.method == 'POST':
         form = request.form
-        reporte = models.Reportes(email=form['email'], problema=form['problema'], area=form['area'], 
-                                  localizacion_breve=form['localizacion'], details=form['details'])
-        db.session.add(reporte)
-        db.session.commit()
+        problemas = form.getlist('problema')
+        estados = form.getlist('estado')
+        regiones = form.getlist('region')
+        reportes = models.get_reportes(problemas,estados,regiones)
     else:
-        checkboxes = "todos"
+        reportes = models.get_all_reportes()
 
-    return render_template('reportes.html', reportes=models.get_all_reportes(), regiones=utils.REGIONES,
+    return render_template('reportes.html', reportes=reportes, regiones=utils.REGIONES,
                                             problemas=utils.TIPOS_DE_PROBLEMAS)
 
+@app.route('/reportes/agregar', methods=['POST'])
+def add_reporte():
+    form = request.form
+    reporte = models.Reportes(email=form['email'], problema=form['problema'], area=form['area'], 
+                              localizacion_breve=form['localizacion'], details=form['details'])
+    db.session.add(reporte)
+    db.session.commit()
+    return redirect(url_for('show_reportes'))
 
 @app.errorhandler(404)
 def page_not_found(e):
