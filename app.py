@@ -72,16 +72,21 @@ def show_news(fecha_raw):
 @app.route('/reportes', methods=['GET', 'POST'])
 def show_reportes():
     if request.method == 'POST':
-        form = request.form
-        problemas = form.getlist('problema')
-        estados = form.getlist('estado')
-        regiones = form.getlist('region')
-        reportes = models.get_reportes(problemas,estados,regiones)
+        problemas_checkiados = request.form.getlist('problema')
+        estados_checkiados = request.form.getlist('estado')
+        regiones_checkiadas = request.form.getlist('region')
+        reportes = models.get_reportes(problemas_checkiados, 
+                                       estados_checkiados, 
+                                       regiones_checkiadas)
     else:
+        problemas_checkiados = utils.PROBLEMAS
+        estados_checkiados = utils.ESTADOS
+        regiones_checkiadas = utils.REGIONES
         reportes = models.get_all_reportes()
 
-    return render_template('reportes.html', reportes=reportes, regiones=utils.REGIONES,
-                                            problemas=utils.TIPOS_DE_PROBLEMAS)
+    return render_template('reportes.html', reportes=reportes, regiones=utils.REGIONES, regiones_checkiadas=regiones_checkiadas,
+                                            problemas=utils.PROBLEMAS, problemas_checkiados=problemas_checkiados, 
+                                            estados=utils.ESTADOS, estados_checkiados=estados_checkiados)
 
 @app.route('/reportes/agregar', methods=['POST'])
 def add_reporte():

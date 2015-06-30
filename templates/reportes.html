@@ -101,39 +101,18 @@
 			</div>
 
 			<form method= "POST">
+			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
 			<div class="filtros">
 				<section class="estado">
 					<h4 class="filtro-ind">Estado:</h4>
+					{% for estado in estados %}
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="estado" value="Completo" checked>
-					    Completo
+					    <input type="checkbox" name="estado" value="{{estado.decode('utf8')}}" {% if estado.decode('utf8') in estados_checkiados %} checked {% endif%}>
+					    {{estado.decode('utf8')}}
 					  </label>
 					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="estado" value="En proceso" checked>
-					    En proceso
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="estado" value="En inspección" checked>
-					    En inspección
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="estado" value="Vencido" checked>
-					    Vencido
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="estado" value="Iniciado" checked>
-					    Iniciado
-					  </label>
-					</div>
+					{% endfor %}
 				</section>
 
 				<section class="region">
@@ -141,7 +120,7 @@
 					{% for region in regiones %}
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" checked>
+					    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" {% if region.decode('utf8') in regiones_checkiadas %} checked{% endif%}>
 					    {{region.decode('utf8')}}
 					  </label>
 					</div>
@@ -149,20 +128,20 @@
 				</section>
 
 				<section class="tipo-de-dano">
-					<h4 class="filtro-ind">Tipo de daño:</h4>
+					<h4 class="filtro-ind problema">Tipo de daño:</h4>
 
 					{% for problema in problemas %}
 			               
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="problema" value="{{problema}}" checked>
+					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema.decode('utf8') in problemas_checkiados %} checked{% endif%}>
 					    {{problema}}
 					  </label>
 					</div>
 					{% endfor %}
 				</section>
 			</div>
-			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
+			
 			</form>
 		</div>
 
