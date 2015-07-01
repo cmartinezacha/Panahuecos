@@ -31,8 +31,8 @@ body{
 	font-size: 14px;
 	font-weight: 600;
 	color: white;
-	background-color: #54B5D6;
-	border-color: #54B5D6;
+	background-color: rgb(47,150,232);
+	border-color: rgb(47,150,232);
 	border-width: 0;
 	text-align: center;
 	margin-right: 2em;
@@ -166,8 +166,8 @@ body{
 	font-size: 12px;
 	font-weight: 300;
 	color: white;
-	background-color: #54B5D6;
-	border-color: #54B5D6;
+	background-color: rgb(47,150,232);
+	border-color: rgb(47,150,232);
 	border-width: 0;
 	border-radius: 2px;
 	text-align: center;
