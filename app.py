@@ -3,13 +3,16 @@
 from flask import Flask, request, session, g, redirect, url_for, \
                   abort, render_template, flash
 import utils
-
+from werkzeug import secure_filename
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
+import os
+from flask import send_from_directory
 
 DEBUG = True
 SECRET_KEY = 'development key'
 SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+UPLOAD_FOLDER = 'static/images/'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -83,7 +86,8 @@ def show_reportes():
         estados_checkiados = utils.ESTADOS
         regiones_checkiadas = utils.REGIONES
         reportes = models.get_all_reportes()
-
+        for i in reportes:
+            print i.id
     return render_template('reportes.html', reportes=reportes, regiones=utils.REGIONES, regiones_checkiadas=regiones_checkiadas,
                                             problemas=utils.PROBLEMAS, problemas_checkiados=problemas_checkiados, 
                                             estados=utils.ESTADOS, estados_checkiados=estados_checkiados)
@@ -91,11 +95,24 @@ def show_reportes():
 @app.route('/reportes/agregar', methods=['POST'])
 def add_reporte():
     form = request.form
+    upload = request.files['file']
     reporte = models.Reportes(email=form['email'], problema=form['problema'], area=form['area'], 
                               localizacion_breve=form['localizacion'], details=form['details'])
     db.session.add(reporte)
+    db.session.flush()
+
+    filename = secure_filename(upload.filename)
+    ext = filename.rsplit('.', 1)[1]
+    reporte.image = str(reporte.id) + "." + ext
+    upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
     db.session.commit()
+    
     return redirect(url_for('show_reportes'))
+
+@app.route('/images/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'],
+                               filename)
 
 @app.errorhandler(404)
 def page_not_found(e):
