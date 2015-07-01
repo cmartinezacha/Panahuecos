@@ -36,15 +36,9 @@ body{
 	border-color: #3F96B0;
 	border-width: 2px;
 	text-align: center;
-	padding: 6px;
 	margin-right: 2em;
-	margin-top: 7px;
-	padding: 7px;
-}
-
-.btn{
-	display:inline-block;
-	width:11em;
+	margin-top: 9px;
+	padding: 5px;
 }
 
 .btn-info:hover{
@@ -80,7 +74,7 @@ body{
 }
 
 .agregar-reporte{
-	width: 9.5%;
+	width: 150px;
 }
 
 /*
@@ -165,7 +159,6 @@ body{
 .detalles{
 	margin: 1em;
 }
-
 
 .like,.like:focus,.like:hover{
 	font-size: 12px;
