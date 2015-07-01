@@ -4,7 +4,7 @@
   ========================================
 */
 body{
-	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -17,20 +17,33 @@ body{
 .left-part{	
 	/*border: 1px solid red !important;*/
 	padding-top: 10px;	
+	width: 180px;
 }
 
-.btn-info,.btn-info:hover,.btn-info:focus {
+/*
+  ========================================
+ Botones
+  ========================================
+*/
+
+.btn-info,.btn-info:focus{
+	margin: 0 auto;
 	font-size: 14px;
 	font-weight: 600;
 	color: white;
-	background-color: #3F96B0;
-	border-color: #3F96B0;
-	border-width: 2px;
+	background-color: #54B5D6;
+	border-color: #54B5D6;
+	border-width: 0;
 	text-align: center;
-	margin: 0 auto;
-	padding: 9px;
+	margin-right: 2em;
+	margin-top: 9px;
+	padding: 6px;
 }
 
+.btn-info:hover,.btn-info:focus{
+	background-color: #2E6C7E;
+	color:white;
+}
 
 /*
   ========================================
@@ -53,14 +66,15 @@ body{
 	text-align: left;
 }
 
-.agregar-reporte{
-	width: 12%;
-}
 
 #nuevoreporte{
 	border-color:#3F96B0;
 	background-color:#3F96B0;
 	color:white;
+}
+
+.agregar-reporte{
+	width: 150px;
 }
 
 /*
@@ -86,12 +100,6 @@ body{
 	border-top-width: 1px;
 }
 
-.problema{
-	border-bottom-color: #e5e5e5;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
-
 .checkbox{
 	margin: 0;
 	padding: 0;
@@ -105,28 +113,8 @@ body{
 	padding: 2px;
 }
 
-.agregar-reporte{
-	width: 9.5%;
 
-}
 
-/*
-  ========================================
- Botones
-  ========================================
-*/
-
-.btn-info,.btn-info:hover,.btn-info:focus {
-	font-size: 14px;
-	font-weight: 600;
-	color: white;
-	background-color: #3F96B0;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
-	padding: 10px;
-}
 
 /*
   ========================================
@@ -137,6 +125,7 @@ body{
 
 .entries{
 	margin-top: 2em;
+	margin-bottom: 3em;
 }
 
 .reporte{
@@ -149,9 +138,41 @@ body{
 	padding: 2px;
 }
 
+.reporte:last-child{
+	border-bottom: 1px;
+	border-color: #e5e5e5;
+	border-style: solid;
+}
+
 .reporte:hover{
 	border-style: solid;
 	padding: 2px;
 	border-width: 1px;
 	border-color: #9E9E9E;
+}
+
+.reporte-peque{
+	margin: 1em;
+    font-weight: 200;
+}
+
+.detalles{
+	margin: 1em;
+}
+
+.like,.like:focus{
+	font-size: 12px;
+	font-weight: 300;
+	color: white;
+	background-color: #54B5D6;
+	border-color: #54B5D6;
+	border-width: 0;
+	border-radius: 2px;
+	text-align: center;
+	margin: 0 auto;
+	width: 5em;
+}
+
+.like:hover{
+	background-color: #2E6C7E;
 }
