@@ -86,8 +86,6 @@ def show_reportes():
         estados_checkiados = utils.ESTADOS
         regiones_checkiadas = utils.REGIONES
         reportes = models.get_all_reportes()
-        for i in reportes:
-            print i.id
     return render_template('reportes.html', reportes=reportes, regiones=utils.REGIONES, regiones_checkiadas=regiones_checkiadas,
                                             problemas=utils.PROBLEMAS, problemas_checkiados=problemas_checkiados, 
                                             estados=utils.ESTADOS, estados_checkiados=estados_checkiados)
@@ -100,11 +98,12 @@ def add_reporte():
                               localizacion_breve=form['localizacion'], details=form['details'])
     db.session.add(reporte)
     db.session.flush()
-
-    filename = secure_filename(upload.filename)
-    ext = filename.rsplit('.', 1)[1]
-    reporte.image = str(reporte.id) + "." + ext
-    upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
+    print upload.filename
+    if upload.filename != "":
+        filename = secure_filename(upload.filename)
+        ext = filename.rsplit('.', 1)[1]
+        reporte.image = str(reporte.id) + "." + ext
+        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
     db.session.commit()
     
     return redirect(url_for('show_reportes'))
