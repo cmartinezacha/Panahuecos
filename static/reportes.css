@@ -20,29 +20,29 @@ body{
 	width: 180px;
 }
 
-
 /*
   ========================================
  Botones
   ========================================
 */
 
-.btn-info,.btn-info:hover,.btn-info:focus {
+.btn-info,.btn-info:focus{
 	margin: 0 auto;
 	font-size: 14px;
 	font-weight: 600;
 	color: white;
 	background-color: #3F96B0;
 	border-color: #3F96B0;
-	border-width: 2px;
+	border-width: 0;
 	text-align: center;
 	margin-right: 2em;
 	margin-top: 9px;
-	padding: 5px;
+	padding: 6px;
 }
 
-.btn-info:hover{
+.btn-info:hover,.btn-info:focus{
 	background-color: #2E6C7E;
+	color:white;
 }
 
 /*
@@ -160,7 +160,7 @@ body{
 	margin: 1em;
 }
 
-.like,.like:focus,.like:hover{
+.like,.like:focus{
 	font-size: 12px;
 	font-weight: 300;
 	color: white;
