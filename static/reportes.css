@@ -19,18 +19,6 @@ body{
 	padding-top: 10px;	
 }
 
-.btn-info,.btn-info:hover,.btn-info:focus {
-	/*font-size: 14px;*/
-	font-weight: 600;
-	color: white;
-	background-color: #3F96B0;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
-	padding: 9px;
-}
-
 
 /*
   ========================================
@@ -39,23 +27,28 @@ body{
 */
 
 .btn-info,.btn-info:hover,.btn-info:focus {
+	margin: 0 auto;
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 600;
 	color: white;
 	background-color: #3F96B0;
 	border-color: #3F96B0;
 	border-width: 2px;
 	text-align: center;
-	margin: 0 auto;
-	padding: 9px;
-
+	padding: 6px;
+	margin-right: 2em;
+	margin-top: 7px;
+	padding: 7px;
 }
+
 .btn{
 	display:inline-block;
-	/*width:11em;*/
+	width:11em;
 }
 
-
+.btn-info:hover{
+	background-color: #2E6C7E;
+}
 
 /*
   ========================================
@@ -78,14 +71,15 @@ body{
 	text-align: left;
 }
 
-.agregar-reporte{
-	width: 12%;
-}
 
 #nuevoreporte{
 	border-color:#3F96B0;
 	background-color:#3F96B0;
 	color:white;
+}
+
+.agregar-reporte{
+	width: 9.5%;
 }
 
 /*
@@ -124,34 +118,8 @@ body{
 	padding: 2px;
 }
 
-.agregar-reporte{
-	width: 9.5%;
 
 
-}
-
-/*
-  ========================================
- Botones
-  ========================================
-*/
-
-.btn-info,.btn-info:hover,.btn-info:focus {
-	font-size: 14px;
-	font-weight: 600;
-	color: white;
-	background-color: #3F96B0;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	padding: 6px;
-	margin-right: 2em;
-	margin-top: 7px;
-}
-.btn{
-	display:inline-block;
-	width:11em;
-}
 
 /*
   ========================================
