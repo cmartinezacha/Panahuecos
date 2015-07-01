@@ -4,7 +4,8 @@
   ========================================
 */
 body{
-	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+	/*font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";*/
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -86,12 +87,6 @@ body{
 	border-top-width: 1px;
 }
 
-.problema{
-	border-bottom-color: #e5e5e5;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
-
 .checkbox{
 	margin: 0;
 	padding: 0;
@@ -154,4 +149,12 @@ body{
 	padding: 2px;
 	border-width: 1px;
 	border-color: #9E9E9E;
+}
+
+.reporte-peque{
+	margin: 1em;
+}
+
+.collapse{
+	margin: 1em;
 }
