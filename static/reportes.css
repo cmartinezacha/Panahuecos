@@ -120,7 +120,12 @@ body{
 	border-width: 2px;
 	text-align: center;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 9px;
+
+}
+.btn{
+	display:inline-block;
+	width:11em;
 }
 
 /*
