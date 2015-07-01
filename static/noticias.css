@@ -272,3 +272,20 @@ div.tabContent.hide {
 	color: #A8A8A8 ;
 
 }
+
+#news_container{
+	width:80%;
+}
+.error-page{
+	margin-left: 30px;
+}
+.area-de-texto{
+	margin: 1.5em;
+	margin-bottom: 2em;
+}
+.login{
+	margin: 1em;
+}
+.noticia_text{
+	margin-bottom: 2em;
+}

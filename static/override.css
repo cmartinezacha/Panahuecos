@@ -29,16 +29,25 @@ body{
 	text-align: left;
 }
 
+.noticia{
+	font: 300 20px/26px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .noticia_text {
 	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
 	margin-left: 60px;
+	margin-bottom: 2em;
+
 }
 
 .noticia_fecha {
 	margin-left: 40px;
+	font-size: 1.5em;
 }
 
-
+.noticia_nohay{
+	font-size: 1.3em;
+}
 .form{
 	margin: 10px;
 	margin-top: 20px;
@@ -75,10 +84,6 @@ body{
 .login{
 	margin: 1em;
 }
-.noticia_text{
-	margin-bottom: 2em;
-}
-
 
 #news_container{
 	width:80%;
