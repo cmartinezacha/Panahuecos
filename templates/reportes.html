@@ -20,7 +20,7 @@
 	<div class="container-fluid">
 	<div class="row">
 
-		<div class="col-md-2 left-part">
+		<div class="col-xs-2 left-part">
 			<div class="container form">
 			  <!-- Modal -->
 			  <div class="modal fade" id="myModal" role="dialog">
@@ -145,7 +145,7 @@
 			</form>
 		</div>
 
-		<div class="col-md-7 entries">
+		<div class="col-xs-9 entries">
 			{% for reporte in reportes %}
 				<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
 					<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>

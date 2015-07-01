@@ -17,6 +17,7 @@ body{
 .left-part{	
 	/*border: 1px solid red !important;*/
 	padding-top: 10px;	
+	width: 180px;
 }
 
 .btn-info,.btn-info:hover,.btn-info:focus {
