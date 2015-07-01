@@ -1,4 +1,6 @@
-
+body{
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .nav-subhead {
     z-index:9010;
     width: 100%;
@@ -46,9 +48,12 @@ nav.content span,nav.content ul,nav.content li{
 
 .navbar-nav>.active>a{
   background-color:#FCCC20;
-  font-weight:bold;
-  font-size:17px;
   color:black;
+}
+
+.navbar-nav>li>a:hover{
+    background-color:#EDBD11;
+    color:black;
 }
 
 #tipomedios>li>a{
@@ -57,18 +62,17 @@ nav.content span,nav.content ul,nav.content li{
 
 #tipomedios>.active>a{
   background-color:#DFDFDF;
-  font-weight:bold;
   font-size:13px;
   color:black;
 }
 
-.navbar-nav>li>a:hover{
-    background-color:#EDBD11;
-    color:black;
-    font-weight:bold;
-}
 
 #tipomedios>li>a:hover{
     background-color:#D0D0D0;
     color:black;
 }
+/*
+#tabs-top-navbar:focus{
+  color:red;
+}
+*/
