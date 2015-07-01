@@ -4,7 +4,6 @@
   ========================================
 */
 body{
-	/*font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";*/
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -21,7 +20,7 @@ body{
 }
 
 .btn-info,.btn-info:hover,.btn-info:focus {
-	font-size: 14px;
+	/*font-size: 14px;*/
 	font-weight: 600;
 	color: white;
 	background-color: #3F96B0;
@@ -31,6 +30,31 @@ body{
 	margin: 0 auto;
 	padding: 9px;
 }
+
+
+/*
+  ========================================
+ Botones
+  ========================================
+*/
+
+.btn-info,.btn-info:hover,.btn-info:focus {
+	font-size: 14px;
+	font-weight: 500;
+	color: white;
+	background-color: #3F96B0;
+	border-color: #3F96B0;
+	border-width: 2px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 9px;
+
+}
+.btn{
+	display:inline-block;
+	/*width:11em;*/
+}
+
 
 
 /*
@@ -102,30 +126,6 @@ body{
 
 .agregar-reporte{
 	width: 9.5%;
-
-}
-
-/*
-  ========================================
- Botones
-  ========================================
-*/
-
-.btn-info,.btn-info:hover,.btn-info:focus {
-	font-size: 14px;
-	font-weight: 600;
-	color: white;
-	background-color: #3F96B0;
-	border-color: #3F96B0;
-	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
-	padding: 9px;
-
-}
-.btn{
-	display:inline-block;
-	width:11em;
 }
 
 /*
@@ -158,8 +158,27 @@ body{
 
 .reporte-peque{
 	margin: 1em;
+    font-weight: 200;
 }
 
-.collapse{
+.detalles{
 	margin: 1em;
+}
+
+
+.like,.like:focus,.like:hover{
+	font-size: 12px;
+	font-weight: 300;
+	color: white;
+	background-color: #3F96B0;
+	border-color: #3F96B0;
+	border-width: 0;
+	border-radius: 2px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 2px;
+}
+
+.like:hover{
+	background-color: #2E6C7E;
 }
