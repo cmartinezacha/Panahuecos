@@ -35,7 +35,7 @@
 			        <div class="modal-body">
 
 			          <div class="container">
-			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar">
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data">
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
 			                <div class="col-sm-4">
@@ -153,6 +153,7 @@
 					<div id="collapse_{{reporte.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 				      	<div>
 				      		{{reporte.details}}
+				      		<img src="/images/{{reporte.id}}.jpg">
 				      		<div class="datos">
 								<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
 							</div>
@@ -161,12 +162,13 @@
 			    </div>				
 			{% endfor %}
 		</div>
-		
+
 		<div class="col-md-3">
 		</div>
 
 	</div>
 	</div>
+
 </body>
 {% endblock %}
 
