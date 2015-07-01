@@ -41,7 +41,8 @@ body{
 }
 
 .btn-info:hover,.btn-info:focus{
-	background-color: #2E6C7E;
+	/*background-color: #2E6C7E;*/
+	background-color: rgb(47,105,200);
 	color:white;
 }
 
@@ -65,7 +66,6 @@ body{
 .modal-title{
 	text-align: left;
 }
-
 
 #nuevoreporte{
 	border-color:#3F96B0;
@@ -112,9 +112,6 @@ body{
 	margin-top: 0;
 	padding: 2px;
 }
-
-
-
 
 /*
   ========================================
@@ -176,7 +173,8 @@ body{
 }
 
 .like:hover{
-	background-color: #2E6C7E;
+	/*background-color: #2E6C7E;*/
+	background-color: rgb(47,105,200);
 }
 
 
