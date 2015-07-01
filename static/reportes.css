@@ -124,9 +124,9 @@ body{
 	border-color: #3F96B0;
 	border-width: 2px;
 	text-align: center;
-	margin: 0 auto;
-	padding: 9px;
-
+	padding: 6px;
+	margin-right: 2em;
+	margin-top: 7px;
 }
 .btn{
 	display:inline-block;
