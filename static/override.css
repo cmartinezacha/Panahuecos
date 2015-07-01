@@ -1,0 +1,104 @@
+/*affects all*/
+body{
+	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+}
+
+.titulo{
+	float: left;
+	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
+	text-transform: uppercase;
+}
+
+.pull-right {
+    font-weight: 300px;
+    margin-right: 12px;
+}
+
+/*colores de leyenda*/
+.positiva{
+	color: #04B431;
+}
+.neutral{
+	color: #FCCC20;
+}
+.negativa{
+	color: red;
+}
+
+.tab-content{
+	text-align: left;
+}
+
+.noticia{
+	font: 300 20px/26px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.noticia_text {
+	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
+	margin-left: 60px;
+	margin-bottom: 2em;
+	padding-right: 2em;
+	padding-left: 2em;
+
+
+}
+
+.noticia_fecha {
+	margin-left: 40px;
+	font-size: 1.5em;
+	padding-top: 1em;
+	border-top-color: gray;
+	border-top-style: solid;
+	border-top-width:  1px;
+}
+
+.noticia_fecha:first-child{
+	border-width: 0;
+}
+
+.noticia_nohay{
+	font-size: 1.3em;
+}
+.form{
+	margin: 10px;
+	margin-top: 20px;
+}
+.parte-arriba{
+	margin: 30px;
+}
+
+.btn{
+	border-radius: 3px;
+	border-color: black;
+	border-width: 1px;
+	color: black;
+	cursor: pointer;
+	font-weight: 300;
+	letter-spacing: .5px;
+	margin: 0;
+	display: inline-block;
+	background: transparent;
+	margin-left: 1.5em;
+	font-size: 18px;
+}
+
+.btn:hover {
+	background: #fff;
+	color: #BDBDBD;
+	border-color: #BDBDBD;
+}
+
+.area-de-texto{
+	margin: 1.5em;
+	margin-bottom: 2em;
+}
+.login{
+	margin: 1em;
+}
+
+#news_container{
+	width:80%;
+}
+.error-page{
+	margin-left: 30px;
+}
