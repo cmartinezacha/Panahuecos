@@ -126,6 +126,8 @@ body{
 .entries{
 	margin-top: 2em;
 	margin-bottom: 3em;
+	width: 55em;
+	display: block!important;
 }
 
 .reporte{
@@ -176,4 +178,5 @@ body{
 .like:hover{
 	background-color: #2E6C7E;
 }
+
 

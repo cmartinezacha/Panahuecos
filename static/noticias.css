@@ -1,284 +1,82 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+/*affects all*/
+body{
+	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 }
 
-
- /*
-  ========================================
-  Custom styles
-  ========================================
-*/
-
-body {
-	background: white;
-	color: black;
-	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.titulo{
+	float: left;
+	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
+	text-transform: uppercase;
 }
 
-/*
-  ========================================
-  Navigation
-  ========================================
-*/
-
-.nav-wrapper{
-	background-color: #FCCC20;
-	height: 2em;
-	font-size: 24px;
-  	font-weight: 300;
-  	letter-spacing: .5px;
-  	text-transform: uppercase;
-  	margin-bottom: 20px;
+.pull-right {
+    font-weight: 300px;
+    margin-right: 12px;
 }
 
-.nav-list {
-	text-align: center;
-}
-
-.nav-list a:hover{
-	color: #a9b2b9;
-}
-
-a {
-	color: black;
-	text-decoration: none;
-}
-
-.nav-list li {
-	display: inline-block;
-	margin-bottom: 1em;
-	margin-right: 1.5em;
-}
-
-
-/*
-  ========================================
-  Leyenda
-  ========================================
-*/
-
-.leyenda{
-	text-align: right;
-	font-weight: 400;
-	margin-right: 20px;
-}
-
+/*colores de leyenda*/
 .positiva{
 	color: #04B431;
 }
-
 .neutral{
 	color: #FCCC20;
 }
-
 .negativa{
 	color: red;
 }
 
-
-/*
-  ========================================
-  Noticias 
-  ========================================
-*/
-
-
-.wrapper-noticias{
-	margin-left: 30px;
-	margin-right: 20px;
+.tab-content{
+	text-align: left;
 }
 
-.noticia {
-	margin-left: 35px;
-}
- /*
-  ========================================
-  Alvaros
-  ========================================
-*/
-
-
-ul#tabs { 
-	list-style-type: none; 
-	margin-top: 0; 
-	padding: 0.6em 0 0.3em 0; 
+.noticia{
+	font: 300 20px/26px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-ul#tabs li { 
-	display: inline; 
-}
-/*			      ul#tabs li a:hover { background-color: #f1f0ee; }*/
-ul#tabs li a.selected { 
-	font-weight: bold 
+.noticia_text {
+	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
+	margin-left: 60px;
+	margin-bottom: 2em;
+
 }
 
-div.tabContent { 
-	color:black 
+.noticia_fecha {
+	margin-left: 40px;
+	font-size: 1.5em;
 }
 
-div.tabContent.hide { 
-	display: none; 
+.noticia_nohay{
+	font-size: 1.3em;
 }
-
-/*
-  ========================================
-  Botones
-  ========================================
-*/
+.form{
+	margin: 10px;
+	margin-top: 20px;
+}
+.parte-arriba{
+	margin: 30px;
+}
 
 .btn{
-	border-radius: 5px;
-	cursor: pointer;
-	font-weight: 400;
-	letter-spacing: .5px;
-	text-transform: uppercase;
-	margin: 0 20px;
-	display: inline-block;
-	background: #fff;
-	color: #181818;
-	border: 1px solid #A8A8A8 ;
-	padding: 10px 30px;
-}
-
-.btn:hover{
-	color: #A8A8A8 
-}
-
-/*
-  ========================================
-  Agregar
-  ========================================
-*/
-
-.titulo{
-	background-color: #FFD700;
-	height: 30px;
-	font-size: 24px;
-  	letter-spacing: .5px;
- 	padding: 20px;
-  	font-weight: 300;
-  	text-transform: uppercase;
-}
-
-.fecha-completa{
-	float: left;
-	width: 10%;
-	height: 100px;
-
-}
-
-.parte-arriba{
-	height: 100px;
-	margin: 20px;
-}
-.wrapper{
-	display: inline-block;
-}
-
- .area-de-texto{
- 	margin: 0px 20px;
- }
-
- .description{
- 	font-weight: 400;
- }
-
-.wrapper {
-    overflow: hidden; /* will contain if #first is longer than #second */
-}
-.leyenda {
-    width: 300px;
-    float:right; 
-}
-
-.parte-de-arriba{
-    overflow: hidden; /* if you don't want #second to wrap below #first */
-}
-
-.fecha_de_noticias{
-	font-weight: bold;
-}
-
-.agregar{
-	margin-top: 10px;
-	margin-left: 20px;
-}
-/*
-  ========================================
- Login
-  ========================================
-*/
-
-.ingresar{
+	border-radius: 3px;
+	border-color: black;
+	border-width: 1px;
 	color: black;
-	margin-bottom: 10px;
+	cursor: pointer;
+	font-weight: 300;
+	letter-spacing: .5px;
+	margin: 0;
+	display: inline-block;
+	background: transparent;
+	margin-left: 1.5em;
+	font-size: 18px;
 }
 
-.passcode{
-	margin-bottom: 20px;
+.btn:hover {
+	background: #fff;
+	color: #BDBDBD;
+	border-color: #BDBDBD;
 }
 
-.cerrar-sesion{
-	color: #181818;
-	font-weight: 500;
-}
-
-.cerrar-sesion:hover{
-	color: #A8A8A8 ;
-
-}
-
-#news_container{
-	width:80%;
-}
-.error-page{
-	margin-left: 30px;
-}
 .area-de-texto{
 	margin: 1.5em;
 	margin-bottom: 2em;
@@ -286,6 +84,10 @@ div.tabContent.hide {
 .login{
 	margin: 1em;
 }
-.noticia_text{
-	margin-bottom: 2em;
+
+#news_container{
+	width:80%;
+}
+.error-page{
+	margin-left: 30px;
 }
