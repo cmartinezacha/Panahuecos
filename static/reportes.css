@@ -42,7 +42,7 @@ body{
 
 .btn-info:hover,.btn-info:focus{
 	/*background-color: #2E6C7E;*/
-	background-color: rgb(47,105,200);
+	background-color: #0392c1;
 	color:white;
 }
 
@@ -173,7 +173,7 @@ body{
 
 .like:hover{
 	/*background-color: #2E6C7E;*/
-	background-color: rgb(47,105,200);
+	background-color: #0392c1;
 }
 
 
