@@ -17,7 +17,7 @@ body{
 .left-part{	
 	/*border: 1px solid red !important;*/
 	padding-top: 10px;	
-	width: 180px;
+	/*width: 180px;*/
 }
 
 /*
@@ -122,7 +122,7 @@ body{
 .entries{
 	margin-top: 2em;
 	margin-bottom: 3em;
-	width: 55em;
+	/*width: 55em;*/
 	display: block!important;
 }
 
@@ -181,8 +181,13 @@ body{
 	display: inline-block;
 }
 
-
+.detalles-ubic{
+	font-size: 14px;
+	max-width: 400px;
+	margin-right: 2em;
+}
 .imagen{
 	max-width: 400px;
-	max-height: 400px;
+	max-height: 300px;
+	margin-left: 2em;
 }
