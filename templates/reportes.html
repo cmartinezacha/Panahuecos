@@ -159,14 +159,14 @@
 
 					<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse container" role="tabpanel" aria-labelledby="headingOne">
 						<div class="row grupito">
-							<div class="col-sm-4 detalles-ubic">
+							<div class="col-sm-6 detalles-ubic">
 					      		{{reporte.details}}
 							</div>
+							{% if reporte.image %}
 				      		<div class="col-sm-3 imagen-up">
-						      	{% if reporte.image %}
 						      	<img class="imagen" src="/images/{{reporte.id}}.jpg">
-						     	{% endif %}
 				      		</div>
+				      		{% endif %}
 				      	</div>
 			      		<div class="datos">
 			      			<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
