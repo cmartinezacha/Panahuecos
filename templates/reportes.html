@@ -33,7 +33,7 @@
 			        <div class="modal-body">
 
 			          <div class="container">
-			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data">
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="nuevo-reporte">
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
 			                <div class="col-sm-4">
@@ -72,7 +72,7 @@
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Detalles:</label>
 			                <div class="col-sm-4">
-			                  <input type="textarea" class="form-control" rows="10" placeholder="Escribir localización detallada" name="details">
+			                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="nuevo-reporte" style="resize:none"></textarea>
 			                </div>
 			              </div>
 
@@ -157,14 +157,18 @@
 
 					<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse container" role="tabpanel" aria-labelledby="headingOne">
 						<div class="row grupito">
-							<div class="col-sm-4 detalles-ubic">
+							{% if reporte.image %}
+							<div class="col-sm-6 detalles-ubic">
 					      		{{reporte.details}}
 							</div>
-				      		<div class="col-sm-3 imagen-up">
-						      	{% if reporte.image %}
+				      		<div class="col-sm-4 imagen-up">
 						      	<img class="imagen" src="/images/{{reporte.id}}.jpg">
-						     	{% endif %}
 				      		</div>
+				      		{% else %}
+							<div class="detalles-ubic-sin-img">
+					      		{{reporte.details}}
+							</div>
+				      		{% endif %}
 				      	</div>
 			      		<div class="datos">
 			      			<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
