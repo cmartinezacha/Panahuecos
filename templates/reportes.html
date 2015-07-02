@@ -35,7 +35,7 @@
 			        <div class="modal-body">
 
 			          <div class="container">
-			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data">
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="nuevo-reporte">
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
 			                <div class="col-sm-4">
@@ -74,7 +74,8 @@
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Detalles:</label>
 			                <div class="col-sm-4">
-			                  <input type="textarea" class="form-control" rows="10" placeholder="Escribir localización detallada" name="details">
+			                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="nuevo-reporte">
+			                  </textarea>
 			                </div>
 			              </div>
 
