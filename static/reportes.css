@@ -87,7 +87,6 @@ body{
 	margin-left: 3em;
 	text-align: left;
 	font-size: 11px;
-	padding-top: 0;
 }
 
 .filtro-ind{
@@ -106,8 +105,8 @@ body{
 }
 
 #filtro{
-	margin-left: 5em;
-	width: 50%;
+	margin-left: 1.6em;
+	width:9em;
 	margin-bottom: 1em;
 	margin-top: 0;
 	padding: 2px;
