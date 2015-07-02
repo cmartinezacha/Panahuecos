@@ -145,12 +145,12 @@ body{
 }
 
 .like,.like:focus{
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: 300;
-	color: white;
-	background-color: #289ECD;
+	color: #289ECD;
+	background-color: white;
 	border-color: #289ECD;
-	border-width: 0;
+	border-width: 1px;
 	border-radius: 2px;
 	text-align: center;
 	margin: 0 auto;
@@ -159,8 +159,11 @@ body{
 }
 
 .like:hover{
-	/*background-color: #2E6C7E;*/
-	background-color: #0392c1;
+	background-color: white;
+	border-color: #289ECD;
+	border-width: 2px;
+	color: #289ECD;
+	font-weight: 500;
 }
 
 .grupito{
