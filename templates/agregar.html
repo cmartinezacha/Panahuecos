@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<script src="static/links/niceedit" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+{% endblock %}
+
 {% block content %}
 
 		<form class="form" method="POST">
