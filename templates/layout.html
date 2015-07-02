@@ -38,7 +38,6 @@
     <body>
         <div class="navbar navbar-fixed-top" role="navigation"> <!-- navbar default es el problema -->
             <div class="container pull-left">
-              <!-- ------------------------------------------------------------- -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -48,11 +47,10 @@
                     </button>
                     <a class="navbar-brand" href="/">
                       <!-- <img src="http://i57.tinypic.com/rh0olh.gif" style="margin-top:-13px; max-height:50px"> -->
-                       <img src="http://i.imgur.com/JWSfMnZ.gif" style="margin-top:-17px; max-height:55px">
+                       <img src={{ url_for('static', filename = 'logo.gif')}} style="margin-top:-17px; max-height:55px">
                     </a>
 
                 </div>
-                <!-- ------------------------------------------------------------- -->
                 <div class="navbar-collapse collapse">
                     {% block footer %}{% endblock %}
                 </div>
