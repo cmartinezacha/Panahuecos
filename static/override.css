@@ -22,7 +22,6 @@ body{
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
 	background-color: transparent;
-	font-weight: bold;
 	color: black;
 }
 .nav-pills>li>a:hover{
@@ -157,17 +156,12 @@ body{
   border-radius: 0px;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-	font-size:21px;
 	color:black;
 }
 
 .navbar-default .navbar-nav>li>a {
 	font-size: 20px;
 	color:black;
-}
-
-.navbar-brand{
-	font-size: 20px;
 }
 
 #news_container{
