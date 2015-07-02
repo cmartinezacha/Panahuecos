@@ -182,12 +182,18 @@ body{
 }
 
 .detalles-ubic{
-	font-size: 14px;
-	max-width: 400px;
-	margin-right: 2em;
+	font-size: 18px;
+	letter-spacing: 1px;
+	max-width: 300px;
 }
+
+.detalles-ubic-sin-img{
+	font-size: 18px;
+	letter-spacing: 1px;
+	max-width: 530px;
+}
+
 .imagen{
-	max-width: 400px;
+	max-width: 230px;
 	max-height: 300px;
-	margin-left: 2em;
 }
