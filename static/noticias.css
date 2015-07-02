@@ -33,21 +33,20 @@ body{
 	font: 300 20px/26px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.noticia_text {
-	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
-	margin-left: 60px;
-	margin-bottom: 2em;
-	padding-right: 2em;
-	padding-left: 2em;
-}
-
 .noticia_fecha {
-	margin-left: 40px;
+	margin-left: 2em;
 	font-size: 1.5em;
-	padding-top: 1em;
 	border-top-color: gray;
 	border-top-style: solid;
-	border-top-width:  1px;
+	border-top-width: 1px;
+}
+
+.noticia_text {
+	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
+	margin-left: 3em;
+	margin-bottom: 2em;
+/*	padding-right: 2em;
+	padding-left: 2em;*/
 }
 
 .noticia_fecha:first-child{
@@ -57,10 +56,12 @@ body{
 .noticia_nohay{
 	font-size: 1.3em;
 }
+
 .form{
 	margin: 10px;
 	margin-top: 20px;
 }
+
 .parte-arriba{
 	margin: 30px;
 }
