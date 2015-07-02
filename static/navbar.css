@@ -29,6 +29,10 @@ nav.content span,nav.content ul,nav.content li{
     color:black;
 }
 
+#logo{ 
+  max-height:2.7em;
+  margin-top:-0.75em;
+}
 .fix {
     position:fixed;
 }
