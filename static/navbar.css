@@ -11,6 +11,7 @@ body{
     top:49px;
     left:0;
     background-color:#E9E9E9;
+    opacity: 0.95;
 }
 
 nav.content span,nav.content ul,nav.content li{
