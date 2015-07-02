@@ -1,16 +1,18 @@
 body{
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .nav-subhead {
     z-index:9010;
     width: 100%;
 }
+
 #nav_secondary.sticky {
     top:49px;
     left:0;
     background-color:#E9E9E9;
-    /*background-color:#3F96B0;*/
 }
+
 nav.content span,nav.content ul,nav.content li{
     display:inline-block;
 }
@@ -25,6 +27,7 @@ nav.content span,nav.content ul,nav.content li{
     padding:0 0.8rem;
     text-transform:uppercase;
 }
+
 .nav-subhead a:hover {
     color:black;
 }
@@ -33,13 +36,13 @@ nav.content span,nav.content ul,nav.content li{
   max-height:2.7em;
   margin-top:-0.75em;
 }
+
 .fix {
     position:fixed;
 }
 
 .navbar {
   background-color:#FFD700;
-/*  background-color: rgb(47,150,232);*/
   border-color:transparent;
 }
 
@@ -70,7 +73,6 @@ nav.content span,nav.content ul,nav.content li{
   font-size:13px;
   color:black;
 }
-
 
 #tipomedios>li>a:hover{
     background-color:#D0D0D0;

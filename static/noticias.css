@@ -14,7 +14,6 @@ body{
     margin-right: 12px;
 }
 
-/*colores de leyenda*/
 .positiva{
 	color: #04B431;
 }
@@ -34,17 +33,18 @@ body{
 }
 
 .noticia_fecha {
-	margin-left: 2em;
+	margin-left: 1em;
 	font-size: 1.5em;
 	padding-top: 1em;
 	border-top-color: gray;
 	border-top-style: solid;
 	border-top-width: 1px;
+	border-color: gray;
 }
 
 .noticia_text {
 	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
-	margin-left: 3em;
+	margin-left: 2.5em;
 	margin-bottom: 2em;
 }
 

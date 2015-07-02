@@ -1,23 +1,13 @@
-/*
-  ========================================
- Afecta todo
-  ========================================
-*/
 body{
 	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-
-/*
-  ========================================
-Columnas
-  ========================================
-*/
 .left-half{ 
 	width: 12em; 
 	float: left; 
 	padding-right: 5px;
 }
+
 .right-half{ 
 	width: 40em; 
 	float: left; 
@@ -28,12 +18,6 @@ Columnas
 	width:150em; 
 	margin: 0 auto;
 } 
-
-/*
-  ========================================
- Botones
-  ========================================
-*/
 
 .btn-info,.btn-info:focus{
 	margin: 0 auto;
@@ -54,12 +38,6 @@ Columnas
 	background-color: #0392c1;
 	color:white;
 }
-
-/*
-  ========================================
- Pop-up form
-  ========================================
-*/
 
 .modal-content{
 	border-color: rgba(248, 210, 96, 1);
@@ -85,12 +63,6 @@ Columnas
 .agregar-reporte{
 	width: 150px;
 }
-
-/*
-  ========================================
- Filtros
-  ========================================
-*/
 
 .filtros{
 	margin-left: 3em;
@@ -119,14 +91,8 @@ Columnas
 	margin-bottom: 1em;
 	margin-top: 0;
 	padding: 2px;
+	font-weight: 400;
 }
-
-/*
-  ========================================
- Todo el centro
-  ========================================
-*/
-
 
 .entries{
 	margin-top: 2em;
@@ -206,7 +172,3 @@ Columnas
 	max-width: 230px;
 	max-height: 300px;
 }
-
-/*.container-fluid{
-	min-width: 10em;
-}*/
