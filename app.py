@@ -71,10 +71,11 @@ def translate_day(fecha_raw):
 
 
 def get_today():
-	'''Regresa la fecha de hoy en formato dd-mm-yyyy'''
-	today = date.today().isoformat().split("-") # regresa la fecha de hoy en formato [YYYY, MM, DD]
-	today.reverse()
-	return "-".join(today)
+    '''Regresa la fecha de hoy en formato dd-mm-yyyy'''
+    today=datetime.now(pytz.timezone('America/Panama'))
+    today = str(today)[0:10].split("-")
+    today.reverse()
+    return "-".join(today)
 
 @app.route('/')
 def today_news():
