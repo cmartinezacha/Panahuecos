@@ -62,6 +62,7 @@ body{
 
 .agregar-reporte{
 	width: 150px;
+	font-weight: 400;
 }
 
 .filtros{
@@ -99,6 +100,7 @@ body{
 	margin-bottom: 3em;
 	width: 55em;
 	display: block!important;
+	font-weight: 200;
 }
 
 .reporte{
@@ -126,7 +128,15 @@ body{
 
 .reporte-peque{
 	margin: 1em;
-    font-weight: 200;
+}
+
+.titulo-de-reporte{
+	font-weight: 400;
+}
+
+.estado-displayed{
+	font-weight: 400;
+	font-size: 20px;
 }
 
 .detalles{
@@ -160,12 +170,15 @@ body{
 	font-size: 18px;
 	letter-spacing: 1px;
 	max-width: 300px;
+	margin-left: 0;
+	font-weight: 200;
 }
 
 .detalles-ubic-sin-img{
 	font-size: 18px;
 	letter-spacing: 1px;
 	max-width: 530px;
+	font-weight: 200;
 }
 
 .imagen{
