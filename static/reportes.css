@@ -31,8 +31,8 @@ body{
 	font-size: 14px;
 	font-weight: 600;
 	color: white;
-	background-color: rgb(47,150,232);
-	border-color: rgb(47,150,232);
+	background-color: #289ECD;
+	border-color: #289ECD;
 	border-width: 0;
 	text-align: center;
 	margin-right: 2em;
@@ -42,7 +42,7 @@ body{
 
 .btn-info:hover,.btn-info:focus{
 	/*background-color: #2E6C7E;*/
-	background-color: rgb(47,105,200);
+	background-color: #0392c1;
 	color:white;
 }
 
@@ -87,7 +87,6 @@ body{
 	margin-left: 3em;
 	text-align: left;
 	font-size: 11px;
-	padding-top: 0;
 }
 
 .filtro-ind{
@@ -106,8 +105,8 @@ body{
 }
 
 #filtro{
-	margin-left: 5em;
-	width: 50%;
+	margin-left: 1.6em;
+	width:9em;
 	margin-bottom: 1em;
 	margin-top: 0;
 	padding: 2px;
@@ -163,8 +162,8 @@ body{
 	font-size: 12px;
 	font-weight: 300;
 	color: white;
-	background-color: rgb(47,150,232);
-	border-color: rgb(47,150,232);
+	background-color: #289ECD;
+	border-color: #289ECD;
 	border-width: 0;
 	border-radius: 2px;
 	text-align: center;
@@ -174,7 +173,7 @@ body{
 
 .like:hover{
 	/*background-color: #2E6C7E;*/
-	background-color: rgb(47,105,200);
+	background-color: #0392c1;
 }
 
 /*.detalles{
