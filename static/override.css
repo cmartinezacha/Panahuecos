@@ -11,7 +11,7 @@ body{
 
 .titulo{
 	float: left;
-	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
+	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 	text-transform: uppercase;
 }
 
@@ -51,8 +51,8 @@ body{
 /*HASTA AQUI*/
 
 .noticia_text {
-	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
-	margin-left: 2.2em;
+	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+	margin-left: 60px;
 }
 
 .noticia_fecha {

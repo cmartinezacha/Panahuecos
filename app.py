@@ -21,6 +21,7 @@ USERNAME = 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6'
 PASSWORD = 'd1775cdbcf90d7864101da3f728d64ef357441361dc31db4d6d62cf3e34c3656'
 # SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 
+
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
@@ -44,10 +45,6 @@ class News(db.Model):
         self.text = text
         self.date = date
  
-### The closing() function allows us to keep a connection open for the duration 
-### of the with block.
-### Open_resource: opens a file from the resource location, and allows
-### you to read from it. 
 def fecha_valida(fecha_raw):
 	if len(fecha_raw) != 10 or len(fecha_raw.split("-")) != 3:
 		return False
@@ -107,14 +104,12 @@ def login():
             error = 'Clave invalida'
         else:
             session['logged_in'] = True
-            flash('You were logged in')
             return redirect(url_for('add_entry'))
     return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('You were logged out')
     return redirect(url_for('today_news'))
 	
 @app.route('/<fecha_raw>')
