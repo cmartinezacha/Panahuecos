@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block footer %}
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav" id="tabs-top-navbar">
 	<li><a href="/">Noticias</a></li>
 	<li class="active"><a href="/reportes">Reportes</a></li>
 </ul>
@@ -146,7 +146,7 @@
 			</form>
 		</div>
 
-		<div class="col-md-7 entries">
+		<div class="col-md-6 entries">
 			{% for reporte in reportes %}
 				<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
 					<div class="reporte-peque">
@@ -160,7 +160,7 @@
 
 					<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse container" role="tabpanel" aria-labelledby="headingOne">
 						<div class="row grupito">
-							<div class="col-sm-5 detalles-ubic">
+							<div class="col-sm-4 detalles-ubic">
 					      		{{reporte.details}}
 							</div>
 				      		<div class="col-sm-3 imagen-up">
