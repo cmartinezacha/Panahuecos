@@ -10,15 +10,24 @@ body{
 
 /*
   ========================================
- toda la columna izquierda
+Columnas
   ========================================
 */
-
-.left-part{	
-	/*border: 1px solid red !important;*/
-	padding-top: 10px;	
-	/*width: 180px;*/
+.left-half{ 
+	width: 12em; 
+	float: left; 
+	padding-right: 5px;
 }
+.right-half{ 
+	width: 40em; 
+	float: left; 
+	padding-left: 5px;
+}
+
+.centered{ 
+	width:150em; 
+	margin: 0 auto;
+} 
 
 /*
   ========================================
@@ -124,7 +133,7 @@ body{
 .entries{
 	margin-top: 2em;
 	margin-bottom: 3em;
-	/*width: 55em;*/
+	width: 55em;
 	display: block!important;
 	font-weight: 200;
 }
@@ -211,3 +220,7 @@ body{
 	max-width: 230px;
 	max-height: 300px;
 }
+
+/*.container-fluid{
+	min-width: 10em;
+}*/
