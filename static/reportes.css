@@ -169,6 +169,7 @@ body{
 	text-align: center;
 	margin: 0 auto;
 	width: 5em;
+	margin-top: 2px;
 }
 
 .like:hover{
@@ -176,4 +177,12 @@ body{
 	background-color: #0392c1;
 }
 
+.grupito{
+	display: inline-block;
+}
 
+
+.imagen{
+	max-width: 400px;
+	max-height: 400px;
+}

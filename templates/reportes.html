@@ -20,7 +20,7 @@
 	<div class="container-fluid">
 	<div class="row">
 
-		<div class="col-xs-2 left-part">
+		<div class="col-md-2 left-part">
 			<div class="container form">
 			  <!-- Modal -->
 			  <div class="modal fade" id="myModal" role="dialog">
@@ -145,7 +145,7 @@
 			</form>
 		</div>
 
-		<div class="col-xs-7 entries">
+		<div class="col-md-7 entries">
 			{% for reporte in reportes %}
 				<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
 					<div class="reporte-peque">
@@ -157,17 +157,21 @@
 						<h4 class = "estado">{{reporte.state}}</h4>
 					</div>
 
-					<div id="collapse_{{reporte.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-				      	<div class="detalles">
-				      		{{reporte.details}}
-				      		{% if reporte.image %}
-				      		<img src="/images/{{reporte.id}}.jpg" width="400px" height="400px">
-				      		{% endif %}
-				      		<div class="datos">
-								<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
+					<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse container" role="tabpanel" aria-labelledby="headingOne">
+						<div class="row grupito">
+							<div class="col-sm-5 detalles-ubic">
+					      		{{reporte.details}}
 							</div>
+				      		<div class="col-sm-3 imagen-up">
+						      	{% if reporte.image %}
+						      	<img class="imagen" src="/images/{{reporte.id}}.jpg">
+						     	{% endif %}
+				      		</div>
 				      	</div>
-				    </div>
+			      		<div class="datos">
+			      			<h6>{{reporte.date|datetime}} - {{reporte.likes}} likes</h6>
+			      		</div>
+			      	</div>
 			    </div>				
 			{% endfor %}
 		</div>
