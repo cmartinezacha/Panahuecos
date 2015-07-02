@@ -36,6 +36,7 @@ body{
 .noticia_fecha {
 	margin-left: 2em;
 	font-size: 1.5em;
+	padding-top: 1em;
 	border-top-color: gray;
 	border-top-style: solid;
 	border-top-width: 1px;
@@ -45,12 +46,11 @@ body{
 	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
 	margin-left: 3em;
 	margin-bottom: 2em;
-/*	padding-right: 2em;
-	padding-left: 2em;*/
 }
 
 .noticia_fecha:first-child{
 	border-width: 0;
+	padding: 0;
 }
 
 .noticia_nohay{
