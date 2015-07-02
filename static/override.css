@@ -15,20 +15,6 @@ body{
 	text-transform: uppercase;
 }
 
-.nav-pills a{
-	color:black;
-	font-size: 20px;
-	font-weight: 100;
-}
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
-	background-color: transparent;
-	color: black;
-}
-.nav-pills>li>a:hover{
-	background-color: transparent;
-	color:#BDBDBD;
-}
-
 .pull-right {
     font-weight: 300px;
     margin-right: 12px;
@@ -66,28 +52,13 @@ body{
 
 .noticia_text {
 	font: 300 16px/22px "Trebuchet MS", "Helvetica", "sans-serif";
-	margin-left: 60px;
+	margin-left: 2.2em;
 }
 
 .noticia_fecha {
-	margin-left: 40px;
+	margin-left: 0.75em;
 }
 
-.centered-pills {  
-    text-align: center
-}
-.centered-pills ul.nav-pills {
-    display: inline-block
-}
-.centered-pills li {
-    display: inline
-}
-.centered-pills a {
-    float: left
-}
-* html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
-    display: inline
-}
 /*LAYOUT*/
 .navbar-layout{
 	background-color: #FCCC20;
@@ -137,7 +108,6 @@ body{
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color:#FCCC20;
-  font-weight:bold
 }
 
 .navbar .navbar-nav {
