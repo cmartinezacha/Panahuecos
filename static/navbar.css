@@ -2,35 +2,8 @@ body{
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.nav-subhead {
-    z-index:9010;
-    width: 100%;
-}
-
-#nav_secondary.sticky {
-    top:49px;
-    left:0;
-    background-color:transparent;
-    opacity: 0.95;
-}
-
 nav.content span,nav.content ul,nav.content li{
     display:inline-block;
-}
-
-.nav-subhead a {
-    color:#fff;
-    font-size:13px;
-    font-size:1.3rem;
-    line-height:24px;
-    line-height:2.4rem;
-    padding:0 8px;
-    padding:0 0.8rem;
-    text-transform:uppercase;
-}
-
-.nav-subhead a:hover {
-    color:black;
 }
 
 #logo{ 
@@ -62,21 +35,6 @@ nav.content span,nav.content ul,nav.content li{
 
 .navbar-nav>li>a:hover{
     background-color:#EDBD11;
-    color:black;
-}
-
-#tipomedios>li>a{
-  color:black;
-}
-
-#tipomedios>.active>a{
-  background-color:#DFDFDF;
-  font-size:13px;
-  color:black;
-}
-
-#tipomedios>li>a:hover{
-    background-color:#D0D0D0;
     color:black;
 }
 
