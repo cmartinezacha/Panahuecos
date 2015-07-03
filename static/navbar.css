@@ -10,7 +10,7 @@ body{
 #nav_secondary.sticky {
     top:49px;
     left:0;
-    background-color:#E9E9E9;
+    background-color:transparent;
     opacity: 0.95;
 }
 
