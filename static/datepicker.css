@@ -57,15 +57,8 @@
 }
 
 .ui-datepicker thead {
-    background-color: #f7f7f7;
-    background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #f1f1f1 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#f1f1f1));
-    background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-    background-image: -o-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-    background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-    background-image: linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
-    border-bottom: 1px solid #bbb;
+    background-color: white;
+    border-bottom: none;
 }
 
 .ui-datepicker th {
@@ -79,15 +72,15 @@
 
 .ui-datepicker tbody td {
     padding: 0;
-    border-right: 1px solid #bbb;
+    border-right: none;
 }
 
 .ui-datepicker tbody td:last-child {
-    border-right: 0px;
+    border-right: none;
 }
 
 .ui-datepicker tbody tr {
-    border-bottom: 1px solid #bbb;
+    border-bottom: none;
 }
 .ui-datepicker tbody tr:last-child {
     border-bottom: 0px;
