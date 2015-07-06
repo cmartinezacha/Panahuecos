@@ -49,7 +49,7 @@ def add_entry():
 def login():
     error = None
     if request.method == 'POST':
-        valid, error = utils.valid_login(request.form['username'], request.form['password'])
+        valid, error = models.valid_login(request.form['username'], request.form['password'])
         if valid:
             session['logged_in'] = True
             return redirect(url_for('add_entry'))            
@@ -98,7 +98,6 @@ def add_reporte():
                               localizacion_breve=form['localizacion'], details=form['details'])
     db.session.add(reporte)
     db.session.flush()
-    print upload.filename
     if upload.filename != "":
         filename = secure_filename(upload.filename)
         ext = filename.rsplit('.', 1)[1]
@@ -106,6 +105,16 @@ def add_reporte():
         upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
     db.session.commit()
     
+    return redirect(url_for('show_reportes'))
+
+@app.route('/reportes/cambiar', methods=['POST'])
+def edit_reporte():
+    form = request.form
+    reporte = models.get_reporte_by_id(int(form['id']))
+    reporte.area = form['area']
+    reporte.state = form['estado']
+    reporte.localizacion_breve = form['localizacion']
+    reporte.details = form['details']
     return redirect(url_for('show_reportes'))
 
 @app.route('/images/<filename>')
