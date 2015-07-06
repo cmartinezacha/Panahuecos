@@ -40,7 +40,7 @@ nav.content span,nav.content ul,nav.content li{
   background-color:#FCCC20;
 }
 
-.navbar-default .navbar-toggle:hover{
+.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
   background-color:#EDBD11;
 }
 
