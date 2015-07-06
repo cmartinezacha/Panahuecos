@@ -9,55 +9,28 @@
 
 {% block content %}
 
-<br><br><br>
-
-<nav class="navbar navbar-fixed-top content nav-subhead fix sticky" id="nav_secondary">
-    <div class="container-fluid">
-
-        <ul class="nav navbar-nav" id="tipomedios">
-			<li class="active"><a href="#medios" data-toggle="tab" id="tipomedios">Medios</a></li>
-			<li><a href="#twitter" data-toggle="tab" id="tipomedios">Twitter</a></li>
-			<li><a href="#radio" data-toggle="tab" id="tipomedios">Radio</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-			<li style="color:white; margin-top:1em; margin-right:0.5em; color:black;">Fecha:</li>
-			<li><span><input type="text" id="fecha" value="{{ fecha_raw }}" size="11" style="margin-top:12px;margin-right:0.5em;"></span></li>
-        </ul>
-    </div>
-</nav>
-
 <div class="pull-right">
+    <ul class="nav navbar-nav navbar-right">
+		<li style="color:white; margin-top:1em; margin-right:0.5em; color:black;">Fecha:</li>
+		<li><span><input type="text" id="fecha" value="{{ fecha_raw }}" size="11" style="margin-top:12px;margin-right:1em;"></span></li>
+    </ul>
+    <br><br>
     <h5 class="positiva">Noticias Positivas</h5>
     <h5 class="neutral">Noticias Neutrales</h5>
     <h5 class ="negativa">Noticias Negativas</h5>
 </div>
 
+<br>
+
 <div class="container pull-left" id="news_container">
 	<div class="tab-content">
-        <div id="medios" class="tab-pane fade in active">
-			{% for new in medios_news %}
+        <div id="noticias" class="tab-pane fade in active">
+			{% for new in noticias %}
 				<h4 class = "noticia noticia_fecha">{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>
 				<div class = "noticia noticia_text">{{ new.text | safe }}</div>
 			{% else %}
-				<h4 class = "noticia noticia_nohay">Aún no hay noticias de MEDIOS para este día.</h4>
+				<h4 class = "noticia noticia_nohay">Aún no hay noticias para este día.</h4>
 			{% endfor %}	
-		</div>
-		<div id="twitter" class="tab-pane fade">
-			{% for new in twitter_news %}
-				<h4 class = "noticia noticia_fecha">{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
-				<div class = "noticia noticia_text">{{ new.text | safe }}</div>
-			{% else %}
-				<h4 class = "noticia noticia_nohay">Aún no hay noticias de TWITTER para este día.</h4>
-			{% endfor %}    
-		</div>
-		<div id="radio" class="tab-pane fade">
-			{% for new in radio_news %}
-				<h4 class = "noticia noticia_fecha">{{ fecha_entera.decode('utf-8') }} - {{ new.time }}:</h4>  
-				<div class = "noticia noticia_text">{{ new.text | safe }}</div>
-			{% else %}
-				<h4 class = "noticia noticia_nohay">Aún no hay noticias de RADIO para este día.</h4>
-			{% endfor %}      
 		</div>
 	</div>
 </div>

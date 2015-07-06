@@ -30,6 +30,8 @@
         <script type="text/javascript" src="static/nuestro.js"></script>
         <link rel="stylesheet" href="static/noticias.css">
         <link rel="stylesheet" href="static/navbar.css">
+        <link rel="stylesheet" href="static/datepicker.css">
+        <link rel="stylesheet" href="static/reportes.css">
         {% block head %}{% endblock %}
     </head>
 
@@ -46,11 +48,14 @@
                     <a class="navbar-brand" href="/">
                        <img src='static/logo.gif' id="logo">
                     </a>
-
+                    
                 </div>
                 <div class="navbar-collapse collapse">
                     {% block footer %}{% endblock %}
                 </div>
+            </div>
+            <div class="pull-right">
+                <a href="#"class="btn btn-info navbar" data-toggle="modal" data-target="#myModal" id="iniciar-sesion">Iniciar Sesión</a>
             </div>
             {% block content_body %}{% endblock %}
         </div>
