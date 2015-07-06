@@ -15,18 +15,33 @@ nav.content span,nav.content ul,nav.content li{
   color:black;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-nav>li>a{
   color:black;
 }
 
-.navbar-nav>.active>a{
+.navbar-default .navbar-nav>.active>a{
   background-color:#FCCC20;
   color:black;
 }
 
-.navbar-nav>li>a:hover{
-    background-color:#EDBD11;
-    color:black;
+
+.navbar-default .navbar-nav>li>a:hover{
+  background-color:#EDBD11;
+  color:black;
+}
+
+.navbar-default .navbar-nav>.active>a:hover{
+  background-color:#EDBD11;
+  color:black;
+}
+
+.navbar-default .navbar-toggle{
+  border-color:#EDBD11;
+  background-color:#FCCC20;
+}
+
+.navbar-default .navbar-toggle:hover{
+  background-color:#EDBD11;
 }
 
 #logo{ 
