@@ -20,6 +20,9 @@ nav.content span,nav.content ul,nav.content li{
   border-color:transparent;
 }
 
+.container{
+  max-width: 600px;
+}
 .container a{
   color:black;
 }
@@ -40,4 +43,19 @@ nav.content span,nav.content ul,nav.content li{
 
 #tabs-top-navbar{
   font-weight: 500;
+}
+
+#iniciar-sesion-container{
+  margin-top: 0.8em;
+  margin-right: 0.75em;
+}
+
+#iniciar-sesion{
+  background-color: #FFD700;
+  font-weight: 500;
+  color: black;
+}
+
+#iniciar-sesion:hover{
+  text-decoration: underline;
 }

@@ -1,4 +1,3 @@
-/*affects all*/
 body{
 	font: 300 16px/22px "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 }
@@ -9,7 +8,7 @@ body{
 	text-transform: uppercase;
 }
 
-.pull-right {
+.leyenda {
     font-weight: 300px;
     margin-right: 12px;
 }
