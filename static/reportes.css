@@ -60,7 +60,7 @@ body{
 	color:white;
 }
 
-.agregar-reporte, .agregar-reporte:focus{
+.agregar-reporte, .agregar-reporte:focus, .agregar-reporte:active{
 	position: fixed;
 	right: 2em;
 	top: 2em;
@@ -174,7 +174,7 @@ body{
 	color: #289ECD;
 	background-color: white;
 	border-color: #289ECD;
-	border-width: 1px;
+	border-width: 0px;
 	border-radius: 2px;
 	text-align: center;
 	margin: 0 auto;
@@ -186,13 +186,25 @@ body{
 .like:hover{
 	background-color: white;
 	border-color: #289ECD;
-	border-width: 2px;
+	border-width: 0px;
 	color: #289ECD;
 	font-weight: 500;
 }
 
+.glyphicon-thumbs-up{
+	font-size: 1.8em;
+	font-weight: 400;
+}
+
+.glyphicon-thumbs-up:hover{
+	font-weight: 700;
+}
 .grupito{
 	display: inline-block;
+}
+
+.detalles{
+	margin-left: -0.5em;
 }
 
 .detalles-ubic{
@@ -218,3 +230,16 @@ body{
 .form{
 	margin-top: 2em;
 }
+
+.datos{
+	margin-top: 1em;
+}
+
+.editar{
+	font-weight: 300;
+	font-size: 12px;
+}
+.date{
+	font-weight: 300;
+}
+
