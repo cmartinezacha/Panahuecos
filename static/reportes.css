@@ -211,3 +211,7 @@ body{
 	max-width: 330px;
 	max-height: 330px;
 }
+
+.form{
+	margin-top: 2em;
+}

@@ -11,10 +11,6 @@ nav.content span,nav.content ul,nav.content li{
   margin-top:-0.75em;
 }
 
-.fix {
-    position:fixed;
-}
-
 .navbar {
   background-color:#FFD700;
   border-color:transparent;
@@ -23,6 +19,7 @@ nav.content span,nav.content ul,nav.content li{
 .container{
   max-width: 600px;
 }
+
 .container a{
   color:black;
 }
