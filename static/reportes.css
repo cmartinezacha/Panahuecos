@@ -151,11 +151,12 @@ body{
 }
 
 .reporte-peque{
-	margin: 1em;
+	margin: 0.5em;
 }
 
 .titulo-de-reporte{
 	font-weight: 400;
+	margin-top: 0em;
 }
 
 .estado-displayed{
@@ -178,7 +179,8 @@ body{
 	text-align: center;
 	margin: 0 auto;
 	width: 5em;
-	margin-top: 2px;
+	z-index: 0;
+	/*margin-top: 2px;*/
 }
 
 .like:hover{
@@ -213,21 +215,6 @@ body{
 	max-height: 330px;
 }
 
-
-#iniciar-sesion{
-	background-color: #FFD700;
-	font-size: 16px;
-	font-weight: 500;
-	color: black;
-	margin: 0;
-	text-align: center;
-}
-
-#iniciar-sesion:hover{
-	background-color: #FFD700;
-	font-size: 16px;
-	text-decoration: underline;
-	font-weight: 500;
-	color: black;
-	margin: 0;
+.form{
+	margin-top: 2em;
 }

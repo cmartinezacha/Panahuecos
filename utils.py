@@ -40,14 +40,6 @@ def get_today():
     today.reverse()
     return "-".join(today)
 
-def valid_login(user, password):
-    error = ""
-    valid = False
-    if sha256(user).hexdigest() != USERNAME:
-        error = 'Usuario invalido'
-    elif sha256(password).hexdigest() != PASSWORD:
-        error = 'Clave invalida'
-    else:
-        valid = True
-    return (valid, error)
+def encrypt(word):
+    return sha256(word).hexdigest()
 

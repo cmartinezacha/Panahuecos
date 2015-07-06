@@ -37,7 +37,7 @@ def add_entry():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
-        new = models.News(request.form['type'],request.form['time'],request.form['text'], utils.get_today())
+        new = models.News("",request.form['time'],request.form['text'], utils.get_today())
         db.session.add(new)
         db.session.commit()
         return redirect(url_for('today_news'))
@@ -49,10 +49,16 @@ def add_entry():
 def login():
     error = None
     if request.method == 'POST':
-        valid, error = utils.valid_login(request.form['username'], request.form['password'])
-        if valid:
-            session['logged_in'] = True
-            return redirect(url_for('add_entry'))            
+        if 'nueva_cuenta' in request.form:
+            user = models.Users(request.form['username'],utils.encrypt(request.form['password']))
+            db.session.add(user)
+            db.session.commit()
+
+        else:
+            valid, error = models.valid_login(request.form['username'], request.form['password'])
+            if valid:
+                session['logged_in'] = True
+                return redirect(url_for('add_entry'))            
     return render_template('login.html', error=error)
 
 @app.route('/logout')
@@ -66,11 +72,8 @@ def show_news(fecha_raw):
 
     if not utils.fecha_valida(fecha_raw):
         abort(404)
-    medios_news = models.get_news_date_tipo(fecha_raw, "Medios")
-    twitter_news = models.get_news_date_tipo(fecha_raw, "Twitter")
-    radio_news = models.get_news_date_tipo(fecha_raw, "Radio")
-    return render_template('noticias.html', medios_news = medios_news, twitter_news = twitter_news, radio_news = radio_news, 
-                                            fecha_entera = utils.translate_day(fecha_raw), fecha_raw = fecha_raw)
+    noticias = models.get_all_noticias(fecha_raw)
+    return render_template('noticias.html', noticias=noticias, fecha_entera = utils.translate_day(fecha_raw), fecha_raw = fecha_raw)
 
 @app.route('/reportes', methods=['GET', 'POST'])
 def show_reportes():
@@ -98,7 +101,6 @@ def add_reporte():
                               localizacion_breve=form['localizacion'], details=form['details'])
     db.session.add(reporte)
     db.session.flush()
-    print upload.filename
     if upload.filename != "":
         filename = secure_filename(upload.filename)
         ext = filename.rsplit('.', 1)[1]
@@ -106,6 +108,16 @@ def add_reporte():
         upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
     db.session.commit()
     
+    return redirect(url_for('show_reportes'))
+
+@app.route('/reportes/cambiar', methods=['POST'])
+def edit_reporte():
+    form = request.form
+    reporte = models.get_reporte_by_id(int(form['id']))
+    reporte.area = form['area']
+    reporte.state = form['estado']
+    reporte.localizacion_breve = form['localizacion']
+    reporte.details = form['details']
     return redirect(url_for('show_reportes'))
 
 @app.route('/images/<filename>')

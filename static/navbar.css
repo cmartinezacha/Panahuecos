@@ -6,15 +6,6 @@ nav.content span,nav.content ul,nav.content li{
     display:inline-block;
 }
 
-#logo{ 
-  max-height:2.7em;
-  margin-top:-0.75em;
-}
-
-.fix {
-    position:fixed;
-}
-
 .navbar {
   background-color:#FFD700;
   border-color:transparent;
@@ -38,6 +29,30 @@ nav.content span,nav.content ul,nav.content li{
     color:black;
 }
 
+#logo{ 
+  max-height:2.7em;
+  margin-top:-0.75em;
+}
+
+#navbar-container{
+  max-width: 600px;
+}
+
 #tabs-top-navbar{
   font-weight: 500;
+}
+
+#iniciar-sesion-container{
+  margin-top: .95em;
+  margin-right: 0.75em;
+}
+
+#iniciar-sesion{
+  background-color: #FFD700;
+  font-weight: 500;
+  color: black;
+}
+
+#iniciar-sesion:hover{
+  text-decoration: underline;
 }

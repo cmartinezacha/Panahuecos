@@ -114,15 +114,6 @@
 
 .ui-datepicker-calendar .ui-state-active {
     background: rgb(39, 158, 205);;
-/*    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-    color: #e0e0e0;
-    text-shadow: 0px 1px 0px #4d7a85;
-    filter: dropshadow(color=#4d7a85, offx=0, offy=1);
-    border: 1px solid #55838f;
-    position: relative;
-    margin: -1px;*/
     color:white;
 }
 
