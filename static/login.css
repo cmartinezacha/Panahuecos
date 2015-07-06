@@ -1,0 +1,18 @@
+.login{
+	margin-left: 2em;
+	margin-top: 2em;
+}
+
+.btn{
+	margin: 0 auto;
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	background-color: #289ECD;
+	border-color: #289ECD;
+	border-width: 0;
+	text-align: center;
+	margin-right: 2em;
+	margin-top: 9px;
+	padding: 6px;
+}
