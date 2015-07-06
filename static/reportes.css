@@ -234,18 +234,22 @@ body{
 .datos{
 	margin-top: 1em;
 	font-size: 14px;
+	color: gray;
 }
 
-.editar{
+#editar{
 	font-weight: 300;
 	font-size: 14px;
+	color: black;
 }
 .glyphicon-pencil{
 	font-weight: 100;
-	color: #289ECD;
+	color: black;
+	color: black;
 }
 .date{
 	font-weight: 300;
 	font-size: 14px;
+	color: gray;
 }
 
