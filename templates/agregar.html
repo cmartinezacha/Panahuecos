@@ -6,25 +6,19 @@
 {% endblock %}
 
 {% block content %}
-
-		<form class="form" method="POST" id="agregar-form">
-			<div class = "parte-arriba">
-				<section class="fecha-completa">
-					<h4 class="description">Hora:</h4>
-					<input step="3600" type="time" name="time" required>
-							
-				</section>
-			</div>
-
-			<div class = "area-de-texto">
-				<textarea rows ="20" cols="150" name="text" placeholder="Escriba aquí sus noticias"></textarea>
-			</div>
-
-			<input class="btn agregar" type="submit" value="Agregar">
-		</form>	
-
+<form class="form" method="POST" id="agregar-form">
+	<div class = "parte-arriba">
+		<section class="fecha-completa">
+			<h4 class="description">Hora:</h4>
+			<input step="3600" type="time" name="time" required>
+					
+		</section>
 	</div>
 
-</body>
-</html>
+	<div class = "area-de-texto">
+		<textarea rows ="20" cols="150" name="text" placeholder="Escriba aquí sus noticias"></textarea>
+	</div>
+
+	<input class="btn agregar" type="submit" value="Agregar">
+</form>	
 {% endblock %}
