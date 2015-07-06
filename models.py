@@ -24,7 +24,7 @@ def get_news_date_tipo(fecha_raw, tipo_noticia):
     return tipo_news
 
 def get_all_noticias(fecha_raw):
-    noticias_query = db.session.query(News).filter(News.date == fecha_raw)
+    noticias_query = db.session.query(News).filter(News.date == fecha_raw).order_by(News.id.desc())
     return noticias_query.all()
 
 class Reportes(db.Model):
