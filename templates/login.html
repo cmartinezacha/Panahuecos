@@ -1,15 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class=metanav>
+
 {% if session.logged_in %}
     <a class="cerrar-sesion" href="{{ url_for('logout') }}"><!-- Cerrar Sesión --></a>
-{% else %}
-  
 {% endif %}
 </div>
 
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error.decode('utf8') }}
+{% endif %}
 
-{% if error %}<p class=error><strong>Error:</strong> {{ error.decode('utf8') }}{% endif %}
 <form  action="{{ url_for('login') }}" method=post class="login">
   <dl>
     <dt>Usuario:

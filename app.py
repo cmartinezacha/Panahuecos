@@ -44,7 +44,6 @@ def add_entry():
     else:
         return render_template('agregar.html')
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -53,7 +52,6 @@ def login():
             user = models.Users(request.form['username'],utils.encrypt(request.form['password']))
             db.session.add(user)
             db.session.commit()
-
         else:
             valid, error = models.valid_login(request.form['username'], request.form['password'])
             if valid:
@@ -107,7 +105,6 @@ def add_reporte():
         reporte.image = str(reporte.id) + "." + ext
         upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
     db.session.commit()
-    
     return redirect(url_for('show_reportes'))
 
 @app.route('/reportes/cambiar', methods=['POST'])

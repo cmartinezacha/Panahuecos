@@ -237,11 +237,6 @@ body{
 	color: gray;
 }
 
-#editar{
-	font-weight: 300;
-	font-size: 14px;
-	color: black;
-}
 .glyphicon-pencil{
 	font-weight: 100;
 	color: black;
@@ -251,5 +246,11 @@ body{
 	font-weight: 300;
 	font-size: 14px;
 	color: gray;
+}
+
+#editar{
+	font-weight: 300;
+	font-size: 14px;
+	color: black;
 }
 
