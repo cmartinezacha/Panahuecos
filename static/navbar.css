@@ -16,7 +16,7 @@ nav.content span,nav.content ul,nav.content li{
   border-color:transparent;
 }
 
-.container{
+#navbar-container{
   max-width: 600px;
 }
 
