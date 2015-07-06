@@ -28,9 +28,9 @@
 
         </script>
         <script type="text/javascript" src="static/nuestro.js"></script>
-        <link rel="stylesheet" href="static/noticias.css">
-        <link rel="stylesheet" href="static/navbar.css">
         <link rel="stylesheet" href="static/datepicker.css">
+        <link rel="stylesheet" href="static/navbar.css">
+        <link rel="stylesheet" href="static/noticias.css">
         <link rel="stylesheet" href="static/reportes.css">
         {% block head %}{% endblock %}
     </head>
@@ -53,9 +53,9 @@
                     {% block footer %}{% endblock %}
                 </div>
             </div>
-            <div class="pull-right">
-                <a href="#"class="btn btn-info navbar" data-toggle="modal" data-target="#myModal" id="iniciar-sesion">Iniciar Sesión</a>
-            </div>
+            <span class="pull-right" id="iniciar-sesion-container">
+                <a href="#" data-toggle="modal" data-target="#myModal" id="iniciar-sesion">Iniciar Sesión</a>
+            </span>
             {% block content_body %}{% endblock %}
         </div>
         <br><br>

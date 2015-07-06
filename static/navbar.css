@@ -44,9 +44,12 @@ nav.content span,nav.content ul,nav.content li{
 #tabs-top-navbar{
   font-weight: 500;
 }
+
 #iniciar-sesion-container{
-  height:50px;
+  margin-top: 0.8em;
+  margin-right: 0.75em;
 }
+
 #iniciar-sesion{
   background-color: #FFD700;
   font-weight: 500;
