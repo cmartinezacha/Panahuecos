@@ -233,13 +233,19 @@ body{
 
 .datos{
 	margin-top: 1em;
+	font-size: 14px;
 }
 
 .editar{
 	font-weight: 300;
-	font-size: 12px;
+	font-size: 14px;
+}
+.glyphicon-pencil{
+	font-weight: 100;
+	color: #289ECD;
 }
 .date{
 	font-weight: 300;
+	font-size: 14px;
 }
 
