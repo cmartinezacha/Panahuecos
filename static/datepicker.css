@@ -132,6 +132,6 @@
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-  border-width: 2px;
-  border-color: #FFD700;
+  font-weight: 800;
+  font-size: 11px;
 }
