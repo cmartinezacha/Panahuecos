@@ -20,6 +20,9 @@ nav.content span,nav.content ul,nav.content li{
   border-color:transparent;
 }
 
+.container{
+  max-width: 600px;
+}
 .container a{
   color:black;
 }

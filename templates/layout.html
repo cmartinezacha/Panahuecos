@@ -47,16 +47,15 @@
                     </button>
                     <a class="navbar-brand" href="/">
                        <img src='static/logo.gif' id="logo">
-                    </a>
-                    
+                    </a>  
                 </div>
                 <div class="navbar-collapse collapse">
                     {% block footer %}{% endblock %}
                 </div>
             </div>
-            <div class="pull-right">
+            <span class="pull-right">
                 <a href="#"class="btn btn-info navbar" data-toggle="modal" data-target="#myModal" id="iniciar-sesion">Iniciar Sesión</a>
-            </div>
+            </span>
             {% block content_body %}{% endblock %}
         </div>
         <br><br>
