@@ -209,22 +209,3 @@ body{
 	max-width: 330px;
 	max-height: 330px;
 }
-
-
-#iniciar-sesion{
-	background-color: #FFD700;
-	font-size: 16px;
-	font-weight: 500;
-	color: black;
-	margin: 0;
-	text-align: center;
-}
-
-#iniciar-sesion:hover{
-	background-color: #FFD700;
-	font-size: 16px;
-	text-decoration: underline;
-	font-weight: 500;
-	color: black;
-	margin: 0;
-}
