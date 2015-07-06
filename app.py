@@ -37,7 +37,7 @@ def add_entry():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
-        new = models.News(request.form['type'],request.form['time'],request.form['text'], utils.get_today())
+        new = models.News("",request.form['time'],request.form['text'], utils.get_today())
         db.session.add(new)
         db.session.commit()
         return redirect(url_for('today_news'))
@@ -72,11 +72,8 @@ def show_news(fecha_raw):
 
     if not utils.fecha_valida(fecha_raw):
         abort(404)
-    medios_news = models.get_news_date_tipo(fecha_raw, "Medios")
-    twitter_news = models.get_news_date_tipo(fecha_raw, "Twitter")
-    radio_news = models.get_news_date_tipo(fecha_raw, "Radio")
-    return render_template('noticias.html', medios_news = medios_news, twitter_news = twitter_news, radio_news = radio_news, 
-                                            fecha_entera = utils.translate_day(fecha_raw), fecha_raw = fecha_raw)
+    noticias = models.get_all_noticias(fecha_raw)
+    return render_template('noticias.html', noticias=noticias, fecha_entera = utils.translate_day(fecha_raw), fecha_raw = fecha_raw)
 
 @app.route('/reportes', methods=['GET', 'POST'])
 def show_reportes():

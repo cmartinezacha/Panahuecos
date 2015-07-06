@@ -23,6 +23,10 @@ def get_news_date_tipo(fecha_raw, tipo_noticia):
     tipo_news = [dict(text=row.text, tipo=row.tipo, time=time.strftime( "%I:%M %p", time.strptime(row.time, "%H:%M"))) for row in tipo_cur.all()]
     return tipo_news
 
+def get_all_noticias(fecha_raw):
+    noticias_query = db.session.query(News).filter(News.date == fecha_raw)
+    return noticias_query.all()
+
 class Reportes(db.Model):
     __tablename__ = "reportes"
     id = db.Column(db.Integer, primary_key=True)
