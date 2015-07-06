@@ -128,11 +128,12 @@ body{
 }
 
 .reporte-peque{
-	margin: 1em;
+	margin: 0.5em;
 }
 
 .titulo-de-reporte{
 	font-weight: 400;
+	margin-top: 0em;
 }
 
 .estado-displayed{
@@ -155,7 +156,8 @@ body{
 	text-align: center;
 	margin: 0 auto;
 	width: 5em;
-	margin-top: 2px;
+	z-index: 0;
+	/*margin-top: 2px;*/
 }
 
 .like:hover{
