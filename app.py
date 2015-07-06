@@ -49,10 +49,16 @@ def add_entry():
 def login():
     error = None
     if request.method == 'POST':
-        valid, error = models.valid_login(request.form['username'], request.form['password'])
-        if valid:
-            session['logged_in'] = True
-            return redirect(url_for('add_entry'))            
+        if 'nueva_cuenta' in request.form:
+            user = models.Users(request.form['username'],utils.encrypt(request.form['password']))
+            db.session.add(user)
+            db.session.commit()
+
+        else:
+            valid, error = models.valid_login(request.form['username'], request.form['password'])
+            if valid:
+                session['logged_in'] = True
+                return redirect(url_for('add_entry'))            
     return render_template('login.html', error=error)
 
 @app.route('/logout')
