@@ -1,27 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class=metanav>
-    {% if session.logged_in %}
-        <a class="cerrar-sesion" href="{{ url_for('logout') }}"><!-- Cerrar Sesión --></a>
-    {% else %}
-      
-    {% endif %}
-    </div>
+<div class=metanav>
+{% if session.logged_in %}
+    <a class="cerrar-sesion" href="{{ url_for('logout') }}"><!-- Cerrar Sesión --></a>
+{% else %}
+  
+{% endif %}
+</div>
 
-    
-    {% if error %}<p class=error><strong>Error:</strong> {{ error.decode('utf8') }}{% endif %}
-    <form  action="{{ url_for('login') }}" method=post class="login">
-      <dl>
-        <dt>Usuario:
-        <dd><input type=text name=username>
-        <dt>Contraseña:
-        <dd class="passcode"><input type=password name=password>
-        <br>
-        <label>Nueva Cuenta</label><input type="checkbox" name="nueva_cuenta" value="true">
-        <br>
-        <dd><input type=submit value="Ingresar" class="btn">
-      </dl>
-    </form>
+
+{% if error %}<p class=error><strong>Error:</strong> {{ error.decode('utf8') }}{% endif %}
+<form  action="{{ url_for('login') }}" method=post class="login">
+  <dl>
+    <dt>Usuario:
+    <dd><input type=text name=username>
+    <dt>Contraseña:
+    <dd class="passcode"><input type=password name=password>
+    <br>
+    <label>Nueva Cuentar</label><input type="checkbox" name="nueva_cuenta" value="true">
+    <br>
+    <dd><input type=submit value="Ingresar" class="btn">
+  </dl>
+</form>
 {% endblock %}
 
 
