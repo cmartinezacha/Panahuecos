@@ -85,23 +85,44 @@ nav.content span,nav.content ul,nav.content li{
   margin-top: 2px;
 }
 
-.modal-header-signin{
-  border-width: 5px;
+.modal-header-signin, .modal-header-signup{
+  border-width: 2px;
   border-bottom-style: solid;
   border-color: rgba(248, 210, 96, 1);
   background-color: rgba(251, 227, 148, 1);
 }
 
-.modal-title-signin{
+.modal-title-signin, .modal-title-signup{
   text-align: left;
 }
 
-#email-signin{
+#email-signin, #email-signup{
+  margin-top: 1.5em;
+}
+
+.sign-email{
   margin-top: 1em;
 }
 
-#iniciar{
+#iniciar, #crear{
   text-align: center;
+  margin: 0 10em;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  background-color:rgba(248, 210, 96, 1);
+  color:black;
+  border-width: 0px;
+}
+
+.nav-tabs{
+  border-width-bottom: 1px;
+  border-bottom-color: rgba(248, 210, 96, 1);
+  margin-bottom: 0;
+}
+
+.control-label-sign{
+  margin-left: 1em;
 }
 
 
