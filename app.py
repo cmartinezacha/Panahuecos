@@ -8,6 +8,9 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 import os
 from flask import send_from_directory
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 DEBUG = True
 SECRET_KEY = 'development key'
