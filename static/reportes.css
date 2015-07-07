@@ -248,9 +248,14 @@ body{
 	color: gray;
 }
 
-#editar{
-	font-weight: 300;
-	font-size: 14px;
+.editar{
 	color: black;
+	background-color: white;
+	border-width: 0;
+	margin-left: 0;
+	padding: 0;
 }
 
+.editar:hover{
+	text-decoration: underline;
+}
