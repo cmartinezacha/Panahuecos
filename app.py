@@ -113,11 +113,13 @@ def add_reporte():
 @app.route('/reportes/cambiar', methods=['POST'])
 def edit_reporte():
     form = request.form
-    reporte = models.get_reporte_by_id(int(form['id']))
+    reporte = db.session.merge(models.get_reporte_by_id(int(form['id'])))
     reporte.area = form['area']
     reporte.state = form['estado']
+    reporte.problema = form['problema']
     reporte.localizacion_breve = form['localizacion']
     reporte.details = form['details']
+    db.session.commit()
     return redirect(url_for('show_reportes'))
 
 @app.route('/images/<filename>')

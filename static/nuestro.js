@@ -18,6 +18,12 @@ $(function($){
 		beforeShowDay: $.datepicker.noWeekends
 	};
 	$.datepicker.setDefaults($.datepicker.regional['es']);
+
+	// $('.editar').click(function(e){
+ //    e.stopPropagation();
+ //    $('#myModal3').modal("show");
+ //  		});
+
 });
 
 $(function () {
@@ -28,3 +34,4 @@ $(function () {
 		}
 	});
 });
+

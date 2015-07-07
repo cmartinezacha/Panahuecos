@@ -138,7 +138,7 @@
 			<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
 				<div class="reporte-peque">
 					<div class="like pull-right">
-						<a href="#" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
+						<a href="#" onclick="stop(event)" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
 						<h6>{{reporte.likes}} likes</h6>
 					</div>
 					<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
@@ -163,12 +163,92 @@
 				      	</div>
 			      		<div class="datos">
 			      			<h6 class="date">{{reporte.date|datetime}}</h6>
-				      		<div class="editar">
-								<a href>Editar <div class="glyphicon glyphicon-pencil"></div> </a>
+				      		<div class="editar" >
+								<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
 							</div>
 		      		</div>
 		      	</div>
-		    </div>				
+		      	
+		    </div>
+		    <div class="modal fade" id="myModal{{reporte.id}}" role="dialog">
+			    		<div class="modal-dialog">
+			    
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h3 class="modal-title">Edita tu Reporte</h3>
+			        </div>
+			        <div class="modal-body">
+
+			          <div class="container">
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/cambiar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
+
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Estado:</label>
+			                <div class="col-sm-4">          
+			                  <select name="estado" required>
+			                  	{% for estado in estados %}
+			                    <option {% if reporte.state==estado.decode('utf8') %} selected {% endif %}>{{estado.decode('utf8')}}</option>
+			                    {% endfor %}
+			                 </select>
+			                </div>
+			              </div>	
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
+			                <div class="col-sm-4">          
+			                  <select name="problema" required>
+			                  	{% for problema in problemas %}
+			                    <option {% if reporte.problema==problema.decode('utf8') %} selected {% endif %}>{{problema}}</option>
+			                    {% endfor %}
+			                 </select>
+			                </div>
+			              </div>
+
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Región:</label>
+			                <div class="col-sm-4">          
+			                  <select name="area" required>
+			                  	{% for region in regiones %}
+			                    <option {% if reporte.area==region.decode('utf8') %} selected {% endif %}>{{region.decode('utf8')}}</option>
+			                    {% endfor %}
+			                 </select>
+			                </div>
+			              </div>
+			              
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
+			                <div class="col-sm-4">
+			                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion" value="{{reporte.localizacion_breve.decode('utf8')}}" required>
+			                </div>
+			              </div>
+
+			              <div class="form-group">
+		                <label class="control-label col-sm-2" for="email">Detalles:</label>
+		                <div class="col-sm-4">
+		                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details.decode('utf8')}}</textarea>
+		                </div>
+		              </div>
+
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
+			                <div class="col-sm-4">
+			                  <input type="file" name="file">
+			                </div>
+			              </div>
+			              <input type="hidden" name="id" value="{{reporte.id}}">
+			              <div class="form-group">        
+			                <div class="col-sm-offset-2 col-sm-10">
+			                  <button type="submit" class="btn btn-info" id="cambiar">Editar</button>
+			                </div>
+			              </div>
+			            </form>
+			          </div>
+			        </div>
+			      </div>
+			      
+			    </div>
+			  </div>				
 		{% endfor %}
 	</div>
 </div>
