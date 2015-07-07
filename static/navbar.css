@@ -121,8 +121,21 @@ nav.content span,nav.content ul,nav.content li{
   margin-bottom: 0;
 }
 
+.nav-tabs>li>a:hover{
+  background-color: #F5C73B;
+  border-width: 0;
+}
+
+.nav-tabs>.active>a:hover{
+  background-color: #F5C73B;
+  border-width: 0;
+}
+
 .control-label-sign{
   margin-left: 1em;
 }
 
+.modal-content-sign{
+  width: 500px;
+}
 
