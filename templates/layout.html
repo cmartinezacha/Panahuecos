@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-<!--       {% block head %} -->
         <title>MOPresponde</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="static/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/override.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300italic' rel='stylesheet' type='text/css'>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+        <!-- COMMENTS SON PARA CORRER OFFLINE -->
+        <!-- <link rel="stylesheet" href="static/navbar.css"> -->
+        <script src="static/links/ajaxgoogle"></script>
+        <link href='static/links/fontsgoogle' type='text/css'>
+        <script src="static/links/maxcdnbootstrap"></script>
+        <!--<link rel="stylesheet" href="static/links/jquery-ui" />
+        <script src="static/links/jquery191"></script>
+        <script src="static/links/jquery1101"></script>-->
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="static/nuestro.js"></script>
-        <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-        <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
-<!--       {% endblock %} -->
-        <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+        <link rel="shortcut icon" href="static/favicon3.ico" type="image/x-icon" />
+
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,50 +26,45 @@
 
           ga('create', 'UA-64398920-1', 'auto');
           ga('send', 'pageview');
-
         </script>
+        <script type="text/javascript" src="static/nuestro.js"></script>
+        <link rel="stylesheet" href="static/datepicker.css">
+        <link rel="stylesheet" href="static/login.css">
+        <link rel="stylesheet" href="static/agregar.css">
+        <link rel="stylesheet" href="static/navbar.css">
+        <link rel="stylesheet" href="static/noticias.css">
+        <link rel="stylesheet" href="static/reportes.css">
+        {% block head %}{% endblock %}
     </head>
 
     <body>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-
-                    </button> 
-                    <a class="navbar-brand" href="/">
-                       <img src='http://i.imgur.com/zG4TYaf.gif' style="max-height:2.5em; margin-top:-0.72em;">
-                    </a>
-
+        <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top"> <!-- navbar-fixed-top -->
+                <div class="container pull-left" id="navbar-container"> <!-- pull-left -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar" style="background-color:#289ECD"></span>
+                            <span class="icon-bar" style="background-color:#289ECD"></span>
+                            <span class="icon-bar" style="background-color:#289ECD"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">
+                           <img src='static/logo.gif' id="logo">
+                        </a>  
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        {% block footer %}{% endblock %}
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#medios" data-toggle="tab">Medios</a>
-                        </li>
-                        <li><a href="#twitter" data-toggle="tab">Twitter</a>
-                        </li>
-                        <li><a href="#radio" data-toggle="tab">Radio</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a>Fecha:</a>
-                        </li>
-                      <li><span><input type="text" id="fecha" value="{{ fecha_raw }}" size="11" style="margin-top:12px"></span></li>
-                    </ul>
-                </div>
+<!--                 <span class="pull-right" id="iniciar-sesion-container">
+                    <a href="/login" id="iniciar-sesion">Iniciar Sesión</a>
+                </span> -->
+                {% block content_body %}{% endblock %}
+            </nav>
+            <br><br>
+            <div id="content">
+            {% block content %}{% endblock %}
             </div>
-        </nav>
-
-        <div class="pull-right">
-            <h5 class="positiva">Noticias Positivas</h5>
-            <h5 class="neutral">Noticias Neutrales</h5>
-            <h5 class = "negativa">Noticias Negativas</h5>
-        </div>
-        <div id="content">
-        {% block content %}{% endblock %}
         </div>
     </body>
 </html>

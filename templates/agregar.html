@@ -1,32 +1,24 @@
 {% extends "layout.html" %}
+
+{% block head %}
+<script src="static/links/niceedit" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+{% endblock %}
+
 {% block content %}
-
-		<form class="form" method="POST">
-			<div class = "parte-arriba">
-				<section class="fecha-completa">
-					<h4 class="description">Hora:</h4>
-					<input step="3600" type="time" name="time" required>
-							
-				</section>
-					<section class="tipo-de-noticia">
-					<h4 class="description">Escoja el tipo de noticia:</h4>
-					<input type="radio" name="type" value="Medios"> Medios
-					<br>
-					<input type="radio" name="type" value="Twitter"> Twitter
-					<br>
-					<input type="radio" name="type" value="Radio" required> Radio
-				</section>
-			</div>
-
-			<div class = "area-de-texto">
-				<textarea rows ="20" cols="150" name="text" placeholder="Escriba aquí sus noticias"></textarea>
-			</div>
-
-			<input class="btn agregar" type="submit" value="Agregar">
-		</form>	
-
+<form class="form" method="POST" id="agregar-form">
+	<div class = "parte-arriba">
+		<section class="fecha-completa">
+			<h4 class="description">Hora:</h4>
+			<input step="3600" type="time" name="time" required>
+					
+		</section>
 	</div>
 
-</body>
-</html>
+	<div class = "area-de-texto">
+		<textarea rows ="20" cols="150" name="text" placeholder="Escriba aquí sus noticias"></textarea>
+	</div>
+
+	<input class="btn agregar" type="submit" value="Agregar">
+</form>	
 {% endblock %}

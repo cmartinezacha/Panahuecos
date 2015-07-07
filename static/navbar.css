@@ -2,44 +2,8 @@ body{
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.nav-subhead {
-    z-index:9010;
-    width: 100%;
-}
-
-#nav_secondary.sticky {
-    top:49px;
-    left:0;
-    background-color:white;
-    opacity: 0.95;
-}
-
 nav.content span,nav.content ul,nav.content li{
     display:inline-block;
-}
-
-.nav-subhead a {
-    color:#fff;
-    font-size:13px;
-    font-size:1.3rem;
-    line-height:24px;
-    line-height:2.4rem;
-    padding:0 8px;
-    padding:0 0.8rem;
-    text-transform:uppercase;
-}
-
-.nav-subhead a:hover {
-    color:black;
-}
-
-#logo{ 
-  max-height:2.7em;
-  margin-top:-0.75em;
-}
-
-.fix {
-    position:fixed;
 }
 
 .navbar {
@@ -51,34 +15,58 @@ nav.content span,nav.content ul,nav.content li{
   color:black;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-nav>li>a{
   color:black;
 }
 
-.navbar-nav>.active>a{
+.navbar-default .navbar-nav>.active>a{
   background-color:#FCCC20;
   color:black;
 }
 
-.navbar-nav>li>a:hover{
-    background-color:#EDBD11;
-    color:black;
-}
-
-#tipomedios>li>a{
+.navbar-default .navbar-nav>li>a:hover{
+  background-color:#EDBD11;
   color:black;
 }
 
-#tipomedios>.active>a{
-  background-color:white;
+.navbar-default .navbar-nav>.active>a:hover{
+  background-color:#EDBD11;
   color:black;
 }
 
-#tipomedios>li>a:hover{
-    background-color:white;
-    color:black;
+.navbar-default .navbar-toggle{
+  border-color:#EDBD11;
+  background-color:#FCCC20;
+}
+
+.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
+  background-color:#EDBD11;
+}
+
+#logo{ 
+  max-height:2.7em;
+  margin-top:-0.75em;
+}
+
+#navbar-container{
+  max-width: 600px;
 }
 
 #tabs-top-navbar{
-  font-weight: 800;
+  font-weight: 500;
+}
+
+#iniciar-sesion-container{
+  margin-top: .95em;
+  margin-right: 0.75em;
+}
+
+#iniciar-sesion{
+  background-color: #FFD700;
+  font-weight: 500;
+  color: black;
+}
+
+#iniciar-sesion:hover{
+  text-decoration: underline;
 }
