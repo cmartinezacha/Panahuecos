@@ -70,3 +70,38 @@ nav.content span,nav.content ul,nav.content li{
 #iniciar-sesion:hover{
   text-decoration: underline;
 }
+
+#mymodalsignin{
+  border-color: rgba(248, 210, 96, 1);
+  border-width: 2px;
+}
+
+.modal-content-signin{
+  border-color: rgba(248, 210, 96, 1);
+  border-width: 5px;
+  border-style: solid;
+  background-color: rgba(251, 227, 148, 1);
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.modal-header-signin{
+  border-width: 5px;
+  border-bottom-style: solid;
+  border-color: rgba(248, 210, 96, 1);
+  background-color: rgba(251, 227, 148, 1);
+}
+
+.modal-title-signin{
+  text-align: left;
+}
+
+#email-signin{
+  margin-top: 1em;
+}
+
+#iniciar{
+  text-align: center;
+}
+
+
