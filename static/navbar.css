@@ -24,7 +24,6 @@ nav.content span,nav.content ul,nav.content li{
   color:black;
 }
 
-
 .navbar-default .navbar-nav>li>a:hover{
   background-color:#EDBD11;
   color:black;
@@ -40,7 +39,7 @@ nav.content span,nav.content ul,nav.content li{
   background-color:#FCCC20;
 }
 
-.navbar-default .navbar-toggle:hover{
+.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
   background-color:#EDBD11;
 }
 
@@ -71,3 +70,72 @@ nav.content span,nav.content ul,nav.content li{
 #iniciar-sesion:hover{
   text-decoration: underline;
 }
+
+#mymodalsignin{
+  border-color: rgba(248, 210, 96, 1);
+  border-width: 2px;
+}
+
+.modal-content-signin{
+  border-color: rgba(248, 210, 96, 1);
+  border-width: 5px;
+  border-style: solid;
+  background-color: rgba(251, 227, 148, 1);
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.modal-header-signin, .modal-header-signup{
+  border-width: 2px;
+  border-bottom-style: solid;
+  border-color: rgba(248, 210, 96, 1);
+  background-color: rgba(251, 227, 148, 1);
+}
+
+.modal-title-signin, .modal-title-signup{
+  text-align: left;
+}
+
+#email-signin, #email-signup{
+  margin-top: 1.5em;
+}
+
+.sign-email{
+  margin-top: 1em;
+}
+
+#iniciar, #crear{
+  text-align: center;
+  margin: 0 10em;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  background-color:rgba(248, 210, 96, 1);
+  color:black;
+  border-width: 0px;
+}
+
+.nav-tabs{
+  border-width-bottom: 1px;
+  border-bottom-color: rgba(248, 210, 96, 1);
+  margin-bottom: 0;
+}
+
+.nav-tabs>li>a:hover{
+  background-color: #F5C73B;
+  border-width: 0;
+}
+
+.nav-tabs>.active>a:hover{
+  background-color: #F5C73B;
+  border-width: 0;
+}
+
+.control-label-sign{
+  margin-left: 1em;
+}
+
+.modal-content-sign{
+  width: 500px;
+}
+

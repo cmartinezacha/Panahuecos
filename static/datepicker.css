@@ -21,6 +21,13 @@
     width: 100%;
 }
 
+/*ESTE ES EL HIGHLIGHT DE FECHA DE HOY*/
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+  font-weight: 800;
+  background-color: #E2F6FF;
+}
+/*------*/
+
 .ui-datepicker-header {
     background: rgb(39, 158, 205);
     /*http://tinypic.com/r/2zp18y8/8*/
@@ -113,7 +120,7 @@
 }
 
 .ui-datepicker-calendar .ui-state-active {
-    background: rgb(39, 158, 205);;
+    background: rgb(39, 158, 205);
     color:white;
 }
 
@@ -129,9 +136,4 @@
 .ui-datepicker-calendar tr:last-child .ui-state-active {
     height: 29px;
     margin-bottom: 0;
-}
-
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-  border-width: 2px;
-  border-color: #FFD700;
 }

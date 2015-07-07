@@ -13,8 +13,7 @@
 		<div class="container form">
 		  <!-- Modal -->
 		  <div class="modal fade" id="myModal" role="dialog">
-		    <div class="modal-dialog">
-		    
+		    <div class="modal-dialog">    
 		      <!-- Modal content-->
 		      <div class="modal-content">
 		        <div class="modal-header">
@@ -41,7 +40,6 @@
 		                 </select>
 		                </div>
 		              </div>
-
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="pwd">Región:</label>
 		                <div class="col-sm-4">          
@@ -52,28 +50,24 @@
 		                 </select>
 		                </div>
 		              </div>
-		              
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
 		                <div class="col-sm-4">
 		                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion" required>
 		                </div>
 		              </div>
-
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Detalles:</label>
 		                <div class="col-sm-4">
 		                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="nuevo-reporte" style="resize:none" required></textarea>
 		                </div>
 		              </div>
-
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
 		                <div class="col-sm-4">
 		                  <input type="file" name="file">
 		                </div>
 		              </div>
-		              
 		              <div class="form-group">        
 		                <div class="col-sm-offset-2 col-sm-10">
 		                  <button type="submit" class="btn btn-info" id="nuevoreporte">Agregar</button>
@@ -82,54 +76,50 @@
 		            </form>
 		          </div>
 		        </div>
-		      </div>
-		      
+		      </div>   
 		    </div>
 		  </div>
 		</div>
 
 		<form method= "POST">
-		<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
-		<div class="filtros">
-			<section class="estado">
-				<h4 class="filtro-ind">Estado:</h4>
-				{% for estado in estados %}
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" name="estado" value="{{estado.decode('utf8')}}" {% if estado.decode('utf8') in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
-				    {{estado.decode('utf8')}}
-				  </label>
-				</div>
-				{% endfor %}
-			</section>
+			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
+			<div class="filtros">
+				<section class="estado">
+					<h4 class="filtro-ind">Estado:</h4>
+					{% for estado in estados %}
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" name="estado" value="{{estado.decode('utf8')}}" {% if estado.decode('utf8') in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
+					    {{estado.decode('utf8')}}
+					  </label>
+					</div>
+					{% endfor %}
+				</section>
 
-			<section class="region">
-				<h4 class="filtro-ind">Región:</h4>
-				{% for region in regiones %}
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" {% if region.decode('utf8') in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
-				    {{region.decode('utf8')}}
-				  </label>
-				</div>
-				{% endfor %}
-			</section>
+				<section class="region">
+					<h4 class="filtro-ind">Región:</h4>
+					{% for region in regiones %}
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" {% if region.decode('utf8') in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
+					    {{region.decode('utf8')}}
+					  </label>
+					</div>
+					{% endfor %}
+				</section>
 
-			<section class="tipo-de-dano">
-				<h4 class="filtro-ind problema">Tipo de daño:</h4>
-
-				{% for problema in problemas %}
-		               
-				<div class="checkbox">
-				  <label>
-				    <input type="checkbox" name="problema" value="{{problema}}" {% if problema.decode('utf8') in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
-				    {{problema}}
-				  </label>
-				</div>
-				{% endfor %}
-			</section>
-		</div>
-		
+				<section class="tipo-de-dano">
+					<h4 class="filtro-ind problema">Tipo de daño:</h4>
+					{% for problema in problemas %}      
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema.decode('utf8') in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
+					    {{problema}}
+					  </label>
+					</div>
+					{% endfor %}
+				</section>
+			</div>
 		</form>
 	</div>
 
@@ -142,7 +132,6 @@
 						<h6>{{reporte.likes}} likes</h6>
 					</div>
 					<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
-
 					<h4 class = "estado-displayed">{{reporte.state}}</h4>
 				</div>
 
