@@ -1,144 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MOPresponde</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
-        <script type="text/javascript" src= "static/bootstrap/js/bootstrap.min.js"></script>
-        <!-- COMMENTS SON PARA CORRER OFFLINE -->
-        <!-- <link rel="stylesheet" href="static/navbar.css"> -->
-        <script src="static/links/ajaxgoogle"></script>
-        <link href='static/links/fontsgoogle' type='text/css'>
-        <script src="static/links/maxcdnbootstrap"></script>
-        <!--<link rel="stylesheet" href="static/links/jquery-ui" />
-        <script src="static/links/jquery191"></script>
-        <script src="static/links/jquery1101"></script>-->
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-        <link rel="shortcut icon" href="static/favicon3.ico" type="image/x-icon" />
+  <head>
+      <title>MOPresponde</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+      <script type="text/javascript" src= "static/bootstrap/js/bootstrap.min.js"></script>
+      <!-- COMMENTS SON PARA CORRER OFFLINE -->
+      <!-- <link rel="stylesheet" href="static/navbar.css"> -->
+      <script src="static/links/ajaxgoogle"></script>
+      <link href='static/links/fontsgoogle' type='text/css'>
+      <script src="static/links/maxcdnbootstrap"></script>
+      <!--<link rel="stylesheet" href="static/links/jquery-ui" />
+      <script src="static/links/jquery191"></script>
+      <script src="static/links/jquery1101"></script>-->
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+      <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+      <link rel="shortcut icon" href="static/favicon3.ico" type="image/x-icon" />
 
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-64398920-1', 'auto');
-          ga('send', 'pageview');
-        </script>
-        <script type="text/javascript" src="static/nuestro.js"></script>
-        <link rel="stylesheet" href="static/datepicker.css">
-        <link rel="stylesheet" href="static/login.css">
-        <link rel="stylesheet" href="static/agregar.css">
-        <link rel="stylesheet" href="static/navbar.css">
-        <link rel="stylesheet" href="static/noticias.css">
-        <link rel="stylesheet" href="static/reportes.css">
-        {% block head %}{% endblock %}
-    </head>
+        ga('create', 'UA-64398920-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <script type="text/javascript" src="static/nuestro.js"></script>
+      <link rel="stylesheet" href="static/datepicker.css">
+      <link rel="stylesheet" href="static/login.css">
+      <link rel="stylesheet" href="static/agregar.css">
+      <link rel="stylesheet" href="static/navbar.css">
+      <link rel="stylesheet" href="static/noticias.css">
+      <link rel="stylesheet" href="static/reportes.css">
+      {% block head %}{% endblock %}
+  </head>
 
-    <body>
-        <div class="container-fluid">
-            <nav class="navbar navbar-default navbar-fixed-top"> <!-- navbar-fixed-top -->
-                <div class="container pull-left" id="navbar-container"> <!-- pull-left -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar" style="background-color:#289ECD"></span>
-                            <span class="icon-bar" style="background-color:#289ECD"></span>
-                            <span class="icon-bar" style="background-color:#289ECD"></span>
-                        </button>
-                        <a class="navbar-brand" href="/">
-                           <img src='static/logo.gif' id="logo">
-                        </a>  
-                    </div> 
-                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                        {% block footer %}{% endblock %}
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-default navbar-fixed-top"> <!-- navbar-fixed-top -->
+          <div class="container pull-left" id="navbar-container"> <!-- pull-left -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar" style="background-color:#289ECD"></span>
+                      <span class="icon-bar" style="background-color:#289ECD"></span>
+                      <span class="icon-bar" style="background-color:#289ECD"></span>
+                  </button>
+                  <a class="navbar-brand" href="/">
+                     <img src='static/logo.gif' id="logo">
+                  </a>  
+              </div> 
+              <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                  {% block footer %}{% endblock %}
+              </div>
+          </div> <!-- pull-left -->
+          <span class="pull-right" id="iniciar-sesion-container">
+              <a href="#" id="iniciar-sesion" data-toggle="modal" data-target="#mymodalsignin">Iniciar Sesión</a>
+          </span>
+{% block content_body %}{% endblock %}
+      </nav> <!-- navbar-fixed-top -->
+      <br><br>
+      <div id="content">
+        <div class="container form-sign">
+          <div class="modal fade" id="mymodalsignin" role="dialog">  <!-- Modal-->
+            <div class="modal-dialog">    
+              <div class="modal-content modal-content-sign"> <!-- Modal content-->
+                <div class="modal-header-signin"> <!-- Modal tabs -->
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <ul class="nav nav-tabs nav-sign" id="tabContent">
+                    <li class="active"><a href="#signin" data-toggle="tab">Iniciar sesión</a></li>
+                    <li><a href="#signup" data-toggle="tab">Crear cuenta nueva</a></li>
+                  </ul>
+                </div> <!-- Modal tabs -->
+                <div class="tab-content"> <!-- tab contents-->
+                  <div class="tab-pane active" id="signin"> <!--tab de sign in-->
+                    <div class="modal-body-signin signin">
+                      <div class="container-signin">
+                        <form class="form-horizontal" role="form" method= "POST" action="" id="signin">
+                          <div class="form-group"> <!--parte de email-->
+                            <label class="control-label col-sm-4 control-label-sign sign-email" for="email">Correo electrónico:</label>
+                            <div class="col-sm-6"> <!--input de email-->
+                              <input type="email" class="form-control" id="email-signin" placeholder="ejemplo@hotmail.com" name="email" required>
+                            </div><!--input de email-->
+                          </div> <!--parte de email-->
+                          <div class="form-group"> <!--parte de contraseña-->
+                            <label class="control-label col-sm-4 control-label-sign" for="pwd">Contraseña:</label>
+                            <div class="col-sm-6"> <!--input de contraseña-->
+                              <input type="password" class="form-control" id="password-signin" placeholder="contraseña" name="" required>
+                            </div> <!--input de contraseña-->
+                          </div> <!--parte de contraseña-->
+                          <div class="form-group">        
+                            <div class="col-sm-offset-2 col-sm-10"> <!--submit de iniciar sesion-->   
+                              <button type="submit" class="btn btn-info" id="iniciar">Iniciar sesión</button> 
+                            </div><!--submit de iniciar sesion-->   
+                          </div>
+                        </form> <!--form de sign in-->
+                      </div>
                     </div>
-                </div> <!-- pull-left -->
-                <span class="pull-right" id="iniciar-sesion-container">
-                    <a href="#" id="iniciar-sesion" data-toggle="modal" data-target="#mymodalsignin">Iniciar Sesión</a>
-                </span>
-                {% block content_body %}{% endblock %}
-            </nav> <!-- navbar-fixed-top -->
-            <br><br>
-            <div id="content">
-                <div class="container form-sign">
-                 
-                  <div class="modal fade" id="mymodalsignin" role="dialog">  <!-- Modal-->
-                    <div class="modal-dialog">    
-                      
-                      <div class="modal-content modal-content-sign"> <!-- Modal content-->
-                        <div class="modal-header-signin"> <!-- Modal tabs -->
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <ul class="nav nav-tabs nav-sign" id="tabContent">
-                            <li class="active"><a href="#signin" data-toggle="tab">Iniciar sesión</a></li>
-                            <li><a href="#signup" data-toggle="tab">Crear cuenta nueva</a></li>
-                          </ul>
-                        </div> <!-- Modal tabs -->
-
-                        <div class="tab-content"> <!-- tab contents-->
-
-                          <div class="tab-pane active" id="signin"> <!--tab de sign in-->
-                            <div class="modal-body-signin signin">
-                              <div class="container-signin">
-                                <form class="form-horizontal" role="form" method= "POST" action="" id="signin">
-                                  <div class="form-group"> <!--parte de email-->
-                                    <label class="control-label col-sm-4 control-label-sign sign-email" for="email">Correo electrónico:</label>
-                                    <div class="col-sm-6"> <!--input de email-->
-                                      <input type="email" class="form-control" id="email-signin" placeholder="ejemplo@hotmail.com" name="email" required>
-                                    </div><!--input de email-->
-                                  </div> <!--parte de email-->
-                                  <div class="form-group"> <!--parte de contraseña-->
-                                    <label class="control-label col-sm-4 control-label-sign" for="pwd">Contraseña:</label>
-                                    <div class="col-sm-6"> <!--input de contraseña-->
-                                      <input type="password" class="form-control" id="password-signin" placeholder="contraseña" name="" required>
-                                    </div> <!--input de contraseña-->
-                                  </div> <!--parte de contraseña-->
-                                  <div class="form-group">        
-                                    <div class="col-sm-offset-2 col-sm-10"> <!--submit de iniciar sesion-->   
-                                      <button type="submit" class="btn btn-info" id="iniciar">Iniciar sesión</button> 
-                                    </div><!--submit de iniciar sesion-->   
-                                  </div>
-                                </form> <!--form de sign in-->
-                              </div>
-                            </div>
-                          </div> <!--tab de sign in-->
-
-                          <div class="tab-pane" id="signup"> <!-- tab de signup-->
-                            <div class="modal-body-signup signup">
-                              <div class="container-signup">
-                                <form class="form-horizontal" role="form" method= "POST" action="" id="signup">
-                                  <div class="form-group"> <!-- form de signup-->
-                                    <label class="control-label col-sm-4 control-label-sign sign-email" for="email">Correo electrónico:</label>
-                                    <div class="col-sm-6"> <!--input de email-->
-                                      <input type="email" class="form-control" id="email-signup" placeholder="ejemplo@hotmail.com" name="email" required>
-                                    </div> <!--input de email-->
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="control-label col-sm-4 control-label-sign" for="pwd">Contraseña:</label>
-                                    <div class="col-sm-6"> <!--input de contraseña-->
-                                      <input type="password" class="form-control" id="password-signup" placeholder="contraseña" name="" required>
-                                    </div> <!--input de contraseña-->
-                                  </div>
-                                  <div class="form-group"> <!--submit de crear cuenta-->    
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                      <button type="submit" class="btn btn-info" id="crear">Crear cuenta</button>
-                                    </div> 
-                                  </div><!--submit de crear cuenta-->   
-                                </form> <!-- form de signup-->
-                              </div>
-                            </div>
-                          </div> <!-- tab de signup-->
-
-                        </div> <!-- tab contents-->
-                      </div>  <!-- Modal content--> 
+                  </div> <!--tab de sign in-->
+                  <div class="tab-pane" id="signup"> <!-- tab de signup-->
+                    <div class="modal-body-signup signup">
+                      <div class="container-signup">
+                        <form class="form-horizontal" role="form" method= "POST" action="" id="signup">
+                          <div class="form-group"> <!-- form de signup-->
+                            <label class="control-label col-sm-4 control-label-sign sign-email" for="email">Correo electrónico:</label>
+                            <div class="col-sm-6"> <!--input de email-->
+                              <input type="email" class="form-control" id="email-signup" placeholder="ejemplo@hotmail.com" name="email" required>
+                            </div> <!--input de email-->
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-4 control-label-sign" for="pwd">Contraseña:</label>
+                            <div class="col-sm-6"> <!--input de contraseña-->
+                              <input type="password" class="form-control" id="password-signup" placeholder="contraseña" name="" required>
+                            </div> <!--input de contraseña-->
+                          </div>
+                          <div class="form-group"> <!--submit de crear cuenta-->    
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="submit" class="btn btn-info" id="crear">Crear cuenta</button>
+                            </div> 
+                          </div><!--submit de crear cuenta-->   
+                        </form> <!-- form de signup-->
+                      </div>
                     </div>
-                  </div> <!-- Modal -->
-                </div>
-            {% block content %}{% endblock %}
-            </div> 
+                  </div> <!-- tab de signup-->
+                </div> <!-- tab contents-->
+              </div>  <!-- Modal content--> 
+            </div>
+          </div> <!-- Modal -->
         </div>
-    </body>
+{% block content %}{% endblock %}
+      </div> 
+    </div>
+  </body>
 </html>
