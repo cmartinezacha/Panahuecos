@@ -116,19 +116,19 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 .nav-tabs{
-  border-width-bottom: 1px;
+  /*border-width-bottom: 1px;*/
   border-bottom-color: rgba(248, 210, 96, 1);
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
 }
 
 .nav-tabs>li>a:hover{
   background-color: #F5C73B;
-  border-width: 0;
+  border-color: #F5C73B;
 }
 
 .nav-tabs>.active>a:hover{
   background-color: #F5C73B;
-  border-width: 0;
+  border-color: #F5C73B;
 }
 
 .control-label-sign{
