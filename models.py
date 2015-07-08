@@ -43,7 +43,7 @@ class Reportes(db.Model):
     def __init__(self, **kwargs):
         self.email = kwargs['email']
         self.date = datetime.now()
-        self.likes = 1
+        self.likes = 0
         self.problema = kwargs['problema']
         self.area = kwargs['area']
         self.localizacion_breve = kwargs['localizacion_breve']
