@@ -64,7 +64,7 @@
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-		                <label style="margin-top:0.55em">
+		                <label style="margin-top:0.525em">
 		                  <input type="file" name="file">
 		                </label>
 		              </div>
@@ -129,38 +129,38 @@
 
 	<div class="right-half entries col-md-6">
 		{% for reporte in reportes %}
-			<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
-				<div class="reporte-peque">
-					<div class="like pull-right">
-						<a href="#" onclick="stop(event)" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
-						<h6>{{reporte.likes}} likes</h6>
-					</div>
-					<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
-					<h4 class = "estado-displayed">{{reporte.state}}</h4>
-				</div>
+		<div class="like pull-right">
+			<a href="#" onclick="stop(event)" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
+			<h6>{{reporte.likes}} likes</h6>
+		</div>
+		<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
+			<div class="reporte-peque" role="tab" >
+				<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
+				<h4 class = "estado-displayed">{{reporte.state}}</h4>
+			</div>
 
-					<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-						<div class="grupito">
-							{% if reporte.image %}
-							<div class="col-sm-6 detalles-ubic">
-					      		{{reporte.details}}
-							</div>
-				      		<div class="col-sm-4 imagen-up">
-						      	<img class="imagen" src="/images/{{reporte.id}}.jpg">
-				      		</div>
-				      		{% else %}
-							<div class="detalles-ubic-sin-img">
-					      		{{reporte.details}}
-							</div>
-				      		{% endif %}
-				      	</div>
-			      		<div class="datos">
-				      		<div class="editar" >
-								<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
-							</div>
-							<h6 class="date">{{reporte.date|datetime}}</h6>
-		      		</div>
-		      	</div>
+				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="grupito">
+						{% if reporte.image %}
+						<div class="col-sm-6 detalles-ubic">
+				      		{{reporte.details}}
+						</div>
+			      		<div class="col-sm-4 imagen-up">
+					      	<img class="imagen" src="/images/{{reporte.id}}.jpg">
+			      		</div>
+			      		{% else %}
+						<div class="detalles-ubic-sin-img">
+				      		{{reporte.details}}
+						</div>
+			      		{% endif %}
+			      	</div>
+		      		<div class="datos">
+			      		<div class="editar" >
+							<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
+						</div>
+						<h6 class="date">{{reporte.date|datetime}}</h6>
+	      		</div>
+	      	</div>
 		      	
 		    </div>
 		    <div class="modal fade" id="myModal{{reporte.id}}" role="dialog">
