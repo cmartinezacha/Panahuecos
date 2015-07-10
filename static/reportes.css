@@ -169,12 +169,8 @@ body{
 	font-weight: 300;
 	color: #289ECD;
 	background-color: white;
-	border-color: #289ECD;
-	border-width: 0px;
-	border-radius: 2px;
 	text-align: center;
 	width: 5em;
-	z-index: 0;
 	margin-top: 0.5em;
 	margin-right: 1.1em;
 }
@@ -182,7 +178,6 @@ body{
 .like:hover{
 	background-color: white;
 	border-color: #289ECD;
-	border-width: 0px;
 	color: #289ECD;
 	font-weight: 500;
 }
