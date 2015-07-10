@@ -125,8 +125,55 @@
 
 	<div class="right-half entries col-md-6">
 		{% for reporte in reportes %}
-			<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
-				<div class="reporte-peque">
+<!-- -------------------------------------------------------- -->
+<!-- <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group reporte">
+
+    <div class="panel panel-default">
+        <div id="headingOne" role="tab" class="panel-heading titulo-de-reporte">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-target="#collapseOne" href="#" aria-expanded="true" aria-controls="collapseOne">{{reporte.problema}} - {{reporte.localizacion_breve}}</a>
+            </h4>
+        </div>
+        <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne"
+            class="panel-collapse collapse in">
+
+
+            <ul class="list-group">
+                <li class="list-group-item">Item1</li>
+                <li class="list-group-item">Item2</li>
+                <li class="list-group-item">Item3</li>
+            </ul>
+
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div id="headingTwo" role="tab" class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-target="#collapseTwo" href="#" aria-expanded="true" aria-controls="collapseTwo">Another list</a>
+            </h4>
+        </div>
+        <div id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo"
+            class="panel-collapse collapse in">
+
+
+            <ul class="list-group">
+                <li class="list-group-item">Item1</li>
+                <li class="list-group-item">Item2</li>
+                <li class="list-group-item">Item3</li>
+            </ul>
+
+            
+        </div>
+    </div>
+
+</div> -->
+
+<!-- -------------------------------------------------------- -->
+
+			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
+				<div class="reporte-peque" role="tab" >
 					<div class="like pull-right">
 						<a href="#" onclick="stop(event)" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
 						<h6>{{reporte.likes}} likes</h6>
