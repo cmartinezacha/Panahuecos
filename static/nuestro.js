@@ -18,23 +18,32 @@ $(function($){
 		beforeShowDay: $.datepicker.noWeekends
 	};
 	$(".solo").click(function(event){
-	event.stopPropagation();
-	big_parent = $(this).parent().parent();
+		event.stopPropagation();
+		big_parent = $(this).parent().parent();
 
-	$(big_parent).find("input").each(function(){
-		$(this).prop("checked",false);
-	});
-	label = $(this).siblings().get();
-	checkbox = $(label).find("input");
-	checkbox.prop("checked",true);
+		$(big_parent).find("input").each(function(){
+			$(this).prop("checked",false);
+		});
+		label = $(this).siblings().get();
+		checkbox = $(label).find("input");
+		checkbox.prop("checked",true);
 	});
 
-	$(".checkbox").click(function(){
+	$(".checkbox").click(function(event){
 		checkbox = $(this).find("input")[0];
 		if(checkbox.checked == false){
 			checkbox.checked = true;
 		} else{
 			checkbox.checked = false;
+		}
+	});
+
+	$(".input-checkbox").click(function(event){
+		event.stopPropagation();
+		if(this.checked == false){
+			this.checked = true;
+		} else{
+			this.checked = false;
 		}
 	});
 
