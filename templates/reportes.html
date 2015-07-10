@@ -89,7 +89,7 @@
 					<h4 class="filtro-ind">Estado:</h4>
 					{% for estado in estados %}
 					<div class="checkbox">
-					  <label>
+					  <label class="input-checkbox">
 					    <input type="checkbox" name="estado" value="{{estado}}" {% if estado in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
 					    {{estado}}
 					  </label>
