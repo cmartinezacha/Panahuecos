@@ -102,7 +102,7 @@
 					<h4 class="filtro-ind">Región:</h4>
 					{% for region in regiones %}
 					<div class="checkbox">
-					  <label>
+					  <label class="input-checkbox">
 					    <input type="checkbox" name="region" value="{{region}}" {% if region in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
 					    {{region}}
 					  </label>
@@ -115,7 +115,7 @@
 					<h4 class="filtro-ind problema">Tipo de daño:</h4>
 					{% for problema in problemas %}      
 					<div class="checkbox">
-					  <label>
+					  <label class="input-checkbox">
 					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
 					    {{problema}}
 					  </label>
