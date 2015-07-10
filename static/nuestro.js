@@ -17,6 +17,19 @@ $(function($){
 		yearSuffix: '',
 		beforeShowDay: $.datepicker.noWeekends
 	};
+	$(".solo").click(function(){
+	big_parent = $(this).parent().parent();
+
+	$(big_parent).find("input").each(function(){
+		console.log(this);
+		$(this).prop("checked",false);
+	});
+	label = $(this).siblings().get();
+	checkbox = $(label).find("input");
+	checkbox.prop("checked",true);
+	console.log(big_parent);
+	});
+
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
 	// $('.editar').click(function(e){
@@ -34,4 +47,7 @@ $(function () {
 		}
 	});
 });
+
+
+
 

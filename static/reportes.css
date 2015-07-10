@@ -259,3 +259,15 @@ body{
 .editar:hover{
 	text-decoration: underline;
 }
+
+.solo{
+	display:none;
+	float:right;
+}
+
+.solo:hover {
+    text-decoration: underline;
+}
+.checkbox:hover > span{
+	display:inline;
+}

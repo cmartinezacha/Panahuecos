@@ -85,6 +85,7 @@
 			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
 			<div class="filtros">
 				<section class="estado">
+
 					<h4 class="filtro-ind">Estado:</h4>
 					{% for estado in estados %}
 					<div class="checkbox">
@@ -92,6 +93,7 @@
 					    <input type="checkbox" name="estado" value="{{estado}}" {% if estado in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
 					    {{estado}}
 					  </label>
+					  <span class="solo">Solo</span>
 					</div>
 					{% endfor %}
 				</section>
@@ -104,6 +106,7 @@
 					    <input type="checkbox" name="region" value="{{region}}" {% if region in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
 					    {{region}}
 					  </label>
+					  <span class="solo">Solo</span>
 					</div>
 					{% endfor %}
 				</section>
@@ -116,6 +119,7 @@
 					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
 					    {{problema}}
 					  </label>
+					  <span class="solo">Solo</span>
 					</div>
 					{% endfor %}
 				</section>
