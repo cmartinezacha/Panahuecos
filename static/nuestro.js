@@ -17,17 +17,25 @@ $(function($){
 		yearSuffix: '',
 		beforeShowDay: $.datepicker.noWeekends
 	};
-	$(".solo").click(function(){
+	$(".solo").click(function(event){
+	event.stopPropagation();
 	big_parent = $(this).parent().parent();
 
 	$(big_parent).find("input").each(function(){
-		console.log(this);
 		$(this).prop("checked",false);
 	});
 	label = $(this).siblings().get();
 	checkbox = $(label).find("input");
 	checkbox.prop("checked",true);
-	console.log(big_parent);
+	});
+
+	$(".checkbox").click(function(){
+		checkbox = $(this).find("input")[0];
+		if(checkbox.checked == false){
+			checkbox.checked = true;
+		} else{
+			checkbox.checked = false;
+		}
 	});
 
 	$.datepicker.setDefaults($.datepicker.regional['es']);
