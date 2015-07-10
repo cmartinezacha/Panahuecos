@@ -163,7 +163,6 @@ body{
 
 .estado-displayed{
 	font-weight: 400;
-	font-size: 20px;
 }
 
 .like,.like:focus{
@@ -172,7 +171,7 @@ body{
 	color: #289ECD;
 	background-color: white;
 	text-align: center;
-	width: 5em;
+	width: 4em;
 	margin-top: 0.5em;
 	margin-right: 1.1em;
 }
@@ -184,14 +183,19 @@ body{
 	font-weight: 500;
 }
 
+.cantidad-likes{
+	font-size: 1.3em;
+}
+
 .glyphicon-thumbs-up{
-	font-size: 1.8em;
+	font-size: 1.6em;
 	font-weight: 400;
 }
 
 .glyphicon-thumbs-up:hover{
 	font-weight: 700;
 }
+
 .grupito{
 	display: inline-block;
 }
