@@ -259,6 +259,7 @@ body{
 .solo{
 	display:none;
 	float:right;
+	cursor: pointer;
 }
 
 .solo:hover {
