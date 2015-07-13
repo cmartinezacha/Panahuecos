@@ -86,7 +86,8 @@
 			<div class="filtros">
 				<section class="estado">
 
-					<h4 class="filtro-ind">Estado:</h4>
+					<h4 class="filtro-ind">Estado: <span class="todos">Todos</span></h4>
+
 					{% for estado in estados %}
 					<div class="checkbox">
 					  <label class="input-checkbox">
@@ -99,7 +100,7 @@
 				</section>
 
 				<section class="region">
-					<h4 class="filtro-ind">Región:</h4>
+					<h4 class="filtro-ind">Región: <span class="todos">Todos</span></h4>
 					{% for region in regiones %}
 					<div class="checkbox">
 					  <label class="input-checkbox">
@@ -112,7 +113,7 @@
 				</section>
 
 				<section class="tipo-de-dano">
-					<h4 class="filtro-ind problema">Tipo de daño:</h4>
+					<h4 class="filtro-ind problema">Daño: <span class="todos">Todos</span></h4>
 					{% for problema in problemas %}      
 					<div class="checkbox">
 					  <label class="input-checkbox">
