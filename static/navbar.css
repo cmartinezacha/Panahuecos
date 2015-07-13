@@ -113,6 +113,7 @@ nav.content span,nav.content ul,nav.content li{
   background-color:rgba(248, 210, 96, 1);
   color:black;
   border-width: 0px;
+  border-radius: 0;
 }
 
 .nav-tabs{
@@ -124,11 +125,13 @@ nav.content span,nav.content ul,nav.content li{
 .nav-tabs>li>a:hover{
   background-color: #F5C73B;
   border-color: #F5C73B;
+  border-radius: 0;
 }
 
 .nav-tabs>.active>a:hover{
   background-color: #F5C73B;
   border-color: #F5C73B;
+  border-radius: 0;
 }
 
 .control-label-sign{
