@@ -82,12 +82,11 @@
 		</div>
 
 		<form method= "POST">
-			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
+			<!-- <button type="submit" class="btn btn-info" id="filtro">Filtrar</button> -->
+			<div style="margin-left:2em; font-weight:400">Filtros:</div>
 			<div class="filtros">
 				<section class="estado">
-
 					<h4 class="filtro-ind">Estado: <span class="todos">Todos</span></h4>
-
 					{% for estado in estados %}
 					<div class="checkbox">
 					  <label class="input-checkbox">
@@ -125,6 +124,8 @@
 					{% endfor %}
 				</section>
 			</div>
+			<br>
+			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
 		</form>
 	</div>
 
@@ -221,10 +222,10 @@
 			              </div>
 
 			              <div class="form-group">
-		                <label class="control-label col-sm-2" for="email">Detalles:</label>
-		                <div class="col-sm-4">
-		                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
-		                </div>
+							<label class="control-label col-sm-2" for="email">Detalles:</label>
+							<div class="col-sm-4">
+								<textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
+							</div>
 		              </div>
 
 			              <div class="form-group">
@@ -243,7 +244,6 @@
 			          </div>
 			        </div>
 			      </div>
-			      
 			    </div>
 			  </div>
 		{% else %}
