@@ -138,7 +138,7 @@ body{
 	border-color: #e5e5e5;
 	border-top-color: transparent;
 	border-style: solid;
-	padding: 2px;
+	padding: 0.6em;
 }
 
 .reportes-overall:first-child { 
@@ -149,7 +149,7 @@ body{
 
 .reporte:hover{
 	border-style: solid;
-	padding: 2px;
+	padding: 0.6em;
 	border-width: 1px;
 	border-color: #9E9E9E;
 }
@@ -172,6 +172,7 @@ body{
 
 .reporte-peque{
 	margin: 0.5em;
+	margin-left: 3em;
 }
 
 .estado-displayed{

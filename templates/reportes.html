@@ -138,36 +138,32 @@
 			</div>
 
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
-				<span>
-					<img class="dano-icon" src="/images/{{reporte.problema}}.jpg">
-				</span>
-				<span>
-					<div class="reporte-peque" role="tab" >
-						<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
-						<div class = "date">{{reporte.state}}: {{reporte.date|datetime}}</div>	
-					</div>
-					<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-						<div class="grupito">
-							{% if reporte.image %}
-							<div class="col-sm-6 detalles-ubic">
-						      	{{reporte.details}}
-							</div>
-					      	<div class="col-sm-4 imagen-up">
-							      <img class="imagen" src="/images/{{reporte.id}}.jpg">
-					      	</div>
-					      	{% else %}
-							<div class="detalles-ubic-sin-img">
-						      	{{reporte.details}}
-							</div>
-					      	{% endif %}
-					    </div>
-				      	<div class="datos">
-				      		<div class="date-created pull-right">Creado {{reporte.date|datetime}}</div>
-							<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
-							
-			      		</div>
-			      	</div>
-			    </span>	
+				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
+				<div class="reporte-peque inline" role="tab">
+					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
+					<div class="date">{{reporte.state}}: {{reporte.date|datetime}}</div>	
+				</div>
+				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="grupito">
+						{% if reporte.image %}
+						<div class="col-sm-6 detalles-ubic">
+					      	{{reporte.details}}
+						</div>
+				      	<div class="col-sm-4 imagen-up">
+						      <img class="imagen" src="/images/{{reporte.id}}.jpg">
+				      	</div>
+				      	{% else %}
+						<div class="detalles-ubic-sin-img">
+					      	{{reporte.details}}
+						</div>
+				      	{% endif %}
+				    </div>
+			      	<div class="datos">
+			      		<div class="date-created pull-right">Creado {{reporte.date|datetime}}</div>
+						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
+						
+		      		</div>
+		      	</div>
 			</div>
 		</div>
 
