@@ -29,7 +29,7 @@ $(function($){
 		checkbox.prop("checked",true);
 	});
 
-	$(".checkbox").click(function(event){
+	$(".checkbox").click(function(){
 		checkbox = $(this).find("input")[0];
 		if(checkbox.checked == false){
 			checkbox.checked = true;
@@ -45,6 +45,13 @@ $(function($){
 		} else{
 			this.checked = false;
 		}
+	});
+
+	$(".todos").click(function(){
+		big_parent = $(this).parent().parent();
+		$(big_parent).find("input").each(function(){
+			$(this).prop("checked", true);
+		});
 	});
 
 	$.datepicker.setDefaults($.datepicker.regional['es']);

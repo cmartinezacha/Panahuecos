@@ -104,7 +104,7 @@ def add_reporte():
     db.session.flush()
     if upload.filename != "":
         filename = secure_filename(upload.filename)
-        ext = filename.rsplit('.', 1)[1]
+        ext = filename.rsplit('.')[-1]
         reporte.image = str(reporte.id) + "." + ext
         upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
     db.session.commit()
