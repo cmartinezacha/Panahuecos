@@ -132,34 +132,42 @@ body{
 .reporte{
 	border-right: 1px;
 	border-left: 1px;
-	border-top: 1px;
-	border-bottom: 1px;
-	border-color: #e5e5e5 #e5e5e5 white #e5e5e5;
-	border-style: solid;
-	padding: 2px;
-}
-
-.reporte:last-child{
+	border-top: 0px;
 	border-bottom: 1px;
 	border-color: #e5e5e5;
 	border-style: solid;
+	padding: 2px;
 }
 
 .reporte:hover{
 	border-style: solid;
 	padding: 2px;
 	border-width: 1px;
+	border-top-width: 0px;
 	border-color: #9E9E9E;
 }
 
-.reporte-peque{
-	margin: 0.5em;
+.reportes-overall:first-child { 
+	border-top-width: 1px !important;
+	border-top-color: #e5e5e5 !important;
+	border-top-style: solid !important;
+}
+
+.reporte:first-child:hover { 
+	border-top-width: 1px !important;
+	border-top-color: #9E9E9E !important;
+	border-top-style: solid !important;
 }
 
 .titulo-de-reporte{
 	font-weight: 400;
 	margin-top: 0em;
 	font-size: 20px;
+}
+
+
+.reporte-peque{
+	margin: 0.5em;
 }
 
 .estado-displayed{
