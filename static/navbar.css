@@ -106,7 +106,8 @@ nav.content span,nav.content ul,nav.content li{
 
 #iniciar, #crear{
   text-align: center;
-  margin: 0 10em;
+  margin: 0 8em;
+  margin-top: 1em;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
@@ -128,7 +129,7 @@ nav.content span,nav.content ul,nav.content li{
   border-radius: 0;
 }
 
-.nav-tabs>.active>a:hover{
+.nav-tabs>.active>a:hover{3
   background-color: #F5C73B;
   border-color: #F5C73B;
   border-radius: 0;

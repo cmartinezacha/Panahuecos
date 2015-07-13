@@ -243,7 +243,7 @@ body{
 
 .glyphicon-pencil{
 	font-weight: 100;
-	font-size: 12px;
+	font-size: 11px;
 	color: black;
 	color: black;
 }
@@ -258,9 +258,9 @@ body{
 	background-color: white;
 	border-width: 0;
 	margin: 0;
-	padding: 0;
 	font-size: 1em;
 	font-weight: 300;
+	padding-left: 0;
 }
 
 .editar:hover{
