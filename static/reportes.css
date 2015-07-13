@@ -156,8 +156,8 @@ body{
 
 .titulo-de-reporte{
 	font-weight: 400;
-	margin-top: 0em;
 	font-size: 1.15em;
+	margin-right: 3em; 
 }
 
 .tipo-de-reporte{
