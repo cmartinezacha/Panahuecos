@@ -305,3 +305,8 @@ body{
 	cursor: pointer;
 	text-decoration: underline;
 }
+
+.dano-icon{
+	max-width: 30px;
+	max-height: 30px;
+}
