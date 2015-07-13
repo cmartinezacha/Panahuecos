@@ -138,10 +138,10 @@
 			</div>
 
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
-				
-				<div class="reporte-peque" role="tab" >
+				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
+				<div class="reporte-peque inline" role="tab">
 					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
-					<div class = "date">{{reporte.state}}: {{reporte.date|datetime}}</div>	
+					<div class="date">{{reporte.state}}: {{reporte.date|datetime}}</div>	
 				</div>
 				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 					<div class="grupito">
@@ -165,7 +165,6 @@
 						
 		      		</div>
 		      	</div>
-			      	
 			</div>
 		</div>
 
