@@ -102,6 +102,7 @@ body{
 	border-top-color: #e5e5e5 ;
 	border-top-style: solid;
 	border-top-width: 1px;
+	
 }
 
 .checkbox{
@@ -272,4 +273,14 @@ body{
 
 .checkbox:hover > span{
 	display:inline;
+}
+
+.todos{
+	float:right;
+	font-weight: normal;
+}
+
+.todos:hover{
+	cursor: pointer;
+	text-decoration: underline;
 }
