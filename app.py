@@ -114,6 +114,15 @@ def add_reporte():
 def edit_reporte():
     form = request.form
     reporte = db.session.merge(models.get_reporte_by_id(int(form['id'])))
+    upload = request.files['file']
+    image_count = len(reporte.images)
+    if upload.filename != "":
+        filename = secure_filename(upload.filename)
+        ext = filename.rsplit('.')[-1]
+        url = str(reporte.id)+"_"+str(image_count)+"."+ext
+        new_image = models.Images(reporte_id=int(form['id']), url=url)
+        reporte.images.append(new_image) 
+        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
     reporte.area = form['area']
     reporte.state = form['estado']
     reporte.problema = form['problema']

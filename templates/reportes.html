@@ -150,7 +150,8 @@
 					      	{{reporte.details}}
 						</div>
 				      	<div class="col-sm-4 imagen-up">
-						      <img class="imagen" src="/images/{{reporte.id}}.jpg">
+				      		{% for image in reporte.images.all() %}
+						      <img class="imagen" src="/images/{{image.url}}.jpg">
 				      	</div>
 				      	{% else %}
 						<div class="detalles-ubic-sin-img">
