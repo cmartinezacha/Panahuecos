@@ -139,12 +139,13 @@
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
 				
 				<div class="reporte-peque" role="tab" >
-					<h4 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h4>
-					<h5 class = "estado-displayed">{{reporte.state}}</h5>
+					<span class="tipo-de-reporte">{{reporte.problema}}</span><span class = "titulo-de-reporte"> - {{reporte.localizacion_breve}}</span>
+					<span class = "date"> - <b>{{reporte.state}}</b> {{reporte.date|datetime}}</span>
+					<div class="date">Creado {{reporte.date|datetime}}</div>
 				</div>
 				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 					<div class="grupito">
-							{% if reporte.image %}
+						{% if reporte.image %}
 						<div class="col-sm-6 detalles-ubic">
 					      		{{reporte.details}}
 						</div>
@@ -161,7 +162,6 @@
 				      	<div class="editar" >
 							<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
 						</div>
-						<h6 class="date">{{reporte.date|datetime}}</h6>
 		      		</div>
 		      	</div>
 			      	
