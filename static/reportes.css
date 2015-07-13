@@ -133,18 +133,12 @@ body{
 .reporte{
 	border-right: 1px;
 	border-left: 1px;
-	border-top: 0px;
+	border-top: 1px;
 	border-bottom: 1px;
 	border-color: #e5e5e5;
+	border-top-color: transparent;
 	border-style: solid;
 	padding: 2px;
-}
-
-.reporte:hover{
-	border-style: solid;
-	padding: 2px;
-	border-width: 1px;
-	border-color: #9E9E9E;
 }
 
 .reportes-overall:first-child { 
@@ -153,10 +147,11 @@ body{
 	border-top-style: solid !important;
 }
 
-.reporte:first-child:hover { 
-	border-top-width: 1px !important;
-	border-top-color: #9E9E9E !important;
-	border-top-style: solid !important;
+.reporte:hover{
+	border-style: solid;
+	padding: 2px;
+	border-width: 1px;
+	border-color: #9E9E9E;
 }
 
 .titulo-de-reporte{
