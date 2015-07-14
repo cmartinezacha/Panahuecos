@@ -224,6 +224,7 @@ body{
 	max-width: 300px;
 	margin-left: 0;
 	font-weight: 400;
+	padding: 0;
 }
 
 .detalles-ubic-sin-img{
@@ -231,6 +232,7 @@ body{
 	/*letter-spacing: 1px;*/
 	max-width: 530px;
 	font-weight: 400;
+	padding: 0;
 }
 
 .imagen{
