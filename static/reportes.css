@@ -221,7 +221,7 @@ body{
 .detalles-ubic{
 	font-size: 14px;
 /*	letter-spacing: 1px;*/
-	max-width: 300px;
+	width: 300px;
 	margin-left: 0;
 	font-weight: 400;
 	padding: 0;
@@ -236,8 +236,8 @@ body{
 }
 
 .imagen{
-	max-width: 330px;
-	max-height: 330px;
+	max-width: 300px;
+	max-height: 300px;
 }
 
 .form{
