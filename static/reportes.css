@@ -313,3 +313,7 @@ body{
 	max-width: 30px;
 	max-height: 30px;
 }
+
+.input-entries{
+	margin-top: 0.45em;
+}
