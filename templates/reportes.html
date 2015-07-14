@@ -145,13 +145,14 @@
 				</div>
 				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 					<div class="grupito">
-						{% if reporte.image %}
+						{% if reporte.images %}
 						<div class="col-sm-6 detalles-ubic">
 					      	{{reporte.details}}
 						</div>
 				      	<div class="col-sm-4 imagen-up">
-				      		{% for image in reporte.images.all() %}
-						      <img class="imagen" src="/images/{{image.url}}.jpg">
+				      		{% for image in reporte.images %}
+						      <img class="imagen" src="/images/{{image.url}}">
+						    {% endfor %}
 				      	</div>
 				      	{% else %}
 						<div class="detalles-ubic-sin-img">

@@ -87,7 +87,7 @@ def valid_login(username, password):
 class Images(db.Model):
     __tablename__ = "images"
     id = db.Column(db.Integer, primary_key=True)
-    reporte_id = db.Column(db.Integer, db.ForeignKey('Reportes.id'))
+    reporte_id = db.Column(db.Integer, db.ForeignKey('reportes.id'))
     url = db.Column(db.String(120), unique=True)
 
     

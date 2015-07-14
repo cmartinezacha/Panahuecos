@@ -105,8 +105,11 @@ def add_reporte():
     if upload.filename != "":
         filename = secure_filename(upload.filename)
         ext = filename.rsplit('.')[-1]
-        reporte.image = str(reporte.id) + "." + ext
-        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
+        url = str(reporte.id)+"_0."+ext
+        new_image = models.Images(reporte_id=reporte.id, url=url)
+        db.session.add(new_image)
+        reporte.images.append(new_image) 
+        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
     db.session.commit()
     return redirect(url_for('show_reportes'))
 
@@ -121,6 +124,7 @@ def edit_reporte():
         ext = filename.rsplit('.')[-1]
         url = str(reporte.id)+"_"+str(image_count)+"."+ext
         new_image = models.Images(reporte_id=int(form['id']), url=url)
+        db.session.add(new_image)
         reporte.images.append(new_image) 
         upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
     reporte.area = form['area']
