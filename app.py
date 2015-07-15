@@ -34,6 +34,11 @@ def datetime_filter(date_time):
 def today_news():
     return redirect(url_for('show_news', fecha_raw= utils.get_today()))
     
+
+@app.route('/estadisticas')
+def show_stats():
+    return render_template('estadisticas.html')
+
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
     if not session.get('logged_in'):

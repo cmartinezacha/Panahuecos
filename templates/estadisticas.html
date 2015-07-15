@@ -1,31 +1,68 @@
 {% extends "layout.html" %}
 
+{% block head %}
+      <link rel="stylesheet" href="static/estadisticas.css">
+{% endblock %}
+
+
 
 {% block content %}
-
 
 <div class="container">
 	
 	<div class="col-md-4">
-		<div>
-			<h4>REPORTES</h4>
+		<div class="reportes-review">
+			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
+			<h4 class="reportes-titulo-stats">Reportes</h4>
+			<h1 class="numero-de-reportes"> 127 </h1>
+
+			<table class="reportes-stats" style="width:100%">
+			  <tr>
+			    <td class="tipo-stat">Reportes completados</td>
+			    <td class="numero-de-r">78</td>
+			  </tr>
+			  <tr>
+			    <td class="tipo-stat">Reportes en proceso</td>		
+			    <td class="numero-de-r">15</td>
+			  </tr>
+			  <tr>
+			    <td class="tipo-stat">Reportes en inspección</td>		
+			    <td class="numero-de-r">22</td>
+			  </tr>
+			  <tr>
+			    <td class="tipo-stat">Reportes iniciados</td>		
+			    <td class="numero-de-r"> 12</td>
+			  </tr>
+			  <tr>
+			    <td class="tipo-stat">Reportes vencidos</td>		
+			    <td class="numero-de-r">0</td>
+			  </tr>
+			</table>
+
+			<ul class="nav nav-pills nav-justified time-frames">
+			  <li role="time-frame"><a href="#">Semana</a></li>
+			  <li role="time-frame"  class="active"><a href="#">Mes</a></li>
+			  <li role="time-frame"><a href="#">Año</a></li>
+			</ul>
+
+
 		</div>
 
-		<div>
+		<div class="filtros-de-stats">
 			<h4>Cambios</h4>
 		</div>
 	</div>
 
 	<div class="col-md-8">
-		<div class="row">
+		<div class="row stats-de-region">
 			<h4>Reportes por region</h4>
 		</div>
 
 		<div class="row">
-			<div class="span4">
+			<div class="col-md-6 stats-de-tiempo">
 				<h4>Tiempo para completar reportes</h4>
 			</div>
-			<div class="span4">
+			<div class="col-md-6 stats-de-dano">
 				<h4>Distribución de daños</h4>
 			</div>
 		</div>
