@@ -236,8 +236,13 @@ body{
 }
 
 .imagen{
+<<<<<<< HEAD
+	width: 300px;
+	height: 300px;
+=======
 	max-width: 300px;
 	max-height: 300px;
+>>>>>>> fbb556770e61d8134a52a160beaba2c77067d37d
 }
 
 .form{
@@ -312,6 +317,14 @@ body{
 .dano-icon{
 	max-width: 30px;
 	max-height: 30px;
+}
+
+.imagen-up img{
+	display:none;
+}
+
+.imagen-up img:first-child{
+	display:list-item;
 }
 
 .input-entries{
