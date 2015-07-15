@@ -18,7 +18,7 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h3 class="modal-title">Agrega tu Reporte</h3>
+		          <h3 class="modal-title">Agregar reporte</h3>
 		        </div>
 		        <div class="modal-body">
 
@@ -26,13 +26,13 @@
 		            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="nuevo-reporte">
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
-		                <div class="col-sm-4">
+		                <div class="col-sm-4 input-entries">
 		                  <input type="email" class="form-control" id="email" placeholder="ejemplo@hotmail.com" name="email" required>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
-		                <div class="col-sm-4">          
+		                <div class="col-sm-4 input-entries">          
 		                  <select name="problema" required>
 		                  	{% for problema in problemas %}
 		                    <option>{{problema}}</option>
@@ -42,7 +42,7 @@
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="pwd">Región:</label>
-		                <div class="col-sm-4">          
+		                <div class="col-sm-4 input-entries">          
 		                  <select name="area" required>
 		                  	{% for region in regiones %}
 		                    <option>{{region}}</option>
@@ -52,13 +52,13 @@
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
-		                <div class="col-sm-4">
+		                <div class="col-sm-4 input-entries">
 		                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion" maxlength="35" required>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Detalles:</label>
-		                <div class="col-sm-4">
+		                <div class="col-sm-4 input-entries">
 		                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="nuevo-reporte" style="resize:none" required></textarea>
 		                </div>
 		              </div>
@@ -180,69 +180,63 @@
 			      <div class="modal-content">
 			        <div class="modal-header">
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h3 class="modal-title">Edita tu Reporte</h3>
+			          <h3 class="modal-title">Editar reporte</h3>
 			        </div>
 			        <div class="modal-body">
 
 			          <div class="container">
-			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/cambiar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
-
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
 			              <div class="form-group">
-			                <label class="control-label col-sm-2" for="pwd">Estado:</label>
-			                <div class="col-sm-4">          
-			                  <select name="estado" required>
-			                  	{% for estado in estados %}
-			                    <option {% if reporte.state==estado %} selected {% endif %}>{{estado}}</option>
-			                    {% endfor %}
-			                 </select>
-			                </div>
-			              </div>	
+			              	  <label class="control-label col-sm-2" for="pwd">Estado:</label>
+			              	  <div class="col-sm-4 input-entries">          
+			              	    <select name="estado" required>
+			              	    	{% for estado in estados %}
+			              	      <option {% if reporte.state==estado %} selected {% endif %}>{{estado}}</option>
+			              	      {% endfor %}
+			              	   </select>
+			              	  </div>
+			              	</div>	
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
-			                <div class="col-sm-4">          
+			                <div class="col-sm-4 input-entries">          
 			                  <select name="problema" required>
-			                  	{% for problema in problemas %}
-			                    <option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
-			                    {% endfor %}
+			                  	  {% for problema in problemas %}
+			                  	  <option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
+			                  	  {% endfor %}
 			                 </select>
 			                </div>
 			              </div>
-
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="pwd">Región:</label>
-			                <div class="col-sm-4">          
+			                <div class="col-sm-4 input-entries">          
 			                  <select name="area" required>
-			                  	{% for region in regiones %}
-			                    <option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
-			                    {% endfor %}
+			                  	  {% for region in regiones %}
+			                  	  <option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
+			                  	  {% endfor %}
 			                 </select>
 			                </div>
 			              </div>
-			              
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
-			                <div class="col-sm-4">
-			                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion" value="{{reporte.localizacion_breve}}" required>
+			                <div class="col-sm-4 input-entries">
+			                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion"  value="{{reporte.localizacion_breve}}" maxlength="35" required>
 			                </div>
 			              </div>
-
 			              <div class="form-group">
-							<label class="control-label col-sm-2" for="email">Detalles:</label>
-							<div class="col-sm-4">
-								<textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
-							</div>
-		              </div>
-
+			                <label class="control-label col-sm-2" for="email">Detalles:</label>
+			                <div class="col-sm-4 input-entries">
+			                 <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
+			                </div>
+			              </div>
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-			                <div class="col-sm-4">
+			                <label style="margin-top:0.525em">
 			                  <input type="file" name="file">
-			                </div>
+			                </label>
 			              </div>
-			              <input type="hidden" name="id" value="{{reporte.id}}">
 			              <div class="form-group">        
 			                <div class="col-sm-offset-2 col-sm-10">
-			                  <button type="submit" class="btn btn-info" id="cambiar">Editar</button>
+			                  <button type="submit" class="btn btn-info" id="nuevoreporte">Editar</button>
 			                </div>
 			              </div>
 			            </form>
