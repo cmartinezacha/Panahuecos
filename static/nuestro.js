@@ -56,20 +56,61 @@ $(function($){
 
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
-	// $('.editar').click(function(e){
- //    e.stopPropagation();
- //    $('#myModal3').modal("show");
- //  		});
-
-});
-
-$(function () {
-	$("#fecha").datepicker({
-		inline : true,
-		onSelect : function(date){ 
-			window.location.href ='/'+date  
+	$(".imagen-up img:first-child").addClass("active");
+	$(".imagen-up .button").click(function(event){
+		event.stopPropagation();
+		children = $(this).parent().find("img");
+		amount_images = children.length;
+		if (amount_images <= 1){
+			return;
 		}
+		current = 0
+		for (var i = 0; i < amount_images; i++) {
+		    if ($(children[i]).hasClass("active")) {
+		    	current = i;
+		   		break;
+			};
+		};
+		thisImage = $(children[current]);
+		if ($(this).hasClass('prevButton')){
+			if (current == 0){
+				current = amount_images - 1
+			}
+			else{
+				current = (current - 1) % amount_images
+			}
+		}
+		else{
+			current = (current + 1) % amount_images
+		}
+		nextImage = $(children[current]);
+		// thisImage.fadeTo('slow',0.3);
+		thisImage.removeClass('active');
+		thisImage.hide();
+		// thisImage.css('opacity',1);
+		// nextImage.fadeIn('slow');
+		// nextImage.css('opacity',1);
+		nextImage.show();
+		nextImage.addClass('active');
+		
 	});
+
+// jQuery("#slideshow").cycle({
+//         timeout:0, // no autoplay
+//         fx: 'fade', //
+//         next: '#next',
+//         prev: '#prev'
+//         });
+
+	$(function () {
+		$("#fecha").datepicker({
+			inline : true,
+			onSelect : function(date){ 
+				window.location.href ='/'+date  
+			}
+		});
+	});
+
 });
 
 

@@ -236,8 +236,8 @@ body{
 }
 
 .imagen{
-	max-width: 330px;
-	max-height: 330px;
+	width: 300px;
+	height: 300px;
 }
 
 .form{
@@ -313,3 +313,12 @@ body{
 	max-width: 30px;
 	max-height: 30px;
 }
+
+.imagen-up img{
+	display:none;
+}
+
+.imagen-up img:first-child{
+	display:list-item;
+}
+
