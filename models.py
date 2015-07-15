@@ -36,7 +36,7 @@ class Reportes(db.Model):
     area = db.Column(db.String(120))
     localizacion_breve = db.Column(db.String(120))
     details = db.Column(db.Text)
-    image = db.Column(db.String(120))
+    images = db.relationship("Images")
     state = db.Column(db.String(120))
     email = db.Column(db.String(120))
 
@@ -84,6 +84,10 @@ def valid_login(username, password):
         else:
             return (False, "Clave inválida")
 
-
+class Images(db.Model):
+    __tablename__ = "images"
+    id = db.Column(db.Integer, primary_key=True)
+    reporte_id = db.Column(db.Integer, db.ForeignKey('reportes.id'))
+    url = db.Column(db.String(120), unique=True)
 
     

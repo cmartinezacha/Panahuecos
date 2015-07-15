@@ -96,7 +96,7 @@ body{
 
 .filtro-ind{
 	font-size: 12px;
-	margin: 1px;
+	margin: 0px;
 	font-weight: 500;
 	padding-top: 1em;
 	border-top-color: #e5e5e5 ;
@@ -172,7 +172,7 @@ body{
 
 .reporte-peque{
 	margin: 0.5em;
-	margin-left: 3em;
+	margin-left: 2.5em;
 }
 
 .estado-displayed{
@@ -215,15 +215,16 @@ body{
 }
 
 .detalles{
-	margin-left: 0.5em;
+	margin-left: 2.5em;
 }
 
 .detalles-ubic{
 	font-size: 14px;
 /*	letter-spacing: 1px;*/
-	max-width: 300px;
+	width: 300px;
 	margin-left: 0;
 	font-weight: 400;
+	padding: 0;
 }
 
 .detalles-ubic-sin-img{
@@ -231,11 +232,12 @@ body{
 	/*letter-spacing: 1px;*/
 	max-width: 530px;
 	font-weight: 400;
+	padding: 0;
 }
 
 .imagen{
-	max-width: 330px;
-	max-height: 330px;
+	max-width: 300px;
+	max-height: 300px;
 }
 
 .form{
@@ -310,4 +312,8 @@ body{
 .dano-icon{
 	max-width: 30px;
 	max-height: 30px;
+}
+
+.input-entries{
+	margin-top: 0.45em;
 }
