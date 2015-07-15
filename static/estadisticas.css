@@ -1,0 +1,102 @@
+ /*
+  ========================================
+	Reportes Review
+  ========================================
+*/
+
+
+.reportes-review{
+	border-width: 2px;
+	border-style: solid;
+	margin-top: 2em;
+	text-align: center;
+}
+
+.glyphicon-stats-reportes{
+	margin-top: 1em;
+	color: gray;
+}
+.reportes-titulo-stats{
+	margin: 0;
+	color: gray;
+}
+.numero-de-reportes{
+	margin: 0;
+}
+
+.reportes-stats{
+	margin-top: 1em;
+	margin-left: 0.5em;
+	text-align: left;
+}
+
+.tipo-stat{
+	color: gray;
+}
+
+td {
+  padding: 7px 15px;
+}
+
+.numero-de-r{
+	font-weight: 500;
+}
+
+.time-frames{
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.nav-justified>li>a{
+	background-color: #DeDeDe;
+	margin: 0.5em;
+}
+
+ /*
+  ========================================
+	Filtro de stats
+  ========================================
+*/
+
+.filtros-de-stats{
+	border-width: 2px;
+	border-style: solid;
+	margin-top: 2em;
+}
+
+ /*
+  ========================================
+	Stats de region
+  ========================================
+*/
+
+
+.stats-de-region{
+	border-width: 2px;
+	border-style: solid;
+	margin-top: 2em;
+}
+
+ /*
+  ========================================
+	Stats de tiempo
+  ========================================
+*/
+
+.stats-de-tiempo{
+	border-width: 2px;
+	border-style: solid;
+	margin-top: 2em;
+}
+
+ /*
+  ========================================
+	Stats de daño
+  ========================================
+*/
+.stats-de-dano{
+	border-width: 2px;
+	border-style: solid;
+	margin-top: 2em;
+}
