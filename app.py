@@ -14,7 +14,7 @@ sys.setdefaultencoding('utf-8')
 
 DEBUG = True
 SECRET_KEY = 'development key'
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 UPLOAD_FOLDER = 'static/images/'
 
 app = Flask(__name__)
