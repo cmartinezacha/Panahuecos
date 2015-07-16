@@ -95,13 +95,6 @@ $(function($){
 		
 	});
 
-// jQuery("#slideshow").cycle({
-//         timeout:0, // no autoplay
-//         fx: 'fade', //
-//         next: '#next',
-//         prev: '#prev'
-//         });
-
 	$(function () {
 		$("#fecha").datepicker({
 			inline : true,
