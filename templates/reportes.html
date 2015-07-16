@@ -185,7 +185,7 @@
 			        <div class="modal-body">
 
 			          <div class="container">
-			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/cambiar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
 			              <div class="form-group">
 			              	  <label class="control-label col-sm-2" for="pwd">Estado:</label>
 			              	  <div class="col-sm-4 input-entries">          
@@ -234,6 +234,7 @@
 			                  <input type="file" name="file">
 			                </label>
 			              </div>
+			              <input type="hidden" name="id" value="{{reporte.id}}">
 			              <div class="form-group">        
 			                <div class="col-sm-offset-2 col-sm-10">
 			                  <button type="submit" class="btn btn-info" id="nuevoreporte">Editar</button>

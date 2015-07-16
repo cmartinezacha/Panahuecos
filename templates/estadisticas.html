@@ -14,28 +14,28 @@
 		<div class="reportes-review">
 			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
 			<h4 class="reportes-titulo-stats">Reportes</h4>
-			<h1 class="numero-de-reportes"> 127 </h1>
+			<h1 class="numero-de-reportes">{{reportes.count()}}</h1>
 
 			<table class="reportes-stats" style="width:100%">
 			  <tr>
 			    <td class="tipo-stat">Reportes completados</td>
-			    <td class="numero-de-r">78</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter("Completo")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes en proceso</td>		
-			    <td class="numero-de-r">15</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter("En proceso")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes en inspección</td>		
-			    <td class="numero-de-r">22</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter("En inspección")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes iniciados</td>		
-			    <td class="numero-de-r"> 12</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter("Iniciado")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes vencidos</td>		
-			    <td class="numero-de-r">0</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter("Vencido")}}</td>
 			  </tr>
 			</table>
 

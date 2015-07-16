@@ -36,7 +36,7 @@ class Reportes(db.Model):
     area = db.Column(db.String(120))
     localizacion_breve = db.Column(db.String(120))
     details = db.Column(db.Text)
-    images = db.relationship("Images")
+    images = db.relationship("Images", cascade="all, delete-orphan")
     state = db.Column(db.String(120))
     email = db.Column(db.String(120))
 
@@ -87,7 +87,7 @@ def valid_login(username, password):
 class Images(db.Model):
     __tablename__ = "images"
     id = db.Column(db.Integer, primary_key=True)
-    reporte_id = db.Column(db.Integer, db.ForeignKey('reportes.id'))
+    reporte_id = db.Column(db.Integer, db.ForeignKey('reportes.id',ondelete='CASCADE'))
     url = db.Column(db.String(120), unique=True)
 
     
