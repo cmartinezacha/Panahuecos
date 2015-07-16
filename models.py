@@ -36,7 +36,7 @@ class Reportes(db.Model):
     area = db.Column(db.String(120))
     localizacion_breve = db.Column(db.String(120))
     details = db.Column(db.Text)
-    image = db.Column(db.String(120))
+    images = db.relationship("Images", cascade="all, delete-orphan")
     state = db.Column(db.String(120))
     email = db.Column(db.String(120))
 
@@ -56,9 +56,10 @@ def get_all_reportes():
 
 def get_reportes(problemas, estados, areas):
     reportes_cur = db.session.query(Reportes).order_by(Reportes.likes.desc())
-    # for i in reportes_cur.all():
-    #     print i.area
     return [x for x in reportes_cur.all() if x.problema in problemas and x.state in estados and x.area in areas]
+
+def get_reporte_by_id(el_id):
+    return db.session.query(Reportes).get(int(el_id))
 
 class Users(db.Model):
     __tablename__ = "users"
@@ -83,6 +84,10 @@ def valid_login(username, password):
         else:
             return (False, "Clave inválida")
 
-
+class Images(db.Model):
+    __tablename__ = "images"
+    id = db.Column(db.Integer, primary_key=True)
+    reporte_id = db.Column(db.Integer, db.ForeignKey('reportes.id',ondelete='CASCADE'))
+    url = db.Column(db.String(120), unique=True)
 
     

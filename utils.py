@@ -11,8 +11,8 @@ DIA_INGLES_ESP = {"Monday":"Lunes", "Tuesday":"Martes", "Wednesday":"Miércoles"
 MES_INGLES_ESP = {"Jan":"Enero", "Feb":"Febrero", "Mar":"Marzo", "Apr":"Abril", \
                           "May":"Mayo", "Jun":"Junio", "Jul":"Julio","Aug":"Agosto","Sep":"Septiembre", \
                           "Oct":"Octubre","Nov":"Noviembre","Dec":"Diciembre"}
-REGIONES = ['Panamá Oeste', 'Panamá Este', 'San Miguelito', 'Colón', 'Bocas del Toro',
-            'Chiriquí', 'Veraguas', 'Coclé', 'Herrera', 'Los Santos', 'Darién', 'Ngobe Bugle']
+REGIONES = ['Areas Canaleras', 'San Miguelito', 'Panamá Centro', 'Panamá Oeste','Panamá Norte', 'Panamá Este', 'Bocas del Toro',
+            'Chiriquí', 'Veraguas',  'Colón', 'Coclé', 'Herrera', 'Los Santos', 'Darién', 'Comarca Ngobe']
 PROBLEMAS = ['Hueco', 'Cajones Pluviales', 'Alcantarilla', 'Puente', 'Otro']
 ESTADOS = ['Completo', 'En proceso', 'En inspección', 'Vencido', 'Iniciado']
 

@@ -8,10 +8,13 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 import os
 from flask import send_from_directory
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 DEBUG = True
 SECRET_KEY = 'development key'
-# SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 UPLOAD_FOLDER = 'static/images/'
 
 app = Flask(__name__)
@@ -27,10 +30,19 @@ def datetime_filter(date_time):
     temp = date_time.strftime('%b %-d - %-I:%M%p').split(" ")
     return " ".join([utils.MES_INGLES_ESP[temp[0]]]+temp[1:])
 
+@app.template_filter('reportes_filter')
+def reportes_filter(reportes, keyword):
+    return reportes.filter(models.Reportes.state == keyword).count()
+
 @app.route('/')
 def today_news():
     return redirect(url_for('show_news', fecha_raw= utils.get_today()))
     
+
+@app.route('/estadisticas')
+def show_stats():
+    return render_template('estadisticas.html', reportes=db.session.query(models.Reportes))
+
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
     if not session.get('logged_in'):
@@ -101,20 +113,35 @@ def add_reporte():
     db.session.flush()
     if upload.filename != "":
         filename = secure_filename(upload.filename)
-        ext = filename.rsplit('.', 1)[1]
-        reporte.image = str(reporte.id) + "." + ext
-        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], reporte.image))
+        ext = filename.rsplit('.')[-1]
+        url = str(reporte.id)+"_0."+ext
+        new_image = models.Images(reporte_id=reporte.id, url=url)
+        db.session.add(new_image)
+        reporte.images.append(new_image) 
+        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
     db.session.commit()
     return redirect(url_for('show_reportes'))
 
 @app.route('/reportes/cambiar', methods=['POST'])
 def edit_reporte():
     form = request.form
-    reporte = models.get_reporte_by_id(int(form['id']))
+    reporte = db.session.merge(models.get_reporte_by_id(int(form['id'])))
+    upload = request.files['file']
+    image_count = len(reporte.images)
+    if upload.filename != "":
+        filename = secure_filename(upload.filename)
+        ext = filename.rsplit('.')[-1]
+        url = str(reporte.id)+"_"+str(image_count)+"."+ext
+        new_image = models.Images(reporte_id=int(form['id']), url=url)
+        db.session.add(new_image)
+        reporte.images.append(new_image) 
+        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
     reporte.area = form['area']
     reporte.state = form['estado']
+    reporte.problema = form['problema']
     reporte.localizacion_breve = form['localizacion']
     reporte.details = form['details']
+    db.session.commit()
     return redirect(url_for('show_reportes'))
 
 @app.route('/images/<filename>')

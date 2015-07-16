@@ -18,7 +18,7 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h3 class="modal-title">Agrega tu Reporte</h3>
+		          <h3 class="modal-title">Agregar reporte</h3>
 		        </div>
 		        <div class="modal-body">
 
@@ -26,13 +26,13 @@
 		            <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="nuevo-reporte">
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
-		                <div class="col-sm-4">
+		                <div class="col-sm-4 input-entries">
 		                  <input type="email" class="form-control" id="email" placeholder="ejemplo@hotmail.com" name="email" required>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
-		                <div class="col-sm-4">          
+		                <div class="col-sm-4 input-entries">          
 		                  <select name="problema" required>
 		                  	{% for problema in problemas %}
 		                    <option>{{problema}}</option>
@@ -42,31 +42,31 @@
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="pwd">Región:</label>
-		                <div class="col-sm-4">          
+		                <div class="col-sm-4 input-entries">          
 		                  <select name="area" required>
 		                  	{% for region in regiones %}
-		                    <option>{{region.decode('utf8')}}</option>
+		                    <option>{{region}}</option>
 		                    {% endfor %}
 		                 </select>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
-		                <div class="col-sm-4">
-		                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion" required>
+		                <div class="col-sm-4 input-entries">
+		                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion" maxlength="35" required>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Detalles:</label>
-		                <div class="col-sm-4">
+		                <div class="col-sm-4 input-entries">
 		                  <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="nuevo-reporte" style="resize:none" required></textarea>
 		                </div>
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-		                <div class="col-sm-4">
+		                <label style="margin-top:0.525em">
 		                  <input type="file" name="file">
-		                </div>
+		                </label>
 		              </div>
 		              <div class="form-group">        
 		                <div class="col-sm-offset-2 col-sm-10">
@@ -82,81 +82,173 @@
 		</div>
 
 		<form method= "POST">
-			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
+			<!-- <button type="submit" class="btn btn-info" id="filtro">Filtrar</button> -->
+			<div style="margin-left:2em; font-weight:400">Filtros:</div>
 			<div class="filtros">
 				<section class="estado">
-					<h4 class="filtro-ind">Estado:</h4>
+					<h4 class="filtro-ind">Estado: <span class="todos">Todos</span></h4>
 					{% for estado in estados %}
 					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="estado" value="{{estado.decode('utf8')}}" {% if estado.decode('utf8') in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
-					    {{estado.decode('utf8')}}
+					  <label class="input-checkbox">
+					    <input type="checkbox" name="estado" value="{{estado}}" {% if estado in estados_checkiados %} checked {% endif%} {% if estados == estados_checkiados %}checked {% endif %}>
+					    {{estado}}
 					  </label>
+					  <span class="solo">Solo</span>
 					</div>
 					{% endfor %}
 				</section>
 
 				<section class="region">
-					<h4 class="filtro-ind">Región:</h4>
+					<h4 class="filtro-ind">Región: <span class="todos">Todos</span></h4>
 					{% for region in regiones %}
 					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="region" value="{{region.decode('utf8')}}" {% if region.decode('utf8') in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
-					    {{region.decode('utf8')}}
+					  <label class="input-checkbox">
+					    <input type="checkbox" name="region" value="{{region}}" {% if region in regiones_checkiadas %} checked{% endif%} {% if regiones == regiones_checkiadas %}checked {% endif %}>
+					    {{region}}
 					  </label>
+					  <span class="solo">Solo</span>
 					</div>
 					{% endfor %}
 				</section>
 
 				<section class="tipo-de-dano">
-					<h4 class="filtro-ind problema">Tipo de daño:</h4>
+					<h4 class="filtro-ind problema">Daño: <span class="todos">Todos</span></h4>
 					{% for problema in problemas %}      
 					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema.decode('utf8') in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
+					  <label class="input-checkbox">
+					    <input type="checkbox" name="problema" value="{{problema}}" {% if problema in problemas_checkiados %} checked{% endif%} {% if problemas == problemas_checkiados %}checked {% endif %}>
 					    {{problema}}
 					  </label>
+					  <span class="solo">Solo</span>
 					</div>
 					{% endfor %}
 				</section>
 			</div>
+			<br>
+			<button type="submit" class="btn btn-info" id="filtro">Filtrar</button>
 		</form>
 	</div>
 
 	<div class="right-half entries col-md-6">
 		{% for reporte in reportes %}
-			<div class="reporte" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}">
-				<div class="reporte-peque">
-					<div class="like pull-right">
-						<a href="#" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
-						<h6>{{reporte.likes}} likes</h6>
-					</div>
-					<h3 class = "titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</h3>
-					<h4 class = "estado-displayed">{{reporte.state}}</h4>
+		<div class="reportes-overall">
+			<div class="like pull-right">
+				<a href="#" onclick="stop(event)" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
+				<h7 class="cantidad-likes">{{reporte.likes}} like(s)</h7>
+			</div>
+
+			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
+				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
+				<div class="reporte-peque inline" role="tab">
+					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
+					<div class="date">{{reporte.state}}: {{reporte.date|datetime}}</div>	
 				</div>
-				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse container" role="tabpanel" aria-labelledby="headingOne">
+				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 					<div class="grupito">
-						{% if reporte.image %}
+						{% if reporte.images %}
 						<div class="col-sm-6 detalles-ubic">
-				      		{{reporte.details}}
+					      	{{reporte.details}}
 						</div>
-			      		<div class="col-sm-4 imagen-up">
-					      	<img class="imagen" src="/images/{{reporte.id}}.jpg">
-			      		</div>
-			      		{% else %}
-						<div class="detalles-ubic-sin-img">
-				      		{{reporte.details}}
+				      	<div class="col-sm-6 imagen-up" id="photo-holder">
+				      		<div id="slideshow">
+				      		{% for image in reporte.images %}
+						     	<img class="imagen" src="/images/{{image.url}}">
+						    {% endfor %}
+							</div>
+						    <span class="button btn prevButton glyphicon glyphicon-chevron-left"></span> 
+      						<span class="button btn nextButton glyphicon glyphicon-chevron-right"></span>
+				      	</div>
+				      	{% else %}
+						<div class="col-sm-6 detalles-ubic-sin-img">
+					      	{{reporte.details}}
 						</div>
-			      		{% endif %}
-			      	</div>
-		      		<div class="datos">
-			      		<div>
-							<a id="editar" href="#">Editar <span class="glyphicon glyphicon-pencil"></span> </a>
-						</div>
-						<h6 class="date">{{reporte.date|datetime}}</h6>
+				      	{% endif %}
+				    </div>
+			      	<div class="datos">
+			      		<div class="date-created pull-right">Creado {{reporte.date|datetime}}</div>
+						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
+						
 		      		</div>
-	      		</div>
-	    	</div>				
+		      	</div>
+			</div>
+		</div>
+
+		    <div class="modal fade" id="myModal{{reporte.id}}" role="dialog">
+			    		<div class="modal-dialog">
+			    
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h3 class="modal-title">Editar reporte</h3>
+			        </div>
+			        <div class="modal-body">
+
+			          <div class="container">
+			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/cambiar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
+			              <div class="form-group">
+			              	  <label class="control-label col-sm-2" for="pwd">Estado:</label>
+			              	  <div class="col-sm-4 input-entries">          
+			              	    <select name="estado" required>
+			              	    	{% for estado in estados %}
+			              	      <option {% if reporte.state==estado %} selected {% endif %}>{{estado}}</option>
+			              	      {% endfor %}
+			              	   </select>
+			              	  </div>
+			              	</div>	
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
+			                <div class="col-sm-4 input-entries">          
+			                  <select name="problema" required>
+			                  	  {% for problema in problemas %}
+			                  	  <option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
+			                  	  {% endfor %}
+			                 </select>
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="pwd">Región:</label>
+			                <div class="col-sm-4 input-entries">          
+			                  <select name="area" required>
+			                  	  {% for region in regiones %}
+			                  	  <option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
+			                  	  {% endfor %}
+			                 </select>
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
+			                <div class="col-sm-4 input-entries">
+			                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion"  value="{{reporte.localizacion_breve}}" maxlength="35" required>
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Detalles:</label>
+			                <div class="col-sm-4 input-entries">
+			                 <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
+			                <label style="margin-top:0.525em">
+			                  <input type="file" name="file">
+			                </label>
+			              </div>
+			              <input type="hidden" name="id" value="{{reporte.id}}">
+			              <div class="form-group">        
+			                <div class="col-sm-offset-2 col-sm-10">
+			                  <button type="submit" class="btn btn-info" id="nuevoreporte">Editar</button>
+			                </div>
+			              </div>
+			            </form>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+		{% else %}
+		<br>
+		<h4 style="margin-left:8em">No hay reportes con estas especificaciones.</h4>				
 		{% endfor %}
 	</div>
 </div>
