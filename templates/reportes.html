@@ -149,14 +149,14 @@
 						<div class="col-sm-6 detalles-ubic">
 					      	{{reporte.details}}
 						</div>
-				      	<div class="col-sm-4 imagen-up">
+				      	<div class="col-sm-6 imagen-up" id="photo-holder">
 				      		<div id="slideshow">
 				      		{% for image in reporte.images %}
 						     	<img class="imagen" src="/images/{{image.url}}">
 						    {% endfor %}
 							</div>
-						    <span class="button btn prevButton" id="next"></span>
-      						<span class="button btn nextButton" id="prev"></span>
+						    <span class="button btn prevButton glyphicon glyphicon-chevron-left"></span> 
+      						<span class="button btn nextButton glyphicon glyphicon-chevron-right"></span>
 				      	</div>
 				      	{% else %}
 						<div class="col-sm-6 detalles-ubic-sin-img">

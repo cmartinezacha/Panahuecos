@@ -236,13 +236,8 @@ body{
 }
 
 .imagen{
-<<<<<<< HEAD
-	width: 300px;
-	height: 300px;
-=======
 	max-width: 300px;
 	max-height: 300px;
->>>>>>> fbb556770e61d8134a52a160beaba2c77067d37d
 }
 
 .form{
@@ -330,3 +325,42 @@ body{
 .input-entries{
 	margin-top: 0.45em;
 }
+
+#photo-holder .prevButton{
+	height:30px;
+	width:30px;
+	position:absolute;
+	background-color: transparent;
+	top:61%;
+	margin-top:-36px;
+	cursor:pointer;
+/*	z-index:2000;*/
+	background-position:left top;
+	left:5%
+}
+
+#photo-holder .nextButton{
+	height:30px;
+	width:30px;
+	position:absolute;
+	background-color: transparent;
+	top:61%;
+	margin-top:-36px;
+	cursor:pointer;
+/*	z-index:2000;*/
+	background-position:right top;
+	right:-9.5%
+}
+
+  
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+	font-size: 16px;
+	font-weight: 100;
+	color: rgb(0,0,0)
+}
+
+.glyphicon-chevron-left:hover, .glyphicon-chevron-right:hover{
+	font-size: 16px;
+	color: rgb(225, 225, 225);
+}
+
