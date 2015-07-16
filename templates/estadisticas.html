@@ -44,18 +44,32 @@
 			  <li role="time-frame"  class="active"><a href="#">Mes</a></li>
 			  <li role="time-frame"><a href="#">Año</a></li>
 			</ul>
-
-
 		</div>
 
 		<div class="filtros-de-stats">
-			<h4>Cambios</h4>
+			<h5>Ver estadisticas solo de:</h5>
+			<div align="center" class="filtros-stats">
+				<select name="area">
+					{% for region in regiones %}
+					<option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
+					{% endfor %}
+			 	</select>
+		        <select name="problema">
+		      	  	{% for problema in problemas %}
+		      	  	<option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
+		      	  	{% endfor %}
+	     		</select>
+     		</div>
+     		<p align="center">
+			  <button class="btn btn-primary ver-todo-stats" type="button">Ver todo</button>
+			</p>
+
 		</div>
 	</div>
 
 	<div class="col-md-8">
 		<div class="row stats-de-region">
-			<h4>Reportes por region</h4>
+			<h5>Reportes por region</h4>
 		</div>
 
 		<div class="row">
