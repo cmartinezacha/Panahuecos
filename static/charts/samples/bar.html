@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="../Chart.js"></script>
+	</head>
+	<body>
+		<div style="width: 70%">
+			<canvas id="canvas" height="250" width="600"></canvas>
+		</div>
+
+	<script>
+	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+	var barChartData = {
+		labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriqui', 'Veraguas',  'Colon', 'Cocle', 'Herrera', 'Los Santos', 'Darien', 'Comarca Ngobe'],
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,0.8)",
+				highlightFill: "rgba(220,220,220,0.75)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data : [10,18,13,27,9,7,6,0,2,5,12,15,4,5,0,0]
+			},
+
+		]
+
+	}
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {
+			responsive : true,
+			animation: true,
+			scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+			scaleFontSize: 8,
+			scaleBeginAtZero: true,
+			tooltipFontSize: 14,
+			
+		});
+	}
+
+	</script>
+	</body>
+</html>

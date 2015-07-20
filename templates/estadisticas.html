@@ -2,6 +2,7 @@
 
 {% block head %}
       <link rel="stylesheet" href="static/estadisticas.css">
+      <script src="static/charts/Chart.min.js"></script>
 {% endblock %}
 
 
@@ -69,13 +70,47 @@
 
 	<div class="col-md-8">
 		<div class="row stats-de-region">
-			<h5>Reportes por region</h4>
+		<!-- 	<h5>Reportes por region</h4> -->
+			<div style="width: 100%">
+				<canvas id="canvas" height="250" width="600"></canvas>
+			</div>
+			<script>
+
+				var barChartData = {
+					labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriqui', 'Veraguas',  'Colon', 'Cocle', 'Herrera', 'Los Santos', 'Darien', 'Comarca Ngobe'],
+					datasets : [
+						{
+							fillColor : "rgba(220,220,220,0.5)",
+							strokeColor : "rgba(220,220,220,0.8)",
+							highlightFill: "rgba(220,220,220,0.75)",
+							highlightStroke: "rgba(220,220,220,1)",
+							data : [10,18,13,27,9,7,6,0,2,5,12,15,4,5,0,0]
+						},
+
+					]
+
+				}
+				window.onload = function(){
+					var ctx = document.getElementById("canvas").getContext("2d");
+					window.myBar = new Chart(ctx).Bar(barChartData, {
+						responsive : true,
+						animation: true,
+						scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+						scaleFontSize: 10,
+						scaleBeginAtZero: true,
+						tooltipFontSize: 14,
+						
+					});
+				}
+
+				</script>
 		</div>
 
 		<div class="row">
 			<div class="col-md-6 stats-de-tiempo">
 				<h4>Tiempo para completar reportes</h4>
 			</div>
+
 			<div class="col-md-6 stats-de-dano">
 				<h4>Distribución de daños</h4>
 			</div>
