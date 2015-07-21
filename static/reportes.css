@@ -302,6 +302,7 @@ body{
 .todos{
 	float:right;
 	font-weight: normal;
+	margin-top: 0.15em;
 }
 
 .todos:hover{

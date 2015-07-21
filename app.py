@@ -41,7 +41,9 @@ def today_news():
 
 @app.route('/estadisticas')
 def show_stats():
-    return render_template('estadisticas.html', reportes=db.session.query(models.Reportes))
+    return render_template('estadisticas.html', reportes=db.session.query(models.Reportes),
+                            amounts_by_region=models.get_amount_reportes_by_region(),)
+                            #regiones=utils.REGIONES, problemas=utils.PROBLEMAS)
 
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
