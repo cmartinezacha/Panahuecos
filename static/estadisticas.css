@@ -1,3 +1,17 @@
+ body{
+ 	background-color:#E6E6E6;
+ }
+
+.reportes-review, .filtros-de-stats, .stats-de-region, .stats-de-tiempo, .stats-de-dano{
+	background-color: white;
+	border-color: #CCCCCC;
+	border-radius: 5px;
+}
+
+.left-part{
+	margin-left: -2em;
+}
+
  /*
   ========================================
 	Reportes Review
@@ -8,7 +22,7 @@
 .reportes-review{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1.5em;
 	text-align: center;
 }
 
@@ -28,6 +42,7 @@
 	margin-top: 1em;
 	margin-left: 0.5em;
 	text-align: left;
+	margin-bottom: 1em;
 }
 
 .tipo-stat{
@@ -54,7 +69,7 @@ td {
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus{
-	background-color: rgb(48, 159, 203)
+	background-color: #289ECD
 }
 
 .nav-pills>li.active>a:hover{
@@ -70,8 +85,7 @@ td {
 .filtros-de-stats{
 	border-width: 2px;
 	border-style: solid;
-	border-color: black;
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 .actualizar-stats{
@@ -96,7 +110,7 @@ td {
 .stats-de-region{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1.5em;
 }
 
  /*
@@ -108,7 +122,15 @@ td {
 .stats-de-tiempo{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1em;
+	width: 48.9%;
+	margin-right: 0.5em;
+}
+
+canvas{
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
 }
 
  /*
@@ -116,8 +138,13 @@ td {
 	Stats de daño
   ========================================
 */
+
+
 .stats-de-dano{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1em;
+	width: 48.9%;
+	height: 50%;
+	margin-left: 0.5em;
 }

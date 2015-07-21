@@ -11,7 +11,7 @@
 
 <div class="container">
 	
-	<div class="col-md-4">
+	<div class="col-md-4 left-part">
 		<div class="reportes-review">
 			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
 			<h4 class="reportes-titulo-stats">Reportes</h4>
@@ -40,11 +40,6 @@
 			  </tr>
 			</table>
 
-			<ul class="nav nav-pills nav-justified time-frames">
-			  <li role="time-frame"><a href="#">Semana</a></li>
-			  <li role="time-frame"  class="active"><a href="#">Mes</a></li>
-			  <li role="time-frame"><a href="#">Año</a></li>
-			</ul>
 		</div>
 
 		<div class="filtros-de-stats">
@@ -62,7 +57,7 @@
 	     		</select>
      		</div>
      		<p align="center">
-			  <button class="btn btn-primary ver-todo-stats" type="button">Ver todo</button>
+			  <button class="btn btn-primary actualizar-stats" type="button">Actualizar</button>
 			</p>
 
 		</div>
@@ -80,10 +75,10 @@
 					labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriqui', 'Veraguas',  'Colon', 'Cocle', 'Herrera', 'Los Santos', 'Darien', 'Comarca Ngobe'],
 					datasets : [
 						{
-							fillColor : "rgba(220,220,220,0.5)",
-							strokeColor : "rgba(220,220,220,0.8)",
-							highlightFill: "rgba(220,220,220,0.75)",
-							highlightStroke: "rgba(220,220,220,1)",
+							fillColor : "rgba(40,158,205,0.5)",
+							strokeColor : "rgba(40,158,205,0.8)",
+							highlightFill: "rgba(40,158,205,0.75)",
+							highlightStroke: "rgba(40,158,205,1)",
 							data : {{amounts_by_region}}
 						},
 
@@ -97,8 +92,8 @@
 		<div class="row">
 			<div class="col-md-6 stats-de-tiempo">
 				<h4>Tiempo para completar reportes</h4>
-				<div id="canvas-holder">
-					<canvas id="chart-area2" width="250" height="250"/>
+				<div id="canvas-holder2">
+					<canvas id="chart-area2" height="100" width="100"/>
 				</div>
 
 				<script>
@@ -106,32 +101,32 @@
 					var pieData2 = [
 							{
 								value: 36,
-								color:"#F7464A",
-								highlight: "#FF5A5E",
+								color:"#7ec4e1",
+								highlight: "#8BCAE4",
 								label: "Una semana"
 							},
 							{
 								value: 12,
-								color: "#46BFBD",
-								highlight: "#5AD3D1",
+								color: "#207ea4",
+								highlight: "#368BAD",
 								label: "Una a dos semanas"
 							},
 							{
 								value: 7,
-								color: "#FDB45C",
-								highlight: "#FFC870",
+								color: "#289ecd",
+								highlight: "#3EA8D2",
 								label: "Dos a cuatro semanas"
 							},
 							{
 								value: 11,
-								color: "#949FB1",
-								highlight: "#A8B3C5",
+								color: "#52b1d7",
+								highlight: "#63B9DB",
 								label: "Uno a dos meses"
 							},
 							{
 								value: 9,
-								color: "#4D5360",
-								highlight: "#616774",
+								color: "#a9d8eb",
+								highlight: "#B2DCED",
 								label: "Mas de dos meses"
 							}
 
@@ -143,7 +138,7 @@
 			<div class="col-md-6 stats-de-dano">
 				<h4>Distribución de daños</h4>
 				<div id="canvas-holder">
-					<canvas id="chart-area" width="250" height="250"/>
+					<canvas id="chart-area" height="150" width="150"/>
 				</div>
 
 				<script>
@@ -151,32 +146,32 @@
 					var pieData = [
 							{
 								value: 36,
-								color:"#F7464A",
-								highlight: "#FF5A5E",
+								color:"#7ec4e1",
+								highlight: "#8BCAE4",
 								label: "Hueco"
 							},
 							{
 								value: 12,
-								color: "#46BFBD",
-								highlight: "#5AD3D1",
+								color: "#207ea4",
+								highlight: "#368BAD",
 								label: "Alcantarilla"
 							},
 							{
 								value: 7,
-								color: "#FDB45C",
-								highlight: "#FFC870",
+								color: "#289ecd",
+								highlight: "#3EA8D2",
 								label: "Cajones Pluviales"
 							},
 							{
 								value: 11,
-								color: "#949FB1",
-								highlight: "#A8B3C5",
+								color: "#52b1d7",
+								highlight: "#63B9DB",
 								label: "Puentes"
 							},
 							{
 								value: 9,
-								color: "#4D5360",
-								highlight: "#616774",
+								color: "#a9d8eb",
+								highlight: "#B2DCED",
 								label: "Otros"
 							}
 
@@ -188,8 +183,10 @@
 								responsive : true,
 								animation: true,
 								scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-								scaleFontSize: 10,
+								scaleFontSize: 8,
 								scaleBeginAtZero: true,
+								scaleShowVerticalLines : false,
+								scaleShowHorizontalLines: true,
 								tooltipFontSize: 14,
 								
 							});
