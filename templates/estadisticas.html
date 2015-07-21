@@ -65,7 +65,7 @@
 
 	<div class="col-md-8">
 		<div class="row stats-de-region">
-		<!-- 	<h5>Reportes por region</h4> -->
+			<p class="titulo-region-stats">Reportes Por Región</p>
 			<div style="width: 100%">
 				<canvas id="canvas" height="250" width="600"></canvas>
 			</div>
@@ -91,9 +91,9 @@
 
 		<div class="row">
 			<div class="col-md-6 stats-de-tiempo">
-				<h4>Tiempo para completar reportes</h4>
+				<p class="titulo-tiempo-stats">Tiempo para completar reportes</p>
 				<div id="canvas-holder2">
-					<canvas id="chart-area2" height="100" width="100"/>
+					<canvas id="chart-area2" height="300" width="300" style="width: 200px; height: 200px"/>
 				</div>
 
 				<script>
@@ -136,7 +136,7 @@
 			</div>
 
 			<div class="col-md-6 stats-de-dano">
-				<h4>Distribución de daños</h4>
+				<p class="titulo-tipo-stats">Distribución de daños</p>
 				<div id="canvas-holder">
 					<canvas id="chart-area" height="150" width="150"/>
 				</div>
@@ -145,31 +145,31 @@
 
 					var pieData = [
 							{
-								value: 36,
+								value: 4,
 								color:"#7ec4e1",
 								highlight: "#8BCAE4",
 								label: "Hueco"
 							},
 							{
-								value: 12,
+								value: 23,
 								color: "#207ea4",
 								highlight: "#368BAD",
 								label: "Alcantarilla"
 							},
 							{
-								value: 7,
+								value: 11,
 								color: "#289ecd",
 								highlight: "#3EA8D2",
 								label: "Cajones Pluviales"
 							},
 							{
-								value: 11,
+								value: 8,
 								color: "#52b1d7",
 								highlight: "#63B9DB",
 								label: "Puentes"
 							},
 							{
-								value: 9,
+								value: 5,
 								color: "#a9d8eb",
 								highlight: "#B2DCED",
 								label: "Otros"
@@ -186,7 +186,7 @@
 								scaleFontSize: 8,
 								scaleBeginAtZero: true,
 								scaleShowVerticalLines : false,
-								scaleShowHorizontalLines: true,
+								scaleShowHorizontalLines: false,
 								tooltipFontSize: 14,
 								
 							});

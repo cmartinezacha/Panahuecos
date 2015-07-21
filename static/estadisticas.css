@@ -113,6 +113,14 @@ td {
 	margin-top: 1.5em;
 }
 
+.titulo-region-stats{
+	margin-left: 2em;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	font-size: 18px;
+	font-weight: 400;
+}
+
  /*
   ========================================
 	Stats de tiempo
@@ -125,12 +133,20 @@ td {
 	margin-top: 1em;
 	width: 48.9%;
 	margin-right: 0.5em;
+	margin-bottom: 1em;
 }
 
-canvas{
-    width: 100% !important;
-    max-width: 800px;
-    height: auto !important;
+.titulo-tiempo-stats{
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#chart-area2{
+	width:250px  !important; 
+	height:250px  !important;
+	position: center;
 }
 
  /*
@@ -139,7 +155,6 @@ canvas{
   ========================================
 */
 
-
 .stats-de-dano{
 	border-width: 2px;
 	border-style: solid;
@@ -147,4 +162,12 @@ canvas{
 	width: 48.9%;
 	height: 50%;
 	margin-left: 0.5em;
+	margin-bottom: 1em;
+}
+
+.titulo-tipo-stats{
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 1em;
 }
