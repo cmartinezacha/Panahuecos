@@ -90,18 +90,6 @@
 					]
 
 				}
-				window.onload = function(){
-					var ctx = document.getElementById("canvas").getContext("2d");
-					window.myBar = new Chart(ctx).Bar(barChartData, {
-						responsive : true,
-						animation: true,
-						scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-						scaleFontSize: 10,
-						scaleBeginAtZero: true,
-						tooltipFontSize: 14,
-						
-					});
-				}
 
 				</script>
 		</div>
@@ -109,10 +97,117 @@
 		<div class="row">
 			<div class="col-md-6 stats-de-tiempo">
 				<h4>Tiempo para completar reportes</h4>
+				<div id="canvas-holder">
+					<canvas id="chart-area2" width="250" height="250"/>
+				</div>
+
+				<script>
+
+					var pieData2 = [
+							{
+								value: 36,
+								color:"#F7464A",
+								highlight: "#FF5A5E",
+								label: "Una semana"
+							},
+							{
+								value: 12,
+								color: "#46BFBD",
+								highlight: "#5AD3D1",
+								label: "Una a dos semanas"
+							},
+							{
+								value: 7,
+								color: "#FDB45C",
+								highlight: "#FFC870",
+								label: "Dos a cuatro semanas"
+							},
+							{
+								value: 11,
+								color: "#949FB1",
+								highlight: "#A8B3C5",
+								label: "Uno a dos meses"
+							},
+							{
+								value: 9,
+								color: "#4D5360",
+								highlight: "#616774",
+								label: "Mas de dos meses"
+							}
+
+						];
+				</script>
+
 			</div>
 
 			<div class="col-md-6 stats-de-dano">
 				<h4>Distribución de daños</h4>
+				<div id="canvas-holder">
+					<canvas id="chart-area" width="250" height="250"/>
+				</div>
+
+				<script>
+
+					var pieData = [
+							{
+								value: 36,
+								color:"#F7464A",
+								highlight: "#FF5A5E",
+								label: "Hueco"
+							},
+							{
+								value: 12,
+								color: "#46BFBD",
+								highlight: "#5AD3D1",
+								label: "Alcantarilla"
+							},
+							{
+								value: 7,
+								color: "#FDB45C",
+								highlight: "#FFC870",
+								label: "Cajones Pluviales"
+							},
+							{
+								value: 11,
+								color: "#949FB1",
+								highlight: "#A8B3C5",
+								label: "Puentes"
+							},
+							{
+								value: 9,
+								color: "#4D5360",
+								highlight: "#616774",
+								label: "Otros"
+							}
+
+						];
+
+						window.onload = function(){
+							var ctx = document.getElementById("canvas").getContext("2d");
+							window.myBar = new Chart(ctx).Bar(barChartData, {
+								responsive : true,
+								animation: true,
+								scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+								scaleFontSize: 10,
+								scaleBeginAtZero: true,
+								tooltipFontSize: 14,
+								
+							});
+							var ctx2 = document.getElementById("chart-area").getContext("2d");
+							window.myPie = new Chart(ctx2).Pie(pieData, {
+								responsive:true,
+								showScale:true,
+							});
+							var ctx3 = document.getElementById("chart-area2").getContext("2d");
+							window.myPie = new Chart(ctx3).Pie(pieData2, {
+								responsive:true,
+								showScale:true,
+							});
+						};
+
+
+
+				</script>
 			</div>
 		</div>
 	</div>
