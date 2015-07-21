@@ -53,6 +53,14 @@ td {
 	margin: 0.5em;
 }
 
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus{
+	background-color: rgb(48, 159, 203)
+}
+
+.nav-pills>li.active>a:hover{
+	background-color: #2B8FB7
+}
+
  /*
   ========================================
 	Filtro de stats
@@ -62,14 +70,22 @@ td {
 .filtros-de-stats{
 	border-width: 2px;
 	border-style: solid;
+	border-color: black;
 	margin-top: 2em;
 }
 
-.ver-todo-stats{
+.actualizar-stats{
 	display: inline-block;
-
+	font-weight: 400;
+	font-size: 16px;
+	margin: 1em;
+	padding: 0.7em 1.5em;
 }
 
+.actualizar-stats:hover{
+	background-color: #2B8FB7;
+	border-color:#2B8FB7;
+}
  /*
   ========================================
 	Stats de region
