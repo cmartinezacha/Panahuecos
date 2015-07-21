@@ -61,6 +61,13 @@ def get_reportes(problemas, estados, areas):
 def get_reporte_by_id(el_id):
     return db.session.query(Reportes).get(int(el_id))
 
+def get_amount_reportes_by_region():
+    all_reportes = db.session.query(Reportes)
+    amounts = []
+    for region in utils.REGIONES:
+        amounts.append(int(all_reportes.filter(Reportes.area == region).count()))
+    return amounts
+
 class Users(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
