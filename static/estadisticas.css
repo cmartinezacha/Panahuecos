@@ -144,10 +144,46 @@ td {
 }
 
 #chart-area2{
-	width:250px  !important; 
-	height:250px  !important;
-	position: center;
+	width:230px  !important; 
+	height:230px  !important;
+	display: inline-block;
+	float: left;
+	margin-bottom: 1em;
 }
+
+.leyenda2{
+	margin: 0;
+	margin-top: 3.5em;
+	font-size: 10px;
+	display: inline-block;
+}
+
+.glyphicon-asterisk{
+	font-size: 12px;
+
+}
+
+.leyenda-unica{
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.l-12sem{
+	color:  #a9d8eb;
+}
+.l-34sem{
+	color: #7ec4e1;
+}
+.l-12mes{
+	color:#52b1d7; 
+}
+.l-34mes{
+	color: #289ecd;
+}
+.l-4mes{
+	color:  #207ea4;
+}
+
 
  /*
   ========================================
@@ -170,4 +206,36 @@ td {
 	font-weight: 400;
 	text-align: center;
 	margin-bottom: 1em;
+}
+
+#chart-area{
+	width:230px  !important; 
+	height:230px  !important;
+	position: center;
+	display: inline-block;
+	float: left;
+	margin-bottom: 1em;
+}
+
+.leyenda{
+	margin: 0;
+	margin-top: 3.5em;
+	font-size: 10px;
+	display: inline-block;
+}
+
+.hueco-s{
+	color:  #a9d8eb;
+}
+.alcantarilla-s{
+	color: #7ec4e1;
+}
+.cajonesp-s{
+	color:#52b1d7; 
+}
+.puente-s{
+	color: #289ecd;
+}
+.otros-s{
+	color:  #207ea4;
 }
