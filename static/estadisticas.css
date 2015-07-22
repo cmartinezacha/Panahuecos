@@ -5,7 +5,7 @@
 .reportes-review, .filtros-de-stats, .stats-de-region, .stats-de-tiempo, .stats-de-dano{
 	background-color: white;
 	border-color: #CCCCCC;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 
 .left-part{
@@ -82,6 +82,16 @@ td {
   ========================================
 */
 
+
+.filtro-titulo-stats{
+	color: gray;
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0.5em;
+	margin-bottom: 1.5em;
+	margin-left: 1em;
+}
+
 .filtros-de-stats{
 	border-width: 2px;
 	border-style: solid;
@@ -94,6 +104,7 @@ td {
 	font-size: 16px;
 	margin: 1em;
 	padding: 0.7em 1.5em;
+	margin-top: 2em;
 }
 
 .actualizar-stats:hover{
@@ -119,6 +130,7 @@ td {
 	margin-top: 1em;
 	font-size: 18px;
 	font-weight: 400;
+	color: gray;
 }
 
  /*
@@ -139,8 +151,10 @@ td {
 .titulo-tiempo-stats{
 	font-size: 18px;
 	font-weight: 400;
-	text-align: center;
+	text-align: left;
+	margin: 0.5em;
 	margin-bottom: 1em;
+	color: gray;
 }
 
 #chart-area2{
@@ -204,8 +218,10 @@ td {
 .titulo-tipo-stats{
 	font-size: 18px;
 	font-weight: 400;
-	text-align: center;
+	text-align: left;
+	margin: 0.5em;
 	margin-bottom: 1em;
+	color: gray;
 }
 
 #chart-area{

@@ -43,16 +43,16 @@
 		</div>
 
 		<div class="filtros-de-stats">
-			<h5>Ver estadisticas solo de:</h5>
+			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
 			<div align="center" class="filtros-stats">
 				<select name="area">
 					{% for region in regiones %}
-					<option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
+					<option>{{region}}</option>
 					{% endfor %}
 			 	</select>
 		        <select name="problema">
 		      	  	{% for problema in problemas %}
-		      	  	<option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
+		      	  	<option>{{problema}}</option>
 		      	  	{% endfor %}
 	     		</select>
      		</div>
@@ -153,7 +153,7 @@
 					<div class="leyenda pull-right">
 						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-asterisk"></span> Huecos</p>
 						<p class="leyenda-unica alcantarilla-s"><span class=" glyphicon glyphicon-asterisk"></span> Alcantarillas</p>
-						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-asterisk"></span> Cajones</p>
+						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-asterisk"></span> Cajones P.</p>
 						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-asterisk"></span> Puentes</p>
 						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-asterisk"></span> Otros</p>
 					</div>
