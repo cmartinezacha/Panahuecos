@@ -39,7 +39,32 @@
 			    <td class="numero-de-r">{{reportes| reportes_filter("Vencido")}}</td>
 			  </tr>
 			</table>
+		</div> <!--reportes review-->
 
+		<div class="reportes-metidos">
+			<h4 class="reportes-metidos-titulo">Reportes subidos</h4>
+			<div style="width:100%">
+				<div>
+					<canvas id="canvas2" height="320" width="600"></canvas>
+				</div>
+			</div>
+			<script>
+				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+				var lineChartData = {
+					labels : ["January","February","March","April","May","June","July"],
+					datasets : [
+						{
+							label: "My First dataset",
+							fillColor : "rgba(220,220,220,0.2)",
+							strokeColor : "rgba(220,220,220,1)",
+							pointColor : "rgba(220,220,220,1)",
+							pointStrokeColor : "#fff",
+							pointHighlightFill : "#fff",
+							pointHighlightStroke : "rgba(220,220,220,1)",
+							data : [0, 2, 4, 10, 11, 15, 13]
+						}]
+					}
+			</script>
 		</div>
 
 		<div class="filtros-de-stats">
@@ -60,14 +85,14 @@
 			  <button class="btn btn-primary actualizar-stats" type="button">Actualizar</button>
 			</p>
 
-		</div>
-	</div>
+		</div> <!--filtros de stats-->
+	</div> <!--col-md-4-->
 
 	<div class="col-md-8">
 		<div class="row stats-de-region">
 			<p class="titulo-region-stats">Reportes Por Región</p>
 			<div style="width: 100%">
-				<canvas id="canvas" height="250" width="600"></canvas>
+				<canvas id="canvas" height="270" width="600"></canvas>
 			</div>
 			<script>
 
@@ -222,6 +247,12 @@
 								responsive:true,
 								showScale:true,
 								tooltipFontSize: 18,
+							});
+							var ctx4 = document.getElementById("canvas2").getContext("2d");
+							window.myLine = new Chart(ctx4).Line(lineChartData, {
+								responsive: true,
+								scaleShowVerticalLines : false,
+								scaleShowHorizontalLines: false,
 							});
 						};
 
