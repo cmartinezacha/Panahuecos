@@ -148,7 +148,23 @@ nav.content span,nav.content ul,nav.content li{
   margin: 0;
 }
 
-.logout:hover{
+.main-dropdown{
+  background-color: #FFD700;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+.main-dropdown:hover{
   cursor: pointer;
+  background-color: #F5C73B;
+
+}
+
+.error-signin{
+  margin-left: 12em;
+  margin-top: -0.8em;
+  text-align: left;
+  color: red;
+  font-weight: 500;
 }
 
