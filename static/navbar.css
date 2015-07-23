@@ -69,6 +69,7 @@ nav.content span,nav.content ul,nav.content li{
 
 #iniciar-sesion:hover{
   text-decoration: underline;
+  cursor: pointer;
 }
 
 #mymodalsignin{
@@ -146,3 +147,8 @@ nav.content span,nav.content ul,nav.content li{
 .form-sign{
   margin: 0;
 }
+
+.logout:hover{
+  cursor: pointer;
+}
+
