@@ -95,6 +95,59 @@ $(function($){
 		
 	});
 
+	$('#iniciar').click(function() {
+		$.ajax({
+			url: "/signin",
+			data: $('#signin-form').serialize(),
+			type: "POST",
+			success: function(response) {
+				var response_parsed = jQuery.parseJSON(response);
+				if (response_parsed["status"] == "ok"){
+					location.reload();
+				}
+				else {
+					$('.error-signin').html(response_parsed['error']);
+				}
+            },
+            error: function(error) {
+                console.log(error);
+			}
+		});	
+	});
+
+	$('#crear').click(function() {
+		$.ajax({
+			url: "/signup",
+			data: $('#signup-form').serialize(),
+			type: "POST",
+			success: function(response) {
+                var response_parsed = jQuery.parseJSON(response);
+				if (response_parsed["status"] == "ok"){
+					location.reload();
+				}
+				else {
+					$('.error-signup').html(response_parsed['error']);
+				}
+            },
+            error: function(error) {
+                console.log(error);
+			}
+		});	
+	});
+
+	$('.logout').click(function(){
+		$.ajax({
+			url: "/logout",
+			type: "GET",
+			success: function(response) {
+				location.reload();
+			},
+            error: function(error) {
+                location.reload();
+			}
+		});
+	});
+
 	$(function () {
 		$("#fecha").datepicker({
 			inline : true,

@@ -9,6 +9,7 @@ from flask.ext.heroku import Heroku
 import os
 from flask import send_from_directory
 import sys
+import json
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -37,7 +38,31 @@ def reportes_filter(reportes, keyword):
 @app.route('/')
 def today_news():
     return redirect(url_for('show_news', fecha_raw= utils.get_today()))
-    
+
+@app.route('/signin', methods=['POST'])
+def sign_in():
+    username = request.form['email']
+    password = request.form['password']
+    valid, error = models.valid_login(username, password)
+    if valid:
+        session['logged_in'] = True
+        session['username'] = username
+        return json.dumps({'status':'ok'})
+    return json.dumps({'status':'error', 'error': error})
+
+@app.route('/signup', methods=['POST'])
+def sign_up():
+    username = request.form['email']
+    password = request.form['password']
+    if models.get_user(username) == None:
+        user = models.Users(username,utils.encrypt(password))
+        db.session.add(user)
+        db.session.commit()
+        session['logged_in'] = True
+        session['username'] = username
+        return json.dumps({'status':'ok'})
+    #return redirect(url_for('show_news', fecha_raw= utils.get_today()))
+    return json.dumps({'status':'error','error':'Usuario ya existe'})
 
 @app.route('/estadisticas')
 def show_stats():
