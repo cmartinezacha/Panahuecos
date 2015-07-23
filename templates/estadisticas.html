@@ -70,24 +70,26 @@
 		<div class="filtros-de-stats">
 			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
 			<div align="center" class="filtros-stats">
-				<div class="dropdown">
+				<div class="dropdown dd1 ">
 				  <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				    Región
 				    <span class="caret"></span>
 				  </button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				  <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
 					{% for region in regiones %}
 					<li><a href="#">{{region}}</a></li>
 					{% endfor %}
 				   </ul>
+				</div>
 
+				<div class="dropdown dd2">
 				  <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				    Daño
 				    <span class="caret"></span>
 				  </button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				  <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2">
 		      	  	{% for problema in problemas %}
-		      	  	<option>{{problema}}</option>
+		      	  	<li><a href="#">{{problema}}</a></li>
 		      	  	{% endfor %}
 				   </ul>
 				</div>

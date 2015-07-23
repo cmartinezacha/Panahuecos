@@ -130,6 +130,20 @@ td {
 	font-weight: 400;
 }
 
+.dd1{
+	display: inline-block;
+}
+
+.dd2{
+	display: inline-block;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 80px;
+    overflow-x: hidden;
+}
+
  /*
   ========================================
 	Reportes metidos
