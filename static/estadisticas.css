@@ -203,13 +203,11 @@ td {
 	color: gray;
 }
 
-#chart-area2{
-	width:250px  !important; 
-	height:250px  !important;
+/*#chart-area2{
 	display: inline-block;
 	float: left;
 	margin-bottom: 1em;
-}
+}*/
 
 .leyenda2{
 	margin: 0;
@@ -261,6 +259,7 @@ td {
 	margin-bottom: 1em;
 }
 
+
 .titulo-tipo-stats{
 	font-size: 18px;
 	font-weight: 400;
@@ -271,21 +270,21 @@ td {
 	color: gray;
 }
 
-#chart-area{
-	width:250px  !important; 
-	height:250px  !important;
-	position: center;
-	display: inline-block;
-	float: left;
-	margin-bottom: 1em;
-}
-
 .leyenda{
 	margin: 0;
 	margin-top: 3.5em;
 	font-size: 10px;
 	display: inline-block;
+	float: left;
 }
+
+#chart-area{
+	margin:0;
+	margin-left: -3.5em;
+	display: inline-block;
+
+}
+
 
 .hueco-s{
 	color:  #a9d8eb;

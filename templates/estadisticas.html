@@ -129,8 +129,8 @@
 			<div class="col-md-6 stats-de-tiempo">
 				<p class="titulo-tiempo-stats">Tiempo para completar reportes</p>
 				<div class="wrapper-tiempo-stats">
-					<div id="canvas-holder2">
-						<canvas id="chart-area2" height="300" width="300" style="width: 200px; height: 200px"/>
+					<div id="canvas-holder">
+						<canvas id="chart-area2" width="230" height="230"/>
 					</div>
 					<div class="leyenda2 pull-right">
 						<p class="leyenda-unica l-12sem"><span class=" glyphicon glyphicon-asterisk"></span> 1-2 semanas</p>
@@ -184,7 +184,7 @@
 				<p class="titulo-tipo-stats">Distribución de daños</p>
 				<div class="wrapper-dano-stats">
 					<div id="canvas-holder">
-						<canvas id="chart-area" height="150" width="150"/>
+						<canvas id="chart-area" width="230" height="230" />
 					</div>
 					<div class="leyenda pull-right">
 						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-asterisk"></span> Huecos</p>
@@ -193,6 +193,7 @@
 						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-asterisk"></span> Puentes</p>
 						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-asterisk"></span> Otros</p>
 					</div>
+
 				</div>
 
 				<script>
@@ -251,13 +252,16 @@
 							window.myPie = new Chart(ctx2).Pie(pieData, {
 								responsive:true,
 								showScale:true,
-								tooltipFontSize: 18,
+								tooltipFontSize: 14,
+								maintainAspectRatio: false,
+
 							});
 							var ctx3 = document.getElementById("chart-area2").getContext("2d");
 							window.myPie = new Chart(ctx3).Pie(pieData2, {
 								responsive:true,
 								showScale:true,
-								tooltipFontSize: 18,
+								tooltipFontSize: 14,
+								maintainAspectRatio: false,
 							});
 							var ctx4 = document.getElementById("canvas2").getContext("2d");
 							window.myLine = new Chart(ctx4).Line(lineChartData, {
