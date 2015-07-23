@@ -55,12 +55,12 @@
 					datasets : [
 						{
 							label: "My First dataset",
-							fillColor : "rgba(220,220,220,0.2)",
-							strokeColor : "rgba(220,220,220,1)",
-							pointColor : "rgba(220,220,220,1)",
+							fillColor : "rgba(40,158,205,0.2)",
+							strokeColor : "rgba(40,158,205,1)",
+							pointColor : "rgba(40,158,205,1)",
 							pointStrokeColor : "#fff",
 							pointHighlightFill : "#fff",
-							pointHighlightStroke : "rgba(220,220,220,1)",
+							pointHighlightStroke : "rgba(40,158,205,1)",
 							data : [0, 2, 4, 10, 11, 15, 13]
 						}]
 					}
@@ -70,16 +70,27 @@
 		<div class="filtros-de-stats">
 			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
 			<div align="center" class="filtros-stats">
-				<select name="area">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Región
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					{% for region in regiones %}
-					<option>{{region}}</option>
+					<li><a href="#">{{region}}</a></li>
 					{% endfor %}
-			 	</select> 
-		        <select name="problema">
+				   </ul>
+
+				  <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Daño
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 		      	  	{% for problema in problemas %}
 		      	  	<option>{{problema}}</option>
 		      	  	{% endfor %}
-	     		</select>
+				   </ul>
+				</div>
      		</div>
      		<p align="center">
 			  <button class="btn btn-primary actualizar-stats" type="button">Actualizar</button>
@@ -253,6 +264,7 @@
 								responsive: true,
 								scaleShowVerticalLines : false,
 								scaleShowHorizontalLines: false,
+								scaleFontSize: 10,
 							});
 						};
 

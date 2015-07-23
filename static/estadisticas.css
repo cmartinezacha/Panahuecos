@@ -88,7 +88,6 @@ td {
 	font-size: 18px;
 	font-weight: 400;
 	margin: 0.5em;
-	margin-bottom: 1em;
 	margin-left: 1em;
 }
 
@@ -96,20 +95,38 @@ td {
 	border-width: 2px;
 	border-style: solid;
 	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
-.actualizar-stats{
+.actualizar-stats, .actualizar-stats:focus{
+	background-color: rgba(40,158,205,0.2);
+	color: black;
+	border-color:#2B8FB7;
+	border-width: 2px;
+	border-style: solid;
 	display: inline-block;
 	font-weight: 400;
 	font-size: 16px;
 	margin: 1em;
-	padding: 0.7em 1.5em;
-	margin-top: 1em;
+	padding: 0.5em 1em;
+	margin-top: 1.3em;
 }
 
 .actualizar-stats:hover{
-	background-color: #2B8FB7;
+	background-color: rgba(40,158,205,0.5);
 	border-color:#2B8FB7;
+	border-width: 2px;
+	border-style: solid;
+	color: black;
+}
+
+.dd-filtros-stats, .dd-filtros-stats2{
+	color: black;
+	background-color: white;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 1px;
+	font-weight: 400;
 }
 
  /*
@@ -130,9 +147,12 @@ td {
 	font-size:18px;
 	font-weight: 400;
 	margin: 0.5em;
-	margin-top: 1em;
 }
 
+#canvas2{
+	margin: 0.3em;
+
+}
 
 
 
@@ -150,9 +170,9 @@ td {
 }
 
 .titulo-region-stats{
-	margin-left: 2em;
+	margin-left: 0.5em;
 	margin-bottom: 1em;
-	margin-top: 1em;
+	margin-top: 0.5em;
 	font-size: 18px;
 	font-weight: 400;
 	color: gray;
@@ -179,6 +199,7 @@ td {
 	text-align: left;
 	margin: 0.5em;
 	margin-bottom: 1em;
+	margin-left: 0;
 	color: gray;
 }
 
@@ -246,6 +267,7 @@ td {
 	text-align: left;
 	margin: 0.5em;
 	margin-bottom: 1em;
+	margin-left: 0;
 	color: gray;
 }
 
