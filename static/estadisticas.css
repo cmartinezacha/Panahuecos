@@ -95,7 +95,7 @@ td {
 	border-width: 2px;
 	border-style: solid;
 	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 0.7em;
 }
 
 .actualizar-stats, .actualizar-stats:focus{
@@ -110,6 +110,7 @@ td {
 	margin: 1em;
 	padding: 0.5em 1em;
 	margin-top: 1.3em;
+	margin-bottom: 0.7em;
 }
 
 .actualizar-stats:hover{
@@ -203,15 +204,13 @@ td {
 	color: gray;
 }
 
-/*#chart-area2{
-	display: inline-block;
-	float: left;
-	margin-bottom: 1em;
-}*/
+#chart-area2{
+	margin-bottom: 0.5em;
+}
 
 .leyenda2{
 	margin: 0;
-	margin-top: 3.5em;
+	margin-top: 3.7em;
 	font-size: 10px;
 	display: inline-block;
 }
@@ -272,17 +271,13 @@ td {
 
 .leyenda{
 	margin: 0;
-	margin-top: 3.5em;
+	margin-top: 3.7em;
 	font-size: 10px;
 	display: inline-block;
-	float: left;
 }
 
 #chart-area{
-	margin:0;
-	margin-left: -3.5em;
-	display: inline-block;
-
+	margin-bottom: 0.5em;
 }
 
 
