@@ -11,7 +11,7 @@
 
 <div class="container">
 	
-	<div class="col-md-4">
+	<div class="col-md-4 left-part">
 		<div class="reportes-review">
 			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
 			<h4 class="reportes-titulo-stats">Reportes</h4>
@@ -39,40 +39,60 @@
 			    <td class="numero-de-r">{{reportes| reportes_filter("Vencido")}}</td>
 			  </tr>
 			</table>
+		</div> <!--reportes review-->
 
-			<ul class="nav nav-pills nav-justified time-frames">
-			  <li role="time-frame"><a href="#">Semana</a></li>
-			  <li role="time-frame"  class="active"><a href="#">Mes</a></li>
-			  <li role="time-frame"><a href="#">Año</a></li>
-			</ul>
+		<div class="reportes-metidos">
+			<h4 class="reportes-metidos-titulo">Reportes subidos</h4>
+			<div style="width:100%">
+				<div>
+					<canvas id="canvas2" height="320" width="600"></canvas>
+				</div>
+			</div>
+			<script>
+				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+				var lineChartData = {
+					labels : ["January","February","March","April","May","June","July"],
+					datasets : [
+						{
+							label: "My First dataset",
+							fillColor : "rgba(220,220,220,0.2)",
+							strokeColor : "rgba(220,220,220,1)",
+							pointColor : "rgba(220,220,220,1)",
+							pointStrokeColor : "#fff",
+							pointHighlightFill : "#fff",
+							pointHighlightStroke : "rgba(220,220,220,1)",
+							data : [0, 2, 4, 10, 11, 15, 13]
+						}]
+					}
+			</script>
 		</div>
 
 		<div class="filtros-de-stats">
-			<h5>Ver estadisticas solo de:</h5>
+			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
 			<div align="center" class="filtros-stats">
 				<select name="area">
 					{% for region in regiones %}
-					<option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
+					<option>{{region}}</option>
 					{% endfor %}
-			 	</select>
+			 	</select> 
 		        <select name="problema">
 		      	  	{% for problema in problemas %}
-		      	  	<option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
+		      	  	<option>{{problema}}</option>
 		      	  	{% endfor %}
 	     		</select>
      		</div>
      		<p align="center">
-			  <button class="btn btn-primary ver-todo-stats" type="button">Ver todo</button>
+			  <button class="btn btn-primary actualizar-stats" type="button">Actualizar</button>
 			</p>
 
-		</div>
-	</div>
+		</div> <!--filtros de stats-->
+	</div> <!--col-md-4-->
 
 	<div class="col-md-8">
 		<div class="row stats-de-region">
-		<!-- 	<h5>Reportes por region</h4> -->
+			<p class="titulo-region-stats">Reportes Por Región</p>
 			<div style="width: 100%">
-				<canvas id="canvas" height="250" width="600"></canvas>
+				<canvas id="canvas" height="270" width="600"></canvas>
 			</div>
 			<script>
 
@@ -80,27 +100,15 @@
 					labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriqui', 'Veraguas',  'Colon', 'Cocle', 'Herrera', 'Los Santos', 'Darien', 'Comarca Ngobe'],
 					datasets : [
 						{
-							fillColor : "rgba(220,220,220,0.5)",
-							strokeColor : "rgba(220,220,220,0.8)",
-							highlightFill: "rgba(220,220,220,0.75)",
-							highlightStroke: "rgba(220,220,220,1)",
+							fillColor : "rgba(40,158,205,0.5)",
+							strokeColor : "rgba(40,158,205,0.8)",
+							highlightFill: "rgba(40,158,205,0.75)",
+							highlightStroke: "rgba(40,158,205,1)",
 							data : {{amounts_by_region}}
 						},
 
 					]
 
-				}
-				window.onload = function(){
-					var ctx = document.getElementById("canvas").getContext("2d");
-					window.myBar = new Chart(ctx).Bar(barChartData, {
-						responsive : true,
-						animation: true,
-						scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-						scaleFontSize: 10,
-						scaleBeginAtZero: true,
-						tooltipFontSize: 14,
-						
-					});
 				}
 
 				</script>
@@ -108,11 +116,149 @@
 
 		<div class="row">
 			<div class="col-md-6 stats-de-tiempo">
-				<h4>Tiempo para completar reportes</h4>
+				<p class="titulo-tiempo-stats">Tiempo para completar reportes</p>
+				<div class="wrapper-tiempo-stats">
+					<div id="canvas-holder2">
+						<canvas id="chart-area2" height="300" width="300" style="width: 200px; height: 200px"/>
+					</div>
+					<div class="leyenda2 pull-right">
+						<p class="leyenda-unica l-12sem"><span class=" glyphicon glyphicon-asterisk"></span> 1-2 semanas</p>
+						<p class="leyenda-unica l-34sem"><span class=" glyphicon glyphicon-asterisk"></span> 3-4 semanas</p>
+						<p class="leyenda-unica l-12mes"><span class=" glyphicon glyphicon-asterisk"></span> 1-2 meses</p>
+						<p class="leyenda-unica l-34mes"><span class=" glyphicon glyphicon-asterisk"></span> 3-4 meses</p>
+						<p class="leyenda-unica l-4mes"><span class=" glyphicon glyphicon-asterisk"></span> 4 meses+</p>
+					</div>
+				</div>
+
+				<script>
+
+					var pieData2 = [
+							{
+								value: 36,
+								color: "#a9d8eb",
+								highlight: "#B2DCED",
+								label: "Una a dos semanas"
+							},
+							{
+								value: 12,
+								color:"#7ec4e1",
+								highlight: "#8BCAE4",
+								label: "Tres a cuatro semanas"
+							},
+							{
+								value: 7,
+								color: "#52b1d7",
+								highlight: "#63B9DB",
+								label: "Uno a dos meses"
+							},
+							{
+								value: 11,
+								color: "#289ecd",
+								highlight: "#3EA8D2",
+								label: "Tres a cuatro meses"
+							},
+							{
+								value: 9,
+								color: "#207ea4",
+								highlight: "#368BAD",
+								label: "Mas de cuatro meses"
+							}
+
+						];
+				</script>
+
 			</div>
 
 			<div class="col-md-6 stats-de-dano">
-				<h4>Distribución de daños</h4>
+				<p class="titulo-tipo-stats">Distribución de daños</p>
+				<div class="wrapper-dano-stats">
+					<div id="canvas-holder">
+						<canvas id="chart-area" height="150" width="150"/>
+					</div>
+					<div class="leyenda pull-right">
+						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-asterisk"></span> Huecos</p>
+						<p class="leyenda-unica alcantarilla-s"><span class=" glyphicon glyphicon-asterisk"></span> Alcantarillas</p>
+						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-asterisk"></span> Cajones P.</p>
+						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-asterisk"></span> Puentes</p>
+						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-asterisk"></span> Otros</p>
+					</div>
+				</div>
+
+				<script>
+
+					var pieData = [
+							{
+								value: 4,
+								color: "#a9d8eb",
+								highlight: "#B2DCED",
+
+								label: "Hueco"
+							},
+							{
+								value: 23,
+								color:"#7ec4e1",
+								highlight: "#8BCAE4",
+
+								label: "Alcantarilla"
+							},
+							{
+								value: 11,
+								color: "#52b1d7",
+								highlight: "#63B9DB",
+								label: "Cajones Pluviales"
+							},
+
+							{
+								value: 8,
+								color: "#289ecd",
+								highlight: "#3EA8D2",
+								label: "Puentes"
+							},
+							{
+								value: 5,
+								color: "#207ea4",
+								highlight: "#368BAD",
+								label: "Otros"
+							}
+
+						];
+
+						window.onload = function(){
+							var ctx = document.getElementById("canvas").getContext("2d");
+							window.myBar = new Chart(ctx).Bar(barChartData, {
+								responsive : true,
+								animation: true,
+								scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+								scaleFontSize: 8,
+								scaleBeginAtZero: true,
+								scaleShowVerticalLines : false,
+								scaleShowHorizontalLines: false,
+								tooltipFontSize: 14,
+								
+							});
+							var ctx2 = document.getElementById("chart-area").getContext("2d");
+							window.myPie = new Chart(ctx2).Pie(pieData, {
+								responsive:true,
+								showScale:true,
+								tooltipFontSize: 18,
+							});
+							var ctx3 = document.getElementById("chart-area2").getContext("2d");
+							window.myPie = new Chart(ctx3).Pie(pieData2, {
+								responsive:true,
+								showScale:true,
+								tooltipFontSize: 18,
+							});
+							var ctx4 = document.getElementById("canvas2").getContext("2d");
+							window.myLine = new Chart(ctx4).Line(lineChartData, {
+								responsive: true,
+								scaleShowVerticalLines : false,
+								scaleShowHorizontalLines: false,
+							});
+						};
+
+
+
+				</script>
 			</div>
 		</div>
 	</div>
