@@ -31,9 +31,13 @@ def datetime_filter(date_time):
     temp = date_time.strftime('%b %-d - %-I:%M%p').split(" ")
     return " ".join([utils.MES_INGLES_ESP[temp[0]]]+temp[1:])
 
-@app.template_filter('reportes_filter')
+@app.template_filter('reportes_filter_state')
 def reportes_filter(reportes, keyword):
     return reportes.filter(models.Reportes.state == keyword).count()
+
+@app.template_filter('reportes_filter_problema')
+def reportes_filter(reportes, keyword):
+    return reportes.filter(models.Reportes.problema == keyword).count()
 
 @app.route('/')
 def today_news():
@@ -67,8 +71,10 @@ def sign_up():
 @app.route('/estadisticas')
 def show_stats():
     return render_template('estadisticas.html', reportes=db.session.query(models.Reportes),
-                            amounts_by_region=models.get_amount_reportes_by_region(),
-                            regiones=utils.REGIONES, problemas=utils.PROBLEMAS)
+                            amounts_by_region=models.get_amount_reportes_by_region(), 
+                            days=utils.get_last_seven_days(),
+                            regiones=utils.REGIONES, problemas=utils.PROBLEMAS, 
+                            amounts_by_day=models.get_amount_reportes_last_seven_days())
 
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():

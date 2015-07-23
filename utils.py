@@ -43,3 +43,11 @@ def get_today():
 def encrypt(word):
     return sha256(word).hexdigest()
 
+def get_last_seven_days():
+
+    sorted_days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+    today=datetime.now(pytz.timezone('America/Panama')).strftime("%A")
+    today_position = sorted_days.index(today)
+    last_seven_days_english = sorted_days[today_position+1:]+sorted_days[:today_position+1]
+    return [DIA_INGLES_ESP[i] for i in last_seven_days_english]
+

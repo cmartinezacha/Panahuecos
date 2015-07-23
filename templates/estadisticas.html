@@ -20,23 +20,23 @@
 			<table class="reportes-stats" style="width:100%">
 			  <tr>
 			    <td class="tipo-stat">Reportes completados</td>
-			    <td class="numero-de-r">{{reportes| reportes_filter("Completo")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("Completo")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes en proceso</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("En proceso")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("En proceso")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes en inspección</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("En inspección")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("En inspección")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes iniciados</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("Iniciado")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("Iniciado")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes vencidos</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("Vencido")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("Vencido")}}</td>
 			  </tr>
 			</table>
 		</div> <!--reportes review-->
@@ -48,10 +48,11 @@
 					<canvas id="canvas2" height="320" width="600"></canvas>
 				</div>
 			</div>
-			<script>
+			<script charset="utf-8">
 				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 				var lineChartData = {
-					labels : ["January","February","March","April","May","June","July"],
+					labels: ['Viernes', 'Sábado', 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves'],
+					// labels : {{days}},
 					datasets : [
 						{
 							label: "My First dataset",
@@ -61,7 +62,7 @@
 							pointStrokeColor : "#fff",
 							pointHighlightFill : "#fff",
 							pointHighlightStroke : "rgba(220,220,220,1)",
-							data : [0, 2, 4, 10, 11, 15, 13]
+							data : {{amounts_by_day}}
 						}]
 					}
 			</script>
@@ -94,10 +95,10 @@
 			<div style="width: 100%">
 				<canvas id="canvas" height="270" width="600"></canvas>
 			</div>
-			<script>
+			<script charset="utf-8">
 
 				var barChartData = {
-					labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriqui', 'Veraguas',  'Colon', 'Cocle', 'Herrera', 'Los Santos', 'Darien', 'Comarca Ngobe'],
+					labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriquí', 'Veraguas',  'Colón', 'Coclé', 'Herrera', 'Los Santos', 'Darién', 'Comarca Ngobe'],
 					datasets : [
 						{
 							fillColor : "rgba(40,158,205,0.5)",
@@ -161,7 +162,7 @@
 								value: 9,
 								color: "#207ea4",
 								highlight: "#368BAD",
-								label: "Mas de cuatro meses"
+								label: "Más de cuatro meses"
 							}
 
 						];
@@ -188,34 +189,34 @@
 
 					var pieData = [
 							{
-								value: 4,
+								value: {{reportes| reportes_filter_problema("Hueco")}},
 								color: "#a9d8eb",
 								highlight: "#B2DCED",
 
-								label: "Hueco"
+								label: "Huecos"
 							},
 							{
-								value: 23,
+								value: {{reportes| reportes_filter_problema("Alcantarilla")}},
 								color:"#7ec4e1",
 								highlight: "#8BCAE4",
 
-								label: "Alcantarilla"
+								label: "Alcantarillas"
 							},
 							{
-								value: 11,
+								value: {{reportes| reportes_filter_problema("Cajones Pluviales")}},
 								color: "#52b1d7",
 								highlight: "#63B9DB",
 								label: "Cajones Pluviales"
 							},
 
 							{
-								value: 8,
+								value: {{reportes| reportes_filter_problema("Puente")}},
 								color: "#289ecd",
 								highlight: "#3EA8D2",
 								label: "Puentes"
 							},
 							{
-								value: 5,
+								value: {{reportes| reportes_filter_problema("Otro")}},
 								color: "#207ea4",
 								highlight: "#368BAD",
 								label: "Otros"

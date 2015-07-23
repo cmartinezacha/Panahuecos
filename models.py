@@ -68,6 +68,15 @@ def get_amount_reportes_by_region():
         amounts.append(int(all_reportes.filter(Reportes.area == region).count()))
     return amounts
 
+def get_amount_reportes_last_seven_days():  
+    all_reportes = db.session.query(Reportes).all()
+    amounts = []
+    today = datetime.today()
+    for i in range(6,-1,-1):#.filter((today - Reportes.date).days == i)
+        amount = len([x for x in all_reportes if ((today-x.date).days == i)])
+        amounts.append(amount)
+    return amounts
+
 class Users(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
@@ -84,17 +93,15 @@ def get_user(username):
 def valid_login(username, password):
     user = get_user(username)
     if user == None:
-        return (False, "Usuario inválido")
+        return (False, "Datos inválidos")
     else:
         if utils.encrypt(password) == user.password:
             return (True, "")
         else:
-            return (False, "Clave inválida")
+            return (False, "Datos inválidos")
 
 class Images(db.Model):
     __tablename__ = "images"
     id = db.Column(db.Integer, primary_key=True)
     reporte_id = db.Column(db.Integer, db.ForeignKey('reportes.id',ondelete='CASCADE'))
     url = db.Column(db.String(120), unique=True)
-
-    
