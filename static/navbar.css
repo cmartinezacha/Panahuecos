@@ -162,6 +162,14 @@ nav.content span,nav.content ul,nav.content li{
 
 .error-signin{
   margin-left: 12em;
+  /*margin-top: -0.8em;*/
+  text-align: left;
+  color: red;
+  font-weight: 500;
+}
+
+.error-signup{
+  margin-left: 12em;
   margin-top: -0.8em;
   text-align: left;
   color: red;
