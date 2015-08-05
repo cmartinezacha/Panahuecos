@@ -365,3 +365,22 @@ body{
 	color: rgb(225, 225, 225);
 }
 
+.seleccionar-foto{
+	background: #eee;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #666;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 8px;
+    text-decoration: none;
+}
+
+.seleccionar-foto:focus{
+	color:red;
+}
+
+.adjuntar-foto{
+	margin-right: 4em;
+	margin-top: 0.5em;
+}

@@ -64,8 +64,9 @@
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-		                <label style="margin-top:0.525em">
-		                  <input type="file" name="file">
+		                <label style="margin-top:0.45em">
+		                  <input type="file" id="files" name="file" class="hidden"/>
+		                  <label for="files" class="seleccionar-foto">Seleccionar</label>
 		                </label>
 		              </div>
 		              <div class="form-group">        
@@ -140,7 +141,7 @@
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
 				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
 				<div class="reporte-peque inline" role="tab">
-					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
+					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}} <span class="date-created">({{reporte.area}})</span></span>
 					<div class="date">{{reporte.state}}: {{reporte.date_changed|datetime}}</div>	
 				</div>
 				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -163,89 +164,98 @@
 					      	{{reporte.details}}
 						</div>
 				      	{% endif %}
+
+				      	<div class="adjuntar-foto pull-right">
+				      		<label style="font-size:0.8em;" class="control-label" for="email">Adjuntar foto:</label>
+							<input type="file" id="files" name="file" class="hidden"/>
+							<!-- <button type="button" for="files">Seleccionar</button> -->
+							<label for="files" class="seleccionar-foto">Seleccionar (reportes)</label>
+				      	</div>
+
 				    </div>
+
 			      	<div class="datos">
 			      		<div class="date-created pull-right">Creado {{reporte.date|datetime}}</div>
-						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
-						
+						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar">Editar<div class="glyphicon glyphicon-pencil"></div></button>	
 		      		</div>
 		      	</div>
 			</div>
 		</div>
 
-		    <div class="modal fade" id="myModal{{reporte.id}}" role="dialog">
-			    		<div class="modal-dialog">
-			    
-			      <!-- Modal content-->
-			      <div class="modal-content">
-			        <div class="modal-header">
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h3 class="modal-title">Editar reporte</h3>
-			        </div>
-			        <div class="modal-body">
+	    <div class="modal fade" id="myModal{{reporte.id}}" role="dialog">
+    		<div class="modal-dialog">
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h3 class="modal-title">Editar reporte</h3>
+		        </div>
+		        <div class="modal-body">
 
-			          <div class="container">
-			            <form class="form-horizontal" role="form" method= "POST" action="/reportes/cambiar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
-			              <div class="form-group">
-			              	  <label class="control-label col-sm-2" for="pwd">Estado:</label>
-			              	  <div class="col-sm-4 input-entries">          
-			              	    <select name="estado" required>
-			              	    	{% for estado in estados %}
-			              	      <option {% if reporte.state==estado %} selected {% endif %}>{{estado}}</option>
-			              	      {% endfor %}
-			              	   </select>
-			              	  </div>
-			              	</div>	
-			              <div class="form-group">
-			                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
-			                <div class="col-sm-4 input-entries">          
-			                  <select name="problema" required>
-			                  	  {% for problema in problemas %}
-			                  	  <option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
-			                  	  {% endfor %}
-			                 </select>
-			                </div>
-			              </div>
-			              <div class="form-group">
-			                <label class="control-label col-sm-2" for="pwd">Región:</label>
-			                <div class="col-sm-4 input-entries">          
-			                  <select name="area" required>
-			                  	  {% for region in regiones %}
-			                  	  <option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
-			                  	  {% endfor %}
-			                 </select>
-			                </div>
-			              </div>
-			              <div class="form-group">
-			                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
-			                <div class="col-sm-4 input-entries">
-			                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion"  value="{{reporte.localizacion_breve}}" maxlength="35" required>
-			                </div>
-			              </div>
-			              <div class="form-group">
-			                <label class="control-label col-sm-2" for="email">Detalles:</label>
-			                <div class="col-sm-4 input-entries">
-			                 <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
-			                </div>
-			              </div>
-			              <div class="form-group">
-			                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-			                <label style="margin-top:0.525em">
-			                  <input type="file" name="file">
-			                </label>
-			              </div>
-			              <input type="hidden" name="id" value="{{reporte.id}}">
-			              <div class="form-group">        
-			                <div class="col-sm-offset-2 col-sm-10">
-			                  <button type="submit" class="btn btn-info" id="nuevoreporte">Editar</button>
-			                </div>
-			              </div>
-			            </form>
-			          </div>
-			        </div>
-			      </div>
-			    </div>
-			  </div>
+		          <div class="container">
+		            <form class="form-horizontal" role="form" method= "POST" action="/reportes/cambiar" enctype="multipart/form-data" id="cambiar{{reporte.id}}">
+		              <div class="form-group">
+		              	  <label class="control-label col-sm-2" for="pwd">Estado:</label>
+		              	  <div class="col-sm-4 input-entries">          
+		              	    <select name="estado" required>
+		              	    	{% for estado in estados %}
+		              	      <option {% if reporte.state==estado %} selected {% endif %}>{{estado}}</option>
+		              	      {% endfor %}
+		              	   </select>
+		              	  </div>
+		              	</div>	
+		              <div class="form-group">
+		                <label class="control-label col-sm-2" for="pwd">Tipo de daño:</label>
+		                <div class="col-sm-4 input-entries">          
+		                  <select name="problema" required>
+		                  	  {% for problema in problemas %}
+		                  	  <option {% if reporte.problema==problema %} selected {% endif %}>{{problema}}</option>
+		                  	  {% endfor %}
+		                 </select>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="control-label col-sm-2" for="pwd">Región:</label>
+		                <div class="col-sm-4 input-entries">          
+		                  <select name="area" required>
+		                  	  {% for region in regiones %}
+		                  	  <option {% if reporte.area==region %} selected {% endif %}>{{region}}</option>
+		                  	  {% endfor %}
+		                 </select>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="control-label col-sm-2" for="email">Localización Breve:</label>
+		                <div class="col-sm-4 input-entries">
+		                  <input type="text" class="form-control" placeholder="Ejemplo: Calle 50" name="localizacion"  value="{{reporte.localizacion_breve}}" maxlength="35" required>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="control-label col-sm-2" for="email">Detalles:</label>
+		                <div class="col-sm-4 input-entries">
+		                 <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
+		                <label style="margin-top:0.45em">
+		                  <!-- <input type="file" name="file"> -->
+		                  <input type="file" id="files" name="file" class="hidden"/>
+		                  <label for="files" class="seleccionar-foto">Seleccionar (editar)</label>
+		                </label>
+		              </div>
+		              <input type="hidden" name="id" value="{{reporte.id}}">
+		              <div class="form-group">        
+		                <div class="col-sm-offset-2 col-sm-10">
+		                  <button type="submit" class="btn btn-info" id="nuevoreporte">Editar</button>
+		                </div>
+		              </div>
+		            </form>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		</div>
 		{% else %}
 		<br>
 		<h4 style="margin-left:8em">No hay reportes con estas especificaciones.</h4>				
