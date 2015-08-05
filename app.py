@@ -39,6 +39,12 @@ def reportes_filter(reportes, keyword):
 def reportes_filter(reportes, keyword):
     return reportes.filter(models.Reportes.problema == keyword).count()
 
+@app.template_filter('days_filter')
+def days_filter(days):
+    today_position = utils.get_today_position()
+    last_seven_days = days[today_position+1:]+days[:today_position+1]
+    return last_seven_days
+
 @app.route('/')
 def today_news():
     return redirect(url_for('show_news', fecha_raw= utils.get_today()))
@@ -68,13 +74,27 @@ def sign_up():
     #return redirect(url_for('show_news', fecha_raw= utils.get_today()))
     return json.dumps({'status':'error','error':'Usuario ya existe'})
 
-@app.route('/estadisticas')
+@app.route('/estadisticas', methods=['GET','POST'])
 def show_stats():
-    return render_template('estadisticas.html', reportes=db.session.query(models.Reportes),
-                            amounts_by_region=models.get_amount_reportes_by_region(), 
-                            days=utils.get_last_seven_days(),
+    if request.method == 'POST':
+        problema = request.form.get('problema','Todos')
+        region = request.form.get('region','Todas')
+        reportes = db.session.query(models.Reportes)
+        if problema != "Todos":
+            print "problema"
+            reportes = reportes.filter(models.Reportes.problema == problema)
+        if region != "Todas":
+            print "region"
+            reportes = reportes.filter(models.Reportes.area == region)
+
+    else:
+        reportes = db.session.query(models.Reportes)
+
+    return render_template('estadisticas.html', reportes=reportes,
+                            amounts_by_region=models.get_amount_reportes_by_region(reportes), 
                             regiones=utils.REGIONES, problemas=utils.PROBLEMAS, 
-                            amounts_by_day=models.get_amount_reportes_last_seven_days())
+                            amounts_by_day=models.get_amount_reportes_last_seven_days(reportes),
+                            amounts_completed=models.get_amount_reportes_completed(reportes))
 
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
@@ -174,6 +194,7 @@ def edit_reporte():
     reporte.problema = form['problema']
     reporte.localizacion_breve = form['localizacion']
     reporte.details = form['details']
+    reporte.date_changed = utils.get_now()
     db.session.commit()
     return redirect(url_for('show_reportes'))
 

@@ -51,7 +51,7 @@
 			<script charset="utf-8">
 				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 				var lineChartData = {
-					labels: ['Viernes', 'Sábado', 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves'],
+					labels: {{['Lunes', 'Martes', 'Miercoles', 'Jueves','Viernes', 'Sabado', 'Domingo'] | days_filter | safe}},
 					// labels : {{days}},
 					datasets : [
 						{
@@ -70,35 +70,42 @@
 
 		<div class="filtros-de-stats">
 			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
-			<div align="center" class="filtros-stats">
-				<div class="dropdown dd1 ">
-				  <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				    Región
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
-					{% for region in regiones %}
-					<li><a href="#">{{region}}</a></li>
-					{% endfor %}
-				   </ul>
-				</div>
+			<form action="" method="POST" role="form" class="form-horizontal">	
+				<div align="center" class="filtros-stats">
+				
+					<div class="dropdown dd1 ">
+					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+					 	<select class="form-control" name="region">
+					   		<option disabled selected>Región</option>
+					   		<option>Todas</option>
+					    <!-- <span class="caret"></span> -->
+					  <!-- </button> -->
+					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"> -->
+							{% for region in regiones %}
+							<option>{{region}}</option>
+							{% endfor %}
+						</select>
+					</div>
 
-				<div class="dropdown dd2">
-				  <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				    Daño
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2">
-		      	  	{% for problema in problemas %}
-		      	  	<li><a href="#">{{problema}}</a></li>
-		      	  	{% endfor %}
-				   </ul>
-				</div>
-     		</div>
-     		<p align="center">
-			  <button class="btn btn-primary actualizar-stats" type="button">Actualizar</button>
-			</p>
-
+					<div class="dropdown dd2">
+						<select class="form-control" name="problema">
+					   		<option disabled selected>Daño</option>
+					   		<option>Todos</option>
+					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+					    <!-- <span class="caret"></span> -->
+					  <!-- </button> -->
+					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"> -->
+			      	  	{% for problema in problemas %}
+			      	  	<option>{{problema}}</option>
+			      	  	{% endfor %}
+					   <!-- </ul> -->
+						</select>
+					</div>	
+     			</div>
+     			<div style="text-align:center">
+			  	<button class="btn btn-primary actualizar-stats" type="submit">Actualizar</button>
+			  	</div>
+     		</form>
 		</div> <!--filtros de stats-->
 	</div> <!--col-md-4-->
 

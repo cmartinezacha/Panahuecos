@@ -64,8 +64,10 @@
 		              </div>
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-		                <label style="margin-top:0.525em">
-		                  <input type="file" name="file">
+		                <label style="margin-top:0.45em">
+		                  <!-- <input type="file" name="file"> -->
+		                  <input type="file" name="file" class="hidden"/>
+		                  <label for="files" class="seleccionar-foto">Seleccionar</label>
 		                </label>
 		              </div>
 		              <div class="form-group">        
@@ -140,8 +142,8 @@
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
 				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
 				<div class="reporte-peque inline" role="tab">
-					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
-					<div class="date">{{reporte.state}}: {{reporte.date|datetime}}</div>	
+					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}} <span class="date-created">({{reporte.area}})</span></span>
+					<div class="date">{{reporte.state}}: {{reporte.date_changed|datetime}}</div>	
 				</div>
 				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 					<div class="grupito">
@@ -153,6 +155,7 @@
 				      		<div id="slideshow">
 				      		{% for image in reporte.images %}
 						     	<img class="imagen" src="/images/{{image.url}}">
+
 						    {% endfor %}
 							</div>
 						    <span class="button btn prevButton glyphicon glyphicon-chevron-left"></span> 
@@ -166,8 +169,7 @@
 				    </div>
 			      	<div class="datos">
 			      		<div class="date-created pull-right">Creado {{reporte.date|datetime}}</div>
-						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>
-						
+						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar" >Editar <div class="glyphicon glyphicon-pencil"></div> </button>	
 		      		</div>
 		      	</div>
 			</div>
@@ -230,8 +232,10 @@
 			              </div>
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-			                <label style="margin-top:0.525em">
-			                  <input type="file" name="file">
+			                <label style="margin-top:0.45em">
+			                  <!-- <input type="file" name="file"> -->
+			                  <input type="file" name="file" class="hidden"/>
+			                  <label for="files" class="seleccionar-foto">Seleccionar</label>
 			                </label>
 			              </div>
 			              <input type="hidden" name="id" value="{{reporte.id}}">

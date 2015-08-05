@@ -31,6 +31,7 @@ class Reportes(db.Model):
     __tablename__ = "reportes"
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime)
+    date_changed = db.Column(db.DateTime)
     likes = db.Column(db.Integer)
     problema = db.Column(db.String(120))
     area = db.Column(db.String(120))
@@ -43,6 +44,7 @@ class Reportes(db.Model):
     def __init__(self, **kwargs):
         self.email = kwargs['email']
         self.date = datetime.now()
+        self.date_changed = datetime.now()
         self.likes = 0
         self.problema = kwargs['problema']
         self.area = kwargs['area']
@@ -61,20 +63,32 @@ def get_reportes(problemas, estados, areas):
 def get_reporte_by_id(el_id):
     return db.session.query(Reportes).get(int(el_id))
 
-def get_amount_reportes_by_region():
-    all_reportes = db.session.query(Reportes)
+def get_amount_reportes_by_region(reportes):
     amounts = []
     for region in utils.REGIONES:
-        amounts.append(int(all_reportes.filter(Reportes.area == region).count()))
+        amounts.append(int(reportes.filter(Reportes.area == region).count()))
     return amounts
 
-def get_amount_reportes_last_seven_days():  
-    all_reportes = db.session.query(Reportes).all()
+def get_amount_reportes_last_seven_days(reportes):  
+    all_reportes = reportes.all()
     amounts = []
     today = datetime.today()
     for i in range(6,-1,-1):#.filter((today - Reportes.date).days == i)
         amount = len([x for x in all_reportes if ((today-x.date).days == i)])
         amounts.append(amount)
+    return amounts
+
+def get_amount_reportes_completed(reportes):
+    completed = reportes.filter(Reportes.state == "Completo").all()
+    dates = [0,14,28,60,120]
+    amounts = []
+    for i in xrange(len(dates)):
+        if i == len(dates):
+            amount = len([x for x in completed if ((x.date_changed-x.date).days >= dates[-1])])
+            amounts.append(amount)
+        else:   
+            amount = len([x for x in completed if ((x.date_changed-x.date).days >= dates[i] and (x.date_changed-x.date).days <= dates[i+1])])
+            amounts.append(amount)
     return amounts
 
 class Users(db.Model):
