@@ -140,7 +140,7 @@
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
 				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
 				<div class="reporte-peque inline" role="tab">
-					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}}</span>
+					<span class="titulo-de-reporte">{{reporte.problema}} - {{reporte.localizacion_breve}} <span class="date-created">({{reporte.area}})</span></span>
 					<div class="date">{{reporte.state}}: {{reporte.date_changed|datetime}}</div>	
 				</div>
 				<div id="collapse_{{reporte.id}}" class="detalles panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -230,8 +230,10 @@
 			              </div>
 			              <div class="form-group">
 			                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-			                <label style="margin-top:0.525em">
-			                  <input type="file" name="file">
+			                <label style="margin-top:0.45em">
+			                  <!-- <input type="file" name="file"> -->
+			                  <input type="file" id="files" class="hidden"/>
+			                  <label for="files" class="seleccionar-foto">Seleccionar</label>
 			                </label>
 			              </div>
 			              <input type="hidden" name="id" value="{{reporte.id}}">
