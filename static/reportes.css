@@ -379,3 +379,8 @@ body{
 .seleccionar-foto:focus{
 	color:red;
 }
+
+.adjuntar-foto{
+	margin-right: 4em;
+	margin-top: 0.5em;
+}

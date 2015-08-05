@@ -56,6 +56,15 @@ $(function($){
 
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
+	$(".adjuntar-foto .seleccionar-foto").click(function(event){
+		event.stopPropagation();
+	});
+
+	// $(".editar").click(function(event){
+	// 	event.stopPropagation();
+	// });
+
+
 	$(".imagen-up img:first-child").addClass("active");
 	$(".imagen-up .button").click(function(event){
 		event.stopPropagation();
