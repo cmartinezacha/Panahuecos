@@ -136,11 +136,11 @@
 						<canvas id="chart-area2" width="250" height="250"/>
 					</div>
 					<div class="leyenda2 pull-right">
-						<p class="leyenda-unica l-12sem"><span class=" glyphicon glyphicon-asterisk"></span> 1-2 semanas</p>
-						<p class="leyenda-unica l-34sem"><span class=" glyphicon glyphicon-asterisk"></span> 3-4 semanas</p>
-						<p class="leyenda-unica l-12mes"><span class=" glyphicon glyphicon-asterisk"></span> 1-2 meses</p>
-						<p class="leyenda-unica l-34mes"><span class=" glyphicon glyphicon-asterisk"></span> 3-4 meses</p>
-						<p class="leyenda-unica l-4mes"><span class=" glyphicon glyphicon-asterisk"></span> 4 meses+</p>
+						<p class="leyenda-unica l-12sem"><span class=" glyphicon glyphicon-stop"></span> 1-2 semanas</p>
+						<p class="leyenda-unica l-34sem"><span class=" glyphicon glyphicon-stop"></span> 3-4 semanas</p>
+						<p class="leyenda-unica l-12mes"><span class=" glyphicon glyphicon-stop"></span> 1-2 meses</p>
+						<p class="leyenda-unica l-34mes"><span class=" glyphicon glyphicon-stop"></span> 3-4 meses</p>
+						<p class="leyenda-unica l-4mes"><span class=" glyphicon glyphicon-stop"></span> 4 meses+</p>
 					</div>
 				</div>
 
@@ -149,32 +149,32 @@
 					var pieData2 = [
 							{
 								value: 36,
-								color: "#a9d8eb",
-								highlight: "#B2DCED",
+								color:"#F7464A",
+								highlight: "#FF5A5E",
 								label: "Una a dos semanas"
 							},
 							{
 								value: 12,
-								color:"#7ec4e1",
-								highlight: "#8BCAE4",
+								color: "#46BFBD",
+								highlight: "#5AD3D1",
 								label: "Tres a cuatro semanas"
 							},
 							{
 								value: 7,
-								color: "#52b1d7",
-								highlight: "#63B9DB",
+								color: "#FDB45C",
+								highlight: "#FFC870",
 								label: "Uno a dos meses"
 							},
 							{
 								value: 11,
-								color: "#289ecd",
-								highlight: "#3EA8D2",
+								color: "#949FB1",
+								highlight: "#A8B3C5",
 								label: "Tres a cuatro meses"
 							},
 							{
 								value: 9,
-								color: "#207ea4",
-								highlight: "#368BAD",
+								color: "#4D5360",
+								highlight: "#616774",
 								label: "Más de cuatro meses"
 							}
 
@@ -190,11 +190,11 @@
 						<canvas id="chart-area" width="250" height="250" />
 					</div>
 					<div class="leyenda pull-right">
-						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-asterisk"></span> Huecos</p>
-						<p class="leyenda-unica alcantarilla-s"><span class=" glyphicon glyphicon-asterisk"></span> Alcantarillas</p>
-						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-asterisk"></span> Cajones P.</p>
-						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-asterisk"></span> Puentes</p>
-						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-asterisk"></span> Otros</p>
+						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-stop"></span> Huecos</p>
+						<p class="leyenda-unica alcantarilla-s"><span class=" glyphicon glyphicon-stop"></span> Alcantarillas</p>
+						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-stop"></span> Cajones P.</p>
+						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-stop"></span> Puentes</p>
+						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-stop"></span> Otros</p>
 					</div>
 
 				</div>
@@ -204,35 +204,35 @@
 					var pieData = [
 							{
 								value: {{reportes| reportes_filter_problema("Hueco")}},
-								color: "#a9d8eb",
-								highlight: "#B2DCED",
+								color:"#F7464A",
+								highlight: "#FF5A5E",
 
 								label: "Huecos"
 							},
 							{
 								value: {{reportes| reportes_filter_problema("Alcantarilla")}},
-								color:"#7ec4e1",
-								highlight: "#8BCAE4",
+								color: "#46BFBD",
+								highlight: "#5AD3D1",
 
 								label: "Alcantarillas"
 							},
 							{
 								value: {{reportes| reportes_filter_problema("Cajones Pluviales")}},
-								color: "#52b1d7",
-								highlight: "#63B9DB",
+								color: "#FDB45C",
+								highlight: "#FFC870",
 								label: "Cajones Pluviales"
 							},
 
 							{
 								value: {{reportes| reportes_filter_problema("Puente")}},
-								color: "#289ecd",
-								highlight: "#3EA8D2",
+								color: "#949FB1",
+								highlight: "#A8B3C5",
 								label: "Puentes"
 							},
 							{
 								value: {{reportes| reportes_filter_problema("Otro")}},
-								color: "#207ea4",
-								highlight: "#368BAD",
+								color: "#4D5360",
+								highlight: "#616774",
 								label: "Otros"
 							}
 
