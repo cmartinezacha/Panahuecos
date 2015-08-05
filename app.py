@@ -15,6 +15,8 @@ sys.setdefaultencoding('utf-8')
 
 DEBUG = True
 SECRET_KEY = 'development key'
+ACCESS_KEY = 'AKIAI72XWNTOKHIWS42Q'
+SECRET_ACCESS_KEY = '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'
 SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 UPLOAD_FOLDER = 'static/images/'
 
