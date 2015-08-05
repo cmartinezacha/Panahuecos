@@ -12,6 +12,47 @@
 <div class="container">
 	
 	<div class="col-md-4 left-part">
+		
+		<div class="filtros-de-stats">
+			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
+			<form action="" method="POST" role="form" class="form-horizontal">	
+				<div align="center" class="filtros-stats">
+				
+					<div class="dropdown dd1 ">
+					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+					 	<select class="form-control" name="region">
+					   		<option disabled selected>Región</option>
+					   		<option>Todas</option>
+					    <!-- <span class="caret"></span> -->
+					  <!-- </button> -->
+					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"> -->
+							{% for region in regiones %}
+							<option>{{region}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+					<div class="dropdown dd2">
+						<select class="form-control" name="problema">
+					   		<option disabled selected>Daño</option>
+					   		<option>Todos</option>
+					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+					    <!-- <span class="caret"></span> -->
+					  <!-- </button> -->
+					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"> -->
+			      	  	{% for problema in problemas %}
+			      	  	<option>{{problema}}</option>
+			      	  	{% endfor %}
+					   <!-- </ul> -->
+						</select>
+					</div>	
+     			</div>
+     			<div style="text-align:center">
+			  	<button class="btn btn-primary actualizar-stats" type="submit">Actualizar</button>
+			  	</div>
+     		</form>
+		</div> <!--filtros de stats-->
+		
 		<div class="reportes-review">
 			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
 			<h4 class="reportes-titulo-stats">Reportes</h4>
@@ -67,46 +108,6 @@
 					}
 			</script>
 		</div>
-
-		<div class="filtros-de-stats">
-			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
-			<form action="" method="POST" role="form" class="form-horizontal">	
-				<div align="center" class="filtros-stats">
-				
-					<div class="dropdown dd1 ">
-					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
-					 	<select class="form-control" name="region">
-					   		<option disabled selected>Región</option>
-					   		<option>Todas</option>
-					    <!-- <span class="caret"></span> -->
-					  <!-- </button> -->
-					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"> -->
-							{% for region in regiones %}
-							<option>{{region}}</option>
-							{% endfor %}
-						</select>
-					</div>
-
-					<div class="dropdown dd2">
-						<select class="form-control" name="problema">
-					   		<option disabled selected>Daño</option>
-					   		<option>Todos</option>
-					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
-					    <!-- <span class="caret"></span> -->
-					  <!-- </button> -->
-					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"> -->
-			      	  	{% for problema in problemas %}
-			      	  	<option>{{problema}}</option>
-			      	  	{% endfor %}
-					   <!-- </ul> -->
-						</select>
-					</div>	
-     			</div>
-     			<div style="text-align:center">
-			  	<button class="btn btn-primary actualizar-stats" type="submit">Actualizar</button>
-			  	</div>
-     		</form>
-		</div> <!--filtros de stats-->
 	</div> <!--col-md-4-->
 
 	<div class="col-md-8">
