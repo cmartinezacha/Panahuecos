@@ -168,8 +168,6 @@ body{
 	color: #6C6C6C;
 }
 
-
-
 .reporte-peque{
 	margin: 0.5em;
 	margin-left: 2.5em;
@@ -235,11 +233,6 @@ body{
 	padding: 0;
 }
 
-.imagen{
-	width: 18em;
-	/*max-height: 300px;*/
-}
-
 .form{
 	margin-top: 2em;
 }
@@ -256,7 +249,6 @@ body{
 	color: gray;
 
 }
-
 
 .editar{
 	color: #6C6C6C;
@@ -327,32 +319,53 @@ body{
 	margin-top: 0.45em;
 }
 
+.imagen{
+	width:18em;
+	margin:auto;
+	/*padding:5em;*/
+}
+
 #photo-holder .prevButton{
-	height:30px;
+	height:100%;
 	width:30px;
 	position:absolute;
-	background-color: transparent;
-	top:61%;
-	margin-top:-36px;
+	/*background-color: transparent;*/
+	background-color: rgba(0, 0, 0, 0.025);
+	color:black;
+	padding-top:0em;
+	margin-top:-0.01em;
 	cursor:pointer;
-/*	z-index:2000;*/
-	background-position:left top;
-	left:5%
+	left:5%;
+	border-radius: 0px;
+}
+
+#photo-holder .prevButton:hover{
+	color:black;
+	/*border-width: 0.1em;
+	border-color: black;*/
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 #photo-holder .nextButton{
-	height:30px;
+	height:100%;
 	width:30px;
 	position:absolute;
-	background-color: transparent;
-	top:61%;
-	margin-top:-36px;
+	/*background-color: transparent;*/
+	background-color: rgba(0, 0, 0, 0.025);
+	color:black;
+	padding-top:0em;
+	margin-top:-0.01em;
 	cursor:pointer;
-/*	z-index:2000;*/
-	background-position:right top;
-	right:-5%
+	right:-7%;
+	border-radius: 0px;
 }
 
+#photo-holder .nextButton:hover{
+	color:black;
+	/*border-width: 0.1em;
+	border-color: black;*/
+	background-color: rgba(0, 0, 0, 0.1);
+}
   
 .glyphicon-chevron-left, .glyphicon-chevron-right{
 	font-size: 16px;
