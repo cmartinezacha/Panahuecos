@@ -60,8 +60,12 @@ def s3_upload(source_file, file_name, acl='public-read'):
     return 
 
 @app.route('/')
-def today_news():
+def home():
     return redirect(url_for('show_reportes'))
+
+@app.route('/noticias')
+def today_news():
+    return redirect(url_for('show_reportes', fecha_raw= utils.get_today()))
 
 @app.route('/signin', methods=['POST'])
 def sign_in():
@@ -95,15 +99,11 @@ def show_stats():
         region = request.form.get('region','Todas')
         reportes = db.session.query(models.Reportes)
         if problema != "Todos":
-            print "problema"
             reportes = reportes.filter(models.Reportes.problema == problema)
         if region != "Todas":
-            print "region"
             reportes = reportes.filter(models.Reportes.area == region)
-
     else:
         reportes = db.session.query(models.Reportes)
-
     return render_template('estadisticas.html', reportes=reportes,
                             amounts_by_region=models.get_amount_reportes_by_region(reportes), 
                             regiones=utils.REGIONES, problemas=utils.PROBLEMAS, 
@@ -210,6 +210,10 @@ def edit_reporte():
     reporte.details = form['details']
     reporte.date_changed = utils.get_now()
     db.session.commit()
+    return redirect(url_for('show_reportes'))
+
+@app.route('/reportes/agregar-foto', methods=['POST'])
+def agregar_foto():
     return redirect(url_for('show_reportes'))
 
 @app.route('/images/<filename>')

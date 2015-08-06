@@ -57,16 +57,19 @@ $(function($){
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
 	$(".adjuntar-foto .seleccionar-foto").click(function(event){
-		console.log("mariks");
 		event.stopPropagation();
+		input = $(this).parent().find("input")[0];
+		input.click();
 	});
 
-
+	$(".hidden").click(function(event){
+		event.stopPropagation();
+	});
 	// $(".datos .editar").click(function(event){
 	// 	console.log("mariks222");
 	// 	event.stopPropagation();
 	// });
-
+	
 
 	$(".imagen-up img:first-child").addClass("active");
 	$(".imagen-up .button").click(function(event){
