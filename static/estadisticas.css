@@ -13,6 +13,11 @@
 	margin-left: -2em;
 }
 
+.page-wrap{
+    width: 100%;
+    white-space:nowrap;
+}
+
  /*
   ========================================
 	Reportes Review
