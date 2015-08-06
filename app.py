@@ -65,7 +65,7 @@ def home():
 
 @app.route('/noticias')
 def today_news():
-    return redirect(url_for('show_reportes', fecha_raw= utils.get_today()))
+    return redirect(url_for('show_news', fecha_raw= utils.get_today()))
 
 @app.route('/signin', methods=['POST'])
 def sign_in():
@@ -214,6 +214,18 @@ def edit_reporte():
 
 @app.route('/reportes/agregar-foto', methods=['POST'])
 def agregar_foto():
+    form = request.form
+    reporte = db.session.merge(models.get_reporte_by_id(int(form['id'])))
+    upload = request.files['file']
+    image_count = len(reporte.images)
+    filename = secure_filename(upload.filename)
+    ext = filename.rsplit('.')[-1]
+    url = str(reporte.id)+"_"+str(image_count)+"."+ext
+    new_image = models.Images(reporte_id=int(form['id']), url=url)
+    db.session.add(new_image)
+    reporte.images.append(new_image) 
+    s3_upload(upload, url)
+    db.session.commit()
     return redirect(url_for('show_reportes'))
 
 @app.route('/images/<filename>')

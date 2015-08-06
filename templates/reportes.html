@@ -170,7 +170,8 @@
 				      	<div class="adjuntar-foto pull-right">
 				      		<label style="font-size:0.8em;" class="control-label" for="email">Adjuntar foto:</label>
 				      		<form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar-foto" enctype="multipart/form-data">
-								<input type="file" id="files-{{reporte.id}}" name="file" class="hidden" onchange="javascript:this.form.submit();"/>
+								<input type="file" id="files-{{reporte.id}}" name="file" class="hidden" onChange="form.submit()"/>
+								<input type="hidden" name="id" value="{{reporte.id}}">
 								<label class="seleccionar-foto">Seleccionar (editar)</label>
 							</form>
 				      	</div>
