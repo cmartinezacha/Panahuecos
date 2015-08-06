@@ -9,14 +9,37 @@
 	border-radius: 10px;
 }
 
-.left-part{
-	margin-left: -2em;
+.page-wrap{
+	width:150em; 
+	margin: 0 auto;
 }
 
-.page-wrap{
-    width: 100%;
-    white-space:nowrap;
+.left-part{
+	width: 20em; 
+	float: left; 
 }
+
+.right-part{
+	width: 50em; 
+	float: left; 
+	padding-left: 5px;
+}
+
+.pie-row{
+	width: 50em;
+	float: left;
+}
+.mini-left-part{
+	width: 25em;
+	float: left;
+
+}
+.mini-right-part{
+	width: 25em;
+	float: left;
+
+}
+
 
  /*
   ========================================
@@ -189,6 +212,9 @@ td {
 	border-width: 2px;
 	border-style: solid;
 	margin-top: 1.5em;
+	margin-left: 0.3em;
+	/*height: 50%;*/
+	/*width: 51.7%;*/
 }
 
 .titulo-region-stats{
@@ -210,9 +236,9 @@ td {
 	border-width: 2px;
 	border-style: solid;
 	margin-top: 1em;
-	width: 48.9%;
 	margin-right: 0.5em;
 	margin-bottom: 1em;
+	margin-left: 1em;
 }
 
 .titulo-tiempo-stats{
@@ -274,7 +300,6 @@ td {
 	border-width: 2px;
 	border-style: solid;
 	margin-top: 1em;
-	width: 48.9%;
 	height: 50%;
 	margin-left: 0.5em;
 	margin-bottom: 1em;
