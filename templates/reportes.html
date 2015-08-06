@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
+
 {% block footer %}
 <ul class="nav navbar-nav" id="tabs-top-navbar">
-	<li><a href="/">Noticias</a></li>
 	<li class="active"><a href="/reportes">Reportes</a></li>
+	<li><a href="/estadisticas">Estadísticas</a></li>
+	<li><a href="/">Noticias</a></li>	
 </ul>
 {% endblock %}
 
@@ -153,7 +155,7 @@
 				      	<div class="col-sm-6 imagen-up" id="photo-holder" style="height:22 em;">
 				      		<div id="slideshow">
 				      		{% for image in reporte.images %}
-						     	<img class="imagen" src="/images/{{image.url}}">
+						     	<img class="imagen" src="https://s3-us-west-2.amazonaws.com/mopresponde/{{image.url}}">
 						    {% endfor %}
 							</div>
 						    <span class="button btn prevButton glyphicon glyphicon-chevron-left"></span> 
