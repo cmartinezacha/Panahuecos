@@ -255,6 +255,7 @@ td {
 
 #chart-area2{
 	margin-bottom: 0.5em;
+	margin-left: 1em;
 }
 
 
@@ -263,6 +264,7 @@ td {
 	margin-top: 3.7em;
 	font-size: 8px;
 	display: inline-block;
+	margin-right: 3em;
 }
 
 .glyphicon-asterisk{
@@ -323,10 +325,12 @@ td {
 	margin-top: 3.7em;
 	font-size: 10px;
 	display: inline-block;
+	margin-right: 3em;
 }
 
 #chart-area{
 	margin-bottom: 0.5em;
+	margin-left: 1em;
 }
 
 
