@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
 
+{% block footer %}
+<ul class="nav navbar-nav" id="tabs-top-navbar">
+	<li><a href="/reportes">Reportes</a></li>
+	<li class="active"><a href="/estadisticas">Estadísticas</a></li>
+	<li><a href="/">Noticias</a></li>	
+</ul>
+{% endblock %}
+
 {% block head %}
       <link rel="stylesheet" href="static/estadisticas.css">
       <script src="static/charts/Chart.min.js"></script>
@@ -12,6 +20,7 @@
 <div class="container">
 	
 	<div class="col-md-4 left-part">
+	
 		<div class="reportes-review">
 			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
 			<h4 class="reportes-titulo-stats">Reportes</h4>
@@ -41,32 +50,6 @@
 			</table>
 		</div> <!--reportes review-->
 
-		<div class="reportes-metidos">
-			<h4 class="reportes-metidos-titulo">Reportes subidos</h4>
-			<div style="width:100%">
-				<div>
-					<canvas id="canvas2" height="330" width="600"></canvas>
-				</div>
-			</div>
-			<script charset="utf-8">
-				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-				var lineChartData = {
-					labels: {{['Lunes', 'Martes', 'Miercoles', 'Jueves','Viernes', 'Sabado', 'Domingo'] | days_filter | safe}},
-					// labels : {{days}},
-					datasets : [
-						{
-							label: "My First dataset",
-							fillColor : "rgba(40,158,205,0.2)",
-							strokeColor : "rgba(40,158,205,1)",
-							pointColor : "rgba(40,158,205,1)",
-							pointStrokeColor : "#fff",
-							pointHighlightFill : "#fff",
-							pointHighlightStroke : "rgba(40,158,205,1)",
-							data : {{amounts_by_day}}
-						}]
-					}
-			</script>
-		</div>
 
 		<div class="filtros-de-stats">
 			<h5 class="filtro-titulo-stats">Ver estadisticas solo de:</h5>
@@ -107,6 +90,34 @@
 			  	</div>
      		</form>
 		</div> <!--filtros de stats-->
+
+
+		<div class="reportes-metidos">
+			<h4 class="reportes-metidos-titulo">Reportes subidos</h4>
+			<div style="width:100%">
+				<div>
+					<canvas id="canvas2" height="343" width="600"></canvas>
+				</div>
+			</div>
+			<script charset="utf-8">
+				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+				var lineChartData = {
+					labels: {{['Lunes', 'Martes', 'Miercoles', 'Jueves','Viernes', 'Sabado', 'Domingo'] | days_filter | safe}},
+					// labels : {{days}},
+					datasets : [
+						{
+							label: "My First dataset",
+							fillColor : "rgba(40,158,205,0.2)",
+							strokeColor : "rgba(40,158,205,1)",
+							pointColor : "rgba(40,158,205,1)",
+							pointStrokeColor : "#fff",
+							pointHighlightFill : "#fff",
+							pointHighlightStroke : "rgba(40,158,205,1)",
+							data : {{amounts_by_day}}
+						}]
+					}
+			</script>
+		</div>
 	</div> <!--col-md-4-->
 
 	<div class="col-md-8">
@@ -199,7 +210,7 @@
 					<div class="leyenda pull-right">
 						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-stop"></span> Huecos</p>
 						<p class="leyenda-unica alcantarilla-s"><span class=" glyphicon glyphicon-stop"></span> Alcantarillas</p>
-						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-stop"></span> Cajones P.</p>
+						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-stop"></span> C. Pluviales</p>
 						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-stop"></span> Puentes</p>
 						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-stop"></span> Otros</p>
 					</div>
@@ -260,7 +271,7 @@
 							});
 							var ctx2 = document.getElementById("chart-area").getContext("2d");
 							window.myPie = new Chart(ctx2).Pie(pieData, {
-								responsive:true,
+								responsive:false,
 								showScale:true,
 								tooltipFontSize: 14,
 								maintainAspectRatio: false,
@@ -268,7 +279,7 @@
 							});
 							var ctx3 = document.getElementById("chart-area2").getContext("2d");
 							window.myPie = new Chart(ctx3).Pie(pieData2, {
-								responsive:true,
+								responsive:false,
 								showScale:true,
 								tooltipFontSize: 14,
 								maintainAspectRatio: false,
