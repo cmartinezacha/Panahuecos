@@ -236,8 +236,8 @@ body{
 }
 
 .imagen{
-	max-width: 300px;
-	max-height: 300px;
+	width: 18em;
+	/*max-height: 300px;*/
 }
 
 .form{
@@ -350,7 +350,7 @@ body{
 	cursor:pointer;
 /*	z-index:2000;*/
 	background-position:right top;
-	right:-9.5%
+	right:-5%
 }
 
   
