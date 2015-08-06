@@ -57,10 +57,13 @@ $(function($){
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
 	$(".adjuntar-foto .seleccionar-foto").click(function(event){
+		console.log("mariks");
 		event.stopPropagation();
 	});
 
-	// $(".editar").click(function(event){
+
+	// $(".datos .editar").click(function(event){
+	// 	console.log("mariks222");
 	// 	event.stopPropagation();
 	// });
 
@@ -167,7 +170,3 @@ $(function($){
 	});
 
 });
-
-
-
-
