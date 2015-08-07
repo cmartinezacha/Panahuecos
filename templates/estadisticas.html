@@ -60,12 +60,12 @@
 					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
 					 	<select class="form-control" name="region">
 					   		<option disabled selected>Región</option>
-					   		<option>Todas</option>
+					   		<option {% if regionSeleccionada == "Todas" %} selected {% endif %}>Todas</option>
 					    <!-- <span class="caret"></span> -->
 					  <!-- </button> -->
 					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"> -->
 							{% for region in regiones %}
-							<option>{{region}}</option>
+							<option {% if regionSeleccionada == region %} selected {% endif %}>{{region}}</option>
 							{% endfor %}
 						</select>
 					</div>
@@ -79,7 +79,7 @@
 					  <!-- </button> -->
 					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"> -->
 			      	  	{% for problema in problemas %}
-			      	  	<option>{{problema}}</option>
+			      	  	<option {% if problemaSeleccionado == problema %} selected {% endif %}>{{problema}}</option>
 			      	  	{% endfor %}
 					   <!-- </ul> -->
 						</select>
