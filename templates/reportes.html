@@ -158,8 +158,10 @@
 						     	<img class="imagen" src="https://s3-us-west-2.amazonaws.com/mopresponde/{{image.url}}">
 						    {% endfor %}
 							</div>
+							{% if reporte.images|length > 1 %}
 						    <span class="button btn prevButton glyphicon glyphicon-chevron-left"></span> 
       						<span class="button btn nextButton glyphicon glyphicon-chevron-right"></span>
+      						{% endif %}
 				      	</div>
 				      	{% else %}
 						<div class="col-sm-6 detalles-ubic-sin-img">
@@ -168,11 +170,10 @@
 				      	{% endif %}
 
 				      	<div class="adjuntar-foto pull-right">
-				      		<label style="font-size:0.8em;" class="control-label" for="email">Adjuntar foto:</label>
-				      		<form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar-foto" enctype="multipart/form-data">
+				      		<form class="form-nueva-foto form-horizontal" role="form" method= "POST" action="/reportes/agregar-foto" enctype="multipart/form-data">
 								<input type="file" id="files-{{reporte.id}}" name="file" class="hidden" onChange="form.submit()"/>
 								<input type="hidden" name="id" value="{{reporte.id}}">
-								<label class="seleccionar-foto">Seleccionar (editar)</label>
+								<label class="btn button seleccionar-foto">Agregar Foto</label>
 							</form>
 				      	</div>
 

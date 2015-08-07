@@ -386,6 +386,7 @@ body{
     display: inline-block;
     font-size: 12px;
     padding: 0 8px;
+    float:right;
     text-decoration: none;
 }
 
@@ -394,6 +395,10 @@ body{
 }
 
 .adjuntar-foto{
-	margin-right: 4em;
+	margin-right: 0em;
 	margin-top: 0.5em;
+}
+
+.form-nueva-foto{
+	float:right;
 }
