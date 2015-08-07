@@ -103,8 +103,11 @@ def show_stats():
         if region != "Todas":
             reportes = reportes.filter(models.Reportes.area == region)
     else:
+        problema = ""
+        region = ""
         reportes = db.session.query(models.Reportes)
-    return render_template('estadisticas.html', reportes=reportes,
+    return render_template('estadisticas.html', reportes=reportes, problemaSeleccionado=problema, 
+                            regionSeleccionada=region,
                             amounts_by_region=models.get_amount_reportes_by_region(reportes), 
                             regiones=utils.REGIONES, problemas=utils.PROBLEMAS, 
                             amounts_by_day=models.get_amount_reportes_last_seven_days(reportes),
