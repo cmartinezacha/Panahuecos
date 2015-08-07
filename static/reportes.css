@@ -385,7 +385,7 @@ body{
     color: #666;
     display: inline-block;
     font-size: 12px;
-    padding: 0 8px;
+    padding: 0.6em;
     float:right;
     text-decoration: none;
 }

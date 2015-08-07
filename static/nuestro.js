@@ -65,6 +65,7 @@ $(function($){
 	$(".hidden").click(function(event){
 		event.stopPropagation();
 	});
+	
 	// $(".datos .editar").click(function(event){
 	// 	console.log("mariks222");
 	// 	event.stopPropagation();
