@@ -149,15 +149,28 @@ nav.content span,nav.content ul,nav.content li{
 }
 
 .main-dropdown{
-  background-color: #FFD700;
+  /*background-color: #FFD700;*/
+  background-color:#FCCC20;
   font-size: 16px;
   font-weight: 500;
   color: black;
+  width: 6.75em;
 }
+
 .main-dropdown:hover{
   cursor: pointer;
   background-color: #F5C73B;
 
+}
+
+.dropdown-menu{
+  min-width: 5em;
+}
+
+.logout{
+  padding: 0.2em;
+  color:black;
+  width:8em;
 }
 
 .error-signin{
@@ -175,4 +188,3 @@ nav.content span,nav.content ul,nav.content li{
   color: red;
   font-weight: 500;
 }
-
