@@ -11,3 +11,4 @@ flask-heroku==0.1.9
 pytz==2013.7
 psycopg2==2.5.3
 wsgiref==0.1.2
+boto==2.38.0
