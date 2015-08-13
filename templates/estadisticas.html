@@ -59,8 +59,8 @@
 					<div class="dropdown dd1 ">
 					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
 					 	<select class="form-control" name="region">
-					   		<option disabled selected>Región</option>
-					   		<option {% if regionSeleccionada == "Todas" %} selected {% endif %}>Todas</option>
+					   		<!-- <option disabled selected>Región</option> -->
+					   		<option {% if regionSeleccionada == "Todas las regiones" %} selected {% endif %}>Todas las regiones</option>
 					    <!-- <span class="caret"></span> -->
 					  <!-- </button> -->
 					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"> -->
@@ -72,8 +72,8 @@
 
 					<div class="dropdown dd2">
 						<select class="form-control" name="problema">
-					   		<option disabled selected>Daño</option>
-					   		<option>Todos</option>
+					   		<!-- <option disabled selected>Daño</option> -->
+					   		<option {% if problemaSeleccionado == "Todos los daños" %} selected {% endif %}>Todos los daños</option>
 					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
 					    <!-- <span class="caret"></span> -->
 					  <!-- </button> -->
