@@ -188,3 +188,12 @@ nav.content span,nav.content ul,nav.content li{
   color: red;
   font-weight: 500;
 }
+
+#agregar-form{
+  margin-left: 3em;
+}
+
+.not-found:hover{
+  background-color: #0392c1;
+  color:white;
+}

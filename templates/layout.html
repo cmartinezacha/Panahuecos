@@ -57,7 +57,7 @@
                   {% block footer %}{% endblock %}
               </div>
           </div> <!-- pull-left -->
-          <span class="pull-right" id="iniciar-sesion-container">
+<!--           <span class="pull-right" id="iniciar-sesion-container">
               {% if not session['logged_in'] %}
               <a href="#" id="iniciar-sesion" data-toggle="modal" data-target="#mymodalsignin">Iniciar Sesión</a>
               {% else %}
@@ -71,6 +71,10 @@
                 </ul>
                 </div>
               {% endif %}
+          </span> -->
+
+          <span class="pull-right" id="iniciar-sesion-container">
+            <a href="#" id="iniciar-sesion" data-toggle="modal" data-target="#mymodalcontactenos">Contáctenos
           </span>
 {% block content_body %}{% endblock %}
       </nav> <!-- navbar-fixed-top -->
@@ -144,6 +148,55 @@
               </div>  <!-- Modal content--> 
             </div>
           </div> <!-- Modal -->
+        </div>
+
+        <div class="container form-sign">
+          <div class="modal fade" id="mymodalcontactenos" role="dialog">  <!-- Modal-->
+            <div class="modal-dialog">    
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="modal-title">Contáctenos</h3>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Esta herramienta fue creada por tres ciudadanos panameños con la intención de apoyar al Ministerio de Obras Públicas en su atención a daños en el país. Si tiene consultas puede enviar correos electrónicos a:
+                  <br><br>
+                    <a href="mailto:contactenos@mopresponde.com">contactenos@mopresponde.com</a>
+                  </p>
+<!--                   <div class="container">
+                    <form class="form-horizontal" role="form" method= "POST" action="/reportes/agregar" enctype="multipart/form-data" id="nuevo-reporte">
+                      <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Nombre:</label>
+                        <div class="col-sm-4 input-entries">
+                          <input type="text" class="form-control" maxlength="35" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Correo electrónico:</label>
+                        <div class="col-sm-4 input-entries">
+                          <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Mensaje:</label>
+                        <div class="col-sm-4 input-entries">
+                          <textarea class="form-control" rows="5" name="details" form="nuevo-reporte" style="resize:none" required></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">        
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-info" id="nuevoreporte" onClick="this.form.submit();this.disabled=true; this.value='Enviando...'">Enviar consulta</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div> -->
+                </div>
+              </div> 
+            </div>
+          </div>
         </div>
 {% block content %}{% endblock %}
       </div> 

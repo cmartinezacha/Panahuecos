@@ -2,9 +2,9 @@
 
 {% block footer %}
 <ul class="nav navbar-nav" id="tabs-top-navbar">
+	<li><a href="/noticias">Noticias</a></li>	
 	<li class="active"><a href="/reportes">Reportes</a></li>
 	<li><a href="/estadisticas">Estadísticas</a></li>
-	<li><a href="/noticias">Noticias</a></li>	
 </ul>
 {% endblock %}
 
@@ -67,13 +67,14 @@
 		              <div class="form-group">
 		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
 		                <label style="margin-top:0.45em">
-		                  <input type="file" id="files" name="file" class="hidden"/>
-		                  <label for="files" class="seleccionar-foto">Seleccionar</label>
+		                	<input type="file" id="files" name="file">
+		                  <!-- <input type="file" id="files" name="file" class="hidden"/> -->
+		                  <!-- <label for="files" class="seleccionar-foto">Seleccionar</label> -->
 		                </label>
 		              </div>
 		              <div class="form-group">        
 		                <div class="col-sm-offset-2 col-sm-10">
-		                  <button type="submit" class="btn btn-info" id="nuevoreporte">Agregar</button>
+		                  <button type="submit" class="btn btn-info" id="nuevoreporte" onClick="this.form.submit();this.disabled=true; this.innerHTML='Enviando...'">Agregar</button>
 		                </div>
 		              </div>
 		            </form>
@@ -85,7 +86,6 @@
 		</div>
 
 		<form method= "POST">
-			<!-- <button type="submit" class="btn btn-info" id="filtro">Filtrar</button> -->
 			<div style="margin-left:2em; font-weight:400">Mostrar:</div>
 			<div class="filtros">
 				<section class="estado">
@@ -139,7 +139,6 @@
 				<a href="#" onclick="stop(event)" class="btn btn-info btn-lg like"><div class="glyphicon glyphicon-thumbs-up"></div> </a>
 				<h7 class="cantidad-likes">{{reporte.likes}} like(s)</h7>
 			</div> -->
-
 			<div class="reporte" data-toggle="collapse" href="#collapse_{{reporte.id}}" aria-controls="collapse_{{reporte.id}}" id="accordion" role="tablist">
 				<img class="dano-icon inline" style="float:left; margin-top:0.5em;" src="/images/{{reporte.problema}}.jpg">
 				<div class="reporte-peque inline" role="tab">
@@ -168,7 +167,6 @@
 					      	{{reporte.details}}
 						</div>
 				      	{% endif %}
-
 				      	<div class="adjuntar-foto pull-right">
 				      		<form class="form-nueva-foto form-horizontal" role="form" method= "POST" action="/reportes/agregar-foto" enctype="multipart/form-data">
 								<input type="file" id="files-{{reporte.id}}" name="file" class="hidden" onChange="form.submit()"/>
@@ -176,9 +174,7 @@
 								<label class="btn button seleccionar-foto">Adjuntar Foto</label>
 							</form>
 				      	</div>
-
 				    </div>
-
 			      	<div class="datos">
 			      		<div class="date-created pull-right">Creado {{reporte.date|datetime}}</div>
 						<button data-toggle="modal" data-target="#myModal{{reporte.id}}" class="editar">Editar<div class="glyphicon glyphicon-pencil"></div></button>	
@@ -241,13 +237,6 @@
 		                 <textarea class="form-control" rows="5" placeholder="Escribir localización detallada" name="details" form="cambiar{{reporte.id}}" style="resize:none" required>{{reporte.details}}</textarea>
 		                </div>
 		              </div>
-		              <!-- <div class="form-group">
-		                <label class="control-label col-sm-2" for="email">Adjuntar Foto:</label>
-		                <label style="margin-top:0.45em">
-		                  <input type="file" id="fils" name="file" class="hidden"/>
-		                  <label for="fils" class="seleccionar-foto">Seleccionar (editar)</label>
-		                </label>
-		              </div> -->
 		              <input type="hidden" name="id" value="{{reporte.id}}">
 		              <div class="form-group">        
 		                <div class="col-sm-offset-2 col-sm-10">
