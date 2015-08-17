@@ -74,7 +74,6 @@ body{
 	margin-right: 14em;
 	box-shadow: 0 0 3px gray;
 	outline: none;
-
 }
 
 .agregar-reporte:hover{
@@ -101,8 +100,7 @@ body{
 	padding-top: 1em;
 	border-top-color: #e5e5e5 ;
 	border-top-style: solid;
-	border-top-width: 1px;
-	
+	border-top-width: 1px;	
 }
 
 .checkbox{
@@ -320,8 +318,11 @@ body{
 }
 
 .imagen{
-	width:18em;
+	max-width:18em;
+	/*max-height: 16em;*/
+	/*-webkit-transform:none;*/
 	margin:auto;
+	imageOrientation:0deg;
 	/*padding:5em;*/
 }
 

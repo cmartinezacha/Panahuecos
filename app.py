@@ -19,7 +19,7 @@ SECRET_KEY = 'development key'
 ACCESS_KEY = 'AKIAI72XWNTOKHIWS42Q'
 SECRET_ACCESS_KEY = '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'
 S3_BUCKET= 'mopresponde' #Cambiar linea dependiendo de persona
-SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+# SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 UPLOAD_FOLDER = 'static/images/'
 
 app = Flask(__name__)
@@ -27,6 +27,7 @@ app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 heroku = Heroku(app)
 db = SQLAlchemy(app)
+heroku = Heroku(app)
 
 import models
 
@@ -61,7 +62,8 @@ def s3_upload(source_file, file_name, acl='public-read'):
 
 @app.route('/')
 def home():
-    return redirect(url_for('show_reportes'))
+    # return redirect(url_for('show_reportes'))
+    return redirect(url_for('show_news', fecha_raw= utils.get_today()))
 
 @app.route('/noticias')
 def today_news():
@@ -95,23 +97,28 @@ def sign_up():
 @app.route('/estadisticas', methods=['GET','POST'])
 def show_stats():
     if request.method == 'POST':
-        problema = request.form.get('problema','Todos')
-        region = request.form.get('region','Todas')
+        problema = request.form.get('problema','Todos los daños')
+        region = request.form.get('region','Todas las regiones')
         reportes = db.session.query(models.Reportes)
-        if problema != "Todos":
+        if problema != "Todos los daños":
             reportes = reportes.filter(models.Reportes.problema == problema)
-        if region != "Todas":
+        if region != "Todas las regiones":
             reportes = reportes.filter(models.Reportes.area == region)
     else:
         problema = ""
         region = ""
         reportes = db.session.query(models.Reportes)
-    return render_template('estadisticas.html', reportes=reportes, problemaSeleccionado=problema, 
-                            regionSeleccionada=region,
-                            amounts_by_region=models.get_amount_reportes_by_region(reportes), 
-                            regiones=utils.REGIONES, problemas=utils.PROBLEMAS, 
-                            amounts_by_day=models.get_amount_reportes_last_seven_days(reportes),
-                            amounts_completed=models.get_amount_reportes_completed(reportes))
+    return render_template('estadisticas.html', 
+        reportes=reportes, 
+        problemaSeleccionado=problema, 
+        regionSeleccionada=region,
+        amounts_by_region=models.get_amount_reportes_by_region(reportes), 
+        regiones=utils.REGIONES, 
+        problemas=utils.PROBLEMAS, 
+        amounts_by_day=models.get_amount_reportes_last_seven_days(reportes),
+        amounts_completed=models.get_amount_reportes_completed(reportes),
+        )
+
 
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
@@ -196,16 +203,6 @@ def add_reporte():
 def edit_reporte():
     form = request.form
     reporte = db.session.merge(models.get_reporte_by_id(int(form['id'])))
-    upload = request.files['file']
-    image_count = len(reporte.images)
-    if upload.filename != "":
-        filename = secure_filename(upload.filename)
-        ext = filename.rsplit('.')[-1]
-        url = str(reporte.id)+"_"+str(image_count)+"."+ext
-        new_image = models.Images(reporte_id=int(form['id']), url=url)
-        db.session.add(new_image)
-        reporte.images.append(new_image) 
-        s3_upload(upload, url)
     reporte.area = form['area']
     reporte.state = form['estado']
     reporte.problema = form['problema']

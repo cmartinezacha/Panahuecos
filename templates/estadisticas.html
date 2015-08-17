@@ -2,9 +2,9 @@
 
 {% block footer %}
 <ul class="nav navbar-nav" id="tabs-top-navbar">
+	<li><a href="/noticias">Noticias</a></li>	
 	<li><a href="/reportes">Reportes</a></li>
 	<li class="active"><a href="/estadisticas">Estadísticas</a></li>
-	<li><a href="/noticias">Noticias</a></li>	
 </ul>
 {% endblock %}
 
@@ -12,8 +12,6 @@
       <link rel="stylesheet" href="static/estadisticas.css">
       <script src="static/charts/Chart.min.js"></script>
 {% endblock %}
-
-
 
 {% block content %}
 
@@ -69,21 +67,19 @@
 							{% endfor %}
 						</select>
 					</div>
-
+			
 					<div class="dropdown dd2">
 						<select class="form-control" name="problema">
-					   		<!-- <option disabled selected>Daño</option> -->
-					   		<option {% if problemaSeleccionado == "Todos los daños" %} selected {% endif %}>Todos los daños</option>
-					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
-					    <!-- <span class="caret"></span> -->
-					  <!-- </button> -->
-					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"> -->
+					   		<!-- <option selected>Daño</option> -->
+					   		<!-- <option>Todos</option> -->
+					   		<option {% if regionSeleccionada == "Todos los daños" %} selected {% endif %}>Todos los daños</option>
+
 			      	  	{% for problema in problemas %}
-			      	  	<option {% if problemaSeleccionado == problema %} selected {% endif %}>{{problema}}</option>
+				      	  	<option {% if problemaSeleccionado == problema %} selected {% endif %}>{{problema}}</option>
 			      	  	{% endfor %}
-					   <!-- </ul> -->
 						</select>
-					</div>	
+					</div>
+
      			</div>
      			<div style="text-align:center">
 			  	<button class="btn btn-primary actualizar-stats" type="submit">Actualizar</button>
@@ -147,18 +143,18 @@
 		</div> <!--stats-de-region-->
 
 		<div class="row pie-row">
-			<div class="mini-left-part stats-de-tiempo">
-				<p class="titulo-tiempo-stats">&nbsp Tiempo para completar reportes</p>
+			<div class="mini-left-part stats-de-estado">
+				<p class="titulo-estado-stats">&nbsp Estado de reportes</p>
 				<div class="wrapper-tiempo-stats">
 					<div id="canvas-holder" class="pull-left">
 						<canvas id="chart-area2" width="250" height="250"/>
 					</div>
 					<div class="leyenda2 pull-right">
-						<p class="leyenda-unica l-12sem"><span class=" glyphicon glyphicon-stop"></span> 1-2 semanas</p>
-						<p class="leyenda-unica l-34sem"><span class=" glyphicon glyphicon-stop"></span> 3-4 semanas</p>
-						<p class="leyenda-unica l-12mes"><span class=" glyphicon glyphicon-stop"></span> 1-2 meses</p>
-						<p class="leyenda-unica l-34mes"><span class=" glyphicon glyphicon-stop"></span> 3-4 meses</p>
-						<p class="leyenda-unica l-4mes"><span class=" glyphicon glyphicon-stop"></span> 4 meses+</p>
+						<p class="leyenda-unica l-iniciados"><span class=" glyphicon glyphicon-stop"></span> Iniciados</p>
+						<p class="leyenda-unica l-eninspeccion"><span class=" glyphicon glyphicon-stop"></span> En inspección</p>
+						<p class="leyenda-unica l-referidos"><span class=" glyphicon glyphicon-stop"></span> En proceso</p>
+						<p class="leyenda-unica l-vencidos"><span class=" glyphicon glyphicon-stop"></span> Vencidos </p>
+						<p class="leyenda-unica l-completados"><span class=" glyphicon glyphicon-stop"></span> Completos</p>
 					</div>
 				</div>
 
@@ -166,36 +162,35 @@
 
 					var pieData2 = [
 							{
-								value: 36,
+								value: {{reportes| reportes_filter_state("Iniciado")}},
 								color:"#F7464A",
 								highlight: "#FF5A5E",
-								label: "Una a dos semanas"
+								label: "Iniciados"
 							},
 							{
-								value: 12,
+								value: {{reportes| reportes_filter_state("En inspección")}},
 								color: "#46BFBD",
 								highlight: "#5AD3D1",
-								label: "Tres a cuatro semanas"
+								label: "En inspección"
 							},
 							{
-								value: 7,
+								value: {{reportes| reportes_filter_state("En proceso")}},
 								color: "#FDB45C",
 								highlight: "#FFC870",
-								label: "Uno a dos meses"
+								label: "En proceso"
 							},
 							{
-								value: 11,
+								value: {{reportes| reportes_filter_state("Vencido")}},
 								color: "#949FB1",
 								highlight: "#A8B3C5",
-								label: "Tres a cuatro meses"
+								label: "Vencidos"
 							},
 							{
-								value: 9,
+								value: {{reportes| reportes_filter_state("Completo")}},
 								color: "#4D5360",
 								highlight: "#616774",
-								label: "Más de cuatro meses"
+								label: "Completos"
 							}
-
 						];
 				</script>
 
@@ -218,20 +213,17 @@
 				</div>
 
 				<script>
-
 					var pieData = [
 							{
 								value: {{reportes| reportes_filter_problema("Hueco")}},
 								color:"#F7464A",
 								highlight: "#FF5A5E",
-
 								label: "Huecos"
 							},
 							{
 								value: {{reportes| reportes_filter_problema("Alcantarilla")}},
 								color: "#46BFBD",
 								highlight: "#5AD3D1",
-
 								label: "Alcantarillas"
 							},
 							{
@@ -240,7 +232,6 @@
 								highlight: "#FFC870",
 								label: "Cajones Pluviales"
 							},
-
 							{
 								value: {{reportes| reportes_filter_problema("Puente")}},
 								color: "#949FB1",
@@ -253,7 +244,6 @@
 								highlight: "#616774",
 								label: "Otros"
 							}
-
 						];
 
 						window.onload = function(){
@@ -292,9 +282,6 @@
 								scaleFontSize: 10,
 							});
 						};
-
-
-
 				</script>
 			</div>
 		</div> <!-- row pie-row -->

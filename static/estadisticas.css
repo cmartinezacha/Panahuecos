@@ -3,7 +3,7 @@
  }
 
 
-.reportes-review, .filtros-de-stats, .stats-de-region, .stats-de-tiempo, .stats-de-dano, .reportes-metidos{
+.reportes-review, .filtros-de-stats, .stats-de-region, .stats-de-estado, .stats-de-dano, .reportes-metidos{
 	background-color: white;
 	border-color: #CCCCCC;
 	border-radius: 10px;
@@ -228,11 +228,11 @@ td {
 
  /*
   ========================================
-	Stats de tiempo
+	Stats de estado
   ========================================
 */
 
-.stats-de-tiempo{
+.stats-de-estado{
 	border-width: 2px;
 	border-style: solid;
 	margin-top: 1em;
@@ -241,7 +241,7 @@ td {
 	margin-left: 1em;
 }
 
-.titulo-tiempo-stats{
+.titulo-estado-stats{
 	font-size: 18px;
 	font-weight: 400;
 	text-align: left;
@@ -275,19 +275,19 @@ td {
 	font-weight: 400;
 }
 
-.l-12sem{
+.l-iniciados{
 	color:  #F7464A;
 }
-.l-34sem{
+.l-eninspeccion{
 	color: #46BFBD;
 }
-.l-12mes{
+.l-referidos{
 	color:#FDB45C; 
 }
-.l-34mes{
+.l-vencidos{
 	color: #949FB1;
 }
-.l-4mes{
+.l-completados{
 	color:  #4D5360;
 }
 
@@ -329,7 +329,6 @@ td {
 	margin-bottom: 0.5em;
 	margin-left: 1em;
 }
-
 
 .hueco-s{
 	color:  #F7464A;

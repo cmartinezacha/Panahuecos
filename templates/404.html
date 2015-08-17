@@ -1,9 +1,19 @@
 <!-- el error en realidad es 500: internal server error. -->
 {% extends "layout.html" %}
+{% block footer %}
+<ul class="nav navbar-nav" id="tabs-top-navbar">
+	<li><a href="/noticias">Noticias</a></li>	
+	<li><a href="/reportes">Reportes</a></li>
+	<li><a href="/estadisticas">Estadísticas</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
-	<h3 class="error-page">Página no encontrada.</h1>
-<!--   <p>What you weree looking for is just not there. -->
-  	<form action="{{ url_for('today_news') }}">
-  		<input type="submit" value="Regresar a noticias de hoy." class="btn agregar">
-  	</form>
+	<div style="margin-left:1.5em; padding:1em;">
+		<h3 class="error-page">Página no encontrada.</h1>
+	<!--   <p>What you weree looking for is just not there. -->
+	  	<form action="{{ url_for('today_news') }}">
+	  		<input type="submit" value="Regresar a noticias de hoy." class="btn not-found">
+	  	</form>
+  	<div>
 {% endblock %}
