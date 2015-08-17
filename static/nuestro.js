@@ -56,6 +56,22 @@ $(function($){
 
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
+	$(".adjuntar-foto .seleccionar-foto").click(function(event){
+		event.stopPropagation();
+		input = $(this).parent().find("input")[0];
+		input.click();
+	});
+
+	$(".hidden").click(function(event){
+		event.stopPropagation();
+	});
+	
+	// $(".datos .editar").click(function(event){
+	// 	console.log("mariks222");
+	// 	event.stopPropagation();
+	// });
+	
+
 	$(".imagen-up img:first-child").addClass("active");
 	$(".imagen-up .button").click(function(event){
 		event.stopPropagation();
@@ -95,6 +111,59 @@ $(function($){
 		
 	});
 
+	$('#iniciar').click(function() {
+		$.ajax({
+			url: "/signin",
+			data: $('#signin-form').serialize(),
+			type: "POST",
+			success: function(response) {
+				var response_parsed = jQuery.parseJSON(response);
+				if (response_parsed["status"] == "ok"){
+					location.reload();
+				}
+				else {
+					$('.error-signin').html(response_parsed['error']);
+				}
+            },
+            error: function(error) {
+                console.log(error);
+			}
+		});	
+	});
+
+	$('#crear').click(function() {
+		$.ajax({
+			url: "/signup",
+			data: $('#signup-form').serialize(),
+			type: "POST",
+			success: function(response) {
+                var response_parsed = jQuery.parseJSON(response);
+				if (response_parsed["status"] == "ok"){
+					location.reload();
+				}
+				else {
+					$('.error-signup').html(response_parsed['error']);
+				}
+            },
+            error: function(error) {
+                console.log(error);
+			}
+		});	
+	});
+
+	$('.logout').click(function(){
+		$.ajax({
+			url: "/logout",
+			type: "GET",
+			success: function(response) {
+				location.reload();
+			},
+            error: function(error) {
+                location.reload();
+			}
+		});
+	});
+
 	$(function () {
 		$("#fecha").datepicker({
 			inline : true,
@@ -103,4 +172,5 @@ $(function($){
 			}
 		});
 	});
+
 });

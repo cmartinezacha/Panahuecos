@@ -1,16 +1,26 @@
 {% extends "layout.html" %}
 
+{% block footer %}
+<ul class="nav navbar-nav" id="tabs-top-navbar">
+	<li><a href="/reportes">Reportes</a></li>
+	<li class="active"><a href="/estadisticas">Estadísticas</a></li>
+	<li><a href="/noticias">Noticias</a></li>	
+</ul>
+{% endblock %}
+
 {% block head %}
       <link rel="stylesheet" href="static/estadisticas.css">
+      <script src="static/charts/Chart.min.js"></script>
 {% endblock %}
 
 
 
 {% block content %}
 
-<div class="container">
+<div class="container page-wrap">
 	
-	<div class="col-md-4">
+	<div class="left-part">
+	
 		<div class="reportes-review">
 			<div class="glyphicon glyphicon-file glyphicon-stats-reportes"></div>
 			<h4 class="reportes-titulo-stats">Reportes</h4>
@@ -19,53 +29,275 @@
 			<table class="reportes-stats" style="width:100%">
 			  <tr>
 			    <td class="tipo-stat">Reportes completados</td>
-			    <td class="numero-de-r">{{reportes| reportes_filter("Completo")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("Completo")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes en proceso</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("En proceso")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("En proceso")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes en inspección</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("En inspección")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("En inspección")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes iniciados</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("Iniciado")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("Iniciado")}}</td>
 			  </tr>
 			  <tr>
 			    <td class="tipo-stat">Reportes vencidos</td>		
-			    <td class="numero-de-r">{{reportes| reportes_filter("Vencido")}}</td>
+			    <td class="numero-de-r">{{reportes| reportes_filter_state("Vencido")}}</td>
 			  </tr>
 			</table>
+		</div> <!--reportes review-->
 
-			<ul class="nav nav-pills nav-justified time-frames">
-			  <li role="time-frame"><a href="#">Semana</a></li>
-			  <li role="time-frame"  class="active"><a href="#">Mes</a></li>
-			  <li role="time-frame"><a href="#">Año</a></li>
-			</ul>
-
-
-		</div>
 
 		<div class="filtros-de-stats">
-			<h4>Cambios</h4>
-		</div>
-	</div>
+			<h5 class="filtro-titulo-stats">Ver estadísticas solo de:</h5>
+			<form action="" method="POST" role="form" class="form-horizontal">	
+				<div align="center" class="filtros-stats">
+				
+					<div class="dropdown dd1 ">
+					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+					 	<select class="form-control" name="region">
+					   		<!-- <option disabled selected>Región</option> -->
+					   		<option {% if regionSeleccionada == "Todas las regiones" %} selected {% endif %}>Todas las regiones</option>
+					    <!-- <span class="caret"></span> -->
+					  <!-- </button> -->
+					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"> -->
+							{% for region in regiones %}
+							<option {% if regionSeleccionada == region %} selected {% endif %}>{{region}}</option>
+							{% endfor %}
+						</select>
+					</div>
 
-	<div class="col-md-8">
+					<div class="dropdown dd2">
+						<select class="form-control" name="problema">
+					   		<!-- <option disabled selected>Daño</option> -->
+					   		<option {% if problemaSeleccionado == "Todos los daños" %} selected {% endif %}>Todos los daños</option>
+					  <!-- <button class="btn btn-default dropdown-toggle dd-filtros-stats2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+					    <!-- <span class="caret"></span> -->
+					  <!-- </button> -->
+					  <!-- <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"> -->
+			      	  	{% for problema in problemas %}
+			      	  	<option {% if problemaSeleccionado == problema %} selected {% endif %}>{{problema}}</option>
+			      	  	{% endfor %}
+					   <!-- </ul> -->
+						</select>
+					</div>	
+     			</div>
+     			<div style="text-align:center">
+			  	<button class="btn btn-primary actualizar-stats" type="submit">Actualizar</button>
+			  	</div>
+     		</form>
+		</div> <!--filtros de stats-->
+
+
+		<div class="reportes-metidos">
+			<h4 class="reportes-metidos-titulo">Reportes subidos</h4>
+			<div style="width:100%">
+				<div>
+					<canvas id="canvas2" height="365" width="600" style="padding-right:1em"></canvas>
+				</div>
+			</div>
+			<script charset="utf-8">
+				var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+				var lineChartData = {
+					labels: {{['Lunes', 'Martes', 'Miercoles', 'Jueves','Viernes', 'Sabado', 'Domingo'] | days_filter | safe}},
+					// labels : {{days}},
+					datasets : [
+						{
+							label: "My First dataset",
+							fillColor : "rgba(40,158,205,0.2)",
+							strokeColor : "rgba(40,158,205,1)",
+							pointColor : "rgba(40,158,205,1)",
+							pointStrokeColor : "#fff",
+							pointHighlightFill : "#fff",
+							pointHighlightStroke : "rgba(40,158,205,1)",
+							data : {{amounts_by_day}}
+						}]
+					}
+			</script>
+		</div>
+	</div> <!--col-md-4-->
+
+	<div class="right-part">
 		<div class="row stats-de-region">
-			<h4>Reportes por region</h4>
-		</div>
+			<p class="titulo-region-stats">Reportes Por Región</p>
+			<div style="width: 100%">
+				<canvas id="canvas" height="260" width="600"></canvas>
+			</div>
+			<script charset="utf-8">
 
-		<div class="row">
-			<div class="col-md-6 stats-de-tiempo">
-				<h4>Tiempo para completar reportes</h4>
+				var barChartData = {
+					labels : ['Areas Canaleras', 'San Miguelito', 'Pnma. Centro', 'Pnma. Oeste','Pnma. Norte', 'Pnma.Este', 'Bocas del Toro','Chiriquí', 'Veraguas',  'Colón', 'Coclé', 'Herrera', 'Los Santos', 'Darién', 'Comarca Ngobe'],
+					datasets : [
+						{
+							fillColor : "rgba(40,158,205,0.5)",
+							strokeColor : "rgba(40,158,205,0.8)",
+							highlightFill: "rgba(40,158,205,0.75)",
+							highlightStroke: "rgba(40,158,205,1)",
+							data : {{amounts_by_region}}
+						},
+
+					]
+
+				}
+
+				</script>
+		</div> <!--stats-de-region-->
+
+		<div class="row pie-row">
+			<div class="mini-left-part stats-de-tiempo">
+				<p class="titulo-tiempo-stats">&nbsp Tiempo para completar reportes</p>
+				<div class="wrapper-tiempo-stats">
+					<div id="canvas-holder" class="pull-left">
+						<canvas id="chart-area2" width="250" height="250"/>
+					</div>
+					<div class="leyenda2 pull-right">
+						<p class="leyenda-unica l-12sem"><span class=" glyphicon glyphicon-stop"></span> 1-2 semanas</p>
+						<p class="leyenda-unica l-34sem"><span class=" glyphicon glyphicon-stop"></span> 3-4 semanas</p>
+						<p class="leyenda-unica l-12mes"><span class=" glyphicon glyphicon-stop"></span> 1-2 meses</p>
+						<p class="leyenda-unica l-34mes"><span class=" glyphicon glyphicon-stop"></span> 3-4 meses</p>
+						<p class="leyenda-unica l-4mes"><span class=" glyphicon glyphicon-stop"></span> 4 meses+</p>
+					</div>
+				</div>
+
+				<script>
+
+					var pieData2 = [
+							{
+								value: 36,
+								color:"#F7464A",
+								highlight: "#FF5A5E",
+								label: "Una a dos semanas"
+							},
+							{
+								value: 12,
+								color: "#46BFBD",
+								highlight: "#5AD3D1",
+								label: "Tres a cuatro semanas"
+							},
+							{
+								value: 7,
+								color: "#FDB45C",
+								highlight: "#FFC870",
+								label: "Uno a dos meses"
+							},
+							{
+								value: 11,
+								color: "#949FB1",
+								highlight: "#A8B3C5",
+								label: "Tres a cuatro meses"
+							},
+							{
+								value: 9,
+								color: "#4D5360",
+								highlight: "#616774",
+								label: "Más de cuatro meses"
+							}
+
+						];
+				</script>
+
 			</div>
-			<div class="col-md-6 stats-de-dano">
-				<h4>Distribución de daños</h4>
+
+			<div class="mini-right-part pull-right stats-de-dano">
+				<p class="titulo-tipo-stats">&nbsp Distribución de daños</p>
+				<div class="wrapper-dano-stats">
+					<div id="canvas-holder" class="pull-left">
+						<canvas id="chart-area" width="250" height="250" />
+					</div>
+					<div class="leyenda pull-right">
+						<p class="leyenda-unica hueco-s"><span class=" glyphicon glyphicon-stop"></span> Huecos</p>
+						<p class="leyenda-unica alcantarilla-s"><span class=" glyphicon glyphicon-stop"></span> Alcantarillas</p>
+						<p class="leyenda-unica cajonesp-s"><span class=" glyphicon glyphicon-stop"></span> C. Pluviales</p>
+						<p class="leyenda-unica puente-s"><span class=" glyphicon glyphicon-stop"></span> Puentes</p>
+						<p class="leyenda-unica otros-s"><span class=" glyphicon glyphicon-stop"></span> Otros</p>
+					</div>
+
+				</div>
+
+				<script>
+
+					var pieData = [
+							{
+								value: {{reportes| reportes_filter_problema("Hueco")}},
+								color:"#F7464A",
+								highlight: "#FF5A5E",
+
+								label: "Huecos"
+							},
+							{
+								value: {{reportes| reportes_filter_problema("Alcantarilla")}},
+								color: "#46BFBD",
+								highlight: "#5AD3D1",
+
+								label: "Alcantarillas"
+							},
+							{
+								value: {{reportes| reportes_filter_problema("Cajones Pluviales")}},
+								color: "#FDB45C",
+								highlight: "#FFC870",
+								label: "Cajones Pluviales"
+							},
+
+							{
+								value: {{reportes| reportes_filter_problema("Puente")}},
+								color: "#949FB1",
+								highlight: "#A8B3C5",
+								label: "Puentes"
+							},
+							{
+								value: {{reportes| reportes_filter_problema("Otro")}},
+								color: "#4D5360",
+								highlight: "#616774",
+								label: "Otros"
+							}
+
+						];
+
+						window.onload = function(){
+							var ctx = document.getElementById("canvas").getContext("2d");
+							window.myBar = new Chart(ctx).Bar(barChartData, {
+								responsive : true,
+								animation: true,
+								scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+								scaleFontSize: 8,
+								scaleBeginAtZero: true,
+								scaleShowVerticalLines : false,
+								scaleShowHorizontalLines: false,
+								tooltipFontSize: 14,
+								
+							});
+							var ctx2 = document.getElementById("chart-area").getContext("2d");
+							window.myPie = new Chart(ctx2).Pie(pieData, {
+								responsive:false,
+								showScale:true,
+								tooltipFontSize: 14,
+								maintainAspectRatio: false,
+
+							});
+							var ctx3 = document.getElementById("chart-area2").getContext("2d");
+							window.myPie = new Chart(ctx3).Pie(pieData2, {
+								responsive:false,
+								showScale:true,
+								tooltipFontSize: 14,
+								maintainAspectRatio: false,
+							});
+							var ctx4 = document.getElementById("canvas2").getContext("2d");
+							window.myLine = new Chart(ctx4).Line(lineChartData, {
+								responsive: true,
+								scaleShowVerticalLines : false,
+								scaleShowHorizontalLines: false,
+								scaleFontSize: 10,
+							});
+						};
+
+
+
+				</script>
 			</div>
-		</div>
+		</div> <!-- row pie-row -->
 	</div>
 
 </div>

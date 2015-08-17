@@ -9,12 +9,17 @@ from flask.ext.heroku import Heroku
 import os
 from flask import send_from_directory
 import sys
+import json
+import boto
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 DEBUG = True
 SECRET_KEY = 'development key'
-#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
+ACCESS_KEY = 'AKIAI72XWNTOKHIWS42Q'
+SECRET_ACCESS_KEY = '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'
+S3_BUCKET= 'mopresponde' #Cambiar linea dependiendo de persona
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/pre-registration'
 UPLOAD_FOLDER = 'static/images/'
 
 app = Flask(__name__)
@@ -30,18 +35,83 @@ def datetime_filter(date_time):
     temp = date_time.strftime('%b %-d - %-I:%M%p').split(" ")
     return " ".join([utils.MES_INGLES_ESP[temp[0]]]+temp[1:])
 
-@app.template_filter('reportes_filter')
+@app.template_filter('reportes_filter_state')
 def reportes_filter(reportes, keyword):
     return reportes.filter(models.Reportes.state == keyword).count()
 
+@app.template_filter('reportes_filter_problema')
+def reportes_filter(reportes, keyword):
+    return reportes.filter(models.Reportes.problema == keyword).count()
+
+@app.template_filter('days_filter')
+def days_filter(days):
+    today_position = utils.get_today_position()
+    last_seven_days = days[today_position+1:]+days[:today_position+1]
+    return last_seven_days
+
+def s3_upload(source_file, file_name, acl='public-read'):
+    # Connect to S3 and upload file.
+    conn = boto.connect_s3(app.config["ACCESS_KEY"], app.config["SECRET_ACCESS_KEY"])
+    b = conn.get_bucket(app.config["S3_BUCKET"])
+
+    sml = b.new_key(file_name)
+    sml.set_contents_from_string(source_file.read())
+    sml.set_acl(acl)
+    return 
+
 @app.route('/')
+def home():
+    return redirect(url_for('show_reportes'))
+
+@app.route('/noticias')
 def today_news():
     return redirect(url_for('show_news', fecha_raw= utils.get_today()))
-    
 
-@app.route('/estadisticas')
+@app.route('/signin', methods=['POST'])
+def sign_in():
+    username = request.form['email']
+    password = request.form['password']
+    valid, error = models.valid_login(username, password)
+    if valid:
+        session['logged_in'] = True
+        session['username'] = username
+        return json.dumps({'status':'ok'})
+    return json.dumps({'status':'error', 'error': error})
+
+@app.route('/signup', methods=['POST'])
+def sign_up():
+    username = request.form['email']
+    password = request.form['password']
+    if models.get_user(username) == None:
+        user = models.Users(username,utils.encrypt(password))
+        db.session.add(user)
+        db.session.commit()
+        session['logged_in'] = True
+        session['username'] = username
+        return json.dumps({'status':'ok'})
+    #return redirect(url_for('show_news', fecha_raw= utils.get_today()))
+    return json.dumps({'status':'error','error':'Usuario ya existe'})
+
+@app.route('/estadisticas', methods=['GET','POST'])
 def show_stats():
-    return render_template('estadisticas.html', reportes=db.session.query(models.Reportes))
+    if request.method == 'POST':
+        problema = request.form.get('problema','Todos')
+        region = request.form.get('region','Todas')
+        reportes = db.session.query(models.Reportes)
+        if problema != "Todos":
+            reportes = reportes.filter(models.Reportes.problema == problema)
+        if region != "Todas":
+            reportes = reportes.filter(models.Reportes.area == region)
+    else:
+        problema = ""
+        region = ""
+        reportes = db.session.query(models.Reportes)
+    return render_template('estadisticas.html', reportes=reportes, problemaSeleccionado=problema, 
+                            regionSeleccionada=region,
+                            amounts_by_region=models.get_amount_reportes_by_region(reportes), 
+                            regiones=utils.REGIONES, problemas=utils.PROBLEMAS, 
+                            amounts_by_day=models.get_amount_reportes_last_seven_days(reportes),
+                            amounts_completed=models.get_amount_reportes_completed(reportes))
 
 @app.route('/agregar', methods=['GET','POST'])
 def add_entry():
@@ -117,8 +187,8 @@ def add_reporte():
         url = str(reporte.id)+"_0."+ext
         new_image = models.Images(reporte_id=reporte.id, url=url)
         db.session.add(new_image)
-        reporte.images.append(new_image) 
-        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
+        reporte.images.append(new_image)
+        s3_upload(upload, url)
     db.session.commit()
     return redirect(url_for('show_reportes'))
 
@@ -135,12 +205,29 @@ def edit_reporte():
         new_image = models.Images(reporte_id=int(form['id']), url=url)
         db.session.add(new_image)
         reporte.images.append(new_image) 
-        upload.save(os.path.join(app.config['UPLOAD_FOLDER'], url))
+        s3_upload(upload, url)
     reporte.area = form['area']
     reporte.state = form['estado']
     reporte.problema = form['problema']
     reporte.localizacion_breve = form['localizacion']
     reporte.details = form['details']
+    reporte.date_changed = utils.get_now()
+    db.session.commit()
+    return redirect(url_for('show_reportes'))
+
+@app.route('/reportes/agregar-foto', methods=['POST'])
+def agregar_foto():
+    form = request.form
+    reporte = db.session.merge(models.get_reporte_by_id(int(form['id'])))
+    upload = request.files['file']
+    image_count = len(reporte.images)
+    filename = secure_filename(upload.filename)
+    ext = filename.rsplit('.')[-1]
+    url = str(reporte.id)+"_"+str(image_count)+"."+ext
+    new_image = models.Images(reporte_id=int(form['id']), url=url)
+    db.session.add(new_image)
+    reporte.images.append(new_image) 
+    s3_upload(upload, url)
     db.session.commit()
     return redirect(url_for('show_reportes'))
 

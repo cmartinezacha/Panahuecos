@@ -1,3 +1,48 @@
+ body{
+ 	background-color:#E6E6E6;
+ }
+
+
+.reportes-review, .filtros-de-stats, .stats-de-region, .stats-de-tiempo, .stats-de-dano, .reportes-metidos{
+	background-color: white;
+	border-color: #CCCCCC;
+	border-radius: 10px;
+}
+
+.page-wrap{
+	width:80em; 
+	margin: 0 auto;
+}
+
+.left-part{
+	width: 21em; 
+	float: left; 
+}
+
+.right-part{
+	width: 50.45em; 
+	float: left; 
+	padding-left: 5px;
+	margin-left: 0.5em;
+}
+
+.pie-row{
+	width: 52em;
+	float: left;
+	display: inline-block;
+}
+.mini-left-part{
+	width: 25em;
+	float: left;
+
+}
+.mini-right-part{
+	width: 25em;
+	float: left;
+
+}
+
+
  /*
   ========================================
 	Reportes Review
@@ -8,8 +53,9 @@
 .reportes-review{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1.5em;
 	text-align: center;
+	margin-bottom: 1em;
 }
 
 .glyphicon-stats-reportes{
@@ -28,6 +74,7 @@
 	margin-top: 1em;
 	margin-left: 0.5em;
 	text-align: left;
+	margin-bottom: 1em;
 }
 
 .tipo-stat{
@@ -53,17 +100,108 @@ td {
 	margin: 0.5em;
 }
 
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus{
+	background-color: #289ECD
+}
+
+.nav-pills>li.active>a:hover{
+	background-color: #2B8FB7
+}
+
  /*
   ========================================
 	Filtro de stats
   ========================================
 */
 
+
+.filtro-titulo-stats{
+	color: gray;
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0.5em;
+	margin-left: 1em;
+	margin-bottom: 0.5em;
+}
+
 .filtros-de-stats{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0em;
 }
+
+.actualizar-stats, .actualizar-stats:focus{
+	background-color: rgba(40,158,205,0.2);
+	color: black;
+	border-color:#2B8FB7;
+	border-width: 2px;
+	border-style: solid;
+	display: inline-block;
+	font-weight: 400;
+	font-size: 16px;
+	margin: 1em;
+	padding: 0.5em 1em;
+	margin-top: 1.3em;
+	margin-bottom: 0.7em;
+}
+
+.actualizar-stats:hover{
+	background-color: rgba(40,158,205,0.5);
+	border-color:#2B8FB7;
+	border-width: 2px;
+	border-style: solid;
+	color: black;
+}
+
+.dd-filtros-stats, .dd-filtros-stats2{
+	color: black;
+	background-color: white;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 1px;
+	font-weight: 400;
+}
+
+.dd1{
+	display: inline-block;
+}
+
+.dd2{
+	display: inline-block;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 80px;
+    overflow-x: hidden;
+}
+
+ /*
+  ========================================
+	Reportes metidos
+  ========================================
+*/
+
+.reportes-metidos{
+	border-width: 2px;
+	border-style: solid;
+	margin-top: 1em;
+	text-align: left;
+}
+
+.reportes-metidos-titulo{
+	color: gray;
+	font-size:18px;
+	font-weight: 400;
+	margin: 0.5em;
+}
+
+#canvas2{
+	margin: 0.3em;
+
+}
+
 
  /*
   ========================================
@@ -75,7 +213,17 @@ td {
 .stats-de-region{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1.5em;
+	margin-left: 0.08em;
+}
+
+.titulo-region-stats{
+	margin-left: 0.5em;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+	font-size: 18px;
+	font-weight: 400;
+	color: gray;
 }
 
  /*
@@ -87,16 +235,115 @@ td {
 .stats-de-tiempo{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1em;
+	margin-right: 0.5em;
+	margin-bottom: 1em;
+	margin-left: 1em;
 }
+
+.titulo-tiempo-stats{
+	font-size: 18px;
+	font-weight: 400;
+	text-align: left;
+	margin: 0.5em;
+	margin-bottom: 1em;
+	margin-left: 0;
+	color: gray;
+}
+
+#chart-area2{
+	margin-bottom: 0.5em;
+	margin-left: 1em;
+}
+
+
+.leyenda2{
+	margin: 0;
+	margin-top: 3.7em;
+	font-size: 8px;
+	display: inline-block;
+	margin-right: 3em;
+}
+
+.glyphicon-asterisk{
+	font-size: 12px;
+
+}
+
+.leyenda-unica{
+	font-size: 10px;
+	font-weight: 400;
+}
+
+.l-12sem{
+	color:  #F7464A;
+}
+.l-34sem{
+	color: #46BFBD;
+}
+.l-12mes{
+	color:#FDB45C; 
+}
+.l-34mes{
+	color: #949FB1;
+}
+.l-4mes{
+	color:  #4D5360;
+}
+
 
  /*
   ========================================
 	Stats de daño
   ========================================
 */
+
 .stats-de-dano{
 	border-width: 2px;
 	border-style: solid;
-	margin-top: 2em;
+	margin-top: 1em;
+	margin-left: 0.5em;
+	margin-bottom: 1em;
+}
+
+
+.titulo-tipo-stats{
+	font-size: 18px;
+	font-weight: 400;
+	text-align: left;
+	margin: 0.5em;
+	margin-bottom: 1em;
+	margin-left: 0;
+	color: gray;
+}
+
+.leyenda{
+	margin: 0;
+	margin-top: 3.7em;
+	font-size: 10px;
+	display: inline-block;
+	margin-right: 3em;
+}
+
+#chart-area{
+	margin-bottom: 0.5em;
+	margin-left: 1em;
+}
+
+
+.hueco-s{
+	color:  #F7464A;
+}
+.alcantarilla-s{
+	color: #46BFBD;
+}
+.cajonesp-s{
+	color:#FDB45C; 
+}
+.puente-s{
+	color: #949FB1;
+}
+.otros-s{
+	color:  #4D5360;
+
 }

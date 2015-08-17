@@ -43,3 +43,11 @@ def get_today():
 def encrypt(word):
     return sha256(word).hexdigest()
 
+def get_today_position():
+    sorted_days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+    today=datetime.now(pytz.timezone('America/Panama')).strftime("%A")
+    today_position = sorted_days.index(today)
+    return today_position
+
+def get_now():
+    return datetime.now()

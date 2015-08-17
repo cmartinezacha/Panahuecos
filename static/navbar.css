@@ -69,6 +69,7 @@ nav.content span,nav.content ul,nav.content li{
 
 #iniciar-sesion:hover{
   text-decoration: underline;
+  cursor: pointer;
 }
 
 #mymodalsignin{
@@ -145,4 +146,45 @@ nav.content span,nav.content ul,nav.content li{
 
 .form-sign{
   margin: 0;
+}
+
+.main-dropdown{
+  /*background-color: #FFD700;*/
+  background-color:#FCCC20;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  width: 6.75em;
+}
+
+.main-dropdown:hover{
+  cursor: pointer;
+  background-color: #F5C73B;
+
+}
+
+.dropdown-menu{
+  min-width: 5em;
+}
+
+.logout{
+  padding: 0.2em;
+  color:black;
+  width:8em;
+}
+
+.error-signin{
+  margin-left: 12em;
+  /*margin-top: -0.8em;*/
+  text-align: left;
+  color: red;
+  font-weight: 500;
+}
+
+.error-signup{
+  margin-left: 12em;
+  /*margin-top: -0.8em;*/
+  text-align: left;
+  color: red;
+  font-weight: 500;
 }
